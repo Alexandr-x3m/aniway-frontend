@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="style/fa.css">
+    <link rel="stylesheet" href="./style/slider.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/inpt_mask/jquery.maskedinput.min.js"></script>
+    <script src="./js/form_inpts/CountryInfo.js"></script>
+    
+    <script src="./js/form_inpts/BreedAnimal.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/slider.js"></script>
+
+    <title>Форма заявки Aniway</title>
+</head>
+
+<body>
+
+    
+    <div class="form_conteiner">
+        <div class="haeder_conteiner">
+            <div class="header_slider_block">
+                <h1>Просчитайте стоимость необходимых<br /> вам услуг на конструкторе</h1>
+                <h1>Travel box от Aniway. Все необходимое <br> для перелета и отдыха в одной коробке</h1>
+                <h1>Необходимые для вашего питомца услуги<br> подробнее в бесплатной консультации по телефону</h1>
+                <h1>Оставьте заявку и наш специалист<br> свяжется с вами в течении 10 минут. </h1>
+                <h1> Отлично, ваша заявка отправлена!<br> Мы уже начали искать решение вашей задачи</h1>
+            </div>
+        </div>
+        <div class="nav_form_conteiner">
+            <div class="step_circle full_circle" value="1" id="step_one_circle">
+                <p>1</p>
+            </div>
+            <div class="connect_info">
+                <p class="number_nav full_text" id="step_one_text">Вводная <br>информация</p>
+            </div>
+            <div class="step_circle empty_circle" value="2" id="step_two_circle">
+                <p>2</p>
+            </div>
+            <div class="connect_info">
+                <p class="number_nav empty_text" id="step_two_text">Travel box <br>от Aniway</p>
+            </div>
+            <div class="step_circle empty_circle" value="3" id="step_tree_circle">
+                <p>3</p>
+            </div>
+            <div class="connect_info">
+                <p class="number_nav empty_text" id="step_tree_text">Необходимые <br> документы и услуги</p>
+            </div>
+            <div class="arc_conteiner">
+                <div class="arc_window_block">
+                    <div class="arc"></div>
+                    <div class="arc"></div>
+                </div>
+            </div>
+            <div class="back_btn_block" id="btn_up_back" value='1'>&larr;
+                <p> вернуться назад</p>
+            </div>
+        </div>
+
+        <div class="steps_slider_conteiner" id="slider_conteiner_btn">
+
+            <div class="form_step_one ">
+
+                <div class="info_trip_conteiner two_columns_grid">
+                    <h4 class="header_4_lvl">Информация о поездке</h4>
+                    <div class="select_type_conteiner">
+                        <div class="type_pet_block">
+                            <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
+                                <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
+                                <div class="select_window type_pet_list" id="view_animal_inpt" value="0"></div>
+                                <span class="select_main_text">Вид животного</span>
+                                <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
+                                <img src="./style/img/Polygon 11.svg" class="arrow_select" alt="">
+                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не заполнили поле</p>
+                            </label>
+                        </div>
+                        <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets" value="0">
+                        </div>
+                        <div id="wrapper_select_pets" class="wrapper_select"></div>
+                    </div>
+                    <div class="breed_animal_block ">
+                        <label class="label_field" for="type_animal_inpt">
+                            <input type="text" class="" id="type_animal_inpt" placeholder="Хаски" name="breed_animal"
+                                value="" required>
+                            <div class="label_text">Порода животного</div>
+                            <p class="invalid_info_text" id="breed_invalid"></p>
+                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_breed" class="valid_info_icon"
+                                alt="">
+                            <img src="./style/img/Group 547.svg" id="inv_icon_breed" class="invalid_info_icon" alt="">
+                        </label>
+                        <div class="animals_list list_saerch_conteiner " id="breed_list"></div>
+                        <div class="wrapper_select" id="wrapper_breed_animal"></div>
+                    </div>
+                    <div class="coutry_tour_block">
+                        <label class="label_field" for="country_arrival">
+                            <input type="text" class="" id="country_arrival" placeholder="Германия"
+                                name="country_arrival" value="" required>
+                            <div class="label_text">Страна прибытия</div>
+                            <p class="invalid_info_text" id="contry_invalid_text">Неверно введен текст</p>
+                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_country" class="valid_info_icon"
+                                alt="">
+                            <img src="./style/img/Group 547.svg" id="inv_icon_country" class="invalid_info_icon" alt="">
+                        </label>
+                        <div class="list_saerch_conteiner" id="coutry_list"></div>
+                        <div id="wrapper_seacrch_country" class="wrapper_select"></div>
+                    </div>
+                    <div class="country_arrival_block">
+                        <label class="label_field" for="date_departure">
+                            <input type="text" class="valid_input inpt_text click_valid" id="date_departure"
+                                placeholder=" " name="date_departure" required>
+                            <div class="label_text">Дата путешествия</div>
+                            <p class="invalid_info_text">Не верно указана дата</p>
+                            <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
+                            <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
+                        </label>
+                    </div>
+                </div>
+                <div class="info_pet_conteiner two_columns_grid">
+                    <h4 class="header_4_lvl">Информация о питомце</h4>
+                    <div class="age_animal_block">
+                        <label class="label_field" for="age_anim_inpt">
+                            <input type="text" class="inpt_text click_valid" id="age_anim_inpt" pattern="([0-9]{1,2})\s([А-Яа-яЁё]{3,8})"
+                                placeholder="7 лет или 12 месяцев" required>
+                            <div class="label_text">Возраст</div>
+                            <p class="invalid_info_text">Вы неверно указали возраст</p>
+                            <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
+                            <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
+                        </label>
+                    </div>
+                    <div class="date_vakcina_block ">
+
+                        <label class="label_field" for="vakvina_date" id="vakcina_field">
+                            <input type="text" class="inpt_text click_valid" id="vakvina_date" placeholder=" " required>
+                            <div class="label_text">Дата посл. вакцинации</div>
+                            <p class="invalid_info_text">Вы неверно указали возраст</p>
+                            <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
+                            <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
+                        </label>
+                    </div>
+                    <div class="chipirovanie_block">
+                        <h4 class="chip_text">Наличие микрочипа</h4>
+                        <input type="checkbox" id="have_chip" checked required />
+                        <label for="have_chip" class="switcher chip_switcher">
+                            <div class="text_block">
+                                <div>нет</div>
+                                <div>да</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="vacine_time_block">
+                        <input type="checkbox" class="dark_check" id="have_vakcina" />
+                        <label for="have_vakcina" class="checkbox_label">
+                            <div class="checkbox_block">
+                                <img src="./style/img/Vector_180.svg" class="check_tick" alt="">
+                            </div>
+                            <p>Питомец не привит</p>
+                        </label>
+                    </div>
+                </div>
+                <div class="hint_conteiner hint_one">
+                    <p class="hint_text">Отлично! <br> Теперь нам нужно <br> узнать о вашем <br> питомце! </p>
+                    <img src="./style/img/Group 584.png" alt="">
+                </div>
+                <div class="btn_nav">
+                    <div id="next_step_btn">
+                        <button class="next_step" id="step_one" value="2">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">далее</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form_step_two form_block" style="height: 796px;">
+
+                <div class="box_items_conteiner" value='0'></div>
+                <div class="btn_nav">
+                    <div id="next_step_btn step_two_btn">
+                        <button class="next_step" id="step_two" value="3">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">далее</span>
+                        </button>
+                    </div>
+                    <div class="hint_conteiner hint_two">
+                        <p class="hint_text">Travel box! Не <br> обязателен. <br> Хотите продолжить? <br> просто нажмите</p>
+                        <img src="./style/img/Group 585.svg" alt="">
+                    </div>
+                    <div class="dwn_back_step" id="dwn_back_step_two" value='1'>
+                        <span class="button_text_back">назад</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form_step_tree">
+                <div class="services_conteiner ">
+                    <div class="serv_necessary_block serv_block">
+                        <h4 class="header_4_lvl">Для поездки вам нужно сделать</h4>
+                        <div class="background_service"></div>
+                    </div>
+                    <div class="serv_optional_block">
+                        <h4 class="header_4_lvl">Опциональные услуги</h4>
+                    </div>
+                </div>
+                <div class="box_purchase_conteiner"></div>
+                <div class="hor_line"></div>
+                <div class="footer_step_tree">
+                    <h2 class="finish_summ">Предварительная сумма <span>11568 </span>руб.</h2>
+                    <h2 class="footer_secnd_text">Отправьте заявку сейчас и получите <br> точный рассчет от нашего
+                        специалиста</h2>
+                    <div class="hint_conteiner hint_tree">
+                            <p class="hint_text">Загрузка фото паспорта <br> ускорит обработку вашего <br> запроса в 2 раза</p>
+                            <img src="./style/img/Group 586.svg" alt="">
+                        </div>   
+                    <div class="contacts_block">
+                        <div class="name_block ">
+                            <label class="label_field" for="whats_name">
+                                <input type="text" required class="inpt_text click_valid" id="whats_name"
+                                    placeholder="Василий" pattern="([А-Яа-яЁё\s]+$)">
+                                <div class="label_text">Как вас зовут</div>
+                                <p class="invalid_info_text" id='user_name_inv_text'>Неправильно введено имя</p>
+                                <img src="./style/img/noun_tick_1181537.svg" id='user_name_valid_icon'
+                                    class="valid_info_icon" alt="">
+                                <img src="./style/img/Group 547.svg" id='user_name_inv_icon' class="invalid_info_icon"
+                                    alt="">
+                            </label>
+                        </div>
+                        <div class="telephone_block ">
+                            <label class="label_field" for="your_telephone">
+                                <input type="text" required class="inpt_text click_valid" id="your_telephone">
+                                <div class="label_text">Ваш номер телефона</div>
+                                <p class="invalid_info_text">Неправильно введен номер</p>
+                                <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
+                                <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
+                            </label>
+                        </div>
+                        <div class="file_block ">
+                            <label for="file" class="btn btn-tertiary js-labelFile">
+                                <div class="icon_inpt_file"></div>
+                                <input type="file" name="file" id="file" multiple class="input-file">
+                                <div class="js-fileName">
+                                    <p>Прикрепить фото страницы </p>
+                                    <p>вет. паспорта с вакцинациями</p>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="email_block ">
+                            <label class="label_field" for="your_email">
+                                <input type="email" required class="inpt_text click_valid" id="your_email"
+                                    placeholder="name@awniway.ru"
+                                    pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})">
+                                <div class="label_text">Ваша эл. почта</div>
+                                <p class="invalid_info_text">Неправильно введена почта</p>
+                                <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
+                                <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
+                            </label>
+                        </div>
+                        <div class="type_link_conteiner">
+                            <div class="type_link_block">
+                                <label class="select_label" for="check_link_inpt" id="">
+                                    <input type="checkbox" name="" class="select_input" id="check_link_inpt">
+                                    <div class="select_window type_pet_list" id="view_link_inpt" value=""></div>
+                                    <div class="select_main_text">Где вам удобнее общаться?</div>
+                                    <p class="select_text type_link_text"></p>
+                                    <img src="./style/img/Polygon 11.svg" class="arrow_select" alt="">
+                                </label>
+                            </div>
+                            <div class="list_items_links list_saerch_conteiner select_list" id="list_type_pets"
+                                value="0">
+                                <div class="search_item type_link_item" id="type_link_1" value="1">Звонок по телефону
+                                </div>
+                                <div class="search_item type_link_item" id="type_link_1" value="2">WhatsApp</div>
+                                <div class="search_item type_link_item" id="type_link_1" value="3">Telegram</div>
+                                <div class="search_item type_link_item" id="type_link_1" value="4">Viber</div>
+                                <div class="search_item type_link_item" id="type_link_1" value="5">Facebook messenger
+                                </div>
+                                <div class="search_item type_link_item" id="type_link_1" value="6">Email</div>
+                            </div>
+                            <div id="wrapper_select_links" class="wrapper_select"></div>
+                        </div>
+                        <div id="send_application">
+                            <button class="next_step" id="last_step" value="4">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">отправить заявку</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+
+
+        <div id="preloader_conteiner">
+            <div class="preloader_background"></div>
+            <div id="hellopreloader_preload"></div>
+        </div>
+
+        <div class="err_conteiner">
+            <div class="err_window_background"></div>
+            <div class="err_window_block">
+                <img src="https://via.placeholder.com/100" alt="">
+                <h1>Упс, что-то пошло не так :(</h1>
+                <h4>Похоже у нас, что-то сломась.</h4>
+                <h4>Попробуйте заново отправить заявку или <br> свяжитесь с нами по телефону <br> <span>+7(828) 888-88-88</span></h4>
+                <div id="send_again_application">
+                    <button class="next_step" id="repeat_send_appl" value="4">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">отправить еще раз</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="travel_box_conteiner">
+        <h1>Travel box от Aniway. Все необходимое <br>для перелета и отдыха в одной коробке</h1>
+        <div class="back_btn_block close_up_tb close_tb">&larr;
+            <p> вернуться назад</p>
+        </div>
+        <div class="box_info_block">
+            <div class="img_slider">
+                <div class="fotorama" data-nav="thumbs" data-allowfullscreen="true">
+                    <a href="https://via.placeholder.com/380x400"><img src="https://via.placeholder.com/80"></a>
+                    <a href="https://via.placeholder.com/380x400"><img src="https://via.placeholder.com/80"></a>
+                  </div>
+                </div>
+            </div>
+
+            <div class="text_info_block">
+                <h4 class="name_travel_box">Travel box <span></span> <br> для кошек</h4>
+                <h4 class="text_price">Стоимость: <span></span> руб.</h4>
+                <div class="list_ware_one">
+                    <p class="desc_left"></p>
+                </div>
+                <div class="list_ware_two">
+                    <p class="desc_right"></p>
+                </div>
+                <div class="hor_line"></div>
+
+                <div class="type_food_block">
+                    <h4>Вид корма</h4>
+                    <input type="checkbox" id="type_food" />
+                    <label for="type_food" class="small_switcher type_food_switcher">
+                        <div class="type_food_text">
+                            <div>сухой</div>
+                            <div>влажный</div>
+                        </div>
+                    </label>
+                </div>
+                <div class="count_boxes_block">
+                    <h4>Количество</h4>
+                    <div class="count_elem_block">
+                        <div class="increase_count" id="increase_box_travel"></div>
+                        <span id="travel_box_counter" value="0">0</span>
+                        <div class="reduce_count" id="reduce_box_travel"></div>
+                    </div>
+                </div>
+                <div class="set_food_block">
+                    <p class="feed_producer">Корм для набора: Purina</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="success_send_four ">
+        <div class="invaite_block">
+            <h1 class="success_title">Вы супер!</h1>
+            <h4>Менеджер уже обрабатывает заявку <br> и свяжется с вами через 10 минут. </h4>
+            <h4>А пока подпишитесь на нас в Инстаграме &rarr; <a href="#">@aniway</a></h4>
+            <a href="" class="back_main_page">вернуться на главную</a>
+        </div>
+
+        <div class="images_inst_conteiner">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+            <img src="https://via.placeholder.com/165" alt="">
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
