@@ -30,7 +30,11 @@ class BreedAnimal {
         })
         promise.then(
             resolve => {
-                if (this.data.length == 0) return this.invalidInpt('Неверно заполнено поле')
+                if (this.data.length == 0) {
+                    let all_items = document.querySelectorAll('.breed_search_item')
+                    all_items.forEach(el => el.remove())
+                    return this.invalidInpt('Неверно заполнено поле')
+                }
                 this.drawList()
             },
             error => console.log(error.message)

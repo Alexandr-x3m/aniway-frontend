@@ -15,18 +15,21 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./js/inpt_mask/jquery.maskedinput.min.js"></script>
+
+    <script src="./js/form_inpts/Product.js"></script>
     <script src="./js/form_inpts/CountryInfo.js"></script>
-    
     <script src="./js/form_inpts/BreedAnimal.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/form_inpts/AnimalType.js"></script>
+
     <script src="./js/slider.js"></script>
+    <script src="./js/main.js"></script>
 
     <title>Форма заявки Aniway</title>
 </head>
 
 <body>
 
-    
+
     <div class="form_conteiner">
         <div class="haeder_conteiner">
             <div class="header_slider_block">
@@ -78,10 +81,11 @@
                             <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
                                 <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
                                 <div class="select_window type_pet_list" id="view_animal_inpt" value="0"></div>
-                                <span class="select_main_text">Вид животного</span>
+                                <div class="select_main_text">Вид животного</div>
                                 <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
                                 <img src="./style/img/Polygon 11.svg" class="arrow_select" alt="">
-                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не заполнили поле</p>
+                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не заполнили
+                                    поле</p>
                             </label>
                         </div>
                         <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets" value="0">
@@ -129,8 +133,8 @@
                     <h4 class="header_4_lvl">Информация о питомце</h4>
                     <div class="age_animal_block">
                         <label class="label_field" for="age_anim_inpt">
-                            <input type="text" class="inpt_text click_valid" id="age_anim_inpt" pattern="([0-9]{1,2})\s([А-Яа-яЁё]{3,8})"
-                                placeholder="7 лет или 12 месяцев" required>
+                            <input type="text" class="inpt_text click_valid" id="age_anim_inpt"
+                                pattern="([0-9]{1,2})\s([А-Яа-яЁё]{3,8})" placeholder="7 лет или 12 месяцев" required>
                             <div class="label_text">Возраст</div>
                             <p class="invalid_info_text">Вы неверно указали возраст</p>
                             <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
@@ -197,7 +201,8 @@
                         </button>
                     </div>
                     <div class="hint_conteiner hint_two">
-                        <p class="hint_text">Travel box! Не <br> обязателен. <br> Хотите продолжить? <br> просто нажмите</p>
+                        <p class="hint_text">Travel box! Не <br> обязателен. <br> Хотите продолжить? <br> просто нажмите
+                        </p>
                         <img src="./style/img/Group 585.svg" alt="">
                     </div>
                     <div class="dwn_back_step" id="dwn_back_step_two" value='1'>
@@ -225,9 +230,10 @@
                     <h2 class="footer_secnd_text">Отправьте заявку сейчас и получите <br> точный рассчет от нашего
                         специалиста</h2>
                     <div class="hint_conteiner hint_tree">
-                            <p class="hint_text">Загрузка фото паспорта <br> ускорит обработку вашего <br> запроса в 2 раза</p>
-                            <img src="./style/img/Group 586.svg" alt="">
-                        </div>   
+                        <p class="hint_text">Загрузка фото паспорта <br> ускорит обработку вашего <br> запроса в 2 раза
+                        </p>
+                        <img src="./style/img/Group 586.svg" alt="">
+                    </div>
                     <div class="contacts_block">
                         <div class="name_block ">
                             <label class="label_field" for="whats_name">
@@ -308,7 +314,7 @@
         </div>
 
 
-        
+
 
 
         <div id="preloader_conteiner">
@@ -322,7 +328,8 @@
                 <img src="https://via.placeholder.com/100" alt="">
                 <h1>Упс, что-то пошло не так :(</h1>
                 <h4>Похоже у нас, что-то сломась.</h4>
-                <h4>Попробуйте заново отправить заявку или <br> свяжитесь с нами по телефону <br> <span>+7(828) 888-88-88</span></h4>
+                <h4>Попробуйте заново отправить заявку или <br> свяжитесь с нами по телефону <br> <span>+7(828)
+                        888-88-88</span></h4>
                 <div id="send_again_application">
                     <button class="next_step" id="repeat_send_appl" value="4">
                         <span class="circle" aria-hidden="true">
@@ -345,11 +352,11 @@
         </div>
         <div class="box_info_block">
             <div class="img_slider">
-                <div class="fotorama" data-nav="thumbs" data-allowfullscreen="true">
-                    <a href="https://via.placeholder.com/380x400"><img src="https://via.placeholder.com/80"></a>
-                    <a href="https://via.placeholder.com/380x400"><img src="https://via.placeholder.com/80"></a>
-                  </div>
-                </div>
+                <div id="fotorama" 
+                    class="fotorama" 
+                    data-nav="thumbs" 
+                    data-allowfullscreen="true"
+                    data-auto="false"></div>
             </div>
 
             <div class="text_info_block">
@@ -387,6 +394,19 @@
             </div>
 
 
+        </div>
+        <div class="btn_nav">
+            <div id="next_step_btn">
+                <button class="next_step" id="tb_next_step" value="2">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">далее</span>
+                </button>
+            </div>
+            <div class="dwn_back_step close_tb">
+                <span class="button_text_back">назад</span>
+            </div>
         </div>
     </div>
 

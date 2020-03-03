@@ -10,10 +10,12 @@ class CountryInfo {
         let promise = new Promise((resolve, reject) => {
 
             let val = country_inpt.value
+            
             val.toLowerCase()
 
             if (val.length == 0) {
-                this.invalidInpt('Вы не заполнили поле')
+                
+                this.invalidInpt('Вы неверно заполнили поле')
             }
 
             fetch(this.proxyUrl + `https://aniway.ru/api/country/?search=${val}`)
@@ -35,6 +37,8 @@ class CountryInfo {
         promise.then(
             result => {
                 if (this.item.length == 0) {
+                    let all_items = document.querySelectorAll('.country_search_item')
+                    all_items.forEach((el) => {el.remove()})
                     return this.invalidInpt('Неверно заполнено поле')
                 }
                 this.drawListSearch()
@@ -70,9 +74,7 @@ class CountryInfo {
         let conteiner = document.querySelector('#coutry_list')
         let all_items = document.querySelectorAll('.country_search_item')
 
-        all_items.forEach((el) => {
-            el.remove()
-        })
+        all_items.forEach((el) => {el.remove()})
 
         this.item.forEach((el) => {
             let item = document.createElement('div')

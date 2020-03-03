@@ -12,6 +12,12 @@
     <link rel="stylesheet" href="./style/mp.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.2/gsap.min.js"></script>
+    
+    <script src="./js/form_inpts/CountryInfo.js"></script>
+    <script src="./js/form_inpts/BreedAnimal.js"></script>
+    <script src="./js/form_inpts/AnimalType.js"></script>
+    
+    <script src="./js/main.js"></script>
     <script src="./js/mp.js"></script>
 
     <title>Aniway — первый в России онлайн-сервис подготовки животных к путешествию</title>
@@ -22,19 +28,19 @@
         <div class="logo_block"></div>
         <div class="nav_block" class="nav_btn">
             <ul>
-                <li>
-                    <a href="#">Документы для поездки</a>
-                </li>
-                <a href="#">
-                    <li>Вакцинация и чипирование</li>
+                <a href="#products_for_tarvel">
+                    <li>Документы для поездки</li>
                 </a>
-                <a href="#">
+                <a href="#products_for_tarvel">
+                    <li>Вакцинация и чипирование</li>
+                </a >
+                <a href="#travel_box">
                     <li>Travel Box</li>
                 </a>
-                <a href="#">
+                <a href="#card_window">
                     <li>Кейсы</li>
                 </a>
-                <a href="#">
+                <a href="#questions">
                     <li>Вопросы и ответы</li>
                 </a>
                 <a href="#">
@@ -151,6 +157,7 @@
 
             <div class="service_travel_box_window_conteiner">
                 <div class="serv_tb_block">
+                    <a name="products_for_tarvel"></a>
                     <h2 class="header_window" value="1">все как у людей, только удобнее</h2>
                     <h4 class="under_header_window" value="1">Ветеринарные услуги для полной готовности <br> вашего любимца к поездке</h4>
                     <div class="services_conteiner">
@@ -222,6 +229,7 @@
                             </div>
                         </div>
                     </div>
+                    <a name="travel_box"></a>
                     <h2 class="header_window" value="1">коробка не простая, а travel box</h2>
                     <h4 class="under_header_window" value="1">Мы разработали специальный набор аксессуаров <br> для поездки и отдыха в одной  коробке</h4>
                     <div class="nav_tavel_box_block" value="1">
@@ -378,6 +386,7 @@
 
             <div class="info_team_window_block">
                 <div class="info_team_block">
+                    <a name="card_window"></a>
                     <h2 class="header_window" value="1">для нас каждый <br> питомец как свой</h2>
                     <h4 class="under_header_window" value="1">Мы собрали уникальную команду ветеринарных врачей, <br> каждый из них горит своим делом</h4>
                     <div class="cards_info_block">
@@ -629,7 +638,7 @@
                                     <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                     </span>
-                                    <span class="button-text">скачать</span>
+                                    <span class="button-text">прислать</span>
                                 </button>
                             </div>
                         </div>
@@ -640,6 +649,7 @@
             </div>
 
             <div class="question_window_conteiner">
+                <a name="questions"></a>
                 <div class="question_conteiner">
                     <h2 class="header_window" value="1">отвечаем за качество, <br> и на ваши вопросы</h2>
                     <div class="item_question_block" value="1">
@@ -1034,6 +1044,13 @@
             </div>
         </div>
         <div class="background_card_worker"></div>
+    </div>
+
+
+
+    <div id="preloader_conteiner">
+        <div class="preloader_background"></div>
+        <div id="hellopreloader_preload"></div>
     </div>
     
 </body>

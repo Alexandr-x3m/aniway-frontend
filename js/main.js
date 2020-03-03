@@ -80,63 +80,6 @@ class FormOrder {
 }
 
 
-class TypeAnimal {
-    constructor() {
-        this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-        this.url = 'http://178.62.220.103/api/animaltype/?format=json'
-        this.data = []
-    }
-    getTypeAnimal() {
-        let preloader = document.querySelector('#preloader_conteiner')
-
-        let promise = new Promise((resolve, reject) => {
-            preloader.style.display = 'block'
-            fetch(this.proxyUrl + this.url)
-                .then((response) => {
-                    if (response.status != 200) {
-                        alert('Oops, something went wrong :(' + response.status)
-                        return
-                    }
-                    response.clone().json()
-                        .then(data => {
-                            this.data = data
-                            resolve()
-                        })
-                })
-                .catch(err => alert(err.message))
-        })
-        promise.then(
-            result => {
-                this.drawTypesPets()
-                preloader.style.display = 'none'
-            },
-            err => alert(err.message)
-        )
-    }
-    drawTypesPets() {
-        let conteiner = document.querySelector('#list_type_pets')
-        let arr = this.data
-
-        arr.forEach((el) => {
-            let block = document.createElement('div')
-            block.setAttribute('class', 'search_item type_pet_item')
-            block.setAttribute('id', `type_pet_${el.id}`)
-            block.setAttribute('value', `${el.id}`)
-            conteiner.append(block)
-            block.innerHTML = el.name
-        })
-        dropDownList.focusSelector({
-            arrItems: '.type_pet_item',
-            sel: '.type_pet_block',
-            back: '#view_animal_inpt',
-            check: '#check_animal_inpt',
-            list: '.list_items_pets',
-            wrap: '#wrapper_select_pets',
-            text: '.type_pet_text'
-        })
-    }
-}
-
 class DropDownList {
     constructor() {
         this.type_links = {
@@ -201,44 +144,6 @@ class TravelBoxes {
         this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
         this.url = 'https://aniway.ru/api/travelbox/?format=json'
         this.data = []
-        this.arrLeft = [
-            {
-                id: 1,
-                val: '0px'
-            },
-            {
-                id: 2,
-                val: '-400px'
-            },
-            {
-                id: 3,
-                val: '-800px'
-            },
-            {
-                id: 4,
-                val: '-1200px'
-            },
-            {
-                id: 4,
-                val: '-1600px'
-            },
-            {
-                id: 5,
-                val: '-2000px'
-            },
-            {
-                id: 6,
-                val: '-2400px'
-            },
-            {
-                id: 7,
-                val: '-2800px'
-            },
-            {
-                id: 8,
-                val: '-3200px'
-            }]
-        this.chosenTB = []
     }
     getBoxes() {
         let box_conteiner = document.querySelector('.box_items_conteiner').getAttribute('value')
@@ -322,30 +227,34 @@ class TravelBoxes {
         btn.innerText = 'подробнее'
         btn.onclick = () => {
 
-            document.querySelector('.travel_box_conteiner').setAttribute('value', el.id)
-            document.querySelector('.form_conteiner').style.display = 'none'
-            document.querySelector('.travel_box_conteiner').style.display = 'block'
-            document.querySelectorAll('.slider_box_small_img').forEach(el => el.remove())
-            //let tb_counter = document.querySelector('#travel_box_counter')
+
+            let fotorama1 = document.querySelector('#fotorama')
 
             let img = el.images
-            img.forEach((el) => {
-                let big_conteiner = document.querySelector('.slider_box_img_block')
-                let small_conteiner = document.querySelector('.slider_box_nav')
 
-                let big_img = document.createElement('img')
-                big_img.setAttribute('class', 'slider_box_big_img')
-                big_img.setAttribute('value', el.id)
-                big_img.src = el.image
 
-                let small_img = document.createElement('img')
-                small_img.setAttribute('class', 'slider_box_small_img')
-                small_img.setAttribute('value', el.id)
-                small_img.src = el.thumbnail
+            let imgArr = []
 
-                big_conteiner.append(big_img)
-                small_conteiner.append(small_img)
-            })
+            img.forEach((el) => imgArr.push({img: el.image, thumb: el.thumbnail}))
+
+            let fr = $('#fotorama').fotorama({
+                width: 380,
+                height: 400,
+                thumbheight: 64,
+            });
+            let fotorama = fr.data('fotorama');
+            
+            if (fotorama) {
+                console.log(imgArr)
+                fotorama.load(imgArr)
+            } else {
+                $('#fotorama').fotorama({data: imgArr});
+            }
+
+
+            document.querySelector('.travel_box_conteiner').style.display = 'block'
+            document.querySelector('.travel_box_conteiner').setAttribute('value', el.id)
+            document.querySelector('.form_conteiner').style.display = 'none'
 
             let name = document.querySelector('.name_travel_box span')
             name.innerText = `"${el.name}"`
@@ -358,8 +267,6 @@ class TravelBoxes {
 
             let sum_price = document.querySelector('.text_price span')
             sum_price.innerText = `${el.price}`
-
-            let tb_counter = document.querySelector('#travel_box_counter')
 
             this.boxCounter()
         }
@@ -376,56 +283,6 @@ class TravelBoxes {
 
         box_conteiner.setAttribute('value', '1')
     }
-    /* navSlider() {
-         let left_btn = document.querySelector('#switch_slide_left')
-         let right_btn = document.querySelector('#switch_slide_right')
-         let slider_box_img_block = document.querySelector('.slider_box_img_block')
-         let slider_box_nav = document.querySelectorAll('.slider_box_nav img')
-         let arrLeft = this.arrLeft
- 
-         left_btn.onclick = () => {
-             let val = slider_box_img_block.getAttribute('value') * 1
-             if (val > 1) {
-                 --val
-                 arrLeft.forEach(el => {
-                     if (el.id === val) {
-                         slider_box_img_block.style.left = el.val
-                         slider_box_img_block.setAttribute('value', val)
-                     }
-                 })
-             } else {
-             }
-         }
-         right_btn.onclick = () => {
-             let val = slider_box_img_block.getAttribute('value') * 1
-             if (val < 3) {
-                 ++val
-                 arrLeft.forEach(el => {
-                     if (el.id === val) {
-                         slider_box_img_block.style.left = el.val
-                         slider_box_img_block.setAttribute('value', val)
-                     }
-                 })
-             } else {
-                 console.log('left block')
-             }
-         }
-         slider_box_nav.forEach((el) => {
-             el.onmousemove = (e) => {
-                 let img = e.target
-                 img.onclick = () => {
-                     let val = img.getAttribute('value') * 1
-                     slider_box_img_block.setAttribute('value', val)
-                 }
-                 let val = slider_box_img_block.getAttribute('value') * 1
-                 arrLeft.forEach(el => {
-                     if (el.id === val) {
-                         slider_box_img_block.style.left = el.val
-                     }
-                 })
-             }
-         })
-     }*/
     drawBoxesStageTree() {
         let type = document.querySelector('#view_animal_inpt').getAttribute('value') * 1
 
@@ -541,94 +398,7 @@ class TravelBoxes {
 
 
 
-class Product {
-    constructor() {
-        this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-        this.product_neces = []
-        this.product_addit = []
-    }
-    async load(type) {
-        let animal = document.querySelector('#view_animal_inpt')
-        animal = animal.getAttribute('value') * 1
 
-        await fetch(this.proxyUrl + `https://aniway.ru/api/product/?animal_type=${animal}&format=json&polymorphic_ctype=${type}`)
-            .then(response => response.json())
-            .then(data => {
-                if (type == 11) {
-                    this.product_neces = data
-                } else {
-                    this.product_addit = data
-                }
-            })
-
-    }
-    addProducts() {
-        this.product_neces.forEach(el => {
-            this.drawBlocks(el, '.serv_necessary_block')
-        })
-        this.product_addit.forEach(el => {
-            this.drawBlocks(el, '.serv_optional_block')
-        })
-    }
-    drawBlocks(el, name_block, ) {
-        let main_block = document.querySelector(name_block)
-
-        let conteiner = document.createElement('div')
-        conteiner.setAttribute('class', 'item_service full_service')
-
-        let checkBlock = document.createElement('div')
-        checkBlock.setAttribute('class', 'check_block')
-
-        let inpt_check = document.createElement('input')
-        inpt_check.setAttribute('type', 'checkbox')
-        inpt_check.setAttribute('class', 'products_check')
-        if (el.checked) {
-            inpt_check.setAttribute('checked', '')
-        }
-        inpt_check.setAttribute('class', 'light_check')
-        inpt_check.setAttribute('id', `${el.id}`)
-
-        let label_check = document.createElement('label')
-        label_check.setAttribute('for', `${el.id}`)
-        label_check.setAttribute('class', `checkbox_label`)
-
-        let check_bl = document.createElement('div')
-        check_bl.setAttribute('class', `checkbox_block`)
-
-        let img_tick = document.createElement('img')
-        img_tick.setAttribute('src', `./style/img/Vector_180.svg`)
-        img_tick.setAttribute('class', `check_tick`)
-
-        let name = document.createElement('span')
-        name.innerText = el.name
-
-        let price = document.createElement('div')
-        price.setAttribute('class', 'price_block')
-
-        let price_txt = document.createElement('h4')
-        price_txt.innerText = `${el.price} \u20BD`
-
-
-        main_block.append(conteiner)
-        conteiner.append(checkBlock)
-        checkBlock.append(inpt_check)
-        checkBlock.append(label_check)
-
-        label_check.append(check_bl)
-        check_bl.append(img_tick)
-
-        conteiner.append(name)
-        conteiner.append(price)
-
-        price.append(price_txt)
-
-        if (el.short_desc !== null) {
-            let desc = document.createElement('p')
-            desc.innerText = el.short_desc
-            conteiner.append(desc)
-        }
-    }
-}
 
 const typeAnimal = new TypeAnimal()
 const breedAnimal = new BreedAnimal()
@@ -644,6 +414,8 @@ window.onload = () => {
     travelBoxes.getBoxes()
     typeAnimal.getTypeAnimal()
     //travelBoxes.navSlider()
+
+
     dropDownList.focusSelector({
         arrItems: '.type_link_item',
         sel: '.type_link_block',
@@ -839,6 +611,7 @@ window.onload = () => {
     }
     type_animal.onfocus = () => {
         breed_list.style.display = 'grid'
+        type_animal.setAttribute('class', 'inpt_list focus_input_with_list')
         wrapper_breed.style.display = "block"
         if (type_animal.value.length == 0) return breedAnimal.famousTypes()
     }
@@ -860,7 +633,7 @@ window.onload = () => {
     console.log(inputs)
 
     inputs.forEach(el => {
-        el.onclick = () => el.setAttribute('class', 'inpt_list invalid_input')
+        el.onclick = () => el.setAttribute('class', 'inpt_text invalid_input')
     })
 
 

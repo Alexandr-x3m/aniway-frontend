@@ -84,6 +84,9 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .invalid_input:invalid~.invalid_info_icon, .invalid_input:invalid~.invalid_info_text{
     display: block;
 }
+.inpt_text:focus:valid~.valid_info_icon{
+    display: block;
+}
 /* active state */
 .inpt_text:focus~.label_text, .inpt_text:valid~.label_text {
     top: 12px;
@@ -255,7 +258,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 }
 .select_main_text {
     color: #999;
-    font-size: 14px;
+    font-size: 16px;
     position: absolute;
     pointer-events: none;
     left: 20px;
@@ -311,7 +314,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 }
 
 .select_input:checked~#view_animal_inpt:active {
-    padding: 29px 9px 7px 19px;
     border: 1px solid #4B9FDF !important;
 }
 
@@ -475,4 +477,35 @@ input:focus::-webkit-input-placeholder {
 
 input:focus::-moz-placeholder {
     color: #9999A5;
+}
+
+/*-----------------------
+
+    Прелоадер блок
+
+-----------------------*/
+#preloader_conteiner{
+    display: none;
+}
+.preloader_background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    z-index: 99998;
+}
+#hellopreloader_preload{
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1000px;
+    background:  url(http://hello-site.ru//main/images/preloads/oval.svg) center center no-repeat;
+    background-size: 172px;
 }
