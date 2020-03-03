@@ -84,8 +84,7 @@
                                 <div class="select_main_text">Вид животного</div>
                                 <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
                                 <img src="./style/img/Polygon 11.svg" class="arrow_select" alt="">
-                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не заполнили
-                                    поле</p>
+                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не выбрали тип животного</p>
                             </label>
                         </div>
                         <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets" value="0">
@@ -97,8 +96,8 @@
                             <input type="text" class="" id="type_animal_inpt" placeholder="Хаски" name="breed_animal"
                                 value="" required>
                             <div class="label_text">Порода животного</div>
-                            <p class="invalid_info_text" id="breed_invalid"></p>
-                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_breed" class="valid_info_icon"
+                            <p class="invalid_info_text" id="breed_invalid">Вы не указали породу</p>
+                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_breed" value="0" class="valid_info_icon"
                                 alt="">
                             <img src="./style/img/Group 547.svg" id="inv_icon_breed" class="invalid_info_icon" alt="">
                         </label>
@@ -107,12 +106,10 @@
                     </div>
                     <div class="coutry_tour_block">
                         <label class="label_field" for="country_arrival">
-                            <input type="text" class="" id="country_arrival" placeholder="Германия"
-                                name="country_arrival" value="" required>
+                            <input type="text" class="" id="country_arrival" placeholder="Германия" name="country_arrival" value="" required>
                             <div class="label_text">Страна прибытия</div>
-                            <p class="invalid_info_text" id="contry_invalid_text">Неверно введен текст</p>
-                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_country" class="valid_info_icon"
-                                alt="">
+                            <p class="invalid_info_text" id="contry_invalid_text">Не указана страна прибытия</p>
+                            <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_country" value="0" class="valid_info_icon" alt="">
                             <img src="./style/img/Group 547.svg" id="inv_icon_country" class="invalid_info_icon" alt="">
                         </label>
                         <div class="list_saerch_conteiner" id="coutry_list"></div>
@@ -219,7 +216,7 @@
                         <h4 class="header_4_lvl">Для поездки вам нужно сделать</h4>
                         <div class="background_service"></div>
                     </div>
-                    <div class="serv_optional_block">
+                    <div class="serv_optional_block serv_block">
                         <h4 class="header_4_lvl">Опциональные услуги</h4>
                     </div>
                 </div>
@@ -283,7 +280,7 @@
                                     <input type="checkbox" name="" class="select_input" id="check_link_inpt">
                                     <div class="select_window type_pet_list" id="view_link_inpt" value=""></div>
                                     <div class="select_main_text">Где вам удобнее общаться?</div>
-                                    <p class="select_text type_link_text"></p>
+                                    <p class="select_text type_link_text" id="inv_text_link"></p>
                                     <img src="./style/img/Polygon 11.svg" class="arrow_select" alt="">
                                 </label>
                             </div>

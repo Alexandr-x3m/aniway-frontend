@@ -111,13 +111,14 @@ class BreedAnimal {
         let valid_icon = document.querySelector('#valid_icon_breed')
 
         text.style.display = 'block'
-        text.innerText = inv_text
-
+        
         inpt.setAttribute('class', 'inpt_list invalid_input')
 
         valid_icon.style.display = 'none'
+        valid_icon.setAttribute('value', 0)
         invalid_icon.style.display = 'block'
         wrap.style.display = 'none'
+        if (inv_text != undefined) text.innerText = inv_text
     }
     validInpt() {
         let text = document.querySelector('#breed_invalid')
@@ -130,6 +131,7 @@ class BreedAnimal {
         text.innerText = ''
         invalid_icon.style.display = 'none'
         valid_icon.style.display = 'block'
+        valid_icon.setAttribute('value', 1)
         inpt.setAttribute('class', 'inpt_list')
     }
 }

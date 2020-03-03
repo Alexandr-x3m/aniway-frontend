@@ -21,10 +21,7 @@ class CountryInfo {
             fetch(this.proxyUrl + `https://aniway.ru/api/country/?search=${val}`)
                 .then(
                     (response) => {
-                        if (response.status != 200) {
-                            alert('Oops, something went wrong :(' + response.status)
-                            return
-                        }
+                        if (response.status != 200) return alert('Oops, something went wrong :(' + response.status)
                         response.clone().json()
                             .then(data => {
                                 this.item = data
@@ -104,12 +101,15 @@ class CountryInfo {
         let invalid_icon = document.querySelector('#inv_icon_country')
         let inpt = document.querySelector('#country_arrival')
         let wrap = document.querySelector('#wrapper_seacrch_country')
+        let valid_icon = document.querySelector('#valid_icon_country')
 
         text.style.display = 'block'
+        valid_icon.style.display = 'none'
+        valid_icon.setAttribute('value', 0)
         invalid_icon.style.display = 'block'
         wrap.style.display = 'none'
         inpt.setAttribute('class', 'inpt_list invalid_input focus_input_with_list')
-        text.innerText = inv_text
+        if (inv_text != undefined) text.innerText = inv_text
     }
     validInpt() {
         let text = document.querySelector('#contry_invalid_text')
@@ -121,6 +121,7 @@ class CountryInfo {
         text.style.display = 'none'
         text.innerText = ''
         valid_icon.style.display = 'block'
+        valid_icon.setAttribute('value', 1)
         invalid_icon.style.display = 'none'
         inpt.setAttribute('class', 'inpt_text')
     }

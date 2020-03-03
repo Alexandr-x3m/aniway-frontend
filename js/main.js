@@ -70,12 +70,52 @@ class FormOrder {
     }
     validStepOne() {
         let type_animal = document.querySelector('#view_animal_inpt').getAttribute('value')
-        let inv_text = document.querySelector('#animal_type_inv_text')
-        let vakcina = document.querySelector('#vakcina_field').control.value
+        let breedValid = document.querySelector('#valid_icon_breed').getAttribute('value')
+        let countryValid = document.querySelector('#valid_icon_country').getAttribute('value')
+        let datetravel = document.querySelector('#date_departure').validity.valid
+        let ageValid = document.querySelector('#age_anim_inpt').validity.valid
+        let vakcina = document.querySelector('#vakvina_date').validity.valid
+        
+        if (vakcina &&
+            ageValid &&
+            datetravel &&
+            type_animal != 0 &&
+            breedValid != 0 &&
+            countryValid != 0) {
+                console.log('vse 4etko')
+                return true
+            }        
 
-        if (type_animal == 0) inv_text.style.display = 'block'
+        if (type_animal != 0) {
 
+        } else {
+            let invBreedText = document.querySelector('#animal_type_inv_text')
+            invBreedText.style.display = 'block'
+            invBreedText.innerText = 'Вы не выбрали тип животного'
+        }
 
+    }
+    finallyPrice() {
+        let sumCheck = document.querySelectorAll('.finally_price_check')
+        let sum = document.querySelectorAll('.finally_price')
+        let summArr = []
+        let finalSum = 0
+
+        sumCheck.forEach( el => {
+            el.onchange = () => this.finallyPrice()
+            if (el.checked) {
+                finalSum += el.getAttribute('value')*1
+            }
+        })
+        sum.forEach(el => {
+            summArr.push(el.getAttribute('value')*1)
+        })
+        summArr.forEach(el => finalSum += el)
+
+        console.log(finalSum)
+        let finish_sum = document.querySelector('.finish_summ span')
+        console.log(finish_sum)
+        finish_sum.innerText = `${finalSum} `
     }
 }
 
@@ -89,7 +129,8 @@ class DropDownList {
             check: '#check_link_inpt',
             list: '.list_items_links',
             wrap: '#wrapper_select_links',
-            text: '.type_link_text'
+            text: '.type_link_text',
+            invText: '#inv_text_link'
         }
     }
     focusSelector(param) {
@@ -102,6 +143,8 @@ class DropDownList {
         let wrap = document.querySelector(el.wrap)
         let text = document.querySelector(el.text)
         let inv_select_text = document.querySelectorAll('.inv_select_text')
+        let invTxt = document.querySelector(el.invText)
+        
 
 
         sel.onclick = () => {
@@ -121,6 +164,11 @@ class DropDownList {
             el.onclick = () => {
                 wrap.style.display = 'none'
                 list.style.display = 'none'
+                if (invTxt == null) {
+                    return
+                } else {
+                    invTxt.style.display = 'none'
+                }
                 check.checked = true
                 check.value = '1'
 
@@ -166,7 +214,7 @@ class TravelBoxes {
                 .catch(err => alert(err.message))
         })
         promise.then(
-            result => { console.log('finish') },
+            result => {},
             err => alert(err.message)
         )
     }
@@ -227,12 +275,7 @@ class TravelBoxes {
         btn.innerText = 'подробнее'
         btn.onclick = () => {
 
-
-            let fotorama1 = document.querySelector('#fotorama')
-
             let img = el.images
-
-
             let imgArr = []
 
             img.forEach((el) => imgArr.push({img: el.image, thumb: el.thumbnail}))
@@ -241,7 +284,7 @@ class TravelBoxes {
                 width: 380,
                 height: 400,
                 thumbheight: 64,
-            });
+            })
             let fotorama = fr.data('fotorama');
             
             if (fotorama) {
@@ -322,7 +365,8 @@ class TravelBoxes {
                 hor_img.setAttribute('class', 'hor_img')
 
                 let priceBl = document.createElement('div')
-                priceBl.setAttribute('class', 'price_block')
+                priceBl.setAttribute('class', 'price_block finally_price')
+                priceBl.setAttribute('value', el.price * el.count)
 
                 let price_txt = document.createElement('h4')
                 price_txt.innerText = `${el.price * el.count} \u20BD`
@@ -333,6 +377,7 @@ class TravelBoxes {
 
                 del_btn.onclick = () => {
                     block.remove()
+                    formOrder.finallyPrice()
                 }
 
                 conteiner.append(block)
@@ -400,13 +445,13 @@ class TravelBoxes {
 
 
 
+const formOrder = new FormOrder()
 const typeAnimal = new TypeAnimal()
 const breedAnimal = new BreedAnimal()
 const travelBoxes = new TravelBoxes()
 const countryInfo = new CountryInfo()
 const products = new Product()
 const dropDownList = new DropDownList()
-const formOrder = new FormOrder()
 
 
 
@@ -430,7 +475,9 @@ window.onload = () => {
     let step_one = document.querySelector('#step_one')
     let step_two = document.querySelector('#step_two')
     let header_slider = document.querySelector('.header_slider_block')
-    let steps_circle = document.querySelectorAll('.step_circle')
+    let step_one_circle = document.querySelector('#step_one_circle')
+    let step_two_circle = document.querySelector('#step_one_circle')
+    let step_tree_circle = document.querySelector('#step_one_circle')
     let btn_up_back = document.querySelector('#btn_up_back')
     let tb_next_step = document.querySelector('#tb_next_step')
     let send_form = document.querySelector('#last_step')
@@ -510,38 +557,56 @@ window.onload = () => {
     }
 
     step_one.onclick = () => {
-        formOrder.validStepOne()
-        let boxes = document.querySelectorAll('.box_item_block')
-        boxes.forEach(el => {
-            el.remove()
-        })
+    
+        if (formOrder.validStepOne()) {
+            let boxes = document.querySelectorAll('.box_item_block')
+            boxes.forEach(el => {
+                el.remove()
+            })
+    
+            let val = step_one.getAttribute('value')
+            nextSlideForm(val)
 
-        let val = step_one.getAttribute('value')
-        nextSlideForm(val)
-        products.load(10)
-        products.load(11)
-        btn_up_back.style.display = 'grid'
-        btn_up_back.setAttribute('value', val)
-        travelBoxes.drawBoxesStageOne()
-        //formOrder.validStepOne()
-    }
-    btn_up_back.onclick = () => {
-        let val = btn_up_back.getAttribute('value')
-        btn_up_back.setAttribute('value', --val)
+            //Услиги
+            let services = document.querySelectorAll('.item_service')
+            services.forEach(el => el.remove())
 
-        if (val == '1') btn_up_back.style.display = 'none'
-        nextSlideForm(val)
-    }
-    step_two.onclick = () => {
-        let services = document.querySelectorAll('.item_service')
-        services.forEach(el => el.remove())
-        travelBoxes.drawBoxesStageTree()
+            products.load(10)
+            products.load(11)
 
-        let val = step_two.getAttribute('value')
-        products.addProducts()
-        nextSlideForm(val)
-        btn_up_back.setAttribute('value', val)
+            btn_up_back.style.display = 'grid'
+            btn_up_back.setAttribute('value', val)
+            travelBoxes.drawBoxesStageOne()
+            step_two_circle.onclick = () => {
+                let val = step_two_circle.getAttribute('value') * 1
+                nextSlideForm(val)
+            }
+        }       
+        step_two.onclick = () => {
+            let val = step_two.getAttribute('value')
+            nextSlideForm(val)
+    
+            travelBoxes.drawBoxesStageTree()
+    
+            formOrder.finallyPrice()
+            btn_up_back.setAttribute('value', val)
+            step_tree_circle.onclick = () => {
+                let val = step_tree_circle.getAttribute('value') * 1
+                nextSlideForm(val)
+            }
+        }
+
+        
+        let select = document.querySelector('#check_animal_inpt')
+        let inputs = document.querySelectorAll('.click_valid')
+        inputs.forEach(el => el.setAttribute('class', 'inpt_text invalid_input'))
+        select.setAttribute('class', 'select_input invalid_input')
+        breedAnimal.invalidInpt() 
+        countryInfo.invalidInpt()
+        
     }
+    
+
     send_form.onclick = () => {
         document.querySelector('.form_conteiner').style.display = 'none'
         document.querySelector('.nav_form_conteiner').style.display = 'none'
@@ -559,8 +624,19 @@ window.onload = () => {
             document.querySelector('.travel_box_conteiner').style.display = 'none'
         }
     })
+    btn_up_back.onclick = () => {
+        let val = btn_up_back.getAttribute('value')
+        btn_up_back.setAttribute('value', --val)
 
-    /* //Тревел бокс следующий шаг
+        if (val == '1') btn_up_back.style.display = 'none'
+        nextSlideForm(val)
+    }
+    step_one_circle.onclick = () => {
+        let val = step_one_circle.getAttribute('value') * 1
+        nextSlideForm(val)
+    }
+    
+    //Тревел бокс следующий шаг
      tb_next_step.onclick = () => {
          travelBoxes.updateChosenTB()
  
@@ -570,7 +646,7 @@ window.onload = () => {
          products.addProducts()
          nextSlideForm(val)
          btn_up_back.setAttribute('value', val)
-     } */
+     }
 
 
     //Взаимодействие с полем страной прибытия
@@ -579,9 +655,7 @@ window.onload = () => {
     let wrapper_country = document.querySelector('#wrapper_seacrch_country')
 
     country_inpt.oninput = () => {
-        if (country_inpt.value.length > 0) {
-            countryInfo.searching(country_inpt)
-        }
+        if (country_inpt.value.length > 0) countryInfo.searching(country_inpt)
     }
     country_inpt.onfocus = () => {
         country_list.style.display = 'grid'
@@ -605,9 +679,7 @@ window.onload = () => {
     let wrapper_breed = document.querySelector('#wrapper_breed_animal')
 
     type_animal.oninput = () => {
-        if (type_animal.value.length > 0) {
-            return breedAnimal.searching()
-        }
+        if (type_animal.value.length > 0) return breedAnimal.searching()
     }
     type_animal.onfocus = () => {
         breed_list.style.display = 'grid'
@@ -620,21 +692,15 @@ window.onload = () => {
         breed_list.style.display = 'none'
     }
 
-    //Переключение между шагами по 
-    steps_circle.forEach(el => {
-        el.onclick = () => {
-            let val = el.getAttribute('value') * 1
-            nextSlideForm(val)
-        }
-    })
-
+    
+    /*
     //проверка на валидность после нажатия на поле
     let inputs = document.querySelectorAll('.click_valid')
-    console.log(inputs)
-
-    inputs.forEach(el => {
-        el.onclick = () => el.setAttribute('class', 'inpt_text invalid_input')
-    })
+    inputs.forEach(el => el.onclick = () => {
+        if (el.value.lenght > 3) {
+            el.setAttribute('class', 'inpt_text invalid_input')
+        }
+    })*/
 
 
 

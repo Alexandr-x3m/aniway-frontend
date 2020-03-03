@@ -51,7 +51,8 @@ class TypeAnimal {
             check: '#check_animal_inpt',
             list: '.list_items_pets',
             wrap: '#wrapper_select_pets',
-            text: '.type_pet_text'
+            text: '.type_pet_text',
+            invText: '#animal_type_inv_text'
         })
     }
 }

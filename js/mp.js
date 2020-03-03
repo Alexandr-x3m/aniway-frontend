@@ -101,7 +101,7 @@ window.onload = () => {
         console.log(windowClient)
 
         let textVideoBL = document.querySelector('.video_text_block')
-        visible(textVideoBL, showLeftRight, 300)
+        visible(textVideoBL, showTopBottom, 100)
 
         let head = document.querySelectorAll('.header_window')
         head.forEach(el => visible(el, showTopBottom, 100))
@@ -111,8 +111,8 @@ window.onload = () => {
 
         let onlineBlock = document.querySelector('.service_online_block')
         let offlineBlock = document.querySelector('.service_ofline_block')
-        visible(onlineBlock, showLeftRight, -500)
-        visible(offlineBlock, showLeftRight, 500)
+        visible(offlineBlock, showTopBottom, 300)
+        visible(onlineBlock, showTopBottom, 300)
 
         let travelBox = document.querySelectorAll('.item_travel_box')
         travelBox.forEach( el => visible(el, opacity))
@@ -122,14 +122,14 @@ window.onload = () => {
 
         let hintText = document.querySelector('.hint_text_block')
         let supportText = document.querySelector('.support_text_block')
-        visible(hintText, showLeftRight, -300)
-        visible(supportText, showLeftRight, 300)
+        visible(hintText, showTopBottom, 100)
+        visible(supportText, showTopBottom, 100)
 
         let questions = document.querySelectorAll('.item_question_block')
         questions.forEach(el => visible(el, showTopBottom, 50))
 
         let socialBlock = document.querySelectorAll('.item_social_block')
-        socialBlock.forEach(el => visible(el, showLeftRight, 300))
+        socialBlock.forEach(el => visible(el, showTopBottom, 100))
         
 
         console.log(windowScroll)
@@ -149,32 +149,71 @@ window.onload = () => {
         listCat.style.display = 'none'
         listRabbit.style.display = 'none'
         listDog.style.display = 'grid'
-        gsap.from(listDog, { duration: 0.8, y: 200, ease: "power2.out" })
+        gsap.from(listDog, { duration: 0.8, y: 100, ease: "power2.out" })
 
 
         dogTb.setAttribute('class', 'active_nav_el')
         catTb.setAttribute('class', '')
         rabbitTb.setAttribute('class', '')
+        let travelBox = document.querySelectorAll('.item_travel_box')
+        travelBox.forEach( el => visible(el, opacity))
     }
     catTb.onclick = () => {
         listDog.style.display = 'none'
         listRabbit.style.display = 'none'
         listCat.style.display = 'grid'
-        gsap.from(listCat, { duration: 0.8, y: 200, ease: "power2.out" })
+        gsap.from(listCat, { duration: 0.8, y: 100, ease: "power2.out" })
 
         catTb.setAttribute('class', 'active_nav_el')
         dogTb.setAttribute('class', '')
         rabbitTb.setAttribute('class', '')
+        let travelBox = document.querySelectorAll('.item_travel_box')
+        travelBox.forEach( el => visible(el, opacity))
     }
     rabbitTb.onclick = () => {
         listCat.style.display = 'none'
         listDog.style.display = 'none'
         listRabbit.style.display = 'grid'
-        gsap.from(listRabbit, { duration: 0.8, y: 200, ease: "power2.out" })
+        gsap.from(listRabbit, { duration: 0.8, y: 100, ease: "power2.out" })
 
         rabbitTb.setAttribute('class', 'active_nav_el')
         catTb.setAttribute('class', '')
         dogTb.setAttribute('class', '')
+        let travelBox = document.querySelectorAll('.item_travel_box')
+        travelBox.forEach( el => visible(el, opacity))
     }
+
+
+    //Вопросы внизу страницы 
+    let questBlock = document.querySelectorAll('.item_question_block')
+    questBlock.forEach( el => {
+        
+        if (el.getAttribute('value') == 1) {
+            el.onclick = () => {
+                console.log(el)
+                debugger
+                el.setAttribute('value', 0)
+                let txt = document.querySelector('.')
+                let head = el.firstChild
+    
+                txt.style.display = 'block'
+                head.setAttribute('class', 'header_question active_head_quest')
+                el.setAttribute('value', 'item_question_block active_block_quest')
+            }
+            
+        } else {
+            el.onclick = () => {
+                debugger
+                el.setAttribute('value', 1)
+                let txt = el.lastChild
+                let head = el.firstChild
+
+                txt.style.display = 'block'
+                head.setAttribute('class', 'header_question')
+                el.setAttribute('value', 'item_question_block')
+            }
+        }
+        
+    })
 
 }
