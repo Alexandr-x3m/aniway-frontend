@@ -2,23 +2,16 @@ class CountryInfo {
     constructor() {
         this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
         this.data = [],
-            this.item = [],
-            this.country_inpt = document.querySelector('#country_arrival')
+        this.item = [],
+        this.country_inpt = document.querySelector('#country_arrival')
     }
     searching(country_inpt) {
-
         let promise = new Promise((resolve, reject) => {
 
             let val = country_inpt.value
-            
             val.toLowerCase()
 
-            if (val.length == 0) {
-                
-                this.invalidInpt('Вы неверно заполнили поле')
-            }
-
-            fetch(this.proxyUrl + `https://aniway.ru/api/country/?search=${val}`)
+            fetch(`https://aniway.ru/api/country/?search=${val}`)
                 .then(
                     (response) => {
                         if (response.status != 200) return alert('Oops, something went wrong :(' + response.status)
@@ -35,8 +28,8 @@ class CountryInfo {
             result => {
                 if (this.item.length == 0) {
                     let all_items = document.querySelectorAll('.country_search_item')
-                    all_items.forEach((el) => {el.remove()})
-                    return this.invalidInpt('Неверно заполнено поле')
+                    all_items.forEach((el) => { el.remove() })
+                    return this.invalidInpt('Не найдено, ни одного совпадения')
                 }
                 this.drawListSearch()
             },
@@ -71,7 +64,7 @@ class CountryInfo {
         let conteiner = document.querySelector('#coutry_list')
         let all_items = document.querySelectorAll('.country_search_item')
 
-        all_items.forEach((el) => {el.remove()})
+        all_items.forEach((el) => { el.remove() })
 
         this.item.forEach((el) => {
             let item = document.createElement('div')
@@ -86,10 +79,11 @@ class CountryInfo {
                 let country_list = document.querySelector('#coutry_list')
                 let wrapper_country = document.querySelector('#wrapper_seacrch_country')
 
+                country_list.style.display = 'none'
+                
                 let txt = item.textContent
                 country_inpt.value = txt
                 country_inpt.setAttribute('value', el.id)
-                country_list.style.display = 'none'
                 wrapper_country.style.display = 'none'
                 country_inpt.setAttribute('class', 'inpt_list')
                 this.validInpt()
@@ -99,17 +93,21 @@ class CountryInfo {
     invalidInpt(inv_text) {
         let text = document.querySelector('#contry_invalid_text')
         let invalid_icon = document.querySelector('#inv_icon_country')
-        let inpt = document.querySelector('#country_arrival')
         let wrap = document.querySelector('#wrapper_seacrch_country')
         let valid_icon = document.querySelector('#valid_icon_country')
+        let inpt = document.querySelector('#country_arrival')
 
-        text.style.display = 'block'
+        
         valid_icon.style.display = 'none'
         valid_icon.setAttribute('value', 0)
+
+        text.style.display = 'block'
         invalid_icon.style.display = 'block'
         wrap.style.display = 'none'
-        inpt.setAttribute('class', 'inpt_list invalid_input focus_input_with_list')
         if (inv_text != undefined) text.innerText = inv_text
+        
+        inpt.classList.remove('valid_list_input')
+        inpt.classList.add('invalid_list_input')
     }
     validInpt() {
         let text = document.querySelector('#contry_invalid_text')
@@ -117,14 +115,32 @@ class CountryInfo {
         let valid_icon = document.querySelector('#valid_icon_country')
         let inpt = document.querySelector('#country_arrival')
 
-        inpt.blur()
         text.style.display = 'none'
         text.innerText = ''
+
         valid_icon.style.display = 'block'
         valid_icon.setAttribute('value', 1)
         invalid_icon.style.display = 'none'
-        inpt.setAttribute('class', 'inpt_text')
+
+        inpt.classList.remove('invalid_list_input')
+        inpt.classList.add('valid_list_input')
+        inpt.blur()
     }
-} 
+    clearValid() {
+        let text = document.querySelector('#contry_invalid_text')
+        let invalid_icon = document.querySelector('#inv_icon_country')
+        let valid_icon = document.querySelector('#valid_icon_country')
+        let inpt = document.querySelector('#country_arrival')
+
+        text.style.display = 'none'
+        valid_icon.style.display = 'none'
+        valid_icon.setAttribute('value', 0)
+        invalid_icon.style.display = 'none'
+
+        inpt.classList.add('full_list_input')
+        inpt.classList.remove('invalid_list_input')
+        inpt.classList.remove('valid_list_input')
+    }
+}
 
 

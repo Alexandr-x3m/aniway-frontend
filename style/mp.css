@@ -1,56 +1,86 @@
 @font-face {
-    font-family: TTWellingtons-Black;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Black.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-Bold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Bold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-DemiBold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-DemiBold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-ExtraBold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-ExtraBold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-ExtraLight;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-ExtraLight.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-Light;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Light.ttf);
-}
-@font-face {
-    font-family: TTWellingtons-LightItalic;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-LightItalic.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-Thin;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Thin.ttf);
-}
-
-@font-face {
     font-family: TTWellingtons-Regular;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Regular.ttf);
+    src: url('TTWellingtons-Regular.eot');
+    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
+        url('TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Regular.woff2') format('woff2'),
+        url('TTWellingtons-Regular.woff') format('woff'),
+        url('TTWellingtons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: TTWellingtons-Medium;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Medium.ttf);
-}
-@font-face {
-    font-family: TTWellingtons-MediumItalic;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-MediumItalic.ttf);
+    src: url('TTWellingtons-Medium.eot');
+    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
+        url('TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Medium.woff2') format('woff2'),
+        url('TTWellingtons-Medium.woff') format('woff'),
+        url('TTWellingtons-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: TTWellingtons-DemiBold;
+    src: url('TTWellingtons-DemiBold.eot');
+    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
+        url('TTWellingtons-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-DemiBold.woff2') format('woff2'),
+        url('TTWellingtons-DemiBold.woff') format('woff'),
+        url('TTWellingtons-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-ExtraLight;
+    src: url('TTWellingtons-ExtraLight.eot');
+    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
+        url('TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-ExtraLight.woff2') format('woff2'),
+        url('TTWellingtons-ExtraLight.woff') format('woff'),
+        url('TTWellingtons-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-MediumItalic;
+    src: url('TTWellingtons-MediumItalic.eot');
+    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'),
+        url('TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-MediumItalic.woff2') format('woff2'),
+        url('TTWellingtons-MediumItalic.woff') format('woff'),
+        url('TTWellingtons-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: TTWellingtons-Bold;
+    src: url('TTWellingtons-Bold.eot');
+    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'),
+        url('TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Bold.woff2') format('woff2'),
+        url('TTWellingtons-Bold.woff') format('woff'),
+        url('TTWellingtons-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-Light;
+    src: url('TTWellingtons-Light.eot');
+    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'),
+        url('TTWellingtons-Light.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Light.woff2') format('woff2'),
+        url('TTWellingtons-Light.woff') format('woff'),
+        url('TTWellingtons-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
 
 body{
     margin: 0;
@@ -111,6 +141,7 @@ p{
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
 .nav_btn li{
     padding: 5px;
@@ -135,6 +166,8 @@ p{
     position: relative;
     top: -67px;
     width: 100%;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
 
@@ -155,8 +188,10 @@ p{
     top: 134px;
     left: 50%;
     width: 1340px;
-    box-sizing: content-box;
     margin-left: -670px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 .mini_form_content_block h1{
     text-align: center;
@@ -196,10 +231,10 @@ p{
     background: #fff;
     border-radius: 8px;
 }
-.type_pet_block{
-    position: relative;
-}
-.breed_pet_block{
+.type_pet_block,
+.breed_pet_block,
+.country_travel_block,
+.date_travel_block{
     position: relative;
 }
 /*---------------------------------------
@@ -216,7 +251,7 @@ p{
 .select_main_text{
     font-size: 18px;
     left: 20px;
-    top: 34px;
+    top: 32px;
     font-family: TTWellingtons-Medium;
 }
 .select_input:checked~.select_main_text {
@@ -243,6 +278,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     padding: 33px 13px 23px 89px !important;
 }
 .label_text{
+    top: 32px;
     font-size: 18px;
     font-family: TTWellingtons-Medium;
 }
@@ -312,6 +348,15 @@ input[type="text"]:focus~.label_text {
     width: 100%;
     height: 100%;
 }
+.video_gradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    z-index: 10;
+}
 .overlay{
     position: relative;
     left: 50%;
@@ -346,6 +391,7 @@ input[type="text"]:focus~.label_text {
     width: 1340px;
     height: 320px;
     margin-left: -670px;
+    z-index: 12;
 }
 .video_text_block{
     opacity: 0;
@@ -389,6 +435,8 @@ input[type="text"]:focus~.label_text {
     top: 200px;
     width: 1340px;
     margin-left: -670px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
 .header_window{
@@ -398,14 +446,17 @@ input[type="text"]:focus~.label_text {
     margin-bottom: 24px;
     line-height: 75px;
     font-weight: 600;
+    letter-spacing: -0.03em;
 }
 .under_header_window{
     opacity: 0;
     text-align: center;
     font-size: 26px;
-    line-height: 26px;
+    line-height: 36px;
+    font-weight: 600;
+    font-style: normal;
     margin-top: 0;
-    margin-bottom: 48px;
+    margin-bottom: 42px;
 }
 /*---------------------------------------
         Карточки с услугами
@@ -675,6 +726,7 @@ input[type="text"]:focus~.label_text {
     -moz-transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
 .hover_card_background{
     width: 100%;
@@ -903,10 +955,12 @@ input[type="text"]:focus~.label_text {
 .history_block{
     position: absolute;
     width: 483px;
-    box-sizing: content-box;
     padding: 84px 64px;
     border-radius: 17px;
     background: #F5F5F5;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 .history_block h4{
     font-size: 28px;
@@ -1035,8 +1089,10 @@ input[type="text"]:focus~.label_text {
     top: 38px;
     left: 0;
     width: 100%;
-    box-sizing: content-box;
     background: #F5E9DB;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 .question_conteiner{
     position: relative;
@@ -1052,12 +1108,14 @@ input[type="text"]:focus~.label_text {
 .item_question_block{
     opacity: 0;
     position: relative;
-    box-sizing: content-box;
     padding: 20px 62px;
     background: #F5F5F5;
     overflow: hidden;
     margin-bottom: 6px;
     border-radius: 8px;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 .item_question_block:hover{
     cursor: pointer;
@@ -1065,6 +1123,7 @@ input[type="text"]:focus~.label_text {
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 .active_block_quest{
     padding: 40px 200px 50px 62px;
@@ -1286,6 +1345,7 @@ input[type="text"]:focus~.label_text {
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 .close_card {
     position: relative;
@@ -1299,6 +1359,7 @@ input[type="text"]:focus~.label_text {
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 .close_card::before{
     content: '';
@@ -1314,6 +1375,7 @@ input[type="text"]:focus~.label_text {
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 .btn_close_card_worker:hover{
     cursor: pointer;

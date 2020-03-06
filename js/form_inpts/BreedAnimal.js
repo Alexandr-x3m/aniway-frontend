@@ -88,17 +88,16 @@ class BreedAnimal {
             conteiner.prepend(item)
 
             item.onclick = () => {
+                conteiner.style.display = 'none'
+                wrapper_breed.style.display = 'none'
+                conteiner.style.display = 'none'
                 let txt = item.textContent
-
                 type_animal.value = txt
                 type_animal.setAttribute('value', el.id)
                 type_animal.setAttribute('class', 'inpt_list')
 
-                conteiner.style.display = 'none'
-                wrapper_breed.style.display = 'none'
-                conteiner.style.display = 'none'
                 all_items.forEach(el => el.remove())
-                
+
                 this.validInpt()
             }
         })
@@ -110,15 +109,17 @@ class BreedAnimal {
         let wrap = document.querySelector('#wrapper_breed_animal')
         let valid_icon = document.querySelector('#valid_icon_breed')
 
-        text.style.display = 'block'
-        
-        inpt.setAttribute('class', 'inpt_list invalid_input')
 
         valid_icon.style.display = 'none'
         valid_icon.setAttribute('value', 0)
+        
+        text.style.display = 'block'
         invalid_icon.style.display = 'block'
         wrap.style.display = 'none'
         if (inv_text != undefined) text.innerText = inv_text
+        
+        inpt.classList.remove('valid_list_input')
+        inpt.classList.add('invalid_list_input')
     }
     validInpt() {
         let text = document.querySelector('#breed_invalid')
@@ -126,14 +127,34 @@ class BreedAnimal {
         let valid_icon = document.querySelector('#valid_icon_breed')
         let inpt = document.querySelector('#type_animal_inpt')
 
-        inpt.blur()
         text.style.display = 'none'
         text.innerText = ''
-        invalid_icon.style.display = 'none'
+
         valid_icon.style.display = 'block'
         valid_icon.setAttribute('value', 1)
-        inpt.setAttribute('class', 'inpt_list')
+        invalid_icon.style.display = 'none'
+        
+        inpt.classList.remove('invalid_list_input')
+        inpt.classList.add('valid_list_input')
+        inpt.blur()
     }
+    clearValid() {
+        let text = document.querySelector('#breed_invalid')
+        let invalid_icon = document.querySelector('#inv_icon_breed')
+        let valid_icon = document.querySelector('#valid_icon_breed')
+        let inpt = document.querySelector('#type_animal_inpt')
+
+        text.style.display = 'none'
+        valid_icon.style.display = 'none'
+        valid_icon.setAttribute('value', 0)
+        invalid_icon.style.display = 'none'
+
+        inpt.classList.add('full_list_input')
+        inpt.classList.remove('invalid_list_input')
+        inpt.classList.remove('valid_list_input')
+    }
+
 }
+
 
 

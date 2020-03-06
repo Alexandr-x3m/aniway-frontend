@@ -1,46 +1,85 @@
 @font-face {
-    font-family: TTWellingtons-Black;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Black.ttf);
-} 
-
-@font-face {
-    font-family: TTWellingtons-Bold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Bold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-DemiBold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-DemiBold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-ExtraBold;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-ExtraBold.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-ExtraLight;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-ExtraLight.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-Light;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Light.ttf);
-}
-
-@font-face {
-    font-family: TTWellingtons-Thin;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Thin.ttf);
-}
-
-@font-face {
     font-family: TTWellingtons-Regular;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Regular.ttf);
+    src: url('TTWellingtons-Regular.eot');
+    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
+        url('TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Regular.woff2') format('woff2'),
+        url('TTWellingtons-Regular.woff') format('woff'),
+        url('TTWellingtons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
     font-family: TTWellingtons-Medium;
-    src: url(./FONT/TT_WELLIGTONES/TTWellingtons-Medium.ttf);
+    src: url('TTWellingtons-Medium.eot');
+    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
+        url('TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Medium.woff2') format('woff2'),
+        url('TTWellingtons-Medium.woff') format('woff'),
+        url('TTWellingtons-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-DemiBold;
+    src: url('TTWellingtons-DemiBold.eot');
+    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
+        url('TTWellingtons-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-DemiBold.woff2') format('woff2'),
+        url('TTWellingtons-DemiBold.woff') format('woff'),
+        url('TTWellingtons-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-ExtraLight;
+    src: url('TTWellingtons-ExtraLight.eot');
+    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
+        url('TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-ExtraLight.woff2') format('woff2'),
+        url('TTWellingtons-ExtraLight.woff') format('woff'),
+        url('TTWellingtons-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-MediumItalic;
+    src: url('TTWellingtons-MediumItalic.eot');
+    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'),
+        url('TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-MediumItalic.woff2') format('woff2'),
+        url('TTWellingtons-MediumItalic.woff') format('woff'),
+        url('TTWellingtons-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: TTWellingtons-Bold;
+    src: url('TTWellingtons-Bold.eot');
+    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'),
+        url('TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Bold.woff2') format('woff2'),
+        url('TTWellingtons-Bold.woff') format('woff'),
+        url('TTWellingtons-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-Light;
+    src: url('TTWellingtons-Light.eot');
+    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'),
+        url('TTWellingtons-Light.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Light.woff2') format('woff2'),
+        url('TTWellingtons-Light.woff') format('woff'),
+        url('TTWellingtons-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }
 
 body, html {
@@ -293,13 +332,15 @@ span {
 .type_pet_block{
     height: 64px;
 }
-.select_type_conteiner{
-    position: relative;
-}
-.breed_animal_block{
-    position: relative;
-}
-.coutry_tour_block{
+.select_type_conteiner,
+.breed_animal_block,
+.coutry_tour_block,
+.country_arrival_block,
+.age_animal_block,
+.date_vakcina_block,
+.name_block,
+.telephone_block,
+.email_block  {
     position: relative;
 }
 
@@ -782,7 +823,7 @@ span {
 }
 .count_block{
     font-size: 12px;
-    font-family: Open-Sans;
+    font-family: Open-Sans !important;
 }
 .box_purchase_item img{
     border-radius: 5px;
@@ -944,6 +985,7 @@ span {
 }
 .input-file {
     display: none;
+    -moz-opacity: 0.8;
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -951,10 +993,16 @@ span {
 }
 .js-fileName{
     position: relative;
-    top: 20px;
+    left: 12px;
     height: 64px;
     margin: 0;
+    width: 222px;
     line-height: 12px;
+    border-left: 1px solid #DBDBDB;
+}
+.text_file_btn{
+    line-height: 14px;
+    margin-top: 18px;
 }
 .icon_inpt_file{
     position: relative;
@@ -962,15 +1010,21 @@ span {
     left: 12px;
     width: 44px;
     height: 64px;
-    border-right: 1px solid #DBDBDB;
     background-image: url(./img/add_file.svg);
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;
     transition-duration: 0.2s;
 }
-.btn-tertiarys:hover .icon_inpt_file, .btn-tertiary:focus .icon_inpt_file{
-    border-right: 1px solid #F0592B;
+.btn-tertiarys:hover~.js-fileName{
+    border-left: 1px solid #F0592B;
+}
+.icon_inpt_file:hover{
+    transform: scale(1.1);
+}
+
+.btn-tertiary:hover~.icon_inpt_file{
+    transform: rotate(50deg);
 }
 
 
@@ -1113,6 +1167,7 @@ span {
     width: 100%;
     height: 100%;
     background: #000;
+    -moz-opacity: 0.8;
     opacity: 0.6;
 }
 /*-------------------------------
@@ -1232,6 +1287,7 @@ span {
     background: #000;
     width: 100%;
     height: 80px;
+    -moz-opacity: 0.8;
     opacity: 0.6;
 }
 
@@ -1249,6 +1305,7 @@ span {
 
 .slider_box_small_img:hover {
     cursor: pointer;
+    -moz-opacity: 0.8;
     opacity: 0.9;
 }
 
@@ -1359,11 +1416,13 @@ span {
 }
 
 .reduce_count:hover {
+    -moz-opacity: 0.8;
     opacity: 0.6;
     cursor: pointer;
 }
 
 .increase_count:hover {
+    -moz-opacity: 0.8;
     opacity: 0.6;
     cursor: pointer;
 }

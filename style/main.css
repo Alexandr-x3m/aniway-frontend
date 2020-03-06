@@ -1,4 +1,3 @@
-
 /*-------------------------------
 
 
@@ -19,6 +18,10 @@ input[type="text"], input[type="email"], input[type="number"] {
     background-color: #EEF2F7;
     outline: none;
     font-family: TTWellingtons-Medium;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
 }
 input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     background-color: #fff;
@@ -28,10 +31,10 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .label_field {
     color: #999;
     font-size: 14px;
-    position: relative;
     pointer-events: none;
     left: 0px;
     top: 0px;
+    pointer-events: auto;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
@@ -73,37 +76,36 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-family: TTWellingtons-Medium;
     font-size: 12px;
 }
-.invalid_input:invalid {
+.invalid_input{
     padding: 29px 9px 7px 19px !important;
     border: 1px solid #DD5656 !important;
 }
-
-.inpt_text:focus:invalid~.invalid_info_icon, .inpt_text:focus:invalid~.invalid_info_text{
+.invalid_input~.invalid_info_icon,
+.invalid_input~.invalid_info_text{
     display: block;
-}
-.invalid_input:invalid~.invalid_info_icon, .invalid_input:invalid~.invalid_info_text{
-    display: block;
-}
-.inpt_text:focus:valid~.valid_info_icon{
-    display: block;
-}
-/* active state */
-.inpt_text:focus~.label_text, .inpt_text:valid~.label_text {
-    top: 12px;
-    font-size: 12px;
 }
 .invalid_input:focus~.label_text{
     top: 12px;
     font-size: 12px;
 }
-.inpt_text:valid~.valid_info_icon{
-    display: block;
+.invalid_input~.label_text{
+    top: 12px;
+    font-size: 12px;
 }
+/* анимация при фокусе на поле ввода */
 .inpt_text:focus~.label_text{
     top: 12px;
     font-size: 12px;
 }
 
+/* сохранение анимации при фокусе на поле ввода, если оно валидно */
+.inpt_text:valid~.label_text{
+    top: 12px;
+    font-size: 12px;
+}
+.valid_input~.valid_info_icon{
+    display: block;
+}
 
 /* --------------------------
     Поля ввода со списком
@@ -119,7 +121,19 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     top: 12px;
     font-size: 12px;
 }
-.inpt_list:focus~.label_text, .inpt_list:valid~.label_text {
+.valid_list_input~.label_text{
+    top: 12px;
+    font-size: 12px;
+}
+.invalid_list_input~.label_text{
+    top: 12px;
+    font-size: 12px;
+}
+.invalid_list_input{
+    border: 1px solid #DD5656 !important;
+    padding: 29px 9px 7px 19px !important;
+}
+.full_list_input~.label_text{
     top: 12px;
     font-size: 12px;
 }
@@ -179,6 +193,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     margin: auto;
     background: #fff;
     -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -moz-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
@@ -188,6 +204,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     height: 3px;
     background: none;
     -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -moz-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
@@ -201,6 +219,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     border-top: 3px solid #fff;
     border-right: 3px solid #fff;
     -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
@@ -214,6 +234,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     line-height: 74px;
     text-align: center;
     -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -moz-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
@@ -224,6 +246,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .next_step:hover .circle .icon.arrow {
     background: #fff;
     -webkit-transform: translate(1rem, 0);
+    -moz-transform: translate(1rem, 0);
+    -o-transform: translate(1rem, 0);
     transform: translate(1rem, 0);
 }
 /*-------------------------------
@@ -235,13 +259,23 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 
 .arrow_select {
     position: absolute;
-    top: 28px;
+    top: 20px;
     left: 240px;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    z-index: 11;
 }
 
 .arrow_select:hover {
     cursor: pointer;
-    opacity: 0.6;
+    -moz-opacity: 0.8;
+    top: 18px;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .wrapper_select {
@@ -257,15 +291,16 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     cursor: pointer;
 }
 .select_main_text {
-    color: #999;
-    font-size: 16px;
     position: absolute;
-    pointer-events: none;
     left: 20px;
     top: 24px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
 }
 
 .select_window {
@@ -308,12 +343,15 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     top: 8px !important;
     font-size: 12px !important;
 }
+.select_input:checked~.arrow_select{
+    
+}
 
-.select_input:checked~#list_type_pets {
+.select_input:checked+#list_type_pets {
     display: grid;
 }
 
-.select_input:checked~#view_animal_inpt:active {
+.select_input:checked+#view_animal_inpt:active {
     border: 1px solid #4B9FDF !important;
 }
 
@@ -339,9 +377,11 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     border-bottom-right-radius: 8px;
     max-height: 196px !important;
     overflow: hidden;
-    box-sizing: content-box;
     background-color: #EEF2F7;
     z-index: 11;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 .list_saerch_conteiner::nth-child(1) {
@@ -367,7 +407,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: grid;
 }
 
-#country_arrival:focus~.list_saerch_conteiner {
+#country_arrival:focus+.list_saerch_conteiner {
     display: grid;
 }
 
@@ -384,76 +424,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 input[type="checkbox"] {
     display: none;
 }
-.check {
-    cursor: pointer;
-    position: relative;
-    margin: auto;
-    width: 18px;
-    height: 18px;
-    -webkit-tap-highlight-color: transparent;
-    transform: translate3d(0, 0, 0);
-}
-
-.check:before {
-    content: "";
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(34, 50, 84, 0.03);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.check svg {
-    position: relative;
-    z-index: 1;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: #c8ccd4;
-    stroke-width: 1.5;
-    transform: translate3d(0, 0, 0);
-    transition: all 0.2s ease;
-}
-
-.check svg path {
-    stroke-dasharray: 60;
-    stroke-dashoffset: 0;
-}
-
-.check svg polyline {
-    stroke-dasharray: 22;
-    stroke-dashoffset: 66;
-}
-
-.check:hover:before {
-    opacity: 1;
-}
-
-.check:hover svg {
-    stroke: #4285f4;
-}
-
-.check_inpt:checked+.check svg {
-    stroke: #4285f4;
-}
-
-.check_inpt:checked+.check svg path {
-    stroke-dashoffset: 60;
-    transition: all 0.3s linear;
-}
-
-.check_inpt:checked+.check svg polyline {
-    stroke-dashoffset: 42;
-    transition: all 0.2s linear;
-    transition-delay: 0.15s;
-}
-
-
-
 
 input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-inner-spin-button {
     display: none;
@@ -463,21 +433,15 @@ input[type='number']::-moz-outer-spin-button, input[type='number']::-moz-inner-s
     display: none;
 }
 
-input::-webkit-input-placeholder {
-    color: #EEF2F7;
-}
+input[type='text']::-webkit-input-placeholder{ color: #EEF2F7;}
+input[type='text']:focus::-webkit-input-placeholder { color: #9E9DAB;}
 
-input::-moz-input-placeholder {
-    color: #EEF2F7;
-}
 
-input:focus::-webkit-input-placeholder {
-    color: #9999A5;
-}
 
-input:focus::-moz-placeholder {
-    color: #9999A5;
-}
+input[type='text']::-moz-placeholder{ color: #EEF2F7;}
+input[type='text']:-moz-placeholder{ color: #EEF2F7;}
+input[type='text']:focus::-moz-placeholder { color: #9E9DAB;}
+input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 
 /*-----------------------
 
@@ -494,6 +458,7 @@ input:focus::-moz-placeholder {
     width: 100%;
     height: 100%;
     background: #000;
+    -moz-opacity: 0.8;
     opacity: 0.8;
     z-index: 99998;
 }
