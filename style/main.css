@@ -136,7 +136,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
-    font-family: TTWellingtons-Regular;
 }
 .label_text{
     position: absolute;
@@ -361,7 +360,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .arrow_select {
     position: absolute;
     top: 20px;
-    left: 240px;
+    right: 15px;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;

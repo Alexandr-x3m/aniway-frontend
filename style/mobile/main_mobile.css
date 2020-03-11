@@ -70,7 +70,14 @@
         left: -8px !important;
         font-size: 12px !important;
     }
-    .inpt_list:focus~.label_text {
+    .input_list:focus{
+        padding: 21px 31px 9px 17px !important;
+    }
+    .input_list:focus~.label_text {
+        top: 4px !important;
+        font-size: 8px !important;
+    }
+    .valid_input~.label_text {
         top: 4px !important;
         font-size: 8px !important;
     }
@@ -83,15 +90,11 @@
         font-size: 8px !important;
     }
     /* анимация при фокусе на поле ввода */
-    .inpt_text:focus~.label_text {
+    .input_text:focus~.label_text {
         top: 4px !important;
         font-size: 8px !important;
     }
     /* сохранение анимации при фокусе на поле ввода, если оно валидно */
-    .inpt_text:valid~.label_text {
-        top: 4px !important;
-        font-size: 8px !important;
-    }
     .valid_list_input~.label_text {
         top: 7px !important;
         font-size: 12px !important;
@@ -108,11 +111,14 @@
         border-radius: 5px;
     }
     .active_select {
-        width: 282px;
+        height: 46px;
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .arrow_select {
         top: 12px;
-        left: 252px;
+        right: 15px;
     }
     .select_main_text {
         left: 18px;
@@ -130,7 +136,6 @@
         top: 22px;
         font-size: 12px;
         font-family: TTWellingtons-Medium; 
-        color: #9E9DAB;
     }
 
 /*-----------------------------------

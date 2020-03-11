@@ -255,10 +255,18 @@ window.onload = () => {
         document.querySelector('#step_tree_text').classList.add('empty_text')
         document.querySelector('#step_tree_text').classList.remove('full_text')
 
-        arcs.style.width = '0px'
+        let width = document.documentElement.clientWidth
 
-        form.style.width = '50%'
-        document.querySelector('.nav_form_conteiner').style.left = '186px'
+        if(width > 640) {
+            form.style.width = '50%'
+            document.querySelector('.nav_form_conteiner').style.width = '582px'
+            arcs.style.width = '0px'
+        } else if (width < 640) {
+            form.style.width = '100%'
+            document.querySelector('.nav_form_conteiner').style.left = '5%'
+            arcs.style.width = '0px'
+        }
+
         
         //Контейнер второго окна
         document.querySelector('.form_step_one').style.display = 'block'
@@ -284,10 +292,19 @@ window.onload = () => {
         document.querySelector('#step_tree_text').classList.add('empty_text')
         document.querySelector('#step_tree_text').classList.remove('full_text')
 
-        arcs.style.width = '190px'
+        let width = document.documentElement.clientWidth
 
-        form.style.width = '64%'
-        document.querySelector('.nav_form_conteiner').style.left = '166px'
+        if(width > 640) {
+            form.style.width = '64%'
+            document.querySelector('.nav_form_conteiner').style.width = '884px'
+            arcs.style.width = '190px'
+        } else if (width < 640) {
+            form.style.width = '100%'
+            document.querySelector('.nav_form_conteiner').style.width = '100px'
+            document.querySelector('.nav_form_conteiner').style.left = '5%'
+            arcs.style.width = '96px'
+        }
+        
 
         //Контейнер второго окна
         document.querySelector('.form_step_one').style.display = 'none'
@@ -311,11 +328,23 @@ window.onload = () => {
         document.querySelector('#step_tree_text').classList.add('full_text')
         document.querySelector('#step_tree_text').classList.remove('empty_text')
 
-        arcs.style.width = '410px'
+        
         
         document.querySelector('.form_step_one').style.display = 'none'
         document.querySelector('.form_step_two').style.display = 'none'
         document.querySelector('.form_step_tree').style.display = 'block'
+
+        let width = document.documentElement.clientWidth
+
+        if(width > 640) {
+            form.style.width = '64%'
+            document.querySelector('.nav_form_conteiner').style.width = '884px'
+            arcs.style.width = '410px'
+        } else if (width < 640) {
+            form.style.width = '100%'
+            document.querySelector('.nav_form_conteiner').style.left = '5%'
+            arcs.style.width = '200px'
+        }
 
         //Кнопки "назад" с врехним расположением 
         btn_up_back_step_one.style.display = 'none'
@@ -342,9 +371,7 @@ window.onload = () => {
             stepTwo()
 
             step_two_circle.onclick = () => {
-                document.querySelector('.form_step_one').style.display = 'none'
-                document.querySelector('.form_step_two').style.display = 'block'
-                document.querySelector('.form_step_tree').style.display = 'none'
+                stepTwo()
             }
         }     
 
@@ -357,9 +384,7 @@ window.onload = () => {
             formOrder.finallyPrice()
 
             step_tree_circle.onclick = () => {
-                document.querySelector('.form_step_one').style.display = 'none'
-                document.querySelector('.form_step_two').style.display = 'none'
-                document.querySelector('.form_step_tree').style.display = 'block'
+                stepTree()
             }
         }
 
@@ -375,9 +400,9 @@ window.onload = () => {
     
 
 
-    btn_up_back_step_two.onclick = () => stepTwo()
-    btn_up_back_step_one.onclick = () => stepOne()
-    dwn_back_step_two.onclick = () => stepOne()
+    btn_up_back_step_two.onclick = () => {stepTwo()}
+    btn_up_back_step_one.onclick = () => {stepOne()}
+    dwn_back_step_two.onclick = () => {stepOne()}
     
 
     send_form.onclick = () => {
@@ -394,8 +419,7 @@ window.onload = () => {
         }
     })
     step_one_circle.onclick = () => {
-        let val = step_one_circle.getAttribute('value') * 1
-        nextSlideForm(val)
+        stepOne()
     }
     
     //Тревел бокс следующий шаг

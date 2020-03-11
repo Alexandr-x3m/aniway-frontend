@@ -96,13 +96,12 @@ class TravelBoxes {
 
             let fr = $('#fotorama').fotorama({
                 width: 380,
-                height: 400,
                 thumbheight: 64,
             })
+            
             let fotorama = fr.data('fotorama');
             
             if (fotorama) {
-                console.log(imgArr)
                 fotorama.load(imgArr)
             } else {
                 $('#fotorama').fotorama({data: imgArr});

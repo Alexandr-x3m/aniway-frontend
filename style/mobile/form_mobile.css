@@ -1,6 +1,6 @@
-@media screen and (max-width: 1670px) {
+@media screen and (max-width: 1690px) {
     .form_conteiner{
-        width: 70%;
+        width: 80%;
     }
 }
 
@@ -22,7 +22,7 @@
     }
     .form_conteiner{
         left: 0;
-        max-width: 100%;
+        max-width: 100% !important;
         width: 100%;
         padding: 0;
         margin: 50px 0 0 0;
@@ -32,8 +32,8 @@
         width: 100%;
     }
     .form_step_one{
-        width: 100%;
-        padding: 0 18px;
+        width: 90%;
+        margin: auto;
     }
     /*-----------------------------------
             Заголовок страницы с формой 
@@ -43,20 +43,25 @@
         margin-bottom: 12px;
     }
     .header_slider_block{
-        grid-template-columns: repeat(5, 284px);
+        margin-bottom: 80px;
     }
     .header_slider_block h1{
-        font-size: 16px;
+        font-size: 18px;
         text-align: center;
+        width: 100%;
+        height: 68px;
     }
      /*-----------------------------------
                 Навигация по форме 
     =-------------------------------------*/
     .nav_form_conteiner{
         position: relative;
-        left: 18px;
+        left: 5%;
+        top: 144px;
+        width: 100px;
         grid-template-columns: repeat(3, 16px 85px);
         height: 32px;
+        margin: 0;
         margin-bottom: 16px;
     }
     .step_circle {
@@ -78,16 +83,16 @@
             Навигация по форме 
     -------------------------------------*/
     .arc_conteiner{
-        top: -60px;
-        left: 10px;
+        top: -48px;
+        left: 9px;
     }
     .arc_window_block{
         grid-template-columns: repeat(3, 82px);
-        grid-column-gap: 11px;
+        grid-column-gap: 19px;
     }
     .arc{
-        width: 82px;
-        height: 22px;
+        width: 89px;
+        height: 20px;
     }
     .header_4_lvl{
         font-size: 12px;
@@ -95,7 +100,7 @@
     /*-----------------------------------
             Форма колонки 
     -------------------------------------*/
-    .two_columns_grid{
+    .two_columns_grid:nth-child(2){
         grid-auto-flow: column;
         grid-template-rows: 24px repeat(4, 48px);
         grid-template-columns: 100%;
@@ -104,7 +109,7 @@
         width: 100%;
         margin-bottom: 20px; 
     }
-    .two_columns_grid:nth-child(2){
+    .two_columns_grid:nth-child(3){
         grid-auto-flow: column;
         grid-template-rows: 24px repeat(3, 48px);
         grid-template-columns: 100%;
@@ -126,27 +131,23 @@
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
     }
-    .switcher:after{
-        border-top-right-radius: 3px;
-        border-bottom-right-radius: 3px;
-    }
     .text_block{
         grid-template-columns: 68px 68px;
         width: 136px !important;
         height: 28px !important;
     }
-    .text_block:nth-child(1) {
+    .text_block div:nth-child(1) {
         border-bottom-left-radius: 3px;
         border-top-left-radius: 3px;
     }
-    .text_block:nth-child(2) {
+    .text_block div:nth-child(2) {
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
     }
     .text_block div{
-        width: 68px;
-        height: 28px !important;
-        line-height: 28px;
+        width: 66px;
+        height: 26px !important;
+        line-height: 26px;
     }
     .chip_switcher{
         width: 68px;
@@ -207,66 +208,295 @@
         line-height: 64px;
         font-size: 14px !important;
     }
-    
+
+
     /*-----------------------------------
-            Список тревел боксов
--------------------------------------*/
-.back_btn_block{
-    left: -16px;
-    width: 110px;
-    height: 20px;
-}
-.back_btn_block p {
-    font-size: 10px;
-}
-.box_items_conteiner{
-    top: 32px;
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(3, 110px);
-    grid-column-gap: 0;
-    grid-row-gap: 12px;
-    margin-bottom: 0;
-}
-.box_item_block{
-    display: grid;
-    grid-template-columns: 110px 154px;
-    grid-column-gap: 20px;
-    height: 110px;
-}
-.img_block{
-    width: 110px;
-    height: 110px;
-    margin-bottom: 0;
-}
-.img_block img {
-    width: 110px;
-    height: 110px;
-    border-radius: 5px;
-}
-.notification_circle{
-    top: -26px;
-    left: 76px;
-    width: 34px;
-    height: 18px;
-    line-height: 18px;
-    border-top-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: 8px;
-}
-.notification_circle span{
-    font-size: 8px;
-}
-.name_tr_box{
-    width: 100%;
-    margin-bottom: 12px;
-    font-size: 12px;
-}
-.more_info_conteiner{
-    width: 100%;
-    height: 36px;
-    font-size: 10px;
-    line-height: 36px;
-    border-radius: 5px;    
-    color: #282936;
-}
+            стили второго окна
+    -------------------------------------*/
+    .form_step_two{
+        width: 90%;
+        margin: auto;
+    }
+    /*-----------------------------------
+                Список тревел боксов
+    -------------------------------------*/
+    .back_btn_block{
+        width: 110px;
+        height: 40px;
+    }
+    .back_btn_block p {
+        font-size: 10px;
+    }
+    .box_items_conteiner{
+        top: 32px;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(3, 110px);
+        grid-column-gap: 0;
+        grid-row-gap: 12px;
+        margin-bottom: 0;
+    }
+    .box_item_block{
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        grid-column-gap: 20px;
+        height: 110px;
+    }
+    .box_item_block h4{
+        width: 100%;
+    }
+    .img_block{
+        width: 110px;
+        height: 110px;
+        margin-bottom: 0;
+    }
+    .img_block img {
+        width: 110px;
+        height: 110px;
+        border-radius: 5px;
+    }
+    .notification_circle{
+        top: -26px;
+        left: 76px;
+        width: 34px;
+        height: 18px;
+        line-height: 18px;
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-size: 8px;
+    }
+    .notification_circle span{
+        font-size: 8px;
+    }
+    .name_tr_box{
+        width: 100%;
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+    .price_tr_box{
+        margin-bottom: 28px;
+        font-size: 10px;
+    }
+    .price_text{
+        font-size: 10px;
+    }
+    .more_info_conteiner{
+        width: 100%;
+        height: 36px;
+        font-size: 10px;
+        line-height: 36px;
+        border-radius: 5px; 
+        border: 0.5px solid #282936;   
+        color: #282936;
+    }
+
+    /*-----------------------------------
+            стили третьего окна
+    -------------------------------------*/
+    .form_step_tree{
+        width: 90%;
+        margin: auto;
+    }
+    .services_conteiner {
+        display: block;
+        top: 15px;
+        left: 0;
+        margin-bottom: 0;
+    }
+    .services_conteiner h4 {
+        margin: 0 0 12px 0;
+    }
+    .serv_necessary_block {
+        width: 90%;
+        padding: 16px 12px;
+        margin: auto;
+    }
+    .item_service {
+        grid-template-columns: 20px 8fr 3fr;
+    }
+    .item_service .price_block h4 {
+        font-size: 8px;
+        line-height: 20px;
+    }
+    .item_service p {
+        font-size: 6px;
+    }
+    .item_service span {
+        font-size: 8px !important;
+        padding-top: 6px;
+    }
+    .serv_block {
+        padding: 16px 12px;
+    }
+    .box_purchase_conteiner{
+        grid-template-columns: 30px 150px 34px 20px;
+        grid-column-gap: 12px;
+        margin-bottom: 12px;
+    }
+    .box_purchase_item img {
+        width: 30px;
+        height: 30px;
+    }
+    .name_purchase_block {
+        grid-template-columns: 5fr 1fr;
+    }
+    .box_purchase_item h5 {
+        line-height: 11px;
+        font-size: 8px;
+    }
+    .hor_img {
+        display: none;
+    }
+    .box_purchase_item .price_block h4{
+        font-size: 8px;
+        line-height: 11px;
+    }
+    .del_tr_box{
+        width: 22px;    
+    }
+    .finish_summ {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .finish_summ span {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .footer_secnd_text {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 12px !important;
+    }
+    .contacts_block {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 48px) 64px 64px;
+        grid-row-gap: 12px;
+    }
+    .file_block {
+        grid-row: 5;
+    }
+    .btn-tertiary {
+        width: 100%;
+    }
+
+
+
+    /*-----------------------------------
+         Тревел бокс внутри
+    -------------------------------------*/
+    .travel_box_conteiner{
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
+        border-radius: 0;
+    }
+    .travel_box_mobile_conteiner{
+        width: 90%;
+        margin: auto;
+    }
+    .travel_box_conteiner h1{
+        font-size: 14px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .box_info_block {
+        grid-template-columns: 100%;
+    }
+    .text_info_block{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-row-gap: 12px;
+    }
+    .img_slider{
+        position: relative;
+        top: 56px;
+    }
+    .name_travel_box {
+        grid-column: 1/3;
+        font-size: 14px !important;
+        position: relative;
+        top: -266px;    
+    }
+    .name_travel_box span {
+        font-size: 14px !important;
+    }
+    .text_price {
+        position: relative;
+        top: -282px;
+        grid-column: 1/3;
+    }
+    .text_info_block h4 {
+        font-size: 12px;
+    }
+    .text_price span {
+        font-size: 12px;
+    }
+
+
+    .list_ware_one {
+        grid-column: 1;
+    }
+    .list_ware_two {
+        grid-column: 2;
+    }
+    .list_ware_one p{
+        font-size: 7px;
+    }
+    .list_ware_two p{
+        font-size: 7px;
+    }
+
+    .count_boxes_block{
+        grid-column: 1;
+        grid-row: 5;
+    }
+    .type_food_block{
+        grid-column: 2;
+    }
+    .type_food_block h4{
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+    .count_boxes_block{
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+    .small_switcher{
+        width: 136px;
+        height: 28px;
+        font-size: 8px;
+        border-radius: 3px;
+    }
+    .type_food_text{
+        grid-template-columns: 68px 68px !important;
+        width: 136px !important;
+        height: 28px !important;
+    }
+    .type_food_text div {
+        width: 68px !important;
+        line-height: 28px;
+    }
+    .type_food_switcher:after{   
+        width: 68px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 8px;
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    :checked+.type_food_switcher:after {
+        left: 68px;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .feed_producer {
+        margin-bottom: 24px !important;
+        font-family: TTWellingtons-DemiBold !important;
+        font-size: 10px !important;
+    }
+    .dwn_back_step span{
+        font-size: 14px;
+    }
+
 }
