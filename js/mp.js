@@ -82,10 +82,7 @@ window.onload = () => {
         gsap.from(target, { duration: 0.8, y: dist, ease: "slow(0.7, 0.7, false)" })
         gsap.to(target, { duration: 0.8, opacity: 1, ease: "slow(0.7, 0.7, false)" })
     }
-    function showLeftRight(target, dist) {
-        gsap.from(target, { duration: 0.8, x: dist, ease: "slow(0.7, 0.7, false)" })
-        gsap.to(target, { duration: 0.8, opacity: 1, ease: "slow(0.7, 0.7, false)" })
-    }
+    
     function opacity(target) {
         gsap.to(target, { duration: 1.5, opacity: 1, ease: "slow(0.7, 0.7, false)" })
     }

@@ -142,30 +142,18 @@ span {
 
 .form_conteiner {
     position: relative;
-    top: 50%;
-    left: 50%;    
-    width: 582px;
-    max-width: 1000px;
-    height: 856px;
+    width: 50%;
+    margin: auto;
     overflow: hidden;
-    margin: 100px 100px 100px -431px;
-    padding: 50px 140px;
     border-radius: 50px;
     transition-property: left;
-    transition: 0.2s;
     background-color: #fff;
 }
 
 .steps_slider_conteiner {
-    display: grid;
-    grid-template-columns: repeat(5, 1000px);
-    grid-column-gap: 100px;
     position: relative;
     top: 0;
     left: 0;
-    width: 1100px;
-    transition-property: top;
-    transition: 0.3s;
 }
 
 .hor_line {
@@ -175,21 +163,10 @@ span {
     margin-bottom: 32px;
     background-color: #F0F0F0;
 }
-
-.haeder_conteiner {
-    width: 1000px;
-    height: 120px;
-    overflow: hidden;
-}
-
 .header_slider_block {
-    display: grid;
-    grid-template-columns: repeat(5, 1000px);
-    grid-column-gap: 100px;
     position: relative;
     left: 0;
-    transition-property: left;
-    transition-duration: 0.2s;
+    margin-bottom: 120px;
 }
 
 /*-------------------------------
@@ -207,6 +184,9 @@ span {
     height: 50px;
     z-index: 998;
     margin-bottom: 32px;
+    position: relative;
+    top: 220px;
+    left: 186px;
 }
 
 .step_circle {
@@ -255,8 +235,13 @@ span {
     left: 14px;
     width: 0px;
     height: 100px;
-    transition-property: width;
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
     transition-delay: 0.2s;
+    -webkit-transition-duration: 0.6s;
+    -moz-transition-duration: 0.6s;
+    -o-transition-duration: 0.6s;
     transition-duration: 0.6s;
     overflow: hidden;
 }
@@ -290,7 +275,6 @@ span {
     grid-template-columns: 20px 110px;
     grid-column-gap: 5px;
     position: relative;
-    left: -24px;
     width: 135px;
     height: 32px;
     line-height: 32px;
@@ -318,8 +302,10 @@ span {
 ------------------------------*/
 
 .form_step_one {
-    width: 560px;
-    height: 404px;
+    position: relative;
+    width: 582px;
+    box-sizing: content-box;
+    margin: auto;
 }
 .form_block h1 {
     margin-top: 0;
@@ -332,6 +318,7 @@ span {
 .type_pet_block{
     height: 64px;
 }
+.type_pet_block,
 .select_type_conteiner,
 .breed_animal_block,
 .coutry_tour_block,
@@ -363,7 +350,7 @@ span {
 
 .hint_one{
     position: absolute;
-    top: 254px;
+    top: 446px;
     left: -125px;
 }
 .hint_one img{
@@ -459,16 +446,14 @@ span {
     width: 152px;
     height: 42px;
     text-align: center;
-    border-radius: 8px;
     cursor: pointer;
-    border: 1px solid #EEF2F7;
 }
 
 .chip_switcher:after {
     content: "нет";
     width: 76px;
-    height: 42px;
-    line-height: 42px;
+    height: 46px;
+    line-height: 46px;
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
     position: absolute;
@@ -532,6 +517,17 @@ span {
     font-family: TTWellingtons-Medium;
     font-size: 14px;
 }
+.text_block div:nth-child(1) {    
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: 1px solid #EEF2F7;
+}
+.text_block div:nth-child(2) {    
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #EEF2F7;
+}
+
 
 /*-------------------------------
 
@@ -641,12 +637,17 @@ span {
 ------------------------------*/
 
 .form_step_two {
+    display: none;
+    position: relative;
     width: 884px;
+    margin: auto;
+    box-sizing: content-box;
+    opacity: 0;
 }
 
 .box_items_conteiner {
     position: relative;
-    top: 60px;
+    top: 32px;
     display: grid;
     grid-template-columns: repeat(3, 280px);
     grid-column-gap: 22px;
@@ -703,7 +704,7 @@ span {
 
 .more_info_conteiner {
     position: relative;
-    width: 280px;
+    width: 100%;
     height: 64px;
     border: 1px solid #282936;
     border-radius: 8px;
@@ -755,7 +756,12 @@ span {
 ------------------------------*/
 
 .form_step_tree {
-    height: 580px;
+    display: none;
+    width: 884px;
+    margin: auto;
+    box-sizing: content-box;
+    background-color: #fff;
+    opacity: 0;
 }
 
 .services_conteiner {
@@ -903,6 +909,10 @@ span {
 
 
 ------------------------------*/
+.footer_step_tree{
+    position: relative;
+    box-sizing: content-box;
+}
 .footer_secnd_text{
     font-family: TTWellingtons-Bold !important;
     font-size: 22px;
@@ -920,9 +930,9 @@ span {
     font-size: 22px;
 }
 .hint_tree{
-    position: relative;
-    top: -30px;
-    left: 660px;
+    position: absolute;
+    top: 47px;
+    left: 672px;
 }
 .hint_tree img{
     position: absolute;
@@ -937,7 +947,7 @@ span {
     grid-template-columns: 280px 280px 280px;
     grid-column-gap: 22px;
     grid-row-gap: 30px;
-    height: 64px;
+    margin-bottom: 32px;
 }
 .type_link_block{
     position: relative;

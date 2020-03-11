@@ -1,0 +1,272 @@
+@media screen and (max-width: 1670px) {
+    .form_conteiner{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .form_conteiner{
+        border-radius: 0;
+        padding: 30px;
+        margin: 50px 0 0 -321px;
+    }
+    .hint_conteiner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #hellopreloader_preload{
+        min-width: 0;
+        background-size: 64px;
+    }
+    .form_conteiner{
+        left: 0;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 50px 0 0 0;
+    }
+    .steps_slider_conteiner{
+        grid-template-columns: repeat(5, 100%);
+        width: 100%;
+    }
+    .form_step_one{
+        width: 100%;
+        padding: 0 18px;
+    }
+    /*-----------------------------------
+            Заголовок страницы с формой 
+    =-------------------------------------*/
+    .haeder_conteiner{
+        height: 76px;
+        margin-bottom: 12px;
+    }
+    .header_slider_block{
+        grid-template-columns: repeat(5, 284px);
+    }
+    .header_slider_block h1{
+        font-size: 16px;
+        text-align: center;
+    }
+     /*-----------------------------------
+                Навигация по форме 
+    =-------------------------------------*/
+    .nav_form_conteiner{
+        position: relative;
+        left: 18px;
+        grid-template-columns: repeat(3, 16px 85px);
+        height: 32px;
+        margin-bottom: 16px;
+    }
+    .step_circle {
+        width: 16px;
+        height: 16px;
+    }
+    .step_circle p{
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .connect_info p{
+        font-size: 8px;
+        margin: 16px 0 0 4px;
+    }
+    .full_text{
+        font-size: 8px !important;
+    }
+    /*-----------------------------------
+            Навигация по форме 
+    -------------------------------------*/
+    .arc_conteiner{
+        top: -60px;
+        left: 10px;
+    }
+    .arc_window_block{
+        grid-template-columns: repeat(3, 82px);
+        grid-column-gap: 11px;
+    }
+    .arc{
+        width: 82px;
+        height: 22px;
+    }
+    .header_4_lvl{
+        font-size: 12px;
+    }
+    /*-----------------------------------
+            Форма колонки 
+    -------------------------------------*/
+    .two_columns_grid{
+        grid-auto-flow: column;
+        grid-template-rows: 24px repeat(4, 48px);
+        grid-template-columns: 100%;
+        grid-column-gap: 0;
+        grid-row-gap: 15px;
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+    .two_columns_grid:nth-child(2){
+        grid-auto-flow: column;
+        grid-template-rows: 24px repeat(3, 48px);
+        grid-template-columns: 100%;
+        grid-column-gap: 0;
+        grid-row-gap: 15px;
+        width: 100%;
+        margin-bottom: 20px; 
+    }
+    .type_pet_block{
+        height: 48px;
+    }
+
+    .chip_text{
+        font-size: 10px;
+    }
+    .switcher{
+        width: 136px;
+        height: 26px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    .switcher:after{
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    .text_block{
+        grid-template-columns: 68px 68px;
+        width: 136px !important;
+        height: 28px !important;
+    }
+    .text_block:nth-child(1) {
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    .text_block:nth-child(2) {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .text_block div{
+        width: 68px;
+        height: 28px !important;
+        line-height: 28px;
+    }
+    .chip_switcher{
+        width: 68px;
+    }
+    .chip_switcher:after{
+        width: 68px;
+        height: 28px;
+        line-height: 28px;
+        border-bottom-left-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+    #have_chip:checked+.chip_switcher:after {
+        left: 68px;
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+    .vacine_time_block{
+        grid-row: 4;
+        position: relative;
+        top: 19px;
+        left: -134px;
+        width: 130px;
+        height: 20px;
+    }
+    .checkbox_block{
+        width: 18px;
+        height: 18px;
+    }
+    .checkbox_label {
+        grid-template-columns: 20px 1fr;
+        grid-column-gap: 8px;
+    }
+    .pet_vaccination_text{
+        font-size: 10px;
+    }
+    .check_tick{
+        top: 3px;
+        left: 1px;
+    }
+    /*-----------------------------------
+                Кнопка навигации
+    -------------------------------------*/
+    .btn_nav{
+        grid-template-rows: 64px 32px;
+        left: 0;
+        width: 100%;
+        margin-left: 0;
+    }
+    .next_step{
+        width: 100%;
+        height: 64px;
+    }
+    .next_step .circle {
+        height: 64px;
+        border-radius: 5px;
+    }
+    .next_step .button-text {
+        line-height: 64px;
+        font-size: 14px !important;
+    }
+    
+    /*-----------------------------------
+            Список тревел боксов
+-------------------------------------*/
+.back_btn_block{
+    left: -16px;
+    width: 110px;
+    height: 20px;
+}
+.back_btn_block p {
+    font-size: 10px;
+}
+.box_items_conteiner{
+    top: 32px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 110px);
+    grid-column-gap: 0;
+    grid-row-gap: 12px;
+    margin-bottom: 0;
+}
+.box_item_block{
+    display: grid;
+    grid-template-columns: 110px 154px;
+    grid-column-gap: 20px;
+    height: 110px;
+}
+.img_block{
+    width: 110px;
+    height: 110px;
+    margin-bottom: 0;
+}
+.img_block img {
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+}
+.notification_circle{
+    top: -26px;
+    left: 76px;
+    width: 34px;
+    height: 18px;
+    line-height: 18px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 8px;
+}
+.notification_circle span{
+    font-size: 8px;
+}
+.name_tr_box{
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+.more_info_conteiner{
+    width: 100%;
+    height: 36px;
+    font-size: 10px;
+    line-height: 36px;
+    border-radius: 5px;    
+    color: #282936;
+}
+}

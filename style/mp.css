@@ -1,168 +1,91 @@
-@font-face {
-    font-family: TTWellingtons-Regular;
-    src: url('TTWellingtons-Regular.eot');
-    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
-        url('TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-Regular.woff2') format('woff2'),
-        url('TTWellingtons-Regular.woff') format('woff'),
-        url('TTWellingtons-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: TTWellingtons-Medium;
-    src: url('TTWellingtons-Medium.eot');
-    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
-        url('TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-Medium.woff2') format('woff2'),
-        url('TTWellingtons-Medium.woff') format('woff'),
-        url('TTWellingtons-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: TTWellingtons-DemiBold;
-    src: url('TTWellingtons-DemiBold.eot');
-    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
-        url('TTWellingtons-DemiBold.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-DemiBold.woff2') format('woff2'),
-        url('TTWellingtons-DemiBold.woff') format('woff'),
-        url('TTWellingtons-DemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: TTWellingtons-ExtraLight;
-    src: url('TTWellingtons-ExtraLight.eot');
-    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
-        url('TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-ExtraLight.woff2') format('woff2'),
-        url('TTWellingtons-ExtraLight.woff') format('woff'),
-        url('TTWellingtons-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: TTWellingtons-MediumItalic;
-    src: url('TTWellingtons-MediumItalic.eot');
-    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'),
-        url('TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-MediumItalic.woff2') format('woff2'),
-        url('TTWellingtons-MediumItalic.woff') format('woff'),
-        url('TTWellingtons-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: TTWellingtons-Bold;
-    src: url('TTWellingtons-Bold.eot');
-    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'),
-        url('TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-Bold.woff2') format('woff2'),
-        url('TTWellingtons-Bold.woff') format('woff'),
-        url('TTWellingtons-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: TTWellingtons-Light;
-    src: url('TTWellingtons-Light.eot');
-    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'),
-        url('TTWellingtons-Light.eot?#iefix') format('embedded-opentype'),
-        url('TTWellingtons-Light.woff2') format('woff2'),
-        url('TTWellingtons-Light.woff') format('woff'),
-        url('TTWellingtons-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-body{
+body {
     margin: 0;
     padding: 0;
     background: #F5E9DB;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
 }
-h1, h2, h3, h4{
+
+h1, h2, h3, h4 {
     font-family: TTWellingtons-DemiBold;
 }
-p{
+
+p {
     font-family: TTWellingtons-Medium;
 }
-
-
 
 /*----------------------------
 
         Стили для заголовка
 
 -----------------------------*/
-.header_conteiner{
+
+.header_conteiner {
     display: grid;
-    grid-template-columns: 124px 270px 1fr;
+    grid-template-columns: 105px 1fr 840px;
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 1340px;
+    left: 20%;
+    width: 60%;
     height: 64px;
-    margin-left: -670px;
     z-index: 11;
 }
-.logo_block{
+
+.logo_block {
     position: relative;
     top: 10px;
-    width: 124px;
+    width: 105px;
     background-image: url(./img/mp/logotype.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.nav_block{
+
+.nav_block {
     grid-column: 3;
 }
-.nav_block ul{
+
+.nav_block ul {
     display: grid;
-    grid-template-columns: 206px 234px 110px 88px 176px 132px;
+    grid-template-columns: 150px 170px 64px 42px 114px 160px;
+    grid-column-gap: 22px;
     margin-top: 40px;
+    padding: 0;
     text-align: center;
     text-decoration: none;
     font-family: TTWellingtons-Medium;
-    font-size: 14px;
+    font-size: 12px;
     list-style-type: none;
     -moz-transition-duration: 0.5s;
     -o-transition-duration: 0.5s;
     -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
 }
-.nav_btn li{
+
+.nav_btn li {
     padding: 5px;
 }
-.nav_btn li:hover{
+
+.nav_btn li:hover {
     text-decoration: underline;
 }
-.header_nomber{
+
+.header_nomber {
     text-align: end !important;
     font-family: Open-Sans;
     font-weight: 600;
 }
-
-
 
 /*-------------------------------------------
 
         Стили для основного конейтнера
 
 ----------------------------------------------*/
-.main_conteiner{
+
+.main_conteiner {
     position: relative;
     top: -67px;
     width: 100%;
@@ -176,159 +99,189 @@ p{
         Стили для окна с формой
 
 -------------------------------------------*/
-.mini_from_background_block{
+
+.mini_from_background_block {
     position: absolute;
     top: 0;
     width: 100%;
     height: 686px;
     background: #F16331;
 }
-.mini_form_content_block{
+
+.mini_form_content_block {
     position: relative;
     top: 134px;
-    left: 50%;
-    width: 1340px;
-    margin-left: -670px;
+    left: 20%;
+    width: 60%;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.mini_form_content_block h1{
+
+.mini_form_content_block h1 {
     text-align: center;
-    font-size: 100px;
+    font-size: 80px;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    line-height: 80px;
     color: #fff;
+}
+
+.mini_form_content_block h4 {
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    margin-top: 0;
     margin-bottom: 32px;
 }
-.mini_form_content_block h4{
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    margin-bottom: 32px;
-}
+
 /*---------------------------------------
         Стили для mini формой
 ---------------------------------------*/
-.mini_form_conteiner{
+
+.mini_form_conteiner {
     width: 100%;
     height: 120px;
 }
-.mini_form_conteiner p{
+
+.mini_form_conteiner p {
     position: relative;
     left: 16px;
     color: #fff;
     font-size: 14px;
 }
-.fast_form_block{
+
+.fast_form_block {
     display: grid;
-    grid-template-columns: 1024px 300px;
-    grid-column-gap: 14px;
+    grid-template-columns: repeat(4, 1fr) 12px 1fr;
+    width: 100%;
+    height: 84px;
 }
-.inputs_conteiner{
+
+.inputs_conteiner {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 5fr) 12px 6fr;
     width: 100%;
     height: 84px;
     background: #fff;
     border-radius: 8px;
 }
-.type_pet_block,
-.breed_pet_block,
-.country_travel_block,
-.date_travel_block{
+
+.type_pet_block, .breed_pet_block, .country_travel_block, .date_travel_block {
     position: relative;
 }
+
 /*---------------------------------------
         Стили для selecta
 ---------------------------------------*/
-.select_window{
-    width: 254px !important;
+
+.select_window {
     height: 84px !important;
 }
-.arrow_select{
+
+.arrow_select {
     top: 38px !important;
     left: 214px !important;
 }
-.select_main_text{
+
+.select_main_text {
     font-size: 18px;
     left: 20px;
     top: 32px;
     font-family: TTWellingtons-Medium;
 }
+
 .select_input:checked~.select_main_text {
     top: 10px !important;
     font-size: 14px !important;
 }
+
 /*---------------------------------------
         Стили для inputов
 ---------------------------------------*/
+
 input[type="text"], input[type="email"], input[type="number"] {
-    width: 153px !important;
+    width: 100%;
     height: 26px;
     font-size: 20px;
-    padding: 34px 14px 24px 90px !important;
+    padding: 34px 24px 24px 25px !important;
     border-radius: 0;
     border-left: 1px solid #C9C9C9;
     font-family: TTWellingtons-Medium;
 }
-input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
-    width: 230px;
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
     height: 26px;
     background-color: #fff;
     border: 1px solid #4B9FDF;
-    padding: 33px 13px 23px 89px !important;
+    padding: 33px 24px 23px 24px !important;
 }
-.label_text{
+
+.label_text {
     top: 32px;
     font-size: 18px;
     font-family: TTWellingtons-Medium;
 }
+
 input[type="text"]:focus~.label_text {
     top: 12px !important;
     font-size: 14px !important;
 }
-.invalid_info_icon{
+
+.invalid_info_icon {
+    top: 40px !important;
+    left: 100% !important;
+}
+
+.valid_info_icon {
     top: 40px !important;
     left: 226px !important;
 }
-.valid_info_icon{
-    top: 40px !important;
-    left: 226px !important;
+
+.invalid_info_text {
+    width: 100% !important;
 }
-.invalid_info_text{
-    width: 256px !important;
-}
+
 /*---------------------------------------
         Стили для btn open form
 ---------------------------------------*/
-.btn_nav{
+.open_form_btn{
+    grid-column: 6;
+}
+.btn_nav {
     left: 0;
     margin-left: 0;
 }
+
 .next_step {
     width: 300px;
     height: 84px;
 }
+
 .next_step .circle {
     height: 84px;
     background: #CC4217;
 }
+
 .next_step .button-text {
     line-height: 84px;
     font-size: 24px;
     font-family: TTWellingtons-Demibold;
 }
+
 .next_step .circle .icon.arrow {
     width: 24px;
     height: 4px;
 }
+
 .next_step .circle .icon.arrow::before {
     width: 14px;
     height: 14px;
 }
-.date_travel_block input{
+
+.date_travel_block input {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-
 }
 
 /*---------------------------------------
@@ -336,190 +289,249 @@ input[type="text"]:focus~.label_text {
         Стили для окна с формой
 
 -------------------------------------------*/
-.video_content_window_block{
+
+.video_content_window_block {
     position: relative;
-    top: 286px;
-    width: 100%;
-    height: 940px;
-    background: grey;
+    left: 20%;
+    top: 264px;
+    width: 60%;
+    height: 720px;
 }
-.video_content_conteiner{
+
+.video_content_conteiner {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
 }
-.video_gradient{
+.video_content_conteiner video{
+    position: relative;
+    left: -6%;
+}
+
+.video_gradient {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 10;
 }
-.overlay{
+
+.overlay {
     position: relative;
     left: 50%;
     top: 50%;
-    width: 120px;
-    height: 120px;
+    width: 78px;
+    height: 78px;
     margin-top: -61px;
     margin-left: -61px;
     background: #fff;
     border-radius: 50%;
 }
+
 .triangle {
     position: relative;
     top: 37%;
-    left: 50%;
+    left: 52%;
     width: 0;
     height: 0;
-    border-top: 18px solid transparent;
-    border-left: 30px solid #F16331;
-    border-bottom: 18px solid transparent;
+    border-top: 12px solid transparent;
+    border-left: 21px solid #F16331;
+    border-bottom: 12px solid transparent;
     margin-left: -9px;
 }
-.overlay:hover{
+
+.overlay:hover {
     cursor: pointer;
 }
-.information_video_block{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+
+.information_video_block {
     position: relative;
-    left: 50%;
-    top: 340px;
-    width: 1340px;
-    height: 320px;
-    margin-left: -670px;
+    top: 250px;
+    width: 100%;
+    height: 324px;
     z-index: 12;
 }
-.video_text_block{
-    opacity: 0;
+.play_btn_block{
+    margin-bottom: 48px;
 }
-.video_text_block h3{
-    font-size: 44px;
+
+.video_text_block {
+    opacity: 0;
+    width: 100%;
+}
+
+.video_text_block h3 {
+    text-align: center;
+    font-size: 32px;
+    letter-spacing: -0.03em;
     color: #fff;
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
-.services_indo_block{
+
+.services_indo_block {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 180px 217px 180px;
+    grid-column-gap: 45px;
+    position: relative;
+    left: 50%;
+    width: 680px;
+    margin-left: -340px;
 }
-.services_indo_block span{
+.services_indo_block div{
+    width: 100%;
+    height: 88px;
+    text-align: center;
+    border: 0.5px dashed #FFFFFF;
+    border-radius: 8px;
+    padding-top: 12px;
+}
+.services_indo_block span {
     font-family: TTWellingtons-Bold;
-    font-size: 20px;
-    color: #fff;
-}
-.services_indo_block p{
-    font-family: TTWellingtons-Medium;
     font-size: 16px;
+    line-height: 22px;
     color: #fff;
 }
+
+.services_indo_block p {
+    font-family: TTWellingtons-Medium;
+    font-size: 12px;
+    color: #fff;
+    line-height: 17px;
+}
+
 /*---------------------------------------
 
     Стили для окна с услугами и 
             тревел боксами
 
 -------------------------------------------*/
-.service_travel_box_window_conteiner{
+
+.service_travel_box_window_conteiner {
     position: relative;
-    top: 224px;
+    top: 70px;
     width: 100%;
     height: 2513px;
-    background: #F5E9DB;
 }
-.serv_tb_block{
+
+.serv_tb_block {
     position: relative;
-    left: 50%;
+    left: 20%;
     top: 200px;
-    width: 1340px;
-    margin-left: -670px;
+    width: 60%;
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.header_window{
+
+.header_window {
     opacity: 0;
     text-align: center;
-    font-size: 75px;
-    margin-bottom: 24px;
-    line-height: 75px;
+    font-size: 48px;
+    margin-bottom: 16px;
+    line-height: 54px;
     font-weight: 600;
     letter-spacing: -0.03em;
 }
-.under_header_window{
+
+.under_header_window {
     opacity: 0;
     text-align: center;
-    font-size: 26px;
-    line-height: 36px;
+    font-size: 20px;
+    line-height: 32px;
     font-weight: 600;
     font-style: normal;
     margin-top: 0;
     margin-bottom: 42px;
 }
+
 /*---------------------------------------
         Карточки с услугами
 -------------------------------------------*/
-.services_conteiner{
+
+.services_conteiner {
     display: grid;
-    grid-template-columns: repeat(2, 654px);
-    grid-column-gap: 24px;
-    margin-bottom: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    margin-bottom: 42px;
 }
-.service_online_block{
+
+.service_online_block {
     opacity: 0;
 }
-.service_ofline_block{
+
+.service_ofline_block {
     opacity: 0;
 }
-.service_list_block{
-    width: 532px;
-    height: 850px;
-    padding: 24px 64px;
+
+.service_list_block {
+    width: 100%; 
+    height: 660px;
+    padding: 24px 0;
     background: #fff;
     border-radius: 30px;
 }
-.service_list_block span{
+.type_list{
+    color: #C39763;
+}
+.service_list_block span {
     position: relative;
     left: 50%;
     margin-left: -24px;
     font-family: TTWellingtons-Bold;
     font-size: 12px;
 }
-.service_list_block h4{
+.name_list{
+    text-align: center !important;
+    margin-bottom: 24px;
+}
+.service_list_block h4 {
+    text-align: center;
     text-align: left;
     margin-top: 34px;
     font-family: TTWellingtons-Bold;
     font-size: 26px;
 }
-.service_item{
+
+.service_item {
     display: grid;
-    grid-template-columns: 406px 104px;
-    margin-bottom: 24px;
+    grid-template-columns: 352px 100px;
+    margin-bottom: 14px;
+    position: relative;
+    left: 42px;
 }
-.service_item h4{
+
+.service_item h4 {
     font-family: TTWellingtons-Bold !important;
-    font-size: 18px;
+    font-size: 16px;
     margin: 0;
     margin-bottom: 6px;
 }
-.service_text p{
+
+.service_text p {
     font-family: TTWellingtons-Medium !important;
-    font-size: 14px;
+    font-size: 12px;
+    margin: 0px;
 }
-.price{
+
+.price {
     left: 0 !important;
     font-family: Open-Sans !important;
     font-weight: 600 !important;
     margin-left: 0 !important;
     font-size: 18px !important;
 }
-.passport_block{
+
+.passport_block {
     position: relative;
-    top: 20px;
+    top: 4px;
     left: 0;
 }
+
 .scnd_img {
     position: absolute;
     top: 69px;
@@ -527,10 +539,12 @@ input[type="text"]:focus~.label_text {
     width: 434px;
     height: 350px;
 }
+
 /*---------------------------------------
         Карточки с тревел боксами
 -------------------------------------------*/
-.nav_tavel_box_block{
+
+.nav_tavel_box_block {
     display: none;
     position: relative;
     left: 50%;
@@ -540,59 +554,70 @@ input[type="text"]:focus~.label_text {
     grid-column-gap: 50px;
     margin-bottom: 48px;
 }
-.nav_el_tb{
+
+.nav_el_tb {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 84px;
 }
-.nav_el_tb img{
+
+.nav_el_tb img {
     height: 70px;
 }
-.nav_el_tb h4{
+
+.nav_el_tb h4 {
     height: 24px;
     text-align: center;
 }
-.nav_el_tb h4:hover{
+
+.nav_el_tb h4:hover {
     cursor: pointer;
     border-bottom: 3px solid #306A4E;
     color: #545454;
 }
-.rabbit_tb_block{
+
+.rabbit_tb_block {
     grid-template-columns: 100px 140px !important;
 }
-.nav_el h4{
+
+.nav_el h4 {
     margin-top: 24px;
     font-size: 18px !important;
 }
-.active_nav_el{
+
+.active_nav_el {
     border-bottom: 3px solid #306A4E;
 }
 
-.list_travel_box_dog{
+.list_travel_box_dog {
     display: grid;
     grid-template-columns: repeat(3, 424px);
     grid-column-gap: 35px;
 }
-.list_travel_box_cat{
-    display: none;
-    grid-template-columns: repeat(3, 424px);
-    grid-column-gap: 35px;
-}
-.list_travel_box_rabbit{
+
+.list_travel_box_cat {
     display: none;
     grid-template-columns: repeat(3, 424px);
     grid-column-gap: 35px;
 }
 
-.item_travel_box{
+.list_travel_box_rabbit {
+    display: none;
+    grid-template-columns: repeat(3, 424px);
+    grid-column-gap: 35px;
+}
+
+.item_travel_box {
     opacity: 0;
 }
-.item_travel_box img{
+
+.item_travel_box img {
     width: 424px;
     height: 276px;
     margin-bottom: 12px;
 }
-.item_travel_box h4{
+
+.item_travel_box h4 {
     position: relative;
     left: 50px;
     width: 323px;
@@ -601,7 +626,8 @@ input[type="text"]:focus~.label_text {
     font-size: 26px;
     margin-bottom: 12px;
 }
-.item_travel_box p{
+
+.item_travel_box p {
     position: relative;
     left: 50px;
     width: 323px;
@@ -610,7 +636,7 @@ input[type="text"]:focus~.label_text {
     font-size: 14px;
 }
 
-.price_block{
+.price_block {
     position: relative;
     left: 50px;
     width: 323px;
@@ -619,61 +645,72 @@ input[type="text"]:focus~.label_text {
     font-family: TTWellingtons-Demibold !important;
     font-size: 18px !important;
 }
-.price_block span{
+
+.price_block span {
     font-family: Open-Sans !important;
 }
-.open_info_tb{
+
+.open_info_tb {
     position: relative;
     left: 0;
     width: 80%;
 }
+
 /*---------------------------------------
         Кнопки больше информации для тревел боксов
 -------------------------------------------*/
-.open_info_tb_block{
+
+.open_info_tb_block {
     position: relative;
     left: 50px;
     width: 280px;
 }
+
 .more_info_tb {
     width: 280px !important;
     height: 74px !important;
 }
+
 .more_info_tb .button-text {
     line-height: 74px !important;
     font-size: 22px !important;
     font-family: TTWellingtons-Demibold;
     color: #888888 !important;
 }
+
 .more_info_tb .circle {
     height: 74px !important;
     border: 1px solid #888888 !important;
     background: none !important;
 }
+
 .more_info_tb .circle .icon.arrow {
-    width: 24px !important; 
+    width: 24px !important;
     height: 3px !important;
 }
+
 .more_info_tb .circle .icon.arrow::before {
     width: 12px !important;
     height: 12px !important;
     border-top: 2px solid #888888 !important;
     border-right: 2px solid #888888 !important;
 }
+
 .more_info_tb:hover .circle .icon.arrow {
     background: #888888;
 }
-.more_info_tb:hover .circle{
+
+.more_info_tb:hover .circle {
     width: 278px !important;
 }
-
 
 /*---------------------------------------
 
     Стили для окна с карточками работников
 
 -------------------------------------------*/
-.info_team_window_block{
+
+.info_team_window_block {
     position: relative;
     top: 162px;
     left: 0;
@@ -681,42 +718,51 @@ input[type="text"]:focus~.label_text {
     height: 2568px;
     background: #306A4E;
 }
-.info_team_block{
+
+.info_team_block {
     position: relative;
     top: 140px;
     left: 50%;
     width: 1340px;
     margin-left: -670px;
 }
-.info_team_block h2{
+
+.info_team_block h2 {
     color: #fff;
 }
-.info_team_block h3{
+
+.info_team_block h3 {
     color: #fff;
     text-align: center;
     font-size: 52px;
 }
-.info_team_block h4{
+
+.info_team_block h4 {
     color: #fff;
 }
-.cards_info_block{
+
+.cards_info_block {
     display: grid;
     grid-template-columns: repeat(4, 335px);
     grid-template-rows: repeat(2, 740px);
     margin-bottom: 135px;
 }
-.item_cards_block{
+
+.item_cards_block {
     position: relative;
     opacity: 0;
 }
-.item_cards_block img{
+
+.item_cards_block img {
     width: 335px;
     height: 740px;
 }
-.item_cards_block:hover .hover_card_block{
+
+.item_cards_block:hover .hover_card_block {
     opacity: 1;
 }
-.hover_card_block{
+
+.hover_card_block {
     position: absolute;
     top: 0;
     left: 0;
@@ -728,28 +774,33 @@ input[type="text"]:focus~.label_text {
     -o-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
-.hover_card_background{
+
+.hover_card_background {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
-.hover_card_text_block{
+
+.hover_card_text_block {
     position: relative;
     top: -290px;
     left: 42px;
     width: 100%;
     height: 180px;
 }
-.hover_card_text_block h4{
+
+.hover_card_text_block h4 {
     font-size: 24px;
     margin-bottom: 12px;
 }
-.hover_card_text_block p{
+
+.hover_card_text_block p {
     font-size: 18px;
     color: #fff;
     margin-bottom: 24px;
 }
-.founder_card_block{
+
+.founder_card_block {
     display: grid;
     grid-template-columns: 140px 180px;
     grid-column-gap: 30px;
@@ -758,69 +809,84 @@ input[type="text"]:focus~.label_text {
     width: 350px;
     margin-left: -175px;
 }
+
 .founder_card_block img {
     width: 140px;
     height: 140px;
     border-radius: 50%;
 }
-.founder_name{
+
+.founder_name {
     font-size: 16px;
     color: #fff;
 }
-.founder_social_block{
+
+.founder_social_block {
     display: grid;
     grid-template-columns: repeat(3, 32px);
     grid-column-gap: 20px;
 }
+
 .founder_social_block img {
     width: 36px;
     height: 36px;
     border-radius: 0 !important;
 }
+
 /*---------------------------------------
         Кнопки больше информации для 
             карточек работников
 -------------------------------------------*/
-.more_info_сards_btn{
+
+.more_info_сards_btn {
     width: 248px !important;
 }
+
 .more_info_сards {
     width: 248px !important;
     height: 66px !important;
 }
+
 .more_info_сards .button-text {
     line-height: 64px !important;
     font-size: 18px !important;
     font-family: TTWellingtons-Demibold;
     color: #fff !important;
 }
+
 .more_info_сards .circle {
     height: 64px !important;
     border: 1px solid #fff !important;
     background: none !important;
 }
+
 .more_info_сards .circle .icon.arrow {
-    width: 20px !important; 
+    width: 20px !important;
     height: 2px !important;
 }
+
 .more_info_сards .circle .icon.arrow::before {
     width: 12px !important;
     height: 12px !important;
     border-top: 2px solid #fff !important;
     border-right: 2px solid #fff !important;
 }
+
 .more_info_сards_btn:hover .circle .icon.arrow {
     background: #fff;
 }
-.more_info_сards_btn:hover .circle{
+
+.more_info_сards_btn:hover .circle {
     width: 246px !important;
 }
+
 /*---------------------------------------
 
     Стили для окна с доп информацией
 
 -------------------------------------------*/
-.secnd_info_window_conteiner{
+
+.secnd_info_window_conteiner {
     position: relative;
     top: 162px;
     left: 0;
@@ -828,7 +894,8 @@ input[type="text"]:focus~.label_text {
     height: 1593px;
     background: #F5E9DB;
 }
-.support_conteiner{
+
+.support_conteiner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
@@ -837,22 +904,27 @@ input[type="text"]:focus~.label_text {
     width: 1340px;
     margin-left: -670px;
 }
-.support_conteiner img{
+
+.support_conteiner img {
     width: 452px;
 }
-.support_text_block{
+
+.support_text_block {
     opacity: 0;
 }
-.support_text_block h4{
+
+.support_text_block h4 {
     font-size: 64px;
     margin-bottom: 24px;
 }
-.support_text_block p{
+
+.support_text_block p {
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 12px;
 }
-.download_hint_conteiner{
+
+.download_hint_conteiner {
     display: grid;
     grid-template-columns: 2fr 1fr;
     position: relative;
@@ -861,67 +933,82 @@ input[type="text"]:focus~.label_text {
     width: 1340px;
     margin-left: -670px;
 }
-.download_hint_conteiner img{
+
+.download_hint_conteiner img {
     position: relative;
     top: -55px;
     width: 568px;
 }
-.hint_text_block{
+
+.hint_text_block {
     opacity: 0;
 }
-.hint_text_block h4{
+
+.hint_text_block h4 {
     font-size: 64px;
     margin-bottom: 24px;
     margin-top: 0px;
 }
-.hint_text_block p{
+
+.hint_text_block p {
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 64px;
 }
-.background_dog{
+
+.background_dog {
     position: absolute !important;
     top: 374px !important;
     left: 275px !important;
     width: 396px !important;
 }
+
 /*---------------------------------------
         Кнопка скачать информацию
 -------------------------------------------*/
-.download_hint_btn_block{
+
+.download_hint_btn_block {
     left: 0;
 }
-.download_hint_btn{
+
+.download_hint_btn {
     width: 248px !important;
 }
+
 .download_hint_btn {
     width: 248px !important;
     height: 66px !important;
 }
+
 .download_hint_btn .button-text {
     line-height: 64px !important;
     font-size: 18px !important;
     font-family: TTWellingtons-Demibold;
     color: #fff !important;
 }
+
 .download_hint_btn .circle {
     height: 64px !important;
     background: #F16331 !important;
 }
+
 .download_hint_btn .circle .icon.arrow {
-    width: 20px !important; 
+    width: 20px !important;
     height: 2px !important;
 }
+
 .download_hint_btn .circle .icon.arrow::before {
     width: 12px !important;
     height: 12px !important;
     border-top: 2px solid #fff !important;
     border-right: 2px solid #fff !important;
 }
+
 .download_hint_btn:hover .circle .icon.arrow {
     background: #fff;
 }
-.download_hint_btn:hover .circle{
+
+.download_hint_btn:hover .circle {
     width: 248px !important;
 }
 
@@ -930,7 +1017,8 @@ input[type="text"]:focus~.label_text {
     Стили для окна с историями путешествий
 
 -------------------------------------------*/
-.history_travels_window_conteiner{
+
+.history_travels_window_conteiner {
     position: relative;
     top: 100px;
     left: 0;
@@ -938,21 +1026,25 @@ input[type="text"]:focus~.label_text {
     height: 2085px;
     background: #4797D5;
 }
-.history_travels_block{
+
+.history_travels_block {
     position: relative;
     top: 100px;
     left: 50%;
     width: 1240px;
     margin-left: -620px;
 }
-.history_travels_block h2{
+
+.history_travels_block h2 {
     color: #fff;
     margin-bottom: 32px;
 }
-.history_list_conteiner{
+
+.history_list_conteiner {
     position: relative;
 }
-.history_block{
+
+.history_block {
     position: absolute;
     width: 483px;
     padding: 84px 64px;
@@ -962,29 +1054,34 @@ input[type="text"]:focus~.label_text {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.history_block h4{
+
+.history_block h4 {
     font-size: 28px;
     margin-top: 0;
     margin-bottom: 20px;
 }
-.history_block_1{
+
+.history_block_1 {
     top: 0;
     left: 0;
 }
-.history_block_2{
+
+.history_block_2 {
     top: 0;
     left: 630px;
 }
-.history_block_3{
+
+.history_block_3 {
     top: 708px;
     left: 0;
 }
-.history_block_4{
+
+.history_block_4 {
     top: 841px;
     left: 630px;
 }
 
-.history_contur{
+.history_contur {
     position: absolute;
     width: 483px;
     height: 550px;
@@ -992,99 +1089,115 @@ input[type="text"]:focus~.label_text {
     border-radius: 17px;
     border: 2px dashed #fff;
 }
-.history_contur h4{
+
+.history_contur h4 {
     text-align: center;
     color: #fff;
     font-size: 36px;
     margin-bottom: 44px;
 }
-.history_contur p{
+
+.history_contur p {
     font-size: 18px;
     text-align: center;
     color: #fff;
     margin-bottom: 44px;
 }
+
 /*---------------------------------------
 
         Шрифты для текста
 
 ----------------------------------------*/
-.cursiv_head{
+
+.cursiv_head {
     font-family: TTWellingtons-MediumItalic;
     font-size: 12px;
     margin: 0;
 }
-.light_text{
+
+.light_text {
     font-family: TTWellingtons-Light;
     font-size: 12px;
     margin-bottom: 20px;
     margin-top: 0;
 }
-.regular_text{
+
+.regular_text {
     font-family: TTWellingtons-Regular;
     font-size: 14px;
 }
-.light_cursiv{
+
+.light_cursiv {
     font-family: TTWellingtons-LightItalic;
     font-size: 12px;
     margin-bottom: 20px;
     margin-top: 0;
 }
 
-.autor_block{
+.autor_block {
     display: grid;
     grid-template-columns: 50px 100px;
     grid-column-gap: 30px;
     position: relative;
     top: 24px;
 }
-.autor_block img{
+
+.autor_block img {
     border-radius: 50%;
 }
+
 /*---------------------------------------
         Кнопка скачать информацию
 -------------------------------------------*/
+
 .send_history_btn {
     left: 50%;
     width: 248px !important;
     height: 66px !important;
     margin-left: -124px;
 }
+
 .send_history_btn .button-text {
     line-height: 64px !important;
     font-size: 18px !important;
     font-family: TTWellingtons-Demibold;
     color: #fff !important;
 }
+
 .send_history_btn .circle {
     height: 64px !important;
     border: 1px solid #fff !important;
     background: none !important;
 }
+
 .send_history_btn .circle .icon.arrow {
-    width: 20px !important; 
+    width: 20px !important;
     height: 2px !important;
 }
+
 .send_history_btn .circle .icon.arrow::before {
     width: 12px !important;
     height: 12px !important;
     border-top: 2px solid #fff !important;
     border-right: 2px solid #fff !important;
 }
+
 .send_history_btn:hover .circle .icon.arrow {
     background: #fff;
 }
-.send_history_btn:hover .circle{
+
+.send_history_btn:hover .circle {
     width: 246px !important;
 }
-
 
 /*---------------------------------------
 
     Стили для окна с историями путешествий
 
 -------------------------------------------*/
-.question_window_conteiner{
+
+.question_window_conteiner {
     position: relative;
     top: 38px;
     left: 0;
@@ -1094,18 +1207,21 @@ input[type="text"]:focus~.label_text {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.question_conteiner{
+
+.question_conteiner {
     position: relative;
     top: 100px;
     left: 50%;
     width: 1340px;
     margin-left: -670px;
 }
-.question_conteiner h2{
+
+.question_conteiner h2 {
     text-align: center;
     font-size: 75px;
 }
-.item_question_block{
+
+.item_question_block {
     opacity: 0;
     position: relative;
     padding: 20px 62px;
@@ -1117,7 +1233,8 @@ input[type="text"]:focus~.label_text {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
-.item_question_block:hover{
+
+.item_question_block:hover {
     cursor: pointer;
     background: #ECD2B3;
     -moz-transition-duration: 0.3s;
@@ -1125,10 +1242,12 @@ input[type="text"]:focus~.label_text {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
-.active_block_quest{
+
+.active_block_quest {
     padding: 40px 200px 50px 62px;
 }
-.header_question{
+
+.header_question {
     width: 900px;
     font-family: TTWellingtons-DemiBold;
     font-size: 38px;
@@ -1136,7 +1255,8 @@ input[type="text"]:focus~.label_text {
     margin-bottom: 32px;
     letter-spacing: -0.01em;
 }
-.text_question{
+
+.text_question {
     width: 1085px;
     font-weight: 500;
     font-size: 20px;
@@ -1144,7 +1264,8 @@ input[type="text"]:focus~.label_text {
     margin: 0;
     margin-bottom: 32px;
 }
-.deploy_btn{
+
+.deploy_btn {
     position: absolute;
     left: 1100px;
     top: 30px;
@@ -1154,17 +1275,17 @@ input[type="text"]:focus~.label_text {
     border-radius: 50%;
 }
 
-.active_head_quest{
+.active_head_quest {
     color: #DE4C21;
 }
-
 
 /*---------------------------------------
 
     Стили для окна с историями путешествий
 
 -------------------------------------------*/
-.footer_window_conteiner{
+
+.footer_window_conteiner {
     position: relative;
     top: 100px;
     left: 0;
@@ -1172,21 +1293,24 @@ input[type="text"]:focus~.label_text {
     height: 638px;
     background: #F16331;
 }
-.footer_conteiner{
+
+.footer_conteiner {
     position: relative;
     top: 100px;
     left: 50%;
     width: 1240px;
     margin-left: -620px;
 }
-.footer_conteiner h2{
+
+.footer_conteiner h2 {
     text-align: center;
     font-size: 55px;
     color: #fff;
     margin: 0;
     margin-bottom: 32px;
 }
-.social_footer_conteiner{
+
+.social_footer_conteiner {
     display: grid;
     grid-template-columns: repeat(6, 120px);
     grid-column-gap: 24px;
@@ -1195,23 +1319,27 @@ input[type="text"]:focus~.label_text {
     margin-left: -420px;
     margin-bottom: 32px;
 }
-.item_social_block{
+
+.item_social_block {
     opacity: 0;
 }
-.item_social_block img{
+
+.item_social_block img {
     position: relative;
     left: 50%;
     margin-left: -38px;
     margin-bottom: 12px;
     border-radius: 50%;
 }
-.item_social_block p{
+
+.item_social_block p {
     font-size: 14px;
     font-family: TTWellingtons-Medium;
     margin: 0;
     text-align: center;
 }
-.nomber_footer{
+
+.nomber_footer {
     display: grid;
     grid-template-columns: 40px 500px;
     grid-column-gap: 24px;
@@ -1219,29 +1347,31 @@ input[type="text"]:focus~.label_text {
     left: 50%;
     margin-left: -282px;
 }
-.nomber_footer img{
+
+.nomber_footer img {
     position: relative;
     top: 12px;
     border-radius: 50%;
 }
-.nomber_footer p{
+
+.nomber_footer p {
     margin: 0;
     font-family: 'Open Sans';
     font-size: 48px;
     color: #fff;
 }
-.head_footer{
+
+.head_footer {
     top: 520px;
 }
-
-
 
 /*---------------------------------------
 
     Стили для окна карточки рабочего
 
 -------------------------------------------*/
-.card_worker_conteiner{
+
+.card_worker_conteiner {
     display: none;
     position: fixed;
     top: 50%;
@@ -1251,7 +1381,8 @@ input[type="text"]:focus~.label_text {
     margin-left: -670px;
     margin-top: -330px;
 }
-.background_card_worker{
+
+.background_card_worker {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -1261,7 +1392,8 @@ input[type="text"]:focus~.label_text {
     margin-top: -480px;
     background: #306A4E;
 }
-.card_worker_block{
+
+.card_worker_block {
     display: grid;
     grid-template-columns: 614px 460px;
     grid-column-gap: 60px;
@@ -1273,68 +1405,82 @@ input[type="text"]:focus~.label_text {
     box-shadow: 0px 50px 40px rgba(0, 0, 0, 0.25);
     z-index: 11;
 }
-.card_worker_img img{
+
+.card_worker_img img {
     width: 614px;
     height: 660px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-.card_worker_text_block{
+
+.card_worker_text_block {
     padding: 50px 30px;
 }
-.card_name{
+
+.card_name {
     font-size: 32px;
     margin: 0;
     margin-bottom: 16px;
 }
-.description_worker{
+
+.description_worker {
     font-size: 16px;
     margin: 0;
     margin-bottom: 32px;
 }
-.card_worker_text_block span{
+
+.card_worker_text_block span {
     font-size: 12px;
     font-family: TTWellingtons-DemiBold;
 }
-.mini_description_worker{
+
+.mini_description_worker {
     font-size: 12px;
     font-family: TTWellingtons-Regular;
     margin: 0;
     margin-bottom: 16px;
 }
-.card_worker_footer{
+
+.card_worker_footer {
     display: grid;
     grid-template-columns: 190px 1fr;
     grid-column-gap: 32px;
     position: relative;
     top: 24px;
 }
-.card_worker_footer h4{
+
+.card_worker_footer h4 {
     font-size: 14px;
     line-height: 20px;
 }
-.card_worker_list_pets{
+
+.card_worker_list_pets {
     display: grid;
     grid-template-columns: repeat(3, 60px);
 }
-.item_card_worker_pet{
+
+.item_card_worker_pet {
     text-align: center;
 }
-.item_card_worker_pet img{
+
+.item_card_worker_pet img {
     width: 52px;
     height: 52px;
     border-radius: 50%;
     margin-bottom: 6px;
 }
-.name_pet{
+
+.name_pet {
     font-size: 9px;
     line-height: 11px;
     margin: 0;
 }
+
 /*-----------------------------------------
     Кнопка закрытия карточки работника
 -----------------------------------------*/
-.btn_close_card_worker{
+
+.btn_close_card_worker {
     position: absolute;
     top: 26px;
     left: 1264px;
@@ -1347,6 +1493,7 @@ input[type="text"]:focus~.label_text {
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
+
 .close_card {
     position: relative;
     top: 24px;
@@ -1361,7 +1508,8 @@ input[type="text"]:focus~.label_text {
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-.close_card::before{
+
+.close_card::before {
     content: '';
     position: absolute;
     top: -1px;
@@ -1377,13 +1525,16 @@ input[type="text"]:focus~.label_text {
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-.btn_close_card_worker:hover{
+
+.btn_close_card_worker:hover {
     cursor: pointer;
     border: 1px solid #828282;
 }
-.btn_close_card_worker:hover .close_card{
+
+.btn_close_card_worker:hover .close_card {
     border-top: 1px solid #828282;
 }
-.btn_close_card_worker:hover .close_card::before{
+
+.btn_close_card_worker:hover .close_card::before {
     border-top: 1px solid #828282;
 }

@@ -69,6 +69,7 @@ class FormOrder {
         console.log(this.order)
     }
     validStepOne() {
+        return true
         let type_animal = document.querySelector('#view_animal_inpt').getAttribute('value')
         let breedValid = document.querySelector('#valid_icon_breed').getAttribute('value')
         let countryValid = document.querySelector('#valid_icon_country').getAttribute('value')
@@ -221,97 +222,113 @@ window.onload = () => {
     //переход на следующий шаг
     let step_one = document.querySelector('#step_one')
     let step_two = document.querySelector('#step_two')
-    let header_slider = document.querySelector('.header_slider_block')
     let step_one_circle = document.querySelector('#step_one_circle')
-    let step_two_circle = document.querySelector('#step_one_circle')
-    let step_tree_circle = document.querySelector('#step_one_circle')
-    let btn_up_back = document.querySelector('#btn_up_back')
+    let step_two_circle = document.querySelector('#step_two_circle')
+    let step_tree_circle = document.querySelector('#step_tree_circle')
+    
     let tb_next_step = document.querySelector('#tb_next_step')
     let send_form = document.querySelector('#last_step')
-    let dwn_back_step = document.querySelector('#dwn_back_step_two')
     let close_tb = document.querySelectorAll('.close_tb')
 
-    dwn_back_step
+    let btn_up_back_step_two = document.querySelector('#btn_up_back_step_two')
+    let btn_up_back_step_one = document.querySelector('#btn_up_back_step_one')
+    let dwn_back_step_two = document.querySelector('#dwn_back_step_two')
+    
+    let form_step_one = document.querySelector('.form_step_one')
+    let form_step_two = document.querySelector('.form_step_two')
+    let form_step_tree = document.querySelector('.form_step_tree')
 
 
-    let conteiner = document.querySelector('#slider_conteiner_btn')
     let form = document.querySelector('.form_conteiner')
     let arcs = document.querySelector('.arc_conteiner')
 
-    let steps = [
-        {
-            val: 1,
-            form_height: '856px',
-            form_width: '582px',
-            form_margin: '-431px',
-            main_left: '0px',
-            header_left: '0px',
-            arcs_left: '0px',
-            step_circle: '#step_one_circle',
-            step_text: '#step_one_text'
 
-        },
-        {
-            val: 2,
-            form_height: '932px',
-            form_width: '884px',
-            form_margin: '-582px',
-            main_left: '-1100px',
-            header_left: '-1100px',
-            arcs_left: '190px',
-            step_circle: '#step_two_circle',
-            step_text: '#step_two_text'
+    function showLeftRight(target, dist) {
+        gsap.from(target, { duration: 0.8, x: dist, ease: "slow(0.7, 0.7, false)" })
+        gsap.to(target, { duration: 0.8, opacity: 1, ease: "slow(0.7, 0.7, false)" })
+    }
 
-        },
-        {
-            val: 3,
-            form_height: '1250px',
-            main_left: '-2200px',
-            header_left: '-2200px',
-            arcs_left: '400px',
-            step_circle: '#step_tree_circle',
-            step_text: '#step_tree_text'
-        },
-        {
-            val: 4,
-            form_height: '700px',
-            main_left: '-3300px',
-            header_left: '-3300px',
-        }
-    ]
+    function stepOne() {
+        //Навигация по шагам
+        document.querySelector('#step_two_text').classList.add('empty_text')
+        document.querySelector('#step_two_text').classList.remove('full_text')
+        document.querySelector('#step_tree_text').classList.add('empty_text')
+        document.querySelector('#step_tree_text').classList.remove('full_text')
 
+        arcs.style.width = '0px'
 
-    function nextSlideForm(val) {
-        val = val * 1
-        steps.forEach(el_2 => {
-            if (el_2.val === val) {
-                header_slider.style.left = el_2.header_left
-                conteiner.style.left = el_2.main_left
-                form.style.height = el_2.form_height
-                form.style.width = el_2.form_width
-                form.style.marginLeft = el_2.form_margin
-                arcs.style.width = el_2.arcs_left
+        form.style.width = '50%'
+        document.querySelector('.nav_form_conteiner').style.left = '186px'
+        
+        //Контейнер второго окна
+        document.querySelector('.form_step_one').style.display = 'block'
+        document.querySelector('.form_step_two').style.display = 'none'
+        document.querySelector('.form_step_tree').style.display = 'none'
 
-                let circle = document.querySelector(`${el_2.step_circle}`)
-                circle.removeAttribute('class')
-                circle.setAttribute('class', 'step_circle full_circle')
+        //Кнопки "назад" с врехним расположением 
+        btn_up_back_step_one.style.display = 'none'
+        btn_up_back_step_two.style.display = 'none'
+        dwn_back_step_two.style.display = 'none'
 
-                let text = document.querySelector(`${el_2.step_text}`)
-                text.removeAttribute('class')
-                text.setAttribute('class', 'number_nav full_text')
-            }
-        })
+        showLeftRight(form_step_one, 500)
+    }
+    function stepTwo() {
+        //Навигация по шагам
+        step_two_circle.classList.add('full_circle')
+        step_two_circle.classList.remove('empty_circle')
+        step_tree_circle.classList.add('empty_circle')
+        step_tree_circle.classList.remove('full_circle')
+
+        document.querySelector('#step_two_text').classList.add('full_text')
+        document.querySelector('#step_two_text').classList.remove('empty_text')
+        document.querySelector('#step_tree_text').classList.add('empty_text')
+        document.querySelector('#step_tree_text').classList.remove('full_text')
+
+        arcs.style.width = '190px'
+
+        form.style.width = '64%'
+        document.querySelector('.nav_form_conteiner').style.left = '166px'
+
+        //Контейнер второго окна
+        document.querySelector('.form_step_one').style.display = 'none'
+        document.querySelector('.form_step_two').style.display = 'block'
+        document.querySelector('.form_step_tree').style.display = 'none'
+
+        //Кнопки "назад" с врехним расположением 
+        btn_up_back_step_one.style.display = 'grid'
+        btn_up_back_step_two.style.display = 'none'
+        dwn_back_step_two.style.display = 'block'
+
+        showLeftRight(form_step_two, 500)
+    }
+
+    function stepTree() {
+
+        //Навигация по шагам
+        step_tree_circle.classList.add('full_circle')
+        step_tree_circle.classList.remove('empty_circle')
+
+        document.querySelector('#step_tree_text').classList.add('full_text')
+        document.querySelector('#step_tree_text').classList.remove('empty_text')
+
+        arcs.style.width = '410px'
+        
+        document.querySelector('.form_step_one').style.display = 'none'
+        document.querySelector('.form_step_two').style.display = 'none'
+        document.querySelector('.form_step_tree').style.display = 'block'
+
+        //Кнопки "назад" с врехним расположением 
+        btn_up_back_step_one.style.display = 'none'
+        btn_up_back_step_two.style.display = 'grid'
+        dwn_back_step_two.style.display = 'none'
+
+        showLeftRight(form_step_tree, 500)
     }
 
     step_one.onclick = () => {    
         if (formOrder.validStepOne()) {
             let boxes = document.querySelectorAll('.box_item_block')
-            boxes.forEach(el => {
-                el.remove()
-            })
-    
-            let val = step_one.getAttribute('value')
-            nextSlideForm(val)
+            boxes.forEach(el => el.remove())
 
             //Услиги
             let services = document.querySelectorAll('.item_service')
@@ -320,27 +337,33 @@ window.onload = () => {
             products.load(10)
             products.load(11)
 
-            btn_up_back.style.display = 'grid'
-            btn_up_back.setAttribute('value', val)
             travelBoxes.drawBoxesStageOne()
+            
+            stepTwo()
+
             step_two_circle.onclick = () => {
-                let val = step_two_circle.getAttribute('value') * 1
-                nextSlideForm(val)
+                document.querySelector('.form_step_one').style.display = 'none'
+                document.querySelector('.form_step_two').style.display = 'block'
+                document.querySelector('.form_step_tree').style.display = 'none'
             }
-        }       
+        }     
+
         step_two.onclick = () => {
-            let val = step_two.getAttribute('value')
-            nextSlideForm(val)
+            
+            stepTree()
     
-            travelBoxes.drawBoxesStageTree()
+            travelBoxes.drawBoxesStageTree()            
     
             formOrder.finallyPrice()
-            btn_up_back.setAttribute('value', val)
+
             step_tree_circle.onclick = () => {
-                let val = step_tree_circle.getAttribute('value') * 1
-                nextSlideForm(val)
+                document.querySelector('.form_step_one').style.display = 'none'
+                document.querySelector('.form_step_two').style.display = 'none'
+                document.querySelector('.form_step_tree').style.display = 'block'
             }
         }
+
+        
 
         
         let select = document.querySelector('#check_animal_inpt')        
@@ -351,30 +374,25 @@ window.onload = () => {
     }
     
 
+
+    btn_up_back_step_two.onclick = () => stepTwo()
+    btn_up_back_step_one.onclick = () => stepOne()
+    dwn_back_step_two.onclick = () => stepOne()
+    
+
     send_form.onclick = () => {
         document.querySelector('.form_conteiner').style.display = 'none'
         document.querySelector('.nav_form_conteiner').style.display = 'none'
         document.querySelector('.success_send_four').style.display = 'block'
         formOrder.takeAllInputs()
     }
-    dwn_back_step.onclick = () => {
-        let val = dwn_back_step.getAttribute('value')
-        btn_up_back.style.display = 'none'
-        nextSlideForm(val)
-    }
+
     close_tb.forEach(el => {
         el.onclick = () => {
             document.querySelector('.form_conteiner').style.display = 'block'
             document.querySelector('.travel_box_conteiner').style.display = 'none'
         }
     })
-    btn_up_back.onclick = () => {
-        let val = btn_up_back.getAttribute('value')
-        btn_up_back.setAttribute('value', --val)
-
-        if (val == '1') btn_up_back.style.display = 'none'
-        nextSlideForm(val)
-    }
     step_one_circle.onclick = () => {
         let val = step_one_circle.getAttribute('value') * 1
         nextSlideForm(val)
@@ -447,7 +465,7 @@ window.onload = () => {
     
 
     
-    let inputs = document.querySelectorAll('.inpt_text')
+    let inputs = document.querySelectorAll('.input_text')
     inputs.forEach(el => {
         el.onblur = () => {
             if (el.value.length == 0 || el.value == '--.--.----' || el.value == '+7 (___) ___-__-__') {

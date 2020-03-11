@@ -64,6 +64,9 @@ class TravelBoxes {
             motid_count.innerText = el.count
         }
 
+        let text_block = document.createElement('div')
+        text_block.setAttribute('class', 'travel_box_info_text')
+
         let name = document.createElement('h4')
         name.setAttribute('class', 'name_tr_box')
         name.setAttribute('id', `tr_box_name_${el.id}`)
@@ -127,9 +130,11 @@ class TravelBoxes {
 
         box_conteiner.append(conteiner)
         conteiner.append(imgBl)
-        conteiner.append(name)
-        conteiner.append(price)
-        conteiner.append(btn)
+        conteiner.append(text_block)
+        
+        text_block.append(name)
+        text_block.append(price)
+        text_block.append(btn)
 
         imgBl.append(img)
         imgBl.append(notific)

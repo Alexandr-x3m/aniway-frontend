@@ -1,3 +1,88 @@
+@font-face {
+    font-family: TTWellingtons-Regular;
+    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot');
+    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
+        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Regular.woff2') format('woff2'),
+        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Regular.woff') format('woff'),
+        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-Medium;
+    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot');
+    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
+        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Medium.woff2') format('woff2'),
+        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Medium.woff') format('woff'),
+        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-DemiBold;
+    src: url('TTWellingtons-DemiBold.eot');
+    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
+        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot') format('embedded-opentype'),
+        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-DemiBold.woff2') format('woff2'),
+        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-DemiBold.woff') format('woff'),
+        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-ExtraLight;
+    src: url('TTWellingtons-ExtraLight.eot');
+    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
+        url('TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-ExtraLight.woff2') format('woff2'),
+        url('TTWellingtons-ExtraLight.woff') format('woff'),
+        url('TTWellingtons-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-MediumItalic;
+    src: url('TTWellingtons-MediumItalic.eot');
+    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'),
+        url('TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-MediumItalic.woff2') format('woff2'),
+        url('TTWellingtons-MediumItalic.woff') format('woff'),
+        url('TTWellingtons-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: TTWellingtons-Bold;
+    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Bold.eot');
+    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'),
+        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Bold.woff2') format('woff2'),
+        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Bold.woff') format('woff'),
+        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: TTWellingtons-Light;
+    src: url('TTWellingtons-Light.eot');
+    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'),
+        url('TTWellingtons-Light.eot?#iefix') format('embedded-opentype'),
+        url('TTWellingtons-Light.woff2') format('woff2'),
+        url('TTWellingtons-Light.woff') format('woff'),
+        url('TTWellingtons-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
 /*-------------------------------
 
 
@@ -5,18 +90,31 @@
 
 
 ------------------------------*/
+.input_width_conteiner{
+    /*styles*/
+   width: 100%;
+}
+.input_width__setter{
+   /*NO changes*/
+   position: relative;
 
+   /*styles*/
+   margin: 0 25px;
+}
 
 input[type="text"], input[type="email"], input[type="number"] {
-    width: 250px;
+    position: absolute;
+    left: -25px;
+    width: 100%;
+    outline: none;
+    border: none;
+    
     height: 26px;
     font-size: 16px;
-    padding: 30px 10px 8px 20px;
+    padding: 30px 30px 8px 20px;
     border-radius: 8px;
     display: block;
-    border: none;
     background-color: #EEF2F7;
-    outline: none;
     font-family: TTWellingtons-Medium;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -26,7 +124,7 @@ input[type="text"], input[type="email"], input[type="number"] {
 input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     background-color: #fff;
     border: 1px solid #4B9FDF;
-    padding: 29px 9px 7px 19px;
+    padding: 29px 29px 7px 19px;
 }
 .label_field {
     color: #999;
@@ -43,7 +141,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .label_text{
     position: absolute;
     top: 24px;
-    left: 18px;
+    left: -4px;
     width: 280px;
     font-size: 16px;
     transition-duration: 0.2s;
@@ -53,7 +151,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 26px;
-    left: 246px;
+    right: -8px;
     width: 18px;
     height: 12px;
 }
@@ -61,7 +159,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 26px;
-    left: 246px;
+    right: -8px;
     width: 18px;
     height: 12px;
 }
@@ -69,7 +167,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 64px;
-    left: 10px;
+    left: -12px;
     width: 266px;
     height: 16px;
     color: #DD5656;
@@ -77,7 +175,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-size: 12px;
 }
 .invalid_input{
-    padding: 29px 9px 7px 19px !important;
+    padding: 29px 29px 7px 19px !important;
     border: 1px solid #DD5656 !important;
 }
 .invalid_input~.invalid_info_icon,
@@ -93,16 +191,16 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-size: 12px;
 }
 /* анимация при фокусе на поле ввода */
-.inpt_text:focus~.label_text{
+.input_text:focus~.label_text{
+    top: 12px;
+    font-size: 12px;
+}
+.valid_input~.label_text{
     top: 12px;
     font-size: 12px;
 }
 
 /* сохранение анимации при фокусе на поле ввода, если оно валидно */
-.inpt_text:valid~.label_text{
-    top: 12px;
-    font-size: 12px;
-}
 .valid_input~.valid_info_icon{
     display: block;
 }
@@ -110,14 +208,14 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 /* --------------------------
     Поля ввода со списком
 ---------------------------*/
-.inpt_list:focus{
+.input_list:focus{
     background-color: #fff !important;
     border: 1px solid #4B9FDF !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-    padding: 29px 9px 7px 19px !important;
+    padding: 29px 29px 7px 19px !important;
 }
-.inpt_list:focus~.label_text{
+.input_list:focus~.label_text{
     top: 12px;
     font-size: 12px;
 }
@@ -131,12 +229,15 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 }
 .invalid_list_input{
     border: 1px solid #DD5656 !important;
-    padding: 29px 9px 7px 19px !important;
+    padding: 29px 29px 7px 19px !important;
 }
 .full_list_input~.label_text{
-    top: 12px;
-    font-size: 12px;
+    top: 12px !important;
+    font-size: 12px !important;
 }
+/*----------------------------------------------------------------------
+
+
 
 /*----------------------------------------
 
@@ -314,6 +415,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 }
 .inv_select_text{
     top: 64px !important;
+    left: 12px;
 }
 
 
@@ -342,9 +444,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .select_input:checked~.select_main_text{
     top: 8px !important;
     font-size: 12px !important;
-}
-.select_input:checked~.arrow_select{
-    
 }
 
 .select_input:checked+#list_type_pets {
@@ -474,3 +573,5 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     background:  url(http://hello-site.ru//main/images/preloads/oval.svg) center center no-repeat;
     background-size: 172px;
 }
+
+
