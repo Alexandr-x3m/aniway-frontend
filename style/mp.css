@@ -4,10 +4,7 @@ body {
     background: #F5E9DB;
 }
 
-a {
-    text-decoration: none;
-    color: #fff;
-}
+
 
 h1, h2, h3, h4 {
     font-family: TTWellingtons-DemiBold;
@@ -17,67 +14,7 @@ p {
     font-family: TTWellingtons-Medium;
 }
 
-/*----------------------------
 
-        Стили для заголовка
-
------------------------------*/
-
-.header_conteiner {
-    display: grid;
-    grid-template-columns: 105px 1fr 840px;
-    position: absolute;
-    top: 0;
-    left: 20%;
-    width: 60%;
-    height: 64px;
-    z-index: 11;
-}
-
-.logo_block {
-    position: relative;
-    top: 10px;
-    width: 105px;
-    background-image: url(./img/mp/logotype.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
-
-.nav_block {
-    grid-column: 3;
-}
-
-.nav_block ul {
-    display: grid;
-    grid-template-columns: 150px 170px 64px 42px 114px 160px;
-    grid-column-gap: 22px;
-    margin-top: 40px;
-    padding: 0;
-    text-align: center;
-    text-decoration: none;
-    font-family: TTWellingtons-Medium;
-    font-size: 12px;
-    list-style-type: none;
-    -moz-transition-duration: 0.5s;
-    -o-transition-duration: 0.5s;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-}
-
-.nav_btn li {
-    padding: 5px;
-}
-
-.nav_btn li:hover {
-    text-decoration: underline;
-}
-
-.header_nomber {
-    text-align: end !important;
-    font-family: Open-Sans;
-    font-weight: 600;
-}
 
 /*-------------------------------------------
 

@@ -1,3 +1,17 @@
+@media screen and (max-width: 1080px) {
+    .active_select {
+        height: 62px;
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .list_saerch_conteiner {
+        top: 64px;
+        width: 100%;
+    }
+}
+
+
 @media screen and (max-width: 640px) {
 
     .input_width_conteiner{
@@ -7,7 +21,14 @@
         position: relative;
         margin: 0 25px;
     }
-
+    .invalid_select~.select_main_text{
+        top: 4px !important;
+        font-size: 8px !important;
+    }
+    .invalid_list_input~.label_text {
+        top: 4px !important;
+        font-size: 8px !important;
+    }
 
     input[type="text"], input[type="email"], input[type="number"] {
         width: 100%;
@@ -31,6 +52,7 @@
     .list_saerch_conteiner {
         top: 48px;
         width: 100%;
+        max-height: 180px !important;
     }
     .label_field{
         font-family: TTWellingtons-Medium; 
@@ -73,31 +95,35 @@
     .input_list:focus{
         padding: 21px 31px 9px 17px !important;
     }
+    .full_list_input~.label_text{
+        top: 7px !important;
+        font-size: 8px !important;
+    }
     .input_list:focus~.label_text {
-        top: 4px !important;
+        top: 7px !important;
         font-size: 8px !important;
     }
     .valid_input~.label_text {
-        top: 4px !important;
+        top: 7px !important;
         font-size: 8px !important;
     }
     .invalid_input:focus~.label_text {
-        top: 4px !important;
+        top: 7px !important;
         font-size: 8px !important;
     }
     .invalid_input~.label_text {
-        top: 4px !important;
+        top: 7px !important;
         font-size: 8px !important;
     }
     /* анимация при фокусе на поле ввода */
     .input_text:focus~.label_text {
-        top: 4px !important;
+        top: 7px !important;
         font-size: 8px !important;
     }
     /* сохранение анимации при фокусе на поле ввода, если оно валидно */
     .valid_list_input~.label_text {
         top: 7px !important;
-        font-size: 12px !important;
+        font-size: 8px !important;
     }
     .valid_input~.valid_info_icon {
         display: block !important;

@@ -7,9 +7,9 @@ class TypeAnimal {
     getTypeAnimal() {
         
         let preloader = document.querySelector('#preloader_conteiner')
+        preloader.classList.remove('hide_block')
 
         let promise = new Promise((resolve, reject) => {
-            preloader.style.display = 'block'
             fetch(this.proxyUrl + this.url)
                 .then((response) => {
                     if (response.status != 200) {
@@ -27,7 +27,7 @@ class TypeAnimal {
         promise.then(
             result => {
                 this.drawTypesPets()
-                preloader.style.display = 'none'
+                preloader.classList.add('hide_block')
             },
             err => alert(err.message)
         )

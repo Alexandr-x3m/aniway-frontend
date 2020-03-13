@@ -85,7 +85,7 @@ class CountryInfo {
                 country_inpt.value = txt
                 country_inpt.setAttribute('value', el.id)
                 wrapper_country.style.display = 'none'
-                country_inpt.setAttribute('class', 'inpt_list')
+                country_inpt.setAttribute('class', 'input_list')
                 this.validInpt()
             }
         })

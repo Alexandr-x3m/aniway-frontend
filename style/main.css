@@ -83,6 +83,74 @@
 }
 
 
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*----------------------------
+
+        Стили для заголовка
+
+-----------------------------*/
+
+.header_conteiner {
+    display: grid;
+    grid-template-columns: 105px 1fr 840px;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 64px;
+    z-index: 11;
+}
+
+.logo_block {
+    position: relative;
+    top: 10px;
+    width: 105px;
+    background-image: url(./img/mp/logotype.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.nav_block {
+    grid-column: 3;
+}
+
+.nav_block ul {
+    display: grid;
+    grid-template-columns: 150px 170px 64px 42px 114px 160px;
+    grid-column-gap: 22px;
+    margin-top: 40px;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: TTWellingtons-Medium;
+    font-size: 12px;
+    list-style-type: none;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+
+.nav_btn li {
+    padding: 5px;
+}
+
+.nav_btn li:hover {
+    text-decoration: underline;
+}
+
+.header_nomber {
+    text-align: end !important;
+    font-family: Open-Sans;
+    font-weight: 600;
+}
+
+
 /*-------------------------------
 
 
@@ -173,6 +241,13 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-family: TTWellingtons-Medium;
     font-size: 12px;
 }
+.invalid_select{
+    border: 1px solid #DD5656 !important;
+}
+.invalid_select~.select_main_text{
+    top: 12px;
+    font-size: 12px;
+}
 .invalid_input{
     padding: 29px 29px 7px 19px !important;
     border: 1px solid #DD5656 !important;
@@ -190,7 +265,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-size: 12px;
 }
 /* анимация при фокусе на поле ввода */
-.input_text:focus~.label_text{
+.focus_input~.label_text{
     top: 12px;
     font-size: 12px;
 }
@@ -254,6 +329,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     left: 50%;
     width: 280px;
     margin-left: -140px;
+    margin-bottom: 12px;
 }
 
 .next_step {
@@ -546,7 +622,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     Прелоадер блок
 
 -----------------------*/
-#preloader_conteiner{
+
+.hide_block{
     display: none;
 }
 .preloader_background{

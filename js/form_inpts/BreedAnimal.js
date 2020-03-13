@@ -94,7 +94,7 @@ class BreedAnimal {
                 let txt = item.textContent
                 type_animal.value = txt
                 type_animal.setAttribute('value', el.id)
-                type_animal.setAttribute('class', 'inpt_list')
+                type_animal.setAttribute('class', 'input_list')
 
                 all_items.forEach(el => el.remove())
 

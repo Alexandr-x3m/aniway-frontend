@@ -84,9 +84,12 @@ class Product {
         let price = document.createElement('div')
         price.setAttribute('class', 'price_block ')
 
+        let rub = document.createElement('span')
+        rub.innerText = ` Р`
+        rub.setAttribute('class', 'rub')
 
         let price_txt = document.createElement('h4')
-        price_txt.innerText = `${el.price} \u20BD`
+        price_txt.innerText = `${el.price}`
 
 
         main_block.append(conteiner)
@@ -101,6 +104,7 @@ class Product {
         conteiner.append(price)
 
         price.append(price_txt)
+        price.append(rub)
 
         if (el.short_desc !== null) {
             let desc = document.createElement('p')

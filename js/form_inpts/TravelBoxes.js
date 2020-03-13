@@ -153,7 +153,7 @@ class TravelBoxes {
 
 
         arr.forEach(el => {
-            if (type == el.animal_type && el.count != undefined) {
+            if (type == el.animal_type && el.count != undefined && el.count != 0) {
                 let block = document.createElement('div')
                 block.setAttribute('class', 'box_purchase_item')
                 block.setAttribute('id', `boxes_for_purchase_${el.id}`)
@@ -167,13 +167,18 @@ class TravelBoxes {
                 textBL.setAttribute('class', 'name_purchase_block')
                 textBL.setAttribute('value', el.count)
 
-                let text = document.createElement('h5')
-                text.innerText = 'Travel box "на природу" для кошек '
+                let type_pet = ''
+                switch (el.animal_type) {
+                    case '1': type_pet = 'кошек'
+                    case '2': type_pet = 'собак'
+                    case '3': type_pet = 'грызунов'
+                }
 
-                let count_text = document.createElement('h5')
-                count_text.setAttribute('class', `count_block count_block_${el.id}`)
-                count_text.innerText = `(${el.count} шт.)`
-                count_text.setAttribute('value', el.count)
+                let text = document.createElement('h5')
+                text.setAttribute('class', `count_block count_block_${el.id}`)
+                text.setAttribute('value', el.count)
+                text.innerText = `Travel box "на природу" для ${type_pet} (${el.count} шт.)`
+
 
                 let hor_img = document.createElement('img')
                 hor_img.setAttribute('src', `./style/img/Line_110.svg`)
@@ -184,7 +189,11 @@ class TravelBoxes {
                 priceBl.setAttribute('value', el.price * el.count)
 
                 let price_txt = document.createElement('h4')
-                price_txt.innerText = `${el.price * el.count} \u20BD`
+                price_txt.innerText = `${el.price * el.count}`
+
+                let rub = document.createElement('span')
+                rub.innerText = ` Р`
+                rub.setAttribute('class', 'rub')
 
                 let del_btn = document.createElement('div')
                 del_btn.setAttribute('class', 'del_tr_box')
@@ -204,9 +213,9 @@ class TravelBoxes {
                 block.append(del_btn)
 
                 textBL.append(text)
-                textBL.append(count_text)
 
                 priceBl.append(price_txt)
+                priceBl.append(rub)
 
 
             }
