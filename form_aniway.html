@@ -138,12 +138,15 @@
                 <h4 class="header_4_lvl">Информация о питомце</h4>
                 <div class="input_width_conteiner age_animal_block">
                     <div class="input_width__setter">
-                        <input type="text" autocomplete="off" class="input_text text_validity" id="age_anim_inpt"
-                            pattern="([0-9]{1,2})\s([А-Яа-яЁё]{3,8})" placeholder="7 лет или 12 месяцев">
-                        <label for="age_anim_inpt" class="label_text label_field">Возраст*</label>
-                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
-                        <img src="./style/img/Group547.svg" class="invalid_info_icon">
-                        <span class="invalid_info_text" id="inv_text_age_anim">Вы неверно указали возраст</span>
+                        <input type="text" autocomplete="off" class="input_text age_input text_validity" id="year_age_anim_inpt" placeholder="лет">
+                        <input type="text" autocomplete="off" class="input_text age_input text_validity" id="month_age_anim_inpt" placeholder="месяцев">
+                        <label for="year_age_anim_inpt" class="label_text label_field" id="label_age_pet">Возраст*</label>
+                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon val_icon_age_pet">
+                        <img src="./style/img/Group547.svg" class="invalid_info_icon inv_icon_age_pet">
+                        <span class="invalid_info_text inv_text_age_pet" id="inv_text_age_anim">Вы неверно указали возраст</span>
+                        <span class="year_text_input composite_text"></span>
+                        <span class="month_text_input composite_text"></span>
+                        <div class="composite_input_back"></div>
                     </div>
                 </div>
 

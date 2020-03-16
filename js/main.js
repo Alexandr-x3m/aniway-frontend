@@ -75,23 +75,27 @@ class FormOrder {
 
 
         let dtTr = document.querySelector('#date_departure')
-        let age = document.querySelector('#age_anim_inpt')
         let vakc = document.querySelector('#vakvina_date')
         let datetravel = document.querySelector('#date_departure').validity.valid
-        let ageValid = document.querySelector('#age_anim_inpt').validity.valid
         let vakcina = document.querySelector('#vakvina_date').validity.valid
         let vakcinaCheck = document.querySelector('#have_vakcina')
+        let year_age_pet = document.querySelector('#year_age_anim_inpt')
+        let month_age_pet = document.querySelector('#month_age_anim_inpt')
+        
+
+        if (year_age_pet.value == 0 && month_age_pet.value == 0) {
+            document.querySelector('.composite_input_back').classList.add('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'block'
+            document.querySelector('#inv_text_age_anim').innerText = 'Необходимо указать возраст питомца'
+            document.querySelector('.inv_icon_age_pet').style.display = 'block'
+        }
 
         if (dtTr.value == '') {
             datetravel = false
             dtTr.classList.add('invalid_input')
             document.querySelector('#inv_text_date_departure').innerText = 'Не указана дата путешествия'
         } else { dtTr.classList.remove('invalid_input') }
-        if (age.value == '') {
-            ageValid = false
-            age.classList.add('invalid_input')
-            document.querySelector('#inv_text_age_anim').innerText = 'Не указан возраст питомца'
-        } else { age.classList.remove('invalid_input') }
+        
         if (vakc.value == '' && !vakcinaCheck.checked) {
             vakcina = false
             vakc.classList.remove('valid_input')
@@ -111,7 +115,6 @@ class FormOrder {
         }
 
         if (vakcina &&
-            ageValid &&
             datetravel &&
             type_animal != 0 &&
             breedValid != 0 &&
@@ -996,8 +999,12 @@ window.onload = () => {
     vakcina.onchange = () => {
         if (!vakcina.checked) {
             document.querySelector('#vakcina_field').innerText = 'Дата посл. вакцинации*'
+            document.querySelector('#vakvina_date').style.opacity = '1'
+            document.querySelector('#vakvina_date').removeAttribute('disabled')
         } else {
             document.querySelector('#vakcina_field').innerText = 'Дата посл. вакцинации'
+            document.querySelector('#vakvina_date').setAttribute('disabled', 'disabled')
+            document.querySelector('#vakvina_date').style.opacity = '0.6'
         }
     }
 
@@ -1029,6 +1036,200 @@ window.onload = () => {
     }
 
 
+
+    let left_age = document.querySelector('#year_age_anim_inpt')
+    let rigth_age = document.querySelector('#month_age_anim_inpt')
+    let label_age = document.querySelector('#label_age_pet')
+    let back_age = document.querySelector('.composite_input_back')
+    
+
+    left_age.oninput = () => {
+        let text = document.querySelector('.year_text_input')
+        let validIcon = document.querySelector('.val_icon_age_pet')
+        let invIcon = document.querySelector('.inv_icon_age_pet')
+        let invText = document.querySelector('.inv_text_age_pet')
+        
+
+        let arrVal = []
+        let val = left_age.value
+        
+        for (let i=0; i < val.length; i++ ) {
+            arrVal.push(val[i])
+        }
+
+        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
+            arrVal.pop()
+        } 
+        if (val*1 > 50) {
+            arrVal[0] = '5'
+            arrVal[1] = '0'
+        }
+        
+
+        let el 
+        if (arrVal.length == 1) {
+            el = arrVal[0]
+            text.style.left = '8px'
+            label_age.classList.add('active_text')
+        } else {
+            el = arrVal[0]+arrVal[1]
+            text.style.left = '18px'
+            label_age.classList.add('active_text')
+        }
+        
+        if (val.length == 0 && rigth_age.value != 0) {
+            left_age.value = '0'
+            text.innerText = 'лет'
+            text.style.left = '8px'
+            label_age.classList.add('active_text')
+        } else if (val.length == 0 && rigth_age.value == 0) {
+            debugger
+            left_age.value = ''
+            text.innerText = ''
+            document.querySelector('.month_text_input').innerText = ''
+            rigth_age.value = ''
+            validIcon.style.display = 'none'
+            invIcon.style.display = 'none'
+        } 
+
+        if (el==1 || el==21 || el==31 || el==41) {
+            left_age.value = el
+            text.innerText = 'год'
+            validIcon.style.display = 'block'
+        }
+
+        if (el>=2 && el<=4 ||
+            el>=22 && el<=24 ||
+            el>=32 && el<=34 ||
+            el>=42 && el<=44) {
+                left_age.value = el
+                text.innerText = 'года'
+                validIcon.style.display = 'block'
+        }
+
+        if (el>=5 && el<=20 ||
+            el>=25 && el<=30 ||
+            el>=35 && el<=40 ||
+            el>=45 && el<=50) {
+                left_age.value = el
+                text.innerText = 'лет'
+                validIcon.style.display = 'block'
+            }
+
+    }
+
+    function focusLeftInpt() {
+        left_age.onfocus = () => {
+            left_age.classList.add('focus_left_input')
+            rigth_age.classList.add('focus_right_input')
+            label_age.classList.add('active_text')
+            back_age.classList.add('focus_back')
+        }
+    }
+    focusLeftInpt()
+    document.querySelector('.year_text_input').onclick = () => {left_age.focus()}
+
+
+    function focusRightInpt() {
+        rigth_age.onfocus = () => {
+            left_age.classList.add('focus_left_input')
+            rigth_age.classList.add('focus_right_input')
+            back_age.classList.add('focus_back')
+        }
+    }
+    focusRightInpt()
+    document.querySelector('.month_text_input').onclick = () => {rigth_age.focus()}
+    rigth_age.oninput = () => {
+        let text = document.querySelector('.month_text_input')
+        let validIcon = document.querySelector('.val_icon_age_pet')
+        let invIcon = document.querySelector('.inv_icon_age_pet')
+
+        let arrVal = []
+        let val = rigth_age.value
+        
+        for (let i=0; i < val.length; i++ ) {
+            arrVal.push(val[i])
+        }
+
+        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
+            arrVal.pop()
+        } 
+        if (val*1 > 13) {
+            arrVal[0] = '1'
+            arrVal[1] = '2'
+        }
+        
+        
+
+        let el 
+        if (arrVal.length == 1) {
+            el = arrVal[0]
+            text.style.left = '106px'
+            label_age.classList.add('active_text')
+        } else {
+            el = arrVal[0]+arrVal[1]
+            text.style.left = '116px'
+            label_age.classList.add('active_text')
+        }
+        
+        if (val.length == 0 && left_age.value != 0) {
+            rigth_age.value = '0'
+            text.innerText = 'месяцев'
+            text.style.left = '106px'
+        } else if (val.length == 0 && left_age.value == 0) {
+            rigth_age.value = ''
+            text.innerText = ''
+            left_age.value = ''
+            document.querySelector('.year_text_input').innerText = ''
+            validIcon.style.display = 'none'
+        }
+
+        if (el==1) {
+            rigth_age.value = el
+            text.innerText = 'месяц'
+            validIcon.style.display = 'block'
+            document.querySelevtor('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+
+        if (el>=2 && el<=4) {
+                rigth_age.value = el
+                text.innerText = 'месяца'
+                validIcon.style.display = 'block'
+                document.querySelector('.composite_input_back').classList.remove('invalid_back')
+                document.querySelector('#inv_text_age_anim').style.display = 'none'
+                document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+
+        if (el>=5 && el<=12) {
+                rigth_age.value = el
+                text.innerText = 'месяцев'
+                validIcon.style.display = 'block'
+                document.querySelector('.composite_input_back').classList.remove('invalid_back')
+                document.querySelector('#inv_text_age_anim').style.display = 'none'
+                document.querySelector('.inv_icon_age_pet').style.display = 'none'
+            }
+
+    }
+
+    left_age.onblur = () => {
+        left_age.classList.remove('focus_left_input')
+        rigth_age.classList.remove('focus_right_input')
+        back_age.classList.remove('focus_back')
+        if (left_age.value == 0 && rigth_age.value == 0) {
+            label_age.classList.remove('active_text')
+        }
+    }
+    rigth_age.onblur = () => {
+        left_age.classList.remove('focus_left_input')
+        rigth_age.classList.remove('focus_right_input')
+        back_age.classList.remove('focus_back')
+        if (left_age.value == 0 && rigth_age.value == 0) {
+            label_age.classList.remove('active_text')
+        }
+    }
+    
 
 
 

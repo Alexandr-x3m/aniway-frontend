@@ -511,7 +511,7 @@ span {
 
 #have_chip:checked+.chip_switcher:after {
     content: "да";
-    left: 76px;
+    left: 77px;
     border: none;
     border-radius: 0px;
     border-bottom-right-radius: 8px;
@@ -851,7 +851,6 @@ span {
 }
 .count_block{
     font-size: 12px;
-    font-family: Open-Sans !important;
 }
 .box_purchase_item img{
     border-radius: 5px;
@@ -990,7 +989,7 @@ span {
 #age_anim_inpt,
 #date_departure,
 #vakvina_date{
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
 }
 
 
