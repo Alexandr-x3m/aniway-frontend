@@ -1,13 +1,12 @@
 class TravelBoxes {
     constructor() {
-        this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
         this.url = 'https://aniway.ru/api/travelbox/?format=json'
         this.data = []
     }
-    getBoxes() {
-        let box_conteiner = document.querySelector('.box_items_conteiner').getAttribute('value')
+    getBoxes(resolve) {
+        //let box_conteiner = document.querySelector('.box_items_conteiner').getAttribute('value')
 
-        if (box_conteiner != 0) return
+        //if (box_conteiner != 0) return
 
         let promise = new Promise((resolve, reject) => {
             fetch(this.url)
@@ -25,7 +24,7 @@ class TravelBoxes {
                 .catch(err => alert(err.message))
         })
         promise.then(
-            result => {},
+            result => {return resolve()},
             err => alert(err.message)
         )
     }
@@ -262,4 +261,88 @@ class TravelBoxes {
         document.querySelector('#travel_box_counter').setAttribute('value', '0')
         document.querySelector('#travel_box_counter').innerText = '0'
     }
+
+    drawBoxesMainPage() {
+        console.log(this.data)
+        let select = document.querySelector('.select_nav_travel_box')
+
+        let preview_1 = document.querySelector('#travel_box_preview_1')
+        let preview_2 = document.querySelector('#travel_box_preview_2')
+        let preview_3 = document.querySelector('#travel_box_preview_3')
+
+        let name_1 = document.querySelector('#name_travel_box_1')
+        let name_2 = document.querySelector('#name_travel_box_2')
+        let name_3 = document.querySelector('#name_travel_box_3')
+        
+        let desc_1 = document.querySelector('#description_travel_box_1')
+        let desc_2 = document.querySelector('#description_travel_box_2')
+        let desc_3 = document.querySelector('#description_travel_box_3')
+
+        let price_1 = document.querySelector('#price_travel_box_1')
+        let price_2 = document.querySelector('#price_travel_box_2')
+        let price_3 = document.querySelector('#price_travel_box_3')
+
+        let more_1 = document.querySelector('#travel_box_1')
+        let more_2 = document.querySelector('#travel_box_2')
+        let more_3 = document.querySelector('#travel_box_3')
+        
+
+        let typeArr = []
+
+        let type = select.getAttribute('value')
+
+        this.data.forEach(el => {
+
+            if (el.animal_type == type*1) {
+                console.log(el)
+                typeArr.push(el)
+            }
+        })
+        
+        typeArr.forEach(el => {
+
+            switch(el.name) {
+                case 'На природу' : {
+                    preview_1.src = el.preview
+                    name_1.innerText = el.name
+                    desc_1.innerText = el.desc_left
+                    price_1.innerText = el.price
+                    more_1.setAttribute('value', el.id)
+                }
+                case 'На море' : {
+                    preview_2.src = el.preview
+                    name_2.innerText = el.name
+                    desc_2.innerText = el.desc_left
+                    price_2.innerText = el.price
+                    more_2.setAttribute('value', el.id)
+                }
+                case 'В город' : {
+                    preview_3.src = el.preview
+                    name_3.innerText = el.name
+                    desc_3.innerText = el.desc_left
+                    price_3.innerText = el.price
+                    more_3.setAttribute('value', el.id)
+                }
+            }
+        })
+
+    }
+    showTravelBoxCardMainPage() {
+        let btns = document.querySelectorAll('.more_info_tb')
+
+        btns.forEach(el => {
+            el.onclick = () => {
+                let id = el.getAttribute('value')
+                let type = document.querySelector('.select_nav_travel_box').getAttribute('value')
+                this.downloadInfoTravelBoxCardMP(id, type)
+            }
+        })
+    }
+    downloadInfoTravelBoxCardMP(id, type) {
+        console.log(id, type)
+    }
+    
+
+
+    
 }

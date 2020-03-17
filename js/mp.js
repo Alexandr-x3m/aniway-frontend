@@ -1,6 +1,23 @@
+
 window.onload = () => {
 
 
+    let promise = new Promise((resolve, reject) => {
+        console.log('step 1')
+        travelBoxes.getBoxes( resolve)
+    })
+
+    travelBoxes.showTravelBoxCardMainPage()
+
+    promise.then(
+        result => {
+            console.log('step 2')
+            travelBoxes.drawBoxesMainPage()},
+        err => alert(err.message)
+    )
+
+
+    
 
 
 
@@ -68,12 +85,8 @@ window.onload = () => {
                 target.setAttribute('value', 0)
                 func(target, dist)
             }
-
-            console.clear();
-            console.log('Вы видите элемент :)');
         } else {
             // Если элемент не видно, то запускаем этот код
-            console.clear();
         };
     };
 
@@ -92,11 +105,7 @@ window.onload = () => {
     window.addEventListener('scroll', () => {
 
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop
-        let windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
-        let windowClient = document.documentElement.clientHeight
-
-        console.log(windowClient)
-
+       
         let textVideoBL = document.querySelector('.video_text_block')
         visible(textVideoBL, showTopBottom, 100)
 
@@ -127,10 +136,6 @@ window.onload = () => {
 
         let socialBlock = document.querySelectorAll('.item_social_block')
         socialBlock.forEach(el => visible(el, showTopBottom, 100))
-        
-
-        console.log(windowScroll)
-
     })
 
 

@@ -18,6 +18,7 @@
     <script src="./js/form_inpts/BreedAnimal.js"></script>
     <script src="./js/form_inpts/AnimalType.js"></script>
     <script src="./js/form_inpts/Product.js"></script>
+    <script src="./js/form_inpts/TravelBoxes.js"></script>
 
     <script src="./js/main.js"></script>
     <script src="./js/mp.js"></script>
@@ -64,23 +65,23 @@
                 <div class="mini_form_conteiner">
                     <p>Узнайте что вам понадобится для путешествия</p>
                     <div class="fast_form_block">
-                            <div class="type_pet_block">
-                                <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
-                                    <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
-                                    <div class="select_window type_pet_list" id="view_animal_inpt" value="0"></div>
-                                    <div class="select_main_text">Вид животного</div>
-                                    <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
-                                    <img src="./style/img/select_arrow.svg" class="arrow_select" alt="">
-                                    <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не выбрали
-                                        тип
-                                        животного</p>
-                                </label>
-                                <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets"
+                        <div class="type_pet_block">
+                            <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
+                                <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
+                                <div class="select_window type_pet_list" id="view_animal_inpt" value="0"></div>
+                                <div class="select_main_text">Вид животного</div>
+                                <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
+                                <img src="./style/img/select_arrow.svg" class="arrow_select" alt="">
+                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не выбрали
+                                    тип
+                                    животного</p>
+                            </label>
+                            <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets"
                                 value="0">
-                                </div>
-                                <div id="wrapper_select_pets" class="wrapper_select"></div>
                             </div>
-                            
+                            <div id="wrapper_select_pets" class="wrapper_select"></div>
+                        </div>
+
                         <div class="breed_pet_block">
                             <div class="input_width_conteiner">
                                 <div class="input_width__setter">
@@ -140,7 +141,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -259,7 +260,7 @@
                 <h4 class="under_header_window" value="1">Мы разработали специальный набор аксессуаров <br> для поездки
                     и отдыха в одной коробке</h4>
                 <div class="nav_tavel_box_block" value="1">
-                    <div class="dog_tb_block nav_el_tb">
+                    <div class="dog_tb_block nav_el_tb select_nav_travel_box" value="2">
                         <img src="./style/img/mp/dog_small.svg" alt="">
                         <h4 class="active_nav_el" id="show_dag_tb">для собак</h4>
                     </div>
@@ -274,15 +275,19 @@
                 </div>
 
                 <div class="travel_boxes_conteiner">
-                    <div class="list_travel_box_dog">
+                    <div class="list_travel_box">
                         <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/nature_tb_cat.png" alt="">
-                            <h4>На природу</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
+                            <div class="travel_box__img_back nature_tb_back"></div>
+                            <img src="./style/img/mp/nature_tb_cat.png" class="preview_travel_box" id="travel_box_preview_1">
+                            <h4 id="name_travel_box_1"></h4>
+                            <p id="description_travel_box_1">Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
                                 боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
+                            <h5 class="price_block">Стоимость: 
+                                <span id="price_travel_box_1"></span>
+                                <span class="rub">P</span>
+                            </h5>
                             <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
+                                <button class="more_info_tb next_step" id="travel_box_1" value="1">
                                     <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                     </span>
@@ -291,13 +296,17 @@
                             </div>
                         </div>
                         <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/sea_cat_tb.png" alt="">
-                            <h4>На море</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
+                            <div class="travel_box__img_back sea_tb_back"></div>
+                            <img src="" class="preview_travel_box" id="travel_box_preview_2">
+                            <h4 id="name_travel_box_2"></h4>
+                            <p id="description_travel_box_2">Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
                                 боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>4 990 &#8381;</span></h5>
+                            <h5 class="price_block">Стоимость: 
+                                <span id="price_travel_box_2"></span>
+                                <span class="rub">P</span>
+                            </h5>
                             <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
+                                <button class="more_info_tb next_step" id="travel_box_2" value="2">
                                     <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                     </span>
@@ -305,108 +314,18 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/town_cat_tb.png" alt="">
-                            <h4>В город</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
+                        <div class="item_travel_box" id="travel_box_1" value="1">
+                            <div class="travel_box__img_back town_tb_back"></div>
+                            <img src="" class="preview_travel_box" id="travel_box_preview_3">
+                            <h4 id="name_travel_box_3"></h4>
+                            <p id="description_travel_box_3">Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
                                 боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
+                            <h5 class="price_block">Стоимость: 
+                                <span id="price_travel_box_3"></span>
+                                <span class="rub">P</span>
+                            </h5>
                             <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_travel_box_cat">
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/nature_tb_cat.png" alt="">
-                            <h4>На природу</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/sea_cat_tb.png" alt="">
-                            <h4>На море</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>4 990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/town_cat_tb.png" alt="">
-                            <h4>В город</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list_travel_box_rabbit">
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/nature_tb_cat.png" alt="">
-                            <h4>На природу</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/sea_cat_tb.png" alt="">
-                            <h4>На море</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>4 990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
-                                    <span class="circle" aria-hidden="true">
-                                        <span class="icon arrow"></span>
-                                    </span>
-                                    <span class="button-text">что внутри</span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="item_travel_box" value="1">
-                            <img src="./style/img/mp/town_cat_tb.png" alt="">
-                            <h4>В город</h4>
-                            <p>Краткое описание этоого боксаКраткое описание этоого боксаКраткое описание этоого
-                                боксаКраткое описание этоого боксаКраткое описание этоого бокса</p>
-                            <h5 class="price_block">Стоимость: <span>2990 &#8381;</span></h5>
-                            <div id="next_step_btn" class="open_info_tb_block">
-                                <button class="more_info_tb next_step" id="step_one" value="2">
+                                <button class="more_info_tb next_step" id="travel_box_3" value="3">
                                     <span class="circle" aria-hidden="true">
                                         <span class="icon arrow"></span>
                                     </span>
@@ -417,388 +336,414 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="info_team_window_block">
-            <div class="info_team_block">
-                <a name="card_window"></a>
-                <h2 class="header_window" value="1">для нас каждый <br> питомец как свой</h2>
-                <h4 class="under_header_window" value="1">Мы собрали уникальную команду ветеринарных врачей, <br> каждый
-                    из них горит своим делом</h4>
-                <div class="cards_info_block">
+            <div class="info_team_window_block">
+                <div class="info_team_block">
+                    <a name="card_window"></a>
+                    <h2 class="header_window" value="1">для нас каждый <br> питомец как свой</h2>
+                    <h4 class="under_header_window" value="1">Мы собрали уникальную команду ветеринарных врачей, <br>
+                        каждый
+                        из них горит своим делом</h4>
+                    <div class="cards_info_block">
 
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_1.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_1" value="1">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_1.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_1" value="1">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_2.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_2" value="2">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_3.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_3" value="3">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_4.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_4" value="4">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_5.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_5" value="5">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_6.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_6" value="6">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_7.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_7" value="7">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_cards_block" value="1">
+                            <img src="./style/img/mp/cards_photo/card_photo_8.png" alt="">
+                            <div class="hover_card_block">
+                                <div class="hover_card_background"></div>
+                                <div class="hover_card_text_block">
+                                    <h4>Попов Дмитрий</h4>
+                                    <p>Ветеринарный врач, <br> опыт 7 лет</p>
+                                    <div id="next_step_btn" class="more_info_сards_btn">
+                                        <button class="more_info_сards next_step" id="card_worker_8" value="8">
+                                            <span class="circle" aria-hidden="true">
+                                                <span class="icon arrow"></span>
+                                            </span>
+                                            <span class="button-text">подробнее</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_2.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_2" value="2">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
+                    <h3 class="header_window" value="1">«Об этом сервисе мечтал каждый владелец <br> домашнего
+                        животного,
+                        который хотя бы раз <br> собирался с ним в путешествие»</h3>
+                    <div class="founder_card_block">
+                        <img src="https://via.placeholder.com/140" alt="">
+                        <div class="founder_card_text">
+                            <p class="founder_name">Алена Коновалова <br> основатель сервиса</p>
+                            <div class="founder_social_block">
+                                <a href="#" class="">
+                                    <img src="https://via.placeholder.com/36" alt="">
+                                </a>
+                                <a href="#" class="">
+                                    <img src="https://via.placeholder.com/36" alt="">
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_3.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_3" value="3">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_4.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_4" value="4">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_5.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_5" value="5">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_6.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_6" value="6">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_7.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_7" value="7">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item_cards_block" value="1">
-                        <img src="./style/img/mp/cards_photo/card_photo_8.png" alt="">
-                        <div class="hover_card_block">
-                            <div class="hover_card_background"></div>
-                            <div class="hover_card_text_block">
-                                <h4>Попов Дмитрий</h4>
-                                <p>Ветеринарный врач, <br> опыт 7 лет</p>
-                                <div id="next_step_btn" class="more_info_сards_btn">
-                                    <button class="more_info_сards next_step" id="card_worker_8" value="8">
-                                        <span class="circle" aria-hidden="true">
-                                            <span class="icon arrow"></span>
-                                        </span>
-                                        <span class="button-text">подробнее</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h3 class="header_window" value="1">«Об этом сервисе мечтал каждый владелец <br> домашнего животного,
-                    который хотя бы раз <br> собирался с ним в путешествие»</h3>
-                <div class="founder_card_block">
-                    <img src="https://via.placeholder.com/140" alt="">
-                    <div class="founder_card_text">
-                        <p class="founder_name">Алена Коновалова <br> основатель сервиса</p>
-                        <div class="founder_social_block">
-                            <a href="#" class="">
-                                <img src="https://via.placeholder.com/36" alt="">
-                            </a>
-                            <a href="#" class="">
-                                <img src="https://via.placeholder.com/36" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="secnd_info_window_conteiner">
-            <div class="support_conteiner">
-                <img src="./style/img/mp/phone_img.png" alt="">
-                <div class="support_text_block" value="1">
-                    <h4>онлайн поддержка. <br> круглосуточно</h4>
-                    <p>В чате или по телефону, в любое время суток, <br> в любом часовом поясе. Не переживайте о <br>
-                        том, как пройти ветконтроль. </p>
-                    <p>Закрепленный менеджер поможет с любыми <br> вопросами, которые возникнут в процессе <br> поездки.
-                    </p>
                 </div>
             </div>
-            <div class="download_hint_conteiner">
-                <div class="hint_text_block" value="1">
-                    <h4>скачайте шпаргалку, <br> пригодится</h4>
-                    <p>Мы сделали гайд, в котором собрали все, что <br> нужно знать, для комфортного путешествия <br> с
-                        домашним питомцем на любом транспорте</p>
-                    <div id="next_step_btn" class="download_hint_btn_block">
-                        <button class="download_hint_btn next_step" id="step_one" value="2">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">скачать</span>
-                        </button>
+
+            <div class="secnd_info_window_conteiner">
+                <div class="support_conteiner">
+                    <img src="./style/img/mp/phone_img.png" alt="">
+                    <div class="support_text_block" value="1">
+                        <h4>онлайн поддержка. <br> круглосуточно</h4>
+                        <p>В чате или по телефону, в любое время суток, <br> в любом часовом поясе. Не переживайте о
+                            <br>
+                            том, как пройти ветконтроль. </p>
+                        <p>Закрепленный менеджер поможет с любыми <br> вопросами, которые возникнут в процессе <br>
+                            поездки.
+                        </p>
                     </div>
                 </div>
-                <img src="./style/img/mp/book_img.png" alt="">
-                <img class="background_dog" src="./style/img/mp/big_daog.png" alt="">
-            </div>
-        </div>
-
-        <div class="history_travels_window_conteiner">
-            <div class="history_travels_block">
-                <h2 class="header_window" value="1">истории наших <br> путешественников</h2>
-                <div class="history_list_conteiner">
-                    <div class="history_block_1 history_block">
-                        <h4>Как кот Арсений летал в Чехию</h4>
-                        <p>на самолете в ручной клади</p>
-                        <p class="cursiv_head">Задача:</p>
-                        <p class="light_text">подготовить непривитого кота к поездки в Чехию</p>
-                        <p class="cursiv_head">Решение:</p>
-                        <p class="light_text">сделали вакцинацию от бешенства, поставили чип, <br> перед вылетом
-                            оформили справку</p>
-                        <p class="regular_text">«Летели с котом в Чехию. Это был мой первый опыт поездки с <br>
-                            животным. Начала искать, что для этого нужно, и поняла, что в <br> интернете невозможно
-                            найти 2 одинаковых списка необходимых <br> действий. Потом пришлось выяснять правила
-                            перелета с <br> котиком: можно ли питомца брать в ручную кладь в самолете, <br> какая должна
-                            быть переноска.</p>
-                        <p class="regular_text">На этом этапе я поняла, что самой не разобраться. Друг <br> посоветовал
-                            сервис Aniway — позвонила, мне все подробно <br> объяснили, помогли с чипированием и
-                            прививкой, посоветовали, <br> где купить переноску. Прошел месяц и прямо перед отъездом <br>
-                            мне привезли нужную справку — все было четко и быстро.»</p>
-                        <div class="autor_block">
-                            <img src="https://via.placeholder.com/50" alt="">
-                            <p class="light_cursiv">Лена, хозяйка <br> Арсения</p>
-                        </div>
-                    </div>
-                    <div class="history_block_2 history_block">
-                        <h4>Переезд пса Арсения в Польшу</h4>
-                        <p>на поезде в отдельном купе</p>
-                        <p class="cursiv_head">Задача:</p>
-                        <p class="light_text">подготовить непривитого кота к поездки в Чехию</p>
-                        <p class="cursiv_head">Решение:</p>
-                        <p class="light_text">сделали вакцинацию от бешенства, поставили чип, <br> перед вылетом
-                            оформили справку</p>
-                        <p class="regular_text">« Переезжали с собакой из Санкт-Петербурга жить в Польшу. <br> Решили
-                            ехать поездом из Москвы. До этого уже летали с Андреем <br> самолетом и были уверены, что
-                            все пройдет гладко. Однако в <br> последний момент выяснилось, что не все так просто.</p>
-                        <p class="regular_text">Справку Вет№1 надо получать и обменивать в одном городе. Либо <br>
-                            получать ее в Москве и обменивать на международную на вокзале, <br> либо получать в Питере,
-                            ехать на финский вокзал, там обменивать <br> за 5 дней до поездки и уже с международным
-                            сертификатом ехать в <br> Москву.</p>
-                        <p class="regular_text">У нас было мало времени, так что начали искать сервис справок в <br>
-                            Москве и нашли Aniway. Оставили номер, нам сразу перезвонил <br> менеджер и ответил на все
-                            вопросы. У нас уже были необходимые <br> прививки, поэтому мы просто отправили фото паспорта
-                            в Whats <br> App, и нам выдали справку. Привезли прямо на вокзал в Москве — <br> очень
-                            удобно!»</p>
-                        <div class="autor_block">
-                            <img src="https://via.placeholder.com/50" alt="">
-                            <p class="light_cursiv">Марина, хозяйка <br> Арсения</p>
-                        </div>
-                    </div>
-                    <div class="history_block_3 history_block">
-                        <h4>Отпуск Мухи в Италии</h4>
-                        <p>на самолете в ручной клади</p>
-                        <p class="cursiv_head">Задача:</p>
-                        <p class="light_text">подготовить собаку к поездке в Италию</p>
-                        <p class="cursiv_head">Решение:</p>
-                        <p class="light_text">провели вакцинацию и сделали справку</p>
-                        <p class="regular_text">«У меня мальчик ши-тцу по кличке Муха. Когда неожиданно у нас <br>
-                            появилась возможность поехать в любимую Италию за совсем <br> смешные деньги, решили ехать
-                            вместе. Это была наша первая <br> поездка с собакой, поэтому огромный пакет документов,
-                            который <br> надо собрать, стал для меня сюрпризом.</p>
-                        <p class="regular_text">Знакомые подсказали, что можно получить справку в <br> государственной
-                            ветеринарной станции. У меня плотный рабочий <br> график, я выбрала день и провела его в
-                            живой очереди! На прием так <br> и не попали. Попытка номер 2 — табличка на двери “по
-                            субботам до <br> 17.30”. На этом моменте терпение лопнуло и я стала искать другой <br>
-                            способ. </p>
-                        <p class="regular_text">Нашла сервис Aniway. Там нам сразу перезвонили и <br>
-                            проконсультировали. Выяснилось, что Муха привит от бешенства <br> российской вакциной, и с
-                            такой прививкой справку нам не дадут, <br> нужна международная. Этот вопрос быстро решили —
-                            врач приехал <br> на дом и сделал прививку. Отмечу, что приехал в удобное для меня <br>
-                            время в 22.30 (!) – приятно, что мне не отказали и даже с пониманием <br> отнеслись!</p>
-                        <p class="regular_text">Прошел месяц и можно было ехать! За день до вылета мне привезли <br>
-                            справку домой и мы с Мухой отправились в путешествие. На <br> погранконтроле справку без
-                            вопросов обменяли на сертификат, в <br> Италии тоже все прошло гладко.»</p>
-                        <div class="autor_block">
-                            <img src="https://via.placeholder.com/50" alt="">
-                            <p class="light_cursiv">Лида, хозяйка <br> Мухи</p>
-                        </div>
-                    </div>
-                    <div class="history_block_4 history_contur">
-                        <h4>войдите в историю <br> вместе с нами</h4>
-                        <p>Присылайте свои истории путешествий <br> с питомцами, как связанные с нашим <br> сервисом,
-                            так и не относящиеся к нему</p>
-                        <div id="next_step_btn" class="send_history_btn_block">
-                            <button class="send_history_btn next_step" id="step_one" value="2">
+                <div class="download_hint_conteiner">
+                    <div class="hint_text_block" value="1">
+                        <h4>скачайте шпаргалку, <br> пригодится</h4>
+                        <p>Мы сделали гайд, в котором собрали все, что <br> нужно знать, для комфортного путешествия
+                            <br> с
+                            домашним питомцем на любом транспорте</p>
+                        <div id="next_step_btn" class="download_hint_btn_block">
+                            <button class="download_hint_btn next_step" id="step_one" value="2">
                                 <span class="circle" aria-hidden="true">
                                     <span class="icon arrow"></span>
                                 </span>
-                                <span class="button-text">прислать</span>
+                                <span class="button-text">скачать</span>
                             </button>
                         </div>
                     </div>
-                </div>
-
-                <img class="background_cat" src="" alt="">
-            </div>
-        </div>
-
-        <div class="question_window_conteiner">
-            <a name="questions"></a>
-            <div class="question_conteiner">
-                <h2 class="header_window" value="1">отвечаем за качество, <br> и на ваши вопросы</h2>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Справки официальные?</p>
-                    <p class="text_question">Да, ветеринарные врачи нашего сервиса — государственно аттестованные
-                        специалисты. Они имеют право на официальное оформление ветеринарно-сопроводительных документов
-                        наравне с государственными СББЖ. Справка ВЕТ1 выдается на бланках строгой отчетности. Мы
-                        гарантируем, что справку от Aniway примут на пограничном контроле и обменяют на международный
-                        сертификат. </p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Как происходит доставка?</p>
-                    <p class="text_question">Доставляем на следующий день курьером в удобное место и время.</p>
-
-                </div>
-                <div class="item_question_block active_block_quest" value="1">
-                    <p class="header_question active_head_quest">Услуги сервиса дороже, чем в клинике?</p>
-                    <p class="text_question">Нет, цена самих ветеринарных услуг чуть ниже средней по Москве. Итоговый
-                        чек выше<br> только из-за стоимости выезда врача на дом — цена выезда равна средней цене<br>
-                        поездки на такси с питомцем в клинику и обратно.</p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Могу я сделать все самостоятельно?</p>
-                    <p class="text_question">Да, получить такие же ветеринарные услуги и оформить справку можно в
-                        обычной ветклинике. Задача сервиса — помочь хозяину разобраться во последовательности
-                        необходимых действий и сэкономить его время, сделав все сразу в одном месте. Если вы хотите сами
-                        заниматься подготовкой, может скачать наш чек-лист, где мы даем подробные инструкции и пройти
-                        все этапы самостоятельно.</p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Что нужно, чтобы получить справку онлайн?</p>
-                    <p class="text_question">Нужно фото паспорта с последней прививкой от бешенства, информацией о
-                        чипировании и дегельминтизации. Прививка должна быть сделана международной вакциной в промежутке
-                        от 1 до 10 месяцев назад. В паспорте должна быть наклейка с номером вакцины, дата, подпись и
-                        печать врача. Мы проверим эти данные в государственной системе и, если они действительны,
-                        выдадим справку. </p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Через сколько после прививки можно лететь?</p>
-                    <p class="text_question">Через 1 месяц. Первые 30 дней после вакцинации у собаки формируется
-                        иммунитет к<br> заболеванию. Через месяц он достигает максимума и можно получить справку по
-                        форме ВЕТ1.</p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Вы работаете только по Москве?</p>
-                    <p class="text_question">Да, пока сервис доступен только в Москве и области.</p>
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Можете оформить справку в день отъезда?</p>
-                    <p class="text_question">Да, если у вас есть актуальная прививка, чип и вы недавно проходили<br>
-                        дегельминтизацию. В этом случае мы подготовим справку онлайн и сможем доставить<br> ее даже
-                        прямо в аэропорт.</p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Как понять, нужна ли прививка?</p>
-                    <p class="text_question">Для перевозки собаки или кошки через границу любым видом транспорта и
-                        перевозки<br> по России на поезде или самолетом нужна справка ВЕТ1 и ветпаспорт. Чтобы
-                        получить<br> эту справку, надо чтобы собака была привита международной вакциной от бешенства<br>
-                        в течение последних 1—10 месяцев. Если в этом промежутке вы делали прививку, то<br> она вам не
-                        нужна. Если прививки не было или прошло больше 10 месяцев — прививка <br> нужна.</p>
-
-                </div>
-                <div class="item_question_block" value="1">
-                    <p class="header_question">Что делать, если я не знаю какие документы и процедуры мне нужны?</p>
-                    <p class="text_question">Позвоните нам или оставьте свой номер в форме обратной связи. Наши
-                        консультанты<br> свяжутся с вами, зададут уточняющие вопросы и подробно расскажут, что и в
-                        какой<br> последовательности делать, чтобы вывезти своего любимца в нужную страну</p>
-
+                    <img src="./style/img/mp/book_img.png" alt="">
+                    <img class="background_dog" src="./style/img/mp/big_daog.png" alt="">
                 </div>
             </div>
-        </div>
+
+            <div class="history_travels_window_conteiner">
+                <div class="history_travels_block">
+                    <h2 class="header_window" value="1">истории наших <br> путешественников</h2>
+                    <div class="history_list_conteiner">
+                        <div class="history_block_1 history_block">
+                            <h4>Как кот Арсений летал в Чехию</h4>
+                            <p>на самолете в ручной клади</p>
+                            <p class="cursiv_head">Задача:</p>
+                            <p class="light_text">подготовить непривитого кота к поездки в Чехию</p>
+                            <p class="cursiv_head">Решение:</p>
+                            <p class="light_text">сделали вакцинацию от бешенства, поставили чип, <br> перед вылетом
+                                оформили справку</p>
+                            <p class="regular_text">«Летели с котом в Чехию. Это был мой первый опыт поездки с <br>
+                                животным. Начала искать, что для этого нужно, и поняла, что в <br> интернете невозможно
+                                найти 2 одинаковых списка необходимых <br> действий. Потом пришлось выяснять правила
+                                перелета с <br> котиком: можно ли питомца брать в ручную кладь в самолете, <br> какая
+                                должна
+                                быть переноска.</p>
+                            <p class="regular_text">На этом этапе я поняла, что самой не разобраться. Друг <br>
+                                посоветовал
+                                сервис Aniway — позвонила, мне все подробно <br> объяснили, помогли с чипированием и
+                                прививкой, посоветовали, <br> где купить переноску. Прошел месяц и прямо перед отъездом
+                                <br>
+                                мне привезли нужную справку — все было четко и быстро.»</p>
+                            <div class="autor_block">
+                                <img src="https://via.placeholder.com/50" alt="">
+                                <p class="light_cursiv">Лена, хозяйка <br> Арсения</p>
+                            </div>
+                        </div>
+                        <div class="history_block_2 history_block">
+                            <h4>Переезд пса Арсения в Польшу</h4>
+                            <p>на поезде в отдельном купе</p>
+                            <p class="cursiv_head">Задача:</p>
+                            <p class="light_text">подготовить непривитого кота к поездки в Чехию</p>
+                            <p class="cursiv_head">Решение:</p>
+                            <p class="light_text">сделали вакцинацию от бешенства, поставили чип, <br> перед вылетом
+                                оформили справку</p>
+                            <p class="regular_text">« Переезжали с собакой из Санкт-Петербурга жить в Польшу. <br>
+                                Решили
+                                ехать поездом из Москвы. До этого уже летали с Андреем <br> самолетом и были уверены,
+                                что
+                                все пройдет гладко. Однако в <br> последний момент выяснилось, что не все так просто.
+                            </p>
+                            <p class="regular_text">Справку Вет№1 надо получать и обменивать в одном городе. Либо <br>
+                                получать ее в Москве и обменивать на международную на вокзале, <br> либо получать в
+                                Питере,
+                                ехать на финский вокзал, там обменивать <br> за 5 дней до поездки и уже с международным
+                                сертификатом ехать в <br> Москву.</p>
+                            <p class="regular_text">У нас было мало времени, так что начали искать сервис справок в <br>
+                                Москве и нашли Aniway. Оставили номер, нам сразу перезвонил <br> менеджер и ответил на
+                                все
+                                вопросы. У нас уже были необходимые <br> прививки, поэтому мы просто отправили фото
+                                паспорта
+                                в Whats <br> App, и нам выдали справку. Привезли прямо на вокзал в Москве — <br> очень
+                                удобно!»</p>
+                            <div class="autor_block">
+                                <img src="https://via.placeholder.com/50" alt="">
+                                <p class="light_cursiv">Марина, хозяйка <br> Арсения</p>
+                            </div>
+                        </div>
+                        <div class="history_block_3 history_block">
+                            <h4>Отпуск Мухи в Италии</h4>
+                            <p>на самолете в ручной клади</p>
+                            <p class="cursiv_head">Задача:</p>
+                            <p class="light_text">подготовить собаку к поездке в Италию</p>
+                            <p class="cursiv_head">Решение:</p>
+                            <p class="light_text">провели вакцинацию и сделали справку</p>
+                            <p class="regular_text">«У меня мальчик ши-тцу по кличке Муха. Когда неожиданно у нас <br>
+                                появилась возможность поехать в любимую Италию за совсем <br> смешные деньги, решили
+                                ехать
+                                вместе. Это была наша первая <br> поездка с собакой, поэтому огромный пакет документов,
+                                который <br> надо собрать, стал для меня сюрпризом.</p>
+                            <p class="regular_text">Знакомые подсказали, что можно получить справку в <br>
+                                государственной
+                                ветеринарной станции. У меня плотный рабочий <br> график, я выбрала день и провела его в
+                                живой очереди! На прием так <br> и не попали. Попытка номер 2 — табличка на двери “по
+                                субботам до <br> 17.30”. На этом моменте терпение лопнуло и я стала искать другой <br>
+                                способ. </p>
+                            <p class="regular_text">Нашла сервис Aniway. Там нам сразу перезвонили и <br>
+                                проконсультировали. Выяснилось, что Муха привит от бешенства <br> российской вакциной, и
+                                с
+                                такой прививкой справку нам не дадут, <br> нужна международная. Этот вопрос быстро
+                                решили —
+                                врач приехал <br> на дом и сделал прививку. Отмечу, что приехал в удобное для меня <br>
+                                время в 22.30 (!) – приятно, что мне не отказали и даже с пониманием <br> отнеслись!</p>
+                            <p class="regular_text">Прошел месяц и можно было ехать! За день до вылета мне привезли <br>
+                                справку домой и мы с Мухой отправились в путешествие. На <br> погранконтроле справку без
+                                вопросов обменяли на сертификат, в <br> Италии тоже все прошло гладко.»</p>
+                            <div class="autor_block">
+                                <img src="https://via.placeholder.com/50" alt="">
+                                <p class="light_cursiv">Лида, хозяйка <br> Мухи</p>
+                            </div>
+                        </div>
+                        <div class="history_block_4 history_contur">
+                            <h4>войдите в историю <br> вместе с нами</h4>
+                            <p>Присылайте свои истории путешествий <br> с питомцами, как связанные с нашим <br>
+                                сервисом,
+                                так и не относящиеся к нему</p>
+                            <div id="next_step_btn" class="send_history_btn_block">
+                                <button class="send_history_btn next_step" id="step_one" value="2">
+                                    <span class="circle" aria-hidden="true">
+                                        <span class="icon arrow"></span>
+                                    </span>
+                                    <span class="button-text">прислать</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img class="background_cat" src="" alt="">
+                </div>
+            </div>
+
+            <div class="question_window_conteiner">
+                <a name="questions"></a>
+                <div class="question_conteiner">
+                    <h2 class="header_window" value="1">отвечаем за качество, <br> и на ваши вопросы</h2>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Справки официальные?</p>
+                        <p class="text_question">Да, ветеринарные врачи нашего сервиса — государственно аттестованные
+                            специалисты. Они имеют право на официальное оформление ветеринарно-сопроводительных
+                            документов
+                            наравне с государственными СББЖ. Справка ВЕТ1 выдается на бланках строгой отчетности. Мы
+                            гарантируем, что справку от Aniway примут на пограничном контроле и обменяют на
+                            международный
+                            сертификат. </p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Как происходит доставка?</p>
+                        <p class="text_question">Доставляем на следующий день курьером в удобное место и время.</p>
+
+                    </div>
+                    <div class="item_question_block active_block_quest" value="1">
+                        <p class="header_question active_head_quest">Услуги сервиса дороже, чем в клинике?</p>
+                        <p class="text_question">Нет, цена самих ветеринарных услуг чуть ниже средней по Москве.
+                            Итоговый
+                            чек выше<br> только из-за стоимости выезда врача на дом — цена выезда равна средней цене<br>
+                            поездки на такси с питомцем в клинику и обратно.</p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Могу я сделать все самостоятельно?</p>
+                        <p class="text_question">Да, получить такие же ветеринарные услуги и оформить справку можно в
+                            обычной ветклинике. Задача сервиса — помочь хозяину разобраться во последовательности
+                            необходимых действий и сэкономить его время, сделав все сразу в одном месте. Если вы хотите
+                            сами
+                            заниматься подготовкой, может скачать наш чек-лист, где мы даем подробные инструкции и
+                            пройти
+                            все этапы самостоятельно.</p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Что нужно, чтобы получить справку онлайн?</p>
+                        <p class="text_question">Нужно фото паспорта с последней прививкой от бешенства, информацией о
+                            чипировании и дегельминтизации. Прививка должна быть сделана международной вакциной в
+                            промежутке
+                            от 1 до 10 месяцев назад. В паспорте должна быть наклейка с номером вакцины, дата, подпись и
+                            печать врача. Мы проверим эти данные в государственной системе и, если они действительны,
+                            выдадим справку. </p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Через сколько после прививки можно лететь?</p>
+                        <p class="text_question">Через 1 месяц. Первые 30 дней после вакцинации у собаки формируется
+                            иммунитет к<br> заболеванию. Через месяц он достигает максимума и можно получить справку по
+                            форме ВЕТ1.</p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Вы работаете только по Москве?</p>
+                        <p class="text_question">Да, пока сервис доступен только в Москве и области.</p>
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Можете оформить справку в день отъезда?</p>
+                        <p class="text_question">Да, если у вас есть актуальная прививка, чип и вы недавно проходили<br>
+                            дегельминтизацию. В этом случае мы подготовим справку онлайн и сможем доставить<br> ее даже
+                            прямо в аэропорт.</p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Как понять, нужна ли прививка?</p>
+                        <p class="text_question">Для перевозки собаки или кошки через границу любым видом транспорта и
+                            перевозки<br> по России на поезде или самолетом нужна справка ВЕТ1 и ветпаспорт. Чтобы
+                            получить<br> эту справку, надо чтобы собака была привита международной вакциной от
+                            бешенства<br>
+                            в течение последних 1—10 месяцев. Если в этом промежутке вы делали прививку, то<br> она вам
+                            не
+                            нужна. Если прививки не было или прошло больше 10 месяцев — прививка <br> нужна.</p>
+
+                    </div>
+                    <div class="item_question_block" value="1">
+                        <p class="header_question">Что делать, если я не знаю какие документы и процедуры мне нужны?</p>
+                        <p class="text_question">Позвоните нам или оставьте свой номер в форме обратной связи. Наши
+                            консультанты<br> свяжутся с вами, зададут уточняющие вопросы и подробно расскажут, что и в
+                            какой<br> последовательности делать, чтобы вывезти своего любимца в нужную страну</p>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -1186,6 +1131,70 @@
         </div>
         <div class="background_card_worker"></div>
     </div>
+
+    <div class="travel_box_conteiner">
+        <div class="travel_box_mobile_conteiner">
+            <div class="header_slider_block">
+                <h1>Travel box от Aniway. Все необходимое для перелета и отдыха в одной коробке</h1>
+            </div>
+            <div class="back_btn_block close_up_tb close_tb">&larr;
+                <p>вернуться назад</p>
+            </div>
+            <div class="box_info_block">
+                <div class="img_slider">
+                    <div id="fotorama" class="fotorama" data-nav="thumbs" data-allowfullscreen="true" data-auto="false"></div>
+                </div>
+
+                <div class="text_info_block">
+                    <h4 class="name_travel_box">Travel box <span></span> <br> для кошек</h4>
+                    <h4 class="text_price">Стоимость: <span></span> руб.</h4>
+                    <div class="list_ware_one">
+                        <p class="desc_left"></p>
+                    </div>
+                    <div class="list_ware_two">
+                        <p class="desc_right"></p>
+                    </div>
+
+                    <div class="type_food_block">
+                        <h4>Вид корма</h4>
+                        <input type="checkbox" id="type_food" />
+                        <label for="type_food" class="small_switcher type_food_switcher">
+                            <div class="type_food_text">
+                                <div>сухой</div>
+                                <div>влажный</div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="count_boxes_block">
+                        <h4>Количество наборов</h4>
+                        <div class="count_elem_block">
+                            <div class="increase_count" id="increase_box_travel"></div>
+                            <span id="travel_box_counter" value="0">0</span>
+                            <div class="reduce_count" id="reduce_box_travel"></div>
+                        </div>
+                    </div>
+                    <div class="set_food_block">
+                        <p class="feed_producer">Корм для набора: Purina</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btn_nav">
+                <button class="next_step" id="tb_next_step" value="2">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">далее</span>
+                </button>
+                <div class="dwn_back_step close_tb">
+                    <span class="button_text_back">назад</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 

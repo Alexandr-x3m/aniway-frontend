@@ -755,3 +755,18 @@ input[type='text']::-moz-placeholder{ color: #EEF2F7;}
 input[type='text']:-moz-placeholder{ color: #EEF2F7;}
 input[type='text']:focus::-moz-placeholder { color: #9E9DAB;}
 input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
+
+
+
+
+.rub {
+    line-height: 3px;
+    width: 0.4em;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    position: relative;
+    left: 3px;
+    font-size: 13px !important;
+    top: -2px;
+}
