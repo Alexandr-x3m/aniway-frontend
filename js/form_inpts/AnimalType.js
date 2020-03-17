@@ -1,7 +1,7 @@
 class TypeAnimal {
     constructor() {
         this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
-        this.url = 'http://178.62.220.103/api/animaltype/?format=json'
+        this.url = 'https://aniway.ru/api/animaltype/?format=json'
         this.data = []
     }
     getTypeAnimal() {
@@ -10,7 +10,7 @@ class TypeAnimal {
         preloader.classList.remove('hide_block')
 
         let promise = new Promise((resolve, reject) => {
-            fetch(this.proxyUrl + this.url)
+            fetch(this.url)
                 .then((response) => {
                     if (response.status != 200) {
                         alert('Oops, something went wrong :(' + response.status)

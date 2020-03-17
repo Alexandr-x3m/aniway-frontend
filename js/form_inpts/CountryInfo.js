@@ -1,6 +1,5 @@
 class CountryInfo {
     constructor() {
-        this.proxyUrl = 'https://cors-anywhere.herokuapp.com/'
         this.data = [],
         this.item = [],
         this.country_inpt = document.querySelector('#country_arrival')
@@ -39,7 +38,7 @@ class CountryInfo {
     famousCoutries() {
         let promise = new Promise((resolve, reject) => {
 
-            fetch(this.proxyUrl + `https://aniway.ru/api/country/?common=true&format=json`)
+            fetch(`https://aniway.ru/api/country/?common=true&format=json`)
                 .then(
                     (response) => {
                         if (response.status !== 200) {
@@ -56,7 +55,9 @@ class CountryInfo {
                 .catch(err => console.log(err.message))
         })
         promise.then(
-            resolve => this.drawListSearch(),
+            resolve => {
+                this.drawListSearch()
+            console.log(this.data)},
             error => console.log(error.message)
         )
     }
@@ -66,7 +67,7 @@ class CountryInfo {
 
         all_items.forEach((el) => { el.remove() })
 
-        this.item.forEach((el) => {
+        this.data.forEach((el) => {
             let item = document.createElement('div')
             item.setAttribute('class', 'search_item country_search_item')
             item.setAttribute('value', `item_country_${el.id}`)

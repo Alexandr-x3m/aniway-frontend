@@ -13,7 +13,7 @@ class BreedAnimal {
             let val = document.querySelector('#type_animal_inpt').value
             val.toLowerCase()
 
-            fetch(this.proxyUrl + `https://aniway.ru/api/breed/?animal_type=${type}&search=${val}`)
+            fetch(`https://aniway.ru/api/breed/?animal_type=${type}&search=${val}`)
                 .then(
                     (response) => {
                         if (response.status !== 200) {

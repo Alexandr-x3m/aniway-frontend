@@ -28,7 +28,6 @@ class FormOrder {
         let breed_animal = document.querySelector('#type_animal_inpt').getAttribute('value')
         let country = document.querySelector('#country_arrival').getAttribute('value')
         let date_travel = document.querySelector('#date_departure').value
-        let age = document.querySelector('#age_anim_inpt').value
         let vakvina_date = document.querySelector('#vakvina_date').value
         let have_chip = document.querySelector('#have_chip').checked
         let have_vakcina = document.querySelector('#have_vakcina').checked
@@ -41,7 +40,6 @@ class FormOrder {
         this.order.breed = breed_animal
         this.order.country = country
         this.order.date_travel = date_travel
-        this.order.age = age
         this.order.chip = have_chip
         this.order.date_vaccination = vakvina_date
         this.order.have_vakcina = have_vakcina
@@ -200,7 +198,7 @@ class FormOrder {
             err_block.classList.add('hide_block')
             preloader.classList.remove('hide_block')
 
-            fetch(('https://cors-anywhere.herokuapp.com/' + 'https://aniway.ru/api/order/?format=api'), {
+            fetch(('https://aniway.ru/api/order/?format=api'), {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
@@ -319,6 +317,7 @@ const dropDownList = new DropDownList()
 window.onload = () => {
     travelBoxes.getBoxes()
     typeAnimal.getTypeAnimal()
+    countryInfo.famousCoutries()
 
 
     dropDownList.focusSelector({
@@ -586,11 +585,13 @@ window.onload = () => {
 
     country_inpt.oninput = () => {
         countryInfo.clearValid()
+        debugger
         if (country_inpt.value.length >= 3) {
             countryInfo.searching(country_inpt)
         } else if (country_inpt.value.length < 3 && country_inpt.value.length > 0) {
             countryInfo.clearValid()
         } else if (country_inpt.value.length == 0) {
+            debugger
             country_inpt.classList.remove('full_list_input')
             countryInfo.famousCoutries()
         }
@@ -599,6 +600,7 @@ window.onload = () => {
         country_list.style.display = 'grid'
         wrapper_country.style.display = "block"
         if (country_inpt.value.length == 0) return countryInfo.famousCoutries()
+        
     }
     wrapper_country.onclick = () => {
         wrapper_country.style.display = "none"
@@ -1060,9 +1062,9 @@ window.onload = () => {
         if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
             arrVal.pop()
         } 
-        if (val*1 > 50) {
-            arrVal[0] = '5'
-            arrVal[1] = '0'
+        if (val*1 > 19) {
+            arrVal[0] = '1'
+            arrVal[1] = '9'
         }
         
 
@@ -1083,7 +1085,6 @@ window.onload = () => {
             text.style.left = '8px'
             label_age.classList.add('active_text')
         } else if (val.length == 0 && rigth_age.value == 0) {
-            debugger
             left_age.value = ''
             text.innerText = ''
             document.querySelector('.month_text_input').innerText = ''
@@ -1188,7 +1189,7 @@ window.onload = () => {
             rigth_age.value = el
             text.innerText = 'месяц'
             validIcon.style.display = 'block'
-            document.querySelevtor('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
             document.querySelector('#inv_text_age_anim').style.display = 'none'
             document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }

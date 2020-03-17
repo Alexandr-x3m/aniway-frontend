@@ -10,7 +10,7 @@ class TravelBoxes {
         if (box_conteiner != 0) return
 
         let promise = new Promise((resolve, reject) => {
-            fetch(this.proxyUrl + this.url)
+            fetch(this.url)
                 .then((response) => {
                     if (response.status != 200) {
                         alert('Oops, something went wrong :(' + response.status)

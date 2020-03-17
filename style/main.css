@@ -1,42 +1,42 @@
 @font-face {
     font-family: TTWellingtons-Regular;
-    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot');
+    src: url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot');
     src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Regular.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Regular.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Regular.ttf') format('truetype');
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff2/TTWellingtons-Regular.woff2') format('woff2'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff/TTWellingtons-Regular.woff') format('woff'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/ttf/TTWellingtons-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: TTWellingtons-Medium;
-    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot');
+    src: url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot');
     src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Medium.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Medium.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Medium.ttf') format('truetype');
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff2/TTWellingtons-Medium.woff2') format('woff2'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff/TTWellingtons-Medium.woff') format('woff'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/ttf/TTWellingtons-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: TTWellingtons-DemiBold;
-    src: url('TTWellingtons-DemiBold.eot');
+    src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot');
     src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-DemiBold.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-DemiBold.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-DemiBold.ttf') format('truetype');
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot') format('embedded-opentype'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff2/TTWellingtons-DemiBold.woff2') format('woff2'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/woff/TTWellingtons-DemiBold.woff') format('woff'),
+        url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/ttf/TTWellingtons-DemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: TTWellingtons-ExtraLight;
-    src: url('TTWellingtons-ExtraLight.eot');
+    src: url('/www/sila.team/aniway-form/style/fonts/TT_WELLIGTONES/eot/TTWellingtons-ExtraLight.eot');
     src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
         url('TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
         url('TTWellingtons-ExtraLight.woff2') format('woff2'),
