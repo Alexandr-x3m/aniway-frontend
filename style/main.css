@@ -575,15 +575,15 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     text-overflow: ellipsis;
 }
 .search_item p {
-    width: 85%;
-    font-family: TTWellingtons-Medium;
-    font-size: 16px;
-    line-height: 48px;
+    width: 85% !important;
+    font-family: TTWellingtons-Medium !important;
+    font-size: 16px !important; 
+    line-height: 48px !important;
 
-    overflow: hidden;
-    white-space: nowrap;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    -o-text-overflow: ellipsis !important;
+    text-overflow: ellipsis !important;
 }
 .search_item {
     cursor: pointer;
@@ -670,7 +670,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 #month_age_anim_inpt,
 .input_width__setter img,
 .input_width__setter label{
-    z-index: 11;
+    z-index: 9;
 }
 #year_age_anim_inpt,
 #month_age_anim_inpt{

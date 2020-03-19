@@ -418,21 +418,21 @@ window.onload = () => {
                 if (curYear > year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
                 } else if (curMonth > month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
                     return
                 } else if (curDay > day && curMonth >= month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
                     return
                 } else {
                     input.classList.add('valid_input')
                     input.classList.remove('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
                 }
             }
             val.forEach(el => {

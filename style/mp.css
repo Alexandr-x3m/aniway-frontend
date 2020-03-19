@@ -90,7 +90,7 @@ p {
 
 .fast_form_block {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 12px 1fr;
+    grid-template-columns: repeat(4, 217.5px) 14px 268px;
     width: 100%;
     height: 84px;
 }
@@ -115,6 +115,7 @@ p {
 
 .select_window {
     top: 0px;
+    width: 217.5px;
     height: 84px !important;
     border-radius: 0;
     border-top-left-radius: 8px  !important;
@@ -141,7 +142,9 @@ p {
 .active_select{
     width: 100%;
     border-bottom-left-radius: 0 !important;
-    border: none;
+    border: 1px solid #4B9FDF;
+    width: 215.5px;
+    height: 82px !important;
 }
 .select_text{
     top: 14px;
@@ -156,26 +159,28 @@ p {
 ---------------------------------------*/
 
 input[type="text"], input[type="email"], input[type="number"] {
-    width: 100%;
+    width: 143px;
     height: 26px;
-    font-size: 20px;
-    padding: 34px 24px 24px 25px !important;
+    font-size: 18px;
+    padding: 34px 48.5px 24px 25px;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     border-radius: 0;
-    border-left: 1px solid #C9C9C9;
+    border-right: 1px solid #C9C9C9;
     font-family: TTWellingtons-Medium;
 }
 
 input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+    width: 168px;
     height: 26px;
     background-color: #fff;
     border: 1px solid #4B9FDF;
-    padding: 33px 24px 23px 24px !important;
+    padding: 33px 23.5px 23px 24px !important;
 }
 
 .label_text {
     top: 32px;
+    left: -10px;
     font-size: 18px;
     font-family: TTWellingtons-Medium;
 }
@@ -196,11 +201,13 @@ input[type="text"]:focus~.label_text {
 }
 
 .invalid_info_text {
-    width: 115% !important;
+    width: 200px !important;
     font-size: 12px;
 }
 .invalid_list_input{
+    width: 168px !important;
     border: none;
+    padding: 33px 24px 23px 24px !important;
 }
 .list_saerch_conteiner{
     top: 84px;
@@ -210,8 +217,13 @@ input[type="text"]:focus~.label_text {
 .search_item{
     background: #fff;
 }
+.search_item p{
+    margin: 0;
+    color: #000;
+}
+
 .search_item:hover{
-    background: #C9C9C9;
+    background: #E5E9EE;
 }
 .valid_list_input~.label_text {
     top: 12px;

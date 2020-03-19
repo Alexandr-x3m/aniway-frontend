@@ -71,7 +71,6 @@ class BreedAnimal {
         )
     }
     drawList() {
-        debugger
         let conteiner = document.querySelector('#breed_list')
         let all_items = document.querySelectorAll('.breed_search_item')
         let type_animal = document.querySelector('#type_animal_inpt')
