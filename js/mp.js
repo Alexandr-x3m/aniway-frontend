@@ -418,21 +418,21 @@ window.onload = () => {
                 if (curYear > year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
                 } else if (curMonth > month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
                     return
                 } else if (curDay > day && curMonth >= month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
                     return
                 } else {
                     input.classList.add('valid_input')
                     input.classList.remove('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Телепузики ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
                 }
             }
             val.forEach(el => {
@@ -448,23 +448,54 @@ window.onload = () => {
     $('#your_telephone').mask('+7(999)999-99-99')
 
 
+
     let openForm = document.querySelector('#open_form')
     openForm.onclick = () => {
-        console.log('was')
         let type = document.querySelector('#view_animal_inpt').getAttribute('value')
         let type_text = document.querySelector('#type_breed_text').textContent
         let breed = document.querySelector('#type_animal_inpt').value
         let country = document.querySelector('#country_arrival').value
         let date = document.querySelector('#date_departure').value
+        
+        console.log(type)
+        if (type.length == 0) {
+            document.querySelector('#view_animal_inpt').classList.add('invalid_select')
+            document.querySelector('#animal_type_inv_text').style.display = 'block'
+            
+        }
 
-        localStorage.setItem('animal_type', type)
-        localStorage.setItem('type_text', type_text)
-        localStorage.setItem('breed', breed)
-        localStorage.setItem('country', country)
-        localStorage.setItem('date', date)
+        if (breed.length == 0) {
+            breedAnimal.invalidInpt()
+        }
 
-        window.open('./form_aniway.html')
+        if (country.length == 0) {
+            countryInfo.invalidInpt()
+        }
+
+        if (date.length == 0) {
+            document.querySelector('#date_departure').classList.add('invalid_input')
+        }
+
+
+        if (type.length != 0 &&
+            breed.length != 0 &&
+            country.length != 0 &&
+            date.length != 0) {
+                localStorage.setItem('animal_type', type)
+                localStorage.setItem('type_text', type_text)
+                localStorage.setItem('breed', breed)
+                localStorage.setItem('country', country)
+                localStorage.setItem('date', date)
+        
+                window.open('./form_aniway.html')
+        } else {
+            return
+        }
+
+        
     }
+
+    
 
     window.onunload = () => {
         localStorage.clear()
