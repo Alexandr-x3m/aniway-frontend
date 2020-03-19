@@ -104,8 +104,9 @@ p {
     border-radius: 8px;
 }
 
-.type_pet_block, .breed_pet_block, .country_travel_block, .date_travel_block {
+.select_type_conteiner, .breed_pet_block, .country_travel_block, .date_travel_block {
     position: relative;
+    height: 84px;
 }
 
 /*---------------------------------------
@@ -113,12 +114,17 @@ p {
 ---------------------------------------*/
 
 .select_window {
+    top: 0px;
     height: 84px !important;
+    border-radius: 0;
+    border-top-left-radius: 8px  !important;
+    border-bottom-left-radius: 8px !important;
+    background: #fff;
 }
 
 .arrow_select {
-    top: 38px !important;
-    left: 15px !important;
+    top: 30px !important;
+    right: 15px !important;
 }
 
 .select_main_text {
@@ -132,6 +138,18 @@ p {
     top: 10px !important;
     font-size: 14px !important;
 }
+.active_select{
+    width: 100%;
+    border-bottom-left-radius: 0 !important;
+    border: none;
+}
+.select_text{
+    top: 14px;
+    font-size: 20px !important;
+    color: #000 !important;
+    left: 0 !important;
+    text-align: center;
+}
 
 /*---------------------------------------
         Стили для inputов
@@ -142,6 +160,8 @@ input[type="text"], input[type="email"], input[type="number"] {
     height: 26px;
     font-size: 20px;
     padding: 34px 24px 24px 25px !important;
+    background-color: #fff;
+    text-align: center;
     border-radius: 0;
     border-left: 1px solid #C9C9C9;
     font-family: TTWellingtons-Medium;
@@ -172,11 +192,30 @@ input[type="text"]:focus~.label_text {
 
 .valid_info_icon {
     top: 40px !important;
-    left: 226px !important;
+    right: -8px !important;
 }
 
 .invalid_info_text {
-    width: 100% !important;
+    width: 115% !important;
+    font-size: 12px;
+}
+.invalid_list_input{
+    border: none;
+}
+.list_saerch_conteiner{
+    top: 84px;
+    width: 100%;
+    border: none;
+}
+.search_item{
+    background: #fff;
+}
+.search_item:hover{
+    background: #C9C9C9;
+}
+.valid_list_input~.label_text {
+    top: 12px;
+    font-size: 14px;
 }
 
 /*---------------------------------------
@@ -488,7 +527,7 @@ input[type="text"]:focus~.label_text {
     left: 50%;
     margin-left: -395px;
     display: grid;
-    grid-template-columns: 210px 220px 240px;
+    grid-template-columns: 187px 187px 240px;
     grid-column-gap: 50px;
     margin-bottom: 48px;
 }
@@ -496,22 +535,41 @@ input[type="text"]:focus~.label_text {
 .nav_el_tb {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 84px;
+    height: 37px;
+    border-bottom: 1px solid #CBAC89;
+
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+}
+.nav_el_tb:hover{
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+}
+.nav_tavel_box_img{
+    height: 37px;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.nav_el_tb img {
-    height: 70px;
+.dog_tb_block .nav_tavel_box_img {
+    background-image: url(./img/mp/nav_tb/focus_dog.svg);
+}
+.cat_tb_block .nav_tavel_box_img {
+    background-image: url(./img/mp/nav_tb/cat.svg);
+}
+.rabbit_tb_block .nav_tavel_box_img {
+    background-image: url(./img/mp/nav_tb/rabbit.svg);
 }
 
 .nav_el_tb h4 {
     height: 24px;
-    text-align: center;
-}
-
-.nav_el_tb h4:hover {
-    cursor: pointer;
-    border-bottom: 3px solid #306A4E;
-    color: #545454;
+    text-align: left;
+    margin: 0;
+    line-height: 43px;
+    font-size: 14px;
+    font-family: TTWellingtons-Medium;
 }
 
 .rabbit_tb_block {
@@ -524,13 +582,16 @@ input[type="text"]:focus~.label_text {
 }
 
 .active_nav_el {
-    border-bottom: 3px solid #306A4E;
+    border-bottom: 1px solid #000;
+}
+.active_nav_el h4{
+    font-family: TTWellingtons-Bold;
 }
 
 .list_travel_box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 35px;
+    grid-column-gap: 14px;
 }
 
 .list_travel_box_cat {
@@ -551,14 +612,22 @@ input[type="text"]:focus~.label_text {
 -----------------------------------*/
 .item_travel_box {
     position: relative;
+    top: 0;
     opacity: 0;
     padding: -1px;
     border: 1px solid #888888;
     border-radius: 8px;
+    box-shadow: none;
+    
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
 }
 /* При наведении на item box */
-.item_travel_box{
+.item_travel_box:hover{
     cursor: pointer;
+    top: -10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
 .item_travel_box:hover .travel_box__img_back{
     cursor: pointer;
@@ -588,7 +657,7 @@ input[type="text"]:focus~.label_text {
     color: #000 !important;
 }
 .item_travel_box:hover .more_info_tb{
-    border: 1px solid #000 !important;
+    border: 1px solid #EEEBEB !important;
 }
 .item_travel_box:hover .more_info_tb .circle .icon.arrow::before{
     border-top: 2px solid #000 !important;
@@ -605,10 +674,6 @@ input[type="text"]:focus~.label_text {
     height: 240px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-
-    -webkit-transition-duration: 0.3s;
-    -moz-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
 }
 .nature_tb_back {
     background: #366D50;
@@ -1516,7 +1581,7 @@ input[type="text"]:focus~.label_text {
 .btn_close_card_worker {
     position: absolute;
     top: 26px;
-    left: 1264px;
+    right: 26px;
     width: 48px;
     height: 48px;
     border: 1px solid #C9C9C9;
@@ -1570,4 +1635,357 @@ input[type="text"]:focus~.label_text {
 
 .btn_close_card_worker:hover .close_card::before {
     border-top: 1px solid #828282;
+}
+
+
+/*-------------------------------
+
+
+        Тревел бокс окно
+
+
+------------------------------*/
+.travel_box_back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+}
+.travel_box_conteiner{
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    width: 950px;
+    margin-left: -542px;
+    z-index: 12;
+}
+.travel_box_conteiner h4{
+    margin: 0;
+}
+.travel_box_conteiner .header_slider_block {
+    margin-bottom: 18px !important;
+}
+.travel_box_mobile_conteiner{
+    position: relative;
+    width: 100%;
+    padding: 74px 80px 0 80px;
+    border-radius: 20px;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+.travel_box_mobile_conteiner,
+.contacts_block,
+.btn_close_card_worker{
+    z-index: 11;
+}
+.close_up_tb{
+    display: grid;
+    left: 0 !important;
+    top: -16px !important;
+}
+.slider_box_img_conteiner {
+    width: 380px;
+    height: 400px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.slider_box_img_block {
+    display: grid;
+    grid-auto-flow: column;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    transition-property: left;
+    transition-duration: 0.2s;
+}
+
+.slider_box_img_block:hover {
+    cursor: pointer;
+    transform: scale(10, 10);
+}
+
+.slider_box_big_img {
+    width: 400px;
+    height: 400px;
+}
+
+.btn_slider_conteiner {
+    display: grid;
+    grid-template-columns: 64px 1fr 64px;
+    position: absolute;
+    width: 380px;
+    height: 400px;
+    z-index: 999;
+}
+
+.btn_arrow_slide {
+    width: 64px;
+    height: 400px;
+}
+
+.btn_slide_left {
+    transform: rotate(180deg);
+}
+
+.btn_slide_right {
+    grid-column: 3;
+}
+
+.btn_arrow_slide img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    z-index: 999;
+}
+
+.btn_slide_left:hover {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.24693627450980393) 0%, rgba(255, 255, 255, 0) 100%);
+    cursor: pointer;
+}
+
+.btn_slide_right:hover {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.24693627450980393) 0%, rgba(255, 255, 255, 0) 100%);
+    cursor: pointer;
+}
+
+.slider_box_nav {
+    width: 380px;
+    height: 80px;
+}
+.slider_block_nav{
+    position: relative;
+    left: 0px;
+    display: grid;
+    transition-property: left;
+    transition-delay: 0.2s;
+}
+.no_selected_img{
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 80px;
+    -moz-opacity: 0.8;
+    opacity: 0.6;
+}
+
+.slider_box_nav img {
+    margin-right: 12px;
+    transition-duration: 0.6s;
+    cursor: pointer;
+    background: black;
+}
+
+.slider_box_small_img {
+    width: 78px;
+    height: 80px;
+}
+
+.slider_box_small_img:hover {
+    cursor: pointer;
+    -moz-opacity: 0.8;
+    opacity: 0.9;
+}
+
+.box_info_block {
+    display: grid;
+    grid-template-columns: 380px 510px;
+    grid-column-gap: 48px;
+    margin-bottom: 48px;
+}
+
+.text_info_block {
+    display: grid;
+    grid-template-columns: 260px 260px;
+    grid-column-gap: 12px;
+    grid-row-gap: 24px;
+}
+.text_info_block{
+    font-size: 16px;
+}
+.text_info_block span {
+    font-family: TTWellingtons-Regular;
+}
+
+.name_travel_box {
+    grid-column: 1/3;
+    font-size: 24px !important;
+    margin: 0;
+}
+.name_travel_box span{
+    font-family: TTWellingtons-DemiBold;
+    font-size: 24px !important;
+}
+.text_info_block .hor_line{
+    grid-column: 1/3;
+    margin: 0;
+}
+.text_info_block h4{
+    font-size: 16px;
+}
+.text_price{
+    grid-column: 1/3;
+    grid-row: 2;
+}
+.text_price span{
+    font-family: 'Open Sans', sans-serif;
+}
+.text_info_block p {
+    margin: 0px;
+    font-family: TTWellingtons-Regular;
+    font-size: 14px;
+}
+
+.list_ware_one {
+    grid-column: 1;
+}
+
+.list_ware_two {
+    grid-column: 2;
+}
+
+.type_food_block h4{
+    margin-bottom: 12px;
+}
+
+.count_boxes_block p {
+    margin-bottom: 26px;
+    font-size: 20px;
+}
+
+.count_elem_block {
+    display: grid;
+    grid-template-columns: 24px 60px 24px;
+    width: 108px;
+    height: 24px;
+} 
+.count_boxes_block h4{
+    margin-bottom: 21px;
+}
+
+.count_elem_block span {
+    text-align: center;
+    line-height: 24px;
+}
+
+.reduce_count {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #545454;
+    background-image: url(./img/noun_Plus_2227060.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+.increase_count {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #545454;
+    background-image: url(./img/noun_minus_2227060.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+#travel_box_counter {
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.reduce_count:hover {
+    -moz-opacity: 0.8;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.increase_count:hover {
+    -moz-opacity: 0.8;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#hide_info_box {
+    width: 250px !important;
+}
+
+#step_two_from_box {
+    width: 250px !important;
+}
+.footer_conteiner{
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    width: 856px;
+    height: 80px;
+    margin: auto;
+    left: 0;
+}
+.footer_conteiner span{
+    font-size: 12px;
+    color: #C1AD96;
+}
+.footer_conteiner a{
+    color: #C1AD96;
+    text-decoration: underline;
+}
+.footer_conteiner a:hover{
+    cursor: pointer;
+}
+.footer_conteiner span:nth-child(2){
+    grid-column: 3;
+    text-align: end;
+}
+.travel_box_conteiner .btn_nav{
+    left: 50% !important;
+    margin-left: -140px !important;
+}
+
+/*-----------------------------------------
+    Кнопка закрытия карточки работника
+-----------------------------------------*/
+.contacts_block {
+    display: none;
+    grid-template-columns: 280px 280px 280px;
+    grid-column-gap: 22px;
+    grid-row-gap: 30px;
+    margin-bottom: 32px;
+    
+    position: relative;
+    width: 100%;
+    padding: 74px 80px 0 80px;
+    border-radius: 20px;
+    box-sizing: content-box;
+    background-color: #fff;
+}
+.type_link_block{
+    position: relative;
+    height: 64px;
+}
+.send_appl {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+}
+.type_link_conteiner{
+    position: relative;
+}
+#send_application{
+    position: relative;
+    top: -5px;
+}
+#your_telephone,
+#age_anim_inpt,
+#date_departure,
+#vakvina_date{
+    font-family: 'Open Sans', sans-serif;
 }

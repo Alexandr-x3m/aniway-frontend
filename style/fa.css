@@ -292,30 +292,6 @@ span {
     margin: 0;
 }
 
-.back_btn_block {
-    display: none;
-    grid-template-columns: 20px 110px;
-    grid-column-gap: 5px;
-    position: relative;
-    width: 135px;
-    height: 32px;
-    margin-bottom: 24px;
-    line-height: 32px;
-    color: #A3A3A3;
-}
-.back_btn_block p{
-    color: #A3A3A3;
-    text-decoration: underline;
-}
-.back_btn_block:hover{
-    cursor: pointer;
-    color: #000;
-}
-.back_btn_block:hover p{
-    cursor: pointer;
-    color: #000;
-}
-
 /*-------------------------------
 
 
@@ -552,87 +528,7 @@ span {
 }
 
 
-/*-------------------------------
 
-
-    Переключатель малекнй
-
-
-------------------------------*/
-
-.small_switcher {
-    display: block;
-    position: relative;
-    width: 180px;
-    height: 42px;
-    text-align: center;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 1px solid #EEF2F7;
-    color: #000;
-    font-family: TTWellingtons-Bold;
-    font-size: 14px;
-}
-
-.type_food_switcher:after {
-    font-family: TTWellingtons-Bold;
-    font-size: 14px;
-    color: #000;
-    content: "сухой";
-    width: 90px;
-    height: 42px;
-    line-height: 42px;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    display: block;
-    background: #EEF2F7;
-    -webkit-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -moz-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -ms-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    -o-transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    transition: all 200ms cubic-bezier(0.645, 0.045, 0.355, 1);
-    cursor: pointer;
-    transition-duration: 0.2s;
-}
-
-.type_food_switcher:hover:after {
-    background-color: #F68026;
-    color: #fff;
-}
-
-:checked+.type_food_switcher {
-    left: 0px;
-}
-
-:checked+.type_food_switcher:after {
-    content: "влажный";
-    left: 90px;
-    border: none;
-    border-radius: 0px;
-    border-bottom-right-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-:checked+.type_food_switcher:hover:after {
-    background-color: #F68026;
-    color: #fff;
-}
-
-.type_food_text {
-    display: grid;
-    grid-template-columns: 90px 90px !important;
-    width: 180px !important;
-    height: 42px !important;
-}
-
-.type_food_text div {
-    width: 90px !important;
-    line-height: 44px;
-    color: #545454;
-}
 
 /*-------------------------------
 
@@ -963,6 +859,8 @@ span {
 .hint_text{
     font-size: 10px !important;
 }
+
+
 .contacts_block {
     display: grid;
     grid-template-columns: 280px 280px 280px;

@@ -1,309 +1,3 @@
-class FormOrder {
-    constructor() {
-        this.order = {
-            "id": 1,
-            "animal_type": 1,
-            "breed": 2,
-            "country": 1,
-            "date_travel": "01.01.2020",
-            "age": 1,
-            "chip": false,
-            "have_vakcina": 'true',
-            "date_vaccination": "01.01.2020",
-            "travelbox": [{
-                id: 1,
-                count: '2',
-                feed_type: 'dry'
-            }],
-            "product": [1, 2, 3, 9, 11],
-            "contact_name": "Андрей",
-            "contact_email": "pipetc@gmail.com",
-            "contact_phone": "89103621389",
-            "type_link": ''
-        }
-        this.url = 'https://aniway.ru/api/order/?format=api'
-    }
-    takeAllInputs() {
-        let type_animal = document.querySelector('#view_animal_inpt').getAttribute('value')
-        let breed_animal = document.querySelector('#type_animal_inpt').getAttribute('value')
-        let country = document.querySelector('#country_arrival').getAttribute('value')
-        let date_travel = document.querySelector('#date_departure').value
-        let vakvina_date = document.querySelector('#vakvina_date').value
-        let have_chip = document.querySelector('#have_chip').checked
-        let have_vakcina = document.querySelector('#have_vakcina').checked
-        let whats_name = document.querySelector('#whats_name').value
-        let your_telephone = document.querySelector('#your_telephone').value
-        let your_email = document.querySelector('#your_email').value
-        let view_link_inpt = document.querySelector('#view_link_inpt').getAttribute('value')
-
-        this.order.animal_type = type_animal
-        this.order.breed = breed_animal
-        this.order.country = country
-        this.order.date_travel = date_travel
-        this.order.chip = have_chip
-        this.order.date_vaccination = vakvina_date
-        this.order.have_vakcina = have_vakcina
-
-        this.order.contact_name = whats_name
-        this.order.contact_email = your_email
-        this.order.contact_phone = your_telephone
-        this.order.type_link = view_link_inpt
-
-        let products = document.querySelectorAll('.products_check')
-
-        products.forEach(el => {
-            if (el.checked == true) {
-                let val = el.value
-                this.order.product.push(val)
-            }
-        })
-
-        let travel_boxes = document.querySelectorAll('.box_purchase_item')
-
-        travel_boxes.forEach(el => {
-            let val = el.getAttribute('value')
-            let count = document.querySelector(`count_block_${val}`)
-            this.order.travelbox.push({ id: val, count: count })
-        })
-    }
-    validStepOne() {
-        let type_animal = document.querySelector('#view_animal_inpt').getAttribute('value')
-        let breedValid = document.querySelector('#valid_icon_breed').getAttribute('value')
-        let countryValid = document.querySelector('#valid_icon_country').getAttribute('value')
-
-
-        let dtTr = document.querySelector('#date_departure')
-        let vakc = document.querySelector('#vakvina_date')
-        let datetravel = document.querySelector('#date_departure').validity.valid
-        let vakcina = document.querySelector('#vakvina_date').validity.valid
-        let vakcinaCheck = document.querySelector('#have_vakcina')
-        let year_age_pet = document.querySelector('#year_age_anim_inpt')
-        let month_age_pet = document.querySelector('#month_age_anim_inpt')
-        
-
-        if (year_age_pet.value == 0 && month_age_pet.value == 0) {
-            document.querySelector('.composite_input_back').classList.add('invalid_back')
-            document.querySelector('#inv_text_age_anim').style.display = 'block'
-            document.querySelector('#inv_text_age_anim').innerText = 'Необходимо указать возраст питомца'
-            document.querySelector('.inv_icon_age_pet').style.display = 'block'
-        }
-
-        if (dtTr.value == '') {
-            datetravel = false
-            dtTr.classList.add('invalid_input')
-            document.querySelector('#inv_text_date_departure').innerText = 'Не указана дата путешествия'
-        } else { dtTr.classList.remove('invalid_input') }
-        
-        if (vakc.value == '' && !vakcinaCheck.checked) {
-            vakcina = false
-            vakc.classList.remove('valid_input')
-            vakc.classList.add('invalid_input')
-            document.querySelector('#inv_text_vakcina_field').innerText = 'Не указана дата выкцинации'
-        } else { vakc.classList.remove('invalid_input') }
-
-        if (breedValid == 0) {
-            breedAnimal.invalidInpt()
-        }
-        if (countryValid == 0) {
-            countryInfo.invalidInpt()
-        }
-        if (type_animal == 0) {
-            let select = document.querySelector('#check_animal_inpt')
-            select.setAttribute('class', 'select_input invalid_input')
-        }
-
-        if (vakcina &&
-            datetravel &&
-            type_animal != 0 &&
-            breedValid != 0 &&
-            countryValid != 0) {
-            return true
-        }
-
-
-        if (type_animal != 0) {
-
-        } else {
-            let invBreedText = document.querySelector('#animal_type_inv_text')
-            document.querySelector('#view_animal_inpt').classList.add('invalid_select')
-            invBreedText.style.display = 'block'
-            invBreedText.innerText = 'Вы не выбрали тип животного'
-        }
-
-    }
-    finallyPrice() {
-        let sumCheck = document.querySelectorAll('.finally_price_check')
-        let sum = document.querySelectorAll('.finally_price')
-        let summArr = []
-        let finalSum = 0
-
-        sumCheck.forEach(el => {
-            el.onchange = () => this.finallyPrice()
-            if (el.checked) {
-                finalSum += el.getAttribute('value') * 1
-            }
-        })
-        sum.forEach(el => {
-            summArr.push(el.getAttribute('value') * 1)
-        })
-        summArr.forEach(el => finalSum += el)
-
-        let finish_sum = document.querySelector('.finish_summ span')
-        finish_sum.innerText = `${finalSum} `
-    }
-    validLastStep() {
-        let name = document.querySelector('#whats_name')
-        let phone = document.querySelector('#your_telephone')
-        let mail = document.querySelector('#your_email')
-        let user_agreement = document.querySelector('#convetion_check')
-
-        if (name.validity.valid && name.value.length != 0) {
-            name.classList.remove('invalid_input')
-            name.classList.add('valid_input')
-        } else {
-            name.classList.add('invalid_input')
-            name.classList.remove('valid_input')
-        }
-        if (phone.validity.valid && phone.value.length != 0) {
-            phone.classList.remove('invalid_input')
-            phone.classList.add('valid_input')
-        } else {
-            phone.classList.add('invalid_input')
-            phone.classList.remove('valid_input')
-        }
-        if (mail.validity.valid && mail.value.length != 0) {
-            mail.classList.remove('invalid_input')
-            mail.classList.add('valid_input')
-        } else {
-            mail.classList.remove('valid_input')
-            mail.classList.add('invalid_input')
-        }
-        if (name.validity.valid && name.value.length != 0 &&
-            phone.validity.valid && phone.value.length != 0 &&
-            mail.validity.valid && mail.value.length != 0 &&
-            user_agreement.checked) {
-            return true
-        }
-    }
-    sendForm() {
-        let preloader = document.querySelector('#preloader_conteiner')
-        let err_block = document.querySelector('.err_conteiner')
-        let nav = document.querySelector('.nav_form_conteiner')
-        let form = document.querySelector('.form_conteiner')
-        let secces = document.querySelector('.success_send_four')
-
-        let promise = new Promise((resolve, reject) => {
-            let obj = this.order
-
-            err_block.classList.add('hide_block')
-            preloader.classList.remove('hide_block')
-
-            fetch(('https://aniway.ru/api/order/?format=api'), {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-                body: JSON.stringify(obj)
-            })
-                .then(response => {
-                    console.log(response.statusText)
-                    response.ok ? resolve() : reject()
-                })
-                .catch(err => console.log(err.message))
-
-        })
-        promise.then(
-            result => {
-                nav.classList.add('hide_block')
-                form.classList.add('hide_block')
-                preloader.classList.add('hide_block')
-                secces.classList.remove('hide_block')
-            },
-            err => {
-                preloader.classList.add('hide_block')
-                err_block.classList.remove('hide_block')
-            }
-        )
-
-
-
-
-    }
-}
-
-
-class DropDownList {
-    constructor() {
-        this.type_links = {
-            arrItems: '.type_link_item',
-            sel: '.type_link_block',
-            back: '#view_link_inpt',
-            check: '#check_link_inpt',
-            list: '.list_items_links',
-            wrap: '#wrapper_select_links',
-            text: '.type_link_text',
-            invText: '#inv_text_link'
-        }
-    }
-    focusSelector(param) {
-        let el = param
-        let arrItems = document.querySelectorAll(el.arrItems)
-        let sel = document.querySelector(el.sel)
-        let back = document.querySelector(el.back)
-        let check = document.querySelector(el.check)
-        let list = document.querySelector(el.list)
-        let wrap = document.querySelector(el.wrap)
-        let text = document.querySelector(el.text)
-        let inv_select_text = document.querySelectorAll('.inv_select_text')
-        let invTxt = document.querySelector(el.invText)
-
-        sel.onclick = () => {
-            wrap.style.display = 'block'
-            list.style.display = 'block'
-            check.checked = true
-            back.setAttribute('class', 'select_window select_list active_select')
-        }
-        wrap.onclick = () => {
-            if (text.textContent == '') check.checked = false
-            wrap.style.display = 'none'
-            list.style.display = 'none'
-            back.setAttribute('class', 'select_window select_list')
-        }
-
-        arrItems.forEach(el => {
-            el.onclick = () => {
-                wrap.style.display = 'none'
-                list.style.display = 'none'
-                if (invTxt == null) {
-                    return
-                } else {
-                    invTxt.style.display = 'block'
-                }
-                check.checked = true
-                check.value = '1'
-
-                let val = el.getAttribute('value')
-                let txt = el.textContent
-
-                back.setAttribute('value', val)
-                text.innerText = txt
-                back.setAttribute('class', 'select_window select_list')
-
-                inv_select_text.forEach(el => {
-                    el.style.display = 'none'
-                })
-            }
-        })
-    }
-}
-
-
-
-
-
-
-
-
 const formOrder = new FormOrder()
 const typeAnimal = new TypeAnimal()
 const breedAnimal = new BreedAnimal()
@@ -313,12 +7,20 @@ const products = new Product()
 const dropDownList = new DropDownList()
 
 
-
 window.onload = () => {
-    travelBoxes.getBoxes()
+    let promise = new Promise((resolve, reject) => {
+        console.log('step 1')
+        travelBoxes.getBoxes(resolve)
+    })
+
+    promise.then(
+        result => {},
+        err => alert(err.message)
+    )
+
     typeAnimal.getTypeAnimal()
     countryInfo.famousCoutries()
-
+    formOrder.loadForm()
 
     dropDownList.focusSelector({
         arrItems: '.type_link_item',
@@ -330,6 +32,8 @@ window.onload = () => {
         text: '.type_link_text',
         invText: '#inv_text_link'
     })
+
+
 
     //переход на следующий шаг
     let step_one = document.querySelector('#step_one')
@@ -355,7 +59,6 @@ window.onload = () => {
     let footer = document.querySelector('.footer_conteiner')
     let form = document.querySelector('.form_conteiner')
     let arcs = document.querySelector('.arc_conteiner')
-
 
     function showLeftRight(target, dist) {
         gsap.from(target, { duration: 0.2, x: dist, ease: "slow(0.7, 0.7, false)" })
@@ -455,7 +158,6 @@ window.onload = () => {
 
         showLeftRight(form_step_two, 500)
     }
-
     function stepTree() {
 
         //Навигация по шагам
@@ -544,10 +246,8 @@ window.onload = () => {
     btn_up_back_step_one.onclick = () => { stepOne() }
     dwn_back_step_two.onclick = () => { stepOne() }
 
-
     send_form.onclick = () => {
         if (formOrder.validLastStep()) {
-
             formOrder.takeAllInputs()
             formOrder.sendForm()
         }
@@ -576,6 +276,256 @@ window.onload = () => {
         products.addProducts()
         stepTwo()
     }
+    let inputs = document.querySelectorAll('.input_text')
+    inputs.forEach(el => {
+        el.onfocus = () => {
+            el.classList.add('focus_input')
+        }
+        el.onblur = () => {
+            if (el.value.length == 0 || el.value == '+7(___)___-__-__') {
+                el.classList.remove('focus_input')
+            } else if (el.value.length > 0 && !el.validity.valid ||
+                el.value == '+7(___)___-__-__' && !el.validity.valid) {
+                el.classList.add('invalid_input')
+                el.classList.remove('valid_input')
+                el.classList.remove('focus_input')
+            } else if (el.value.length > 0 && el.validity.valid) {
+                el.classList.add('valid_input')
+                el.classList.remove('invalid_input')
+                el.classList.remove('focus_input')
+            }
+        }
+    })
+
+    let valid_inputs = document.querySelectorAll('.text_validity')
+    valid_inputs.forEach(el => {
+        el.oninput = () => {
+            if (el.value.length > 0 && el.validity.valid) {
+                el.classList.add('valid_input')
+                el.classList.remove('invalid_input')
+                el.classList.remove('focus_input')
+            }
+        }
+    })
+
+
+    // Кнопка прикрепления документов
+    let file = document.querySelector('#file')
+    let file_block = document.querySelector('.file_block')
+
+    file.onchange = () => {
+        let count = document.querySelector('#file').files.length
+        let txt = document.querySelector('.text_file_btn')
+        if (count == 1) {
+            txt.innerText = `Вы прикрепили ${count} файл`
+        } else if (count >= 2 && count <= 4) {
+            txt.innerText = `Вы прикрепили ${count} файла`
+        } else if (count > 5) {
+            txt.innerText = `Вы прикрепили ${count} файлов`
+        }
+        txt.style.lineHeight = '26px'
+        txt.style.marginTop = '20px'
+    }
+    file_block.onmouseover = () => {
+        document.querySelector('.icon_inpt_file').setAttribute('src', './style/img/add_file_orange.svg')
+        document.querySelector('.js-fileName').style.borderLeft = '1px solid #F16331'
+    }
+    file_block.onmouseout = () => {
+        document.querySelector('.icon_inpt_file').setAttribute('src', './style/img/add_file.svg')
+        document.querySelector('.js-fileName').style.borderLeft = '1px solid #DBDBDB'
+    }
+
+    //Поле ввода возраста
+    let left_age = document.querySelector('#year_age_anim_inpt')
+    let rigth_age = document.querySelector('#month_age_anim_inpt')
+    let label_age = document.querySelector('#label_age_pet')
+    let back_age = document.querySelector('.composite_input_back')
+    
+
+    left_age.oninput = () => {
+        console.log('was')
+        let text = document.querySelector('.year_text_input')
+        let validIcon = document.querySelector('.val_icon_age_pet')
+        let invIcon = document.querySelector('.inv_icon_age_pet')
+        
+
+        let arrVal = []
+        let val = left_age.value
+        
+        for (let i=0; i < val.length; i++ ) {
+            arrVal.push(val[i])
+        }
+
+        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
+            arrVal.pop()
+        } 
+        if (val*1 > 19) {
+            arrVal[0] = '1'
+            arrVal[1] = '9'
+        }
+        
+
+        let el 
+        if (arrVal.length == 1) {
+            el = arrVal[0]
+            text.style.left = '8px'
+            label_age.classList.add('active_text')
+        } else {
+            el = arrVal[0]+arrVal[1]
+            text.style.left = '18px'
+            label_age.classList.add('active_text')
+        }
+        
+        if (val.length == 0 && rigth_age.value != 0) {
+            left_age.value = '0'
+            text.innerText = 'лет'
+            text.style.left = '8px'
+            label_age.classList.add('active_text')
+        } else if (val.length == 0 && rigth_age.value == 0) {
+            left_age.value = ''
+            text.innerText = ''
+            document.querySelector('.month_text_input').innerText = ''
+            rigth_age.value = ''
+            validIcon.style.display = 'none'
+            invIcon.style.display = 'none'
+        } 
+
+        if (el==1 || el==21 || el==31 || el==41) {
+            left_age.value = el
+            text.innerText = 'год'
+            validIcon.style.display = 'block'
+        }
+
+        if (el>=2 && el<=4 ||
+            el>=22 && el<=24 ||
+            el>=32 && el<=34 ||
+            el>=42 && el<=44) {
+                left_age.value = el
+                text.innerText = 'года'
+                validIcon.style.display = 'block'
+        }
+
+        if (el>=5 && el<=20 ||
+            el>=25 && el<=30 ||
+            el>=35 && el<=40 ||
+            el>=45 && el<=50) {
+                left_age.value = el
+                text.innerText = 'лет'
+                validIcon.style.display = 'block'
+            }
+
+    }
+
+    function focusLeftInpt() {
+        left_age.onfocus = () => {
+            left_age.classList.add('focus_left_input')
+            rigth_age.classList.add('focus_right_input')
+            label_age.classList.add('active_text')
+            back_age.classList.add('focus_back')
+        }
+    }
+    
+    focusLeftInpt()
+    document.querySelector('.year_text_input').onclick = () => {left_age.focus()}
+
+
+    function focusRightInpt() {
+        rigth_age.onfocus = () => {
+            left_age.classList.add('focus_left_input')
+            rigth_age.classList.add('focus_right_input')
+            back_age.classList.add('focus_back')
+        }
+    }
+    focusRightInpt()
+    document.querySelector('.month_text_input').onclick = () => {rigth_age.focus()}
+    rigth_age.oninput = () => {
+        let text = document.querySelector('.month_text_input')
+        let validIcon = document.querySelector('.val_icon_age_pet')
+        let invIcon = document.querySelector('.inv_icon_age_pet')
+
+        let arrVal = []
+        let val = rigth_age.value
+        
+        for (let i=0; i < val.length; i++ ) {
+            arrVal.push(val[i])
+        }
+
+        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
+            arrVal.pop()
+        } 
+        if (val*1 > 13) {
+            arrVal[0] = '1'
+            arrVal[1] = '2'
+        }
+        
+        let el 
+        if (arrVal.length == 1) {
+            el = arrVal[0]
+            text.style.left = '106px'
+            label_age.classList.add('active_text')
+        } else {
+            el = arrVal[0]+arrVal[1]
+            text.style.left = '116px'
+            label_age.classList.add('active_text')
+        }
+        
+        if (val.length == 0 && left_age.value != 0) {
+            rigth_age.value = '0'
+            text.innerText = 'месяцев'
+            text.style.left = '106px'
+        } else if (val.length == 0 && left_age.value == 0) {
+            rigth_age.value = ''
+            text.innerText = ''
+            left_age.value = ''
+            document.querySelector('.year_text_input').innerText = ''
+            validIcon.style.display = 'none'
+        }
+
+        if (el==1) {
+            rigth_age.value = el
+            text.innerText = 'месяц'
+            validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+
+        if (el>=2 && el<=4) {
+                rigth_age.value = el
+                text.innerText = 'месяца'
+                validIcon.style.display = 'block'
+                document.querySelector('.composite_input_back').classList.remove('invalid_back')
+                document.querySelector('#inv_text_age_anim').style.display = 'none'
+                document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+
+        if (el>=5 && el<=12) {
+                rigth_age.value = el
+                text.innerText = 'месяцев'
+                validIcon.style.display = 'block'
+                document.querySelector('.composite_input_back').classList.remove('invalid_back')
+                document.querySelector('#inv_text_age_anim').style.display = 'none'
+                document.querySelector('.inv_icon_age_pet').style.display = 'none'
+            }
+
+    }
+
+    left_age.onblur = () => {
+        left_age.classList.remove('focus_left_input')
+        rigth_age.classList.remove('focus_right_input')
+        back_age.classList.remove('focus_back')
+        if (left_age.value == 0 && rigth_age.value == 0) {
+            label_age.classList.remove('active_text')
+        }
+    }
+    rigth_age.onblur = () => {
+        left_age.classList.remove('focus_left_input')
+        rigth_age.classList.remove('focus_right_input')
+        back_age.classList.remove('focus_back')
+        if (left_age.value == 0 && rigth_age.value == 0) {
+            label_age.classList.remove('active_text')
+        }
+    }
 
 
     //Взаимодействие с полем страной прибытия
@@ -585,13 +535,11 @@ window.onload = () => {
 
     country_inpt.oninput = () => {
         countryInfo.clearValid()
-        debugger
         if (country_inpt.value.length >= 3) {
             countryInfo.searching(country_inpt)
         } else if (country_inpt.value.length < 3 && country_inpt.value.length > 0) {
             countryInfo.clearValid()
         } else if (country_inpt.value.length == 0) {
-            debugger
             country_inpt.classList.remove('full_list_input')
             countryInfo.famousCoutries()
         }
@@ -638,37 +586,7 @@ window.onload = () => {
 
 
 
-    let inputs = document.querySelectorAll('.input_text')
-    inputs.forEach(el => {
-        el.onfocus = () => {
-            el.classList.add('focus_input')
-        }
-        el.onblur = () => {
-            if (el.value.length == 0 || el.value == '+7(___)___-__-__') {
-                el.classList.remove('focus_input')
-            } else if (el.value.length > 0 && !el.validity.valid ||
-                el.value == '+7(___)___-__-__' && !el.validity.valid) {
-                el.classList.add('invalid_input')
-                el.classList.remove('valid_input')
-                el.classList.remove('focus_input')
-            } else if (el.value.length > 0 && el.validity.valid) {
-                el.classList.add('valid_input')
-                el.classList.remove('invalid_input')
-                el.classList.remove('focus_input')
-            }
-        }
-    })
-
-    let valid_inputs = document.querySelectorAll('.text_validity')
-    valid_inputs.forEach(el => {
-        el.oninput = () => {
-            if (el.value.length > 0 && el.validity.valid) {
-                el.classList.add('valid_input')
-                el.classList.remove('invalid_input')
-                el.classList.remove('focus_input')
-            }
-        }
-    })
+    
 
 
 
@@ -836,7 +754,6 @@ window.onload = () => {
         }
     }
     vakcinaDate()
-
 
     function departureDate() {
         let input = document.querySelector('#date_departure')
@@ -1011,228 +928,14 @@ window.onload = () => {
     }
 
 
-    // Кнопка прикрепления документов
-    let file = document.querySelector('#file')
-    let file_block = document.querySelector('.file_block')
 
-    file.onchange = () => {
-        let count = document.querySelector('#file').files.length
-        let txt = document.querySelector('.text_file_btn')
-        if (count == 1) {
-            txt.innerText = `Вы прикрепили ${count} файл`
-        } else if (count >= 2 && count <= 4) {
-            txt.innerText = `Вы прикрепили ${count} файла`
-        } else if (count > 5) {
-            txt.innerText = `Вы прикрепили ${count} файлов`
-        }
-        txt.style.lineHeight = '26px'
-        txt.style.marginTop = '20px'
-    }
-    file_block.onmouseover = () => {
-        document.querySelector('.icon_inpt_file').setAttribute('src', './style/img/add_file_orange.svg')
-        document.querySelector('.js-fileName').style.borderLeft = '1px solid #F16331'
-    }
-    file_block.onmouseout = () => {
-        document.querySelector('.icon_inpt_file').setAttribute('src', './style/img/add_file.svg')
-        document.querySelector('.js-fileName').style.borderLeft = '1px solid #DBDBDB'
+    //Изменения выбранного типа животного
+    let tA = document.querySelector('#view_animal_inpt')
+
+    tA.onchange = () => {
+        console.log('was')
     }
 
 
-
-    let left_age = document.querySelector('#year_age_anim_inpt')
-    let rigth_age = document.querySelector('#month_age_anim_inpt')
-    let label_age = document.querySelector('#label_age_pet')
-    let back_age = document.querySelector('.composite_input_back')
     
-
-    left_age.oninput = () => {
-        let text = document.querySelector('.year_text_input')
-        let validIcon = document.querySelector('.val_icon_age_pet')
-        let invIcon = document.querySelector('.inv_icon_age_pet')
-        let invText = document.querySelector('.inv_text_age_pet')
-        
-
-        let arrVal = []
-        let val = left_age.value
-        
-        for (let i=0; i < val.length; i++ ) {
-            arrVal.push(val[i])
-        }
-
-        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
-            arrVal.pop()
-        } 
-        if (val*1 > 19) {
-            arrVal[0] = '1'
-            arrVal[1] = '9'
-        }
-        
-
-        let el 
-        if (arrVal.length == 1) {
-            el = arrVal[0]
-            text.style.left = '8px'
-            label_age.classList.add('active_text')
-        } else {
-            el = arrVal[0]+arrVal[1]
-            text.style.left = '18px'
-            label_age.classList.add('active_text')
-        }
-        
-        if (val.length == 0 && rigth_age.value != 0) {
-            left_age.value = '0'
-            text.innerText = 'лет'
-            text.style.left = '8px'
-            label_age.classList.add('active_text')
-        } else if (val.length == 0 && rigth_age.value == 0) {
-            left_age.value = ''
-            text.innerText = ''
-            document.querySelector('.month_text_input').innerText = ''
-            rigth_age.value = ''
-            validIcon.style.display = 'none'
-            invIcon.style.display = 'none'
-        } 
-
-        if (el==1 || el==21 || el==31 || el==41) {
-            left_age.value = el
-            text.innerText = 'год'
-            validIcon.style.display = 'block'
-        }
-
-        if (el>=2 && el<=4 ||
-            el>=22 && el<=24 ||
-            el>=32 && el<=34 ||
-            el>=42 && el<=44) {
-                left_age.value = el
-                text.innerText = 'года'
-                validIcon.style.display = 'block'
-        }
-
-        if (el>=5 && el<=20 ||
-            el>=25 && el<=30 ||
-            el>=35 && el<=40 ||
-            el>=45 && el<=50) {
-                left_age.value = el
-                text.innerText = 'лет'
-                validIcon.style.display = 'block'
-            }
-
-    }
-
-    function focusLeftInpt() {
-        left_age.onfocus = () => {
-            left_age.classList.add('focus_left_input')
-            rigth_age.classList.add('focus_right_input')
-            label_age.classList.add('active_text')
-            back_age.classList.add('focus_back')
-        }
-    }
-    focusLeftInpt()
-    document.querySelector('.year_text_input').onclick = () => {left_age.focus()}
-
-
-    function focusRightInpt() {
-        rigth_age.onfocus = () => {
-            left_age.classList.add('focus_left_input')
-            rigth_age.classList.add('focus_right_input')
-            back_age.classList.add('focus_back')
-        }
-    }
-    focusRightInpt()
-    document.querySelector('.month_text_input').onclick = () => {rigth_age.focus()}
-    rigth_age.oninput = () => {
-        let text = document.querySelector('.month_text_input')
-        let validIcon = document.querySelector('.val_icon_age_pet')
-        let invIcon = document.querySelector('.inv_icon_age_pet')
-
-        let arrVal = []
-        let val = rigth_age.value
-        
-        for (let i=0; i < val.length; i++ ) {
-            arrVal.push(val[i])
-        }
-
-        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
-            arrVal.pop()
-        } 
-        if (val*1 > 13) {
-            arrVal[0] = '1'
-            arrVal[1] = '2'
-        }
-        
-        
-
-        let el 
-        if (arrVal.length == 1) {
-            el = arrVal[0]
-            text.style.left = '106px'
-            label_age.classList.add('active_text')
-        } else {
-            el = arrVal[0]+arrVal[1]
-            text.style.left = '116px'
-            label_age.classList.add('active_text')
-        }
-        
-        if (val.length == 0 && left_age.value != 0) {
-            rigth_age.value = '0'
-            text.innerText = 'месяцев'
-            text.style.left = '106px'
-        } else if (val.length == 0 && left_age.value == 0) {
-            rigth_age.value = ''
-            text.innerText = ''
-            left_age.value = ''
-            document.querySelector('.year_text_input').innerText = ''
-            validIcon.style.display = 'none'
-        }
-
-        if (el==1) {
-            rigth_age.value = el
-            text.innerText = 'месяц'
-            validIcon.style.display = 'block'
-            document.querySelector('.composite_input_back').classList.remove('invalid_back')
-            document.querySelector('#inv_text_age_anim').style.display = 'none'
-            document.querySelector('.inv_icon_age_pet').style.display = 'none'
-        }
-
-        if (el>=2 && el<=4) {
-                rigth_age.value = el
-                text.innerText = 'месяца'
-                validIcon.style.display = 'block'
-                document.querySelector('.composite_input_back').classList.remove('invalid_back')
-                document.querySelector('#inv_text_age_anim').style.display = 'none'
-                document.querySelector('.inv_icon_age_pet').style.display = 'none'
-        }
-
-        if (el>=5 && el<=12) {
-                rigth_age.value = el
-                text.innerText = 'месяцев'
-                validIcon.style.display = 'block'
-                document.querySelector('.composite_input_back').classList.remove('invalid_back')
-                document.querySelector('#inv_text_age_anim').style.display = 'none'
-                document.querySelector('.inv_icon_age_pet').style.display = 'none'
-            }
-
-    }
-
-    left_age.onblur = () => {
-        left_age.classList.remove('focus_left_input')
-        rigth_age.classList.remove('focus_right_input')
-        back_age.classList.remove('focus_back')
-        if (left_age.value == 0 && rigth_age.value == 0) {
-            label_age.classList.remove('active_text')
-        }
-    }
-    rigth_age.onblur = () => {
-        left_age.classList.remove('focus_left_input')
-        rigth_age.classList.remove('focus_right_input')
-        back_age.classList.remove('focus_back')
-        if (left_age.value == 0 && rigth_age.value == 0) {
-            label_age.classList.remove('active_text')
-        }
-    }
-    
-
-
-
-
 }

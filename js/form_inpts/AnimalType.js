@@ -26,6 +26,7 @@ class TypeAnimal {
         })
         promise.then(
             result => {
+                console.log('was')
                 this.drawTypesPets()
                 preloader.classList.add('hide_block')
             },

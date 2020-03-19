@@ -11,16 +11,20 @@
 
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/mp.css">
+    <link rel="stylesheet" href="./style/slider.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.2/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./js/inpt_mask/jquery.maskedinput.min.js"></script>
 
+    <script src="./js/form_inpts/DropDown.js"></script>
     <script src="./js/form_inpts/CountryInfo.js"></script>
     <script src="./js/form_inpts/BreedAnimal.js"></script>
-    <script src="./js/form_inpts/AnimalType.js"></script>
     <script src="./js/form_inpts/Product.js"></script>
     <script src="./js/form_inpts/TravelBoxes.js"></script>
+    <script src="./js/form_inpts/AnimalType.js"></script>
 
-    <script src="./js/main.js"></script>
+    <script src="./js/slider.js"></script>
     <script src="./js/mp.js"></script>
 
     <title>Aniway — первый в России онлайн-сервис подготовки животных к путешествию</title>
@@ -65,23 +69,20 @@
                 <div class="mini_form_conteiner">
                     <p>Узнайте что вам понадобится для путешествия</p>
                     <div class="fast_form_block">
-                        <div class="type_pet_block">
-                            <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
-                                <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
-                                <div class="select_window type_pet_list" id="view_animal_inpt" value="0"></div>
-                                <div class="select_main_text">Вид животного</div>
-                                <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
-                                <img src="./style/img/select_arrow.svg" class="arrow_select" alt="">
-                                <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Вы не выбрали
-                                    тип
-                                    животного</p>
-                            </label>
-                            <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets"
-                                value="0">
+                        <div class="select_type_conteiner">
+                            <div class="type_pet_block">
+                                <label class="select_label" for="check_animal_inpt" id="lbl_type_pets">
+                                    <input type="checkbox" class="select_input" id="check_animal_inpt" value="">
+                                    <div class="select_window type_pet_list" id="view_animal_inpt" value=""></div>
+                                    <div class="select_main_text">Вид животного*</div>
+                                    <p class="select_text type_pet_text" name="type_animal" id="type_breed_text"></p>
+                                    <img src="./style/img/select_arrow.svg" class="arrow_select">
+                                    <p class="invalid_info_text inv_select_text" id="animal_type_inv_text">Необходимо выбрать тип животного</p>
+                                </label>
                             </div>
+                            <div class="list_items_pets list_saerch_conteiner select_list" id="list_type_pets" value="0"></div>
                             <div id="wrapper_select_pets" class="wrapper_select"></div>
                         </div>
-
                         <div class="breed_pet_block">
                             <div class="input_width_conteiner">
                                 <div class="input_width__setter">
@@ -118,20 +119,20 @@
                         <div class="date_travel_block">
                             <div class="input_width_conteiner country_arrival_block">
                                 <div class="input_width__setter">
-                                    <input type="text" class="input_text" id="date_departure"
+                                    <input type="text" autocomplete="off" class="input_text" id="date_departure" placeholder="дд.мм.гггг"
                                         pattern="^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
                                         placeholder=" " name="date_departure" required>
-                                    <label for="date_departure" class="label_text label_field">Дата путешествия</label>
-                                    <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" alt="">
-                                    <img src="./style/img/Group 547.svg" class="invalid_info_icon" alt="">
-                                    <span class="invalid_info_text">Не верно указана дата</span>
+                                    <label for="date_departure" class="label_text label_field">Дата путешествия*</label>
+                                    <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
+                                    <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                                    <span class="invalid_info_text" id="inv_text_date_departure">Не верно указана дата</span>
                                 </div>
                             </div>
                         </div>
                         <div class="open_form_btn">
                             <div class="btn_nav">
-                                <div id="next_step_btn">
-                                    <button class="next_step" id="step_one" value="2">
+                                <div>
+                                    <button class="next_step" id="open_form" value="2">
                                         <span class="circle" aria-hidden="true">
                                             <span class="icon arrow"></span>
                                         </span>
@@ -260,17 +261,17 @@
                 <h4 class="under_header_window" value="1">Мы разработали специальный набор аксессуаров <br> для поездки
                     и отдыха в одной коробке</h4>
                 <div class="nav_tavel_box_block" value="1">
-                    <div class="dog_tb_block nav_el_tb select_nav_travel_box" value="2">
-                        <img src="./style/img/mp/dog_small.svg" alt="">
-                        <h4 class="active_nav_el" id="show_dag_tb">для собак</h4>
+                    <div class="dog_tb_block nav_el_tb active_nav_el"  id="show_dag_tb" value="2">
+                        <div class="nav_tavel_box_img"></div>
+                        <h4>для собак</h4>
                     </div>
-                    <div class="cat_tb_block nav_el_tb">
-                        <img src="./style/img/mp/cat_small.png" alt="">
-                        <h4 id="show_cat_tb">для кошек</h4>
+                    <div class="cat_tb_block nav_el_tb" id="show_cat_tb" value="1">
+                        <div class="nav_tavel_box_img"></div>
+                        <h4>для кошек</h4>
                     </div>
-                    <div class="rabbit_tb_block nav_el_tb">
-                        <img src="./style/img/mp/rabbit_small.png" alt="">
-                        <h4 id="show_rabbit_tb">для грызунов</h4>
+                    <div class="rabbit_tb_block nav_el_tb" id="show_rabbit_tb" value="3">
+                        <div class="nav_tavel_box_img"></div>
+                        <h4>для грызунов</h4>
                     </div>
                 </div>
 
@@ -1132,22 +1133,19 @@
         <div class="background_card_worker"></div>
     </div>
 
-    <div class="travel_box_conteiner">
+    <div class="travel_box_conteiner"  id="card_conteiner_9">
+        <div class="travel_box_back"></div>
         <div class="travel_box_mobile_conteiner">
             <div class="header_slider_block">
                 <h1>Travel box от Aniway. Все необходимое для перелета и отдыха в одной коробке</h1>
             </div>
-            <div class="back_btn_block close_up_tb close_tb">&larr;
-                <p>вернуться назад</p>
-            </div>
             <div class="box_info_block">
                 <div class="img_slider">
-                    <div id="fotorama" class="fotorama" data-nav="thumbs" data-allowfullscreen="true" data-auto="false"></div>
+                    <div id="fotorama_main_page" class="fotorama" data-nav="thumbs" data-allowfullscreen="true" data-auto="false"></div>
                 </div>
-
                 <div class="text_info_block">
                     <h4 class="name_travel_box">Travel box <span></span> <br> для кошек</h4>
-                    <h4 class="text_price">Стоимость: <span></span> руб.</h4>
+                    <h4 class="text_price">Стоимость: <span id="travel_box_price"></span> руб.</h4>
                     <div class="list_ware_one">
                         <p class="desc_left"></p>
                     </div>
@@ -1180,15 +1178,91 @@
 
             </div>
             <div class="btn_nav">
-                <button class="next_step" id="tb_next_step" value="2">
+                <button class="next_step" id="order_only_trav_box" value="2">
                     <span class="circle" aria-hidden="true">
                         <span class="icon arrow"></span>
                     </span>
                     <span class="button-text">далее</span>
                 </button>
-                <div class="dwn_back_step close_tb">
-                    <span class="button_text_back">назад</span>
+            </div>
+            <div class="btn_close_card_worker" value="9">
+                <div class="close_card"></div>
+            </div>
+        </div>
+        <div class="contacts_block">
+            <div class="input_width_conteiner name_block">
+                <div class="input_width__setter">
+                    <input type="text" class="input_text text_validity" id="whats_name" placeholder="Василий"
+                        pattern="([А-Яа-яЁё\s]+$)">
+                    <label for="whats_name" class="label_text label_field">Как вас зовут</label>
+                    <img src="./style/img/noun_tick_1181537.svg" id='user_name_valid_icon'
+                        class="valid_info_icon">
+                    <img src="./style/img/Group547.svg" id='user_name_inv_icon' class="invalid_info_icon">
+                    <span class="invalid_info_text" id='user_name_inv_text'>Неправильно введено имя</span>
                 </div>
+            </div>
+            <div class="input_width_conteiner telephone_block">
+                <div class="input_width__setter">
+                    <input type="text" autocomplete="off" class="input_text text_validity" id="your_telephone"
+                        pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                    <label for="your_telephone" class="label_text label_field">Ваш номер телефона</label>
+                    <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
+                    <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                    <span class="invalid_info_text">Неправильно введен номер</span>
+                </div>
+            </div>
+            <div class="input_width_conteiner email_block">
+                <div class="input_width__setter">
+                    <input type="text" autocomplete="off" class="input_text text_validity" id="your_email" value=""
+                        placeholder="aniway@email.ru"
+                        pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
+                    <label for="your_email" class="label_text label_field">Ваша эл. почта</label>
+                    <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
+                    <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                    <span class="invalid_info_text">Неправильно введена почта</span>
+                </div>
+            </div>
+            <div class="type_link_conteiner">
+                <div class="type_link_block">
+                    <label class="select_label" for="check_link_inpt" id="">
+                        <input type="checkbox" class="select_input" id="check_link_inpt">
+                        <div class="select_window type_pet_list" id="view_link_inpt" value=""></div>
+                        <div class="select_main_text">Как с вами связаться?</div>
+                        <p class="select_text type_link_text" id="inv_text_link"></p>
+                        <img src="./style/img/select_arrow.svg" class="arrow_select">
+                    </label>
+                </div>
+                <div class="list_items_links list_saerch_conteiner select_list" id="list_type_links" value="0">
+                    <div class="search_item type_link_item" id="type_link_1" value="1">Звонок по телефону
+                    </div>
+                    <div class="search_item type_link_item" id="type_link_2" value="2">WhatsApp</div>
+                    <div class="search_item type_link_item" id="type_link_3" value="3">Telegram</div>
+                    <div class="search_item type_link_item" id="type_link_4" value="4">Viber</div>
+                    <div class="search_item type_link_item" id="type_link_5" value="5">Facebook messenger
+                    </div>
+                    <div class="search_item type_link_item" id="type_link_6" value="6">Email</div>
+                </div>
+                <div id="wrapper_select_links" class="wrapper_select"></div>
+            </div>
+            <div id="send_application">
+                <button class="next_step" id="last_step" value="4">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">отправить заявку</span>
+                </button>
+            </div>
+            <div class="convention_conteiner">
+                <input type="checkbox" class="dark_check" id="convetion_check" checked />
+                <label for="convetion_check" class="checkbox_label ">
+                    <div class="checkbox_block small_check">
+                        <img src="./style/img/Vector_180.svg" class="check_tick">
+                    </div>
+                </label>
+                <p>Нажимая на кнопку, <a href="" class="convention_link"> я даю согласие на обработку персональных данных</a></p>
+            </div>
+            <div class="btn_close_card_worker" value="9">
+                <div class="close_card"></div>
             </div>
         </div>
     </div>
