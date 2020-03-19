@@ -495,6 +495,17 @@ window.onload = () => {
         
     }
 
+    let menu_humb = document.querySelector('#menu_handurger')
+    menu_humb.onclick = () => {
+        if (menu_humb.checked) {
+            //document.querySelector('.nav_block').style.display = 'block'
+            document.querySelector('.nav_block').style.left = '0px'
+        } else {
+            //document.querySelector('.nav_block').style.display = 'none'
+            document.querySelector('.nav_block').style.left = '400px'
+        }
+        
+    }
     
 
     window.onunload = () => {

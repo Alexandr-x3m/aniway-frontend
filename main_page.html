@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/mp.css">
+    <link rel="stylesheet" href="./style/mobile/land_mobile.css">
     <link rel="stylesheet" href="./style/slider.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.2/gsap.min.js"></script>
@@ -51,11 +52,24 @@
                 <a href="#questions">
                     <li>Вопросы и ответы</li>
                 </a>
-                <a href="#">
-                    <span class="header_nomber">8(495) 958 98 45</span>
-                </a>
             </ul>
         </div>
+        <a href="tel:84959589845" class="nomber_phone">
+            <img src="./style/img/mp/icon_phone.svg" class="icon_phone">
+            <span class="header_nomber">8(495) 958 98 45</span>
+        </a>
+        <div class="menu_button_conteiner">
+            <input type="checkbox" id="menu_handurger" class="checkbox3 visuallyHidden">
+            <label for="menu_handurger">
+                <div class="hamburger hamburger3">
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                    <span class="bar bar3"></span>
+                    <span class="bar bar4"></span>
+                </div>
+            </label>
+        </div>
+        
     </header>
 
     <main class="main_conteiner">
@@ -67,7 +81,7 @@
                 <h1>везде вместе</h1>
                 <h4>Подготовим вашего питомца к поездке по России и всему миру <br> Быстро и без посещения клиники</h4>
                 <div class="mini_form_conteiner">
-                    <p>Узнайте что вам понадобится для путешествия</p>
+                    <p class="form_text">Узнайте что вам понадобится для путешествия</p>
                     <div class="fast_form_block">
                         <div class="select_type_conteiner">
                             <div class="type_pet_block">
@@ -168,10 +182,12 @@
                             <span>документы</span>
                             <p>Онлайн оформление <br> справки Вет. 1</p>
                         </div>
+                        <img src="./style/img/mp/icon_plus.svg">
                         <div>
                             <span>услуги ветеринара</span>
                             <p>Вакцинация и <br> чипирование у вас дома</p>
                         </div>
+                        <img src="./style/img/mp/icon_plus.svg">
                         <div>
                             <span>аксессуары</span>
                             <p>Travel Box, в котором <br> есть все необходимое</p>
