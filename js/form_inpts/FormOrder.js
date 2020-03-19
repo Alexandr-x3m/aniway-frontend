@@ -30,25 +30,34 @@ class FormOrder {
         let breed = localStorage.getItem('breed')
         let date = localStorage.getItem('date')
 
+        
         //date_departure
-        let date_inpt = document.querySelector('#date_departure')
-        date_inpt.value = date
-        date_inpt.classList.add('valid_input')
+        if (date != null) {
+            let date_inpt = document.querySelector('#date_departure')
+            date_inpt.value = date
+            date_inpt.classList.add('valid_input')
+        }
 
         //Country arrival
-        let country_inpt = document.querySelector('#country_arrival')
-        country_inpt.value = country
-        countryInfo.validInpt()
+        if (country != null) {
+            let country_inpt = document.querySelector('#country_arrival')
+            country_inpt.value = country
+            countryInfo.validInpt()
+        }
 
         //Порода животного
-        let breed_inpt = document.querySelector('#type_animal_inpt')
-        breed_inpt.value = breed
-        breedAnimal.validInpt()
+        if (breed != null) {
+            let breed_inpt = document.querySelector('#type_animal_inpt')
+            breed_inpt.value = breed
+            breedAnimal.validInpt()
+        }
         
         //Тип животного
-        document.querySelector('#view_animal_inpt').setAttribute('value', type)
-        document.querySelector('#type_breed_text').innerText = type_text
-        document.querySelector('#check_animal_inpt').checked = true
+        if (type != null) {
+            document.querySelector('#view_animal_inpt').setAttribute('value', type)
+            document.querySelector('#type_breed_text').innerText = type_text
+            document.querySelector('#check_animal_inpt').checked = true
+        }
     }
     takeAllInputs() {
         let type_animal = document.querySelector('#view_animal_inpt').getAttribute('value')
@@ -63,6 +72,10 @@ class FormOrder {
         let your_email = document.querySelector('#your_email').value
         let view_link_inpt = document.querySelector('#view_link_inpt').getAttribute('value')
 
+        let year_age = document.querySelector('#year_age_anim_inpt').value
+        let month_age = document.querySelector('#month_age_anim_inpt').value
+
+
         this.order.animal_type = type_animal
         this.order.breed = breed_animal
         this.order.country = country
@@ -70,12 +83,13 @@ class FormOrder {
         this.order.chip = have_chip
         this.order.date_vaccination = vakvina_date
         this.order.have_vakcina = have_vakcina
-
+        this.order.age = (year_age*12)+month_age*1
         this.order.contact_name = whats_name
         this.order.contact_email = your_email
         this.order.contact_phone = your_telephone
         this.order.type_link = view_link_inpt
 
+        console.log(this.order)
         let products = document.querySelectorAll('.products_check')
 
         products.forEach(el => {

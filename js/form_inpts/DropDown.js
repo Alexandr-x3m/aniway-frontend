@@ -37,7 +37,9 @@ class DropDownList {
         }
 
         arrItems.forEach(el => {
+            
             el.onclick = () => {
+                let state = document.querySelector('#view_animal_inpt').getAttribute('value')*1
                 wrap.style.display = 'none'
                 list.style.display = 'none'
                 if (invTxt == null) {
@@ -51,6 +53,16 @@ class DropDownList {
                 let val = el.getAttribute('value')
                 let txt = el.textContent
 
+                if (state == val) {
+                    console.log('without changes')
+                } else {
+                    breedAnimal.famousTypes()
+                    breedAnimal.drawList()
+                    document.querySelector('#type_animal_inpt').value = ''
+                    breedAnimal.clearValid()
+                    document.querySelector('#type_animal_inpt').classList.remove('full_list_input')
+                    console.log('was changed')
+                }
                 back.setAttribute('value', val)
                 text.innerText = txt
                 back.setAttribute('class', 'select_window select_list')

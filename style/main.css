@@ -169,19 +169,19 @@ a {
    position: relative;
 
    /*styles*/
-   margin: 0 25px;
+   margin: 0 35px;
 }
 
 input[type="text"], input[type="email"], input[type="number"] {
     position: absolute;
-    left: -25px;
+    left: -35px;
     width: 100%;
     outline: none;
     border: none;
     
     height: 26px;
     font-size: 16px;
-    padding: 30px 30px 8px 20px;
+    padding: 30px 50px 8px 20px;
     border-radius: 8px;
     display: block;
     background-color: #EEF2F7;
@@ -195,7 +195,7 @@ input[type="text"], input[type="email"], input[type="number"] {
 input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     background-color: #fff;
     border: 1px solid #4B9FDF;
-    padding: 29px 29px 7px 19px;
+    padding: 29px 49px 7px 19px;
 }
 .label_field {
     color: #999;
@@ -211,7 +211,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .label_text{
     position: absolute;
     top: 24px;
-    left: -4px;
+    left: -16px;
     width: 280px;
     font-size: 16px;
     transition-duration: 0.2s;
@@ -221,7 +221,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 26px;
-    right: -8px;
+    right: -18px;
     width: 18px;
     height: 12px;
 }
@@ -229,7 +229,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 26px;
-    right: -8px;
+    right: -18px;
     width: 18px;
     height: 12px;
 }
@@ -237,7 +237,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
     position: absolute;
     top: 64px;
-    left: -12px;
+    left: -22px;
     width: 266px;
     height: 16px;
     color: #DD5656;
@@ -252,7 +252,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-size: 12px;
 }
 .invalid_input{
-    padding: 29px 29px 7px 19px !important;
+    padding: 29px 49px 7px 19px !important;
     border: 1px solid #DD5656 !important;
 }
 .invalid_input~.invalid_info_icon,
@@ -290,7 +290,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     border: 1px solid #4B9FDF !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
-    padding: 29px 29px 7px 19px !important;
+    padding: 29px 49px 7px 19px !important;
 }
 .input_list:focus~.label_text{
     top: 12px;
@@ -306,7 +306,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 }
 .invalid_list_input{
     border: 1px solid #DD5656 !important;
-    padding: 29px 29px 7px 19px !important;
+    padding: 29px 49px 7px 19px !important;
 }
 .full_list_input~.label_text{
     top: 12px !important;
@@ -520,7 +520,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     display: none;
 }
 .select_input:checked~.select_main_text{
-    top: 8px !important;
+    top: 12px !important;
     font-size: 12px !important;
 }
 
@@ -569,13 +569,22 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     padding-left: 20px;
     width: 100%;
     height: 48px;
-    line-height: 48px;
     border-bottom: 1px solid #C4C4C4;
-    font-family: TTWellingtons-Medium;
-    font-size: 16px;
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 }
+.search_item p {
+    width: 85%;
+    font-family: TTWellingtons-Medium;
+    font-size: 16px;
+    line-height: 48px;
 
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
 .search_item {
     cursor: pointer;
 }
@@ -670,12 +679,15 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 .composite_input_back{
     grid-column: 1/3;
     position: relative;
-    top: -54px;
-    left: -25px;
-    width: 280px;
+    top: -50px;
+    left: -36px;
+    width: 100%;
     height: 64px;
     border-radius: 8px;
     background: #EEF2F7;
+}
+.invalid_back{
+    border: 1px solid #DD5656 ;
 }
 .active_text{
     top: 12px !important;
@@ -683,17 +695,18 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 }
 .age_input{
     position: relative !important;
-    left: -25px !important;
-    width: 86px !important;
+    
 }
 .age_input:nth-child(1){
+    width: 74px !important;
     margin: 24px 12px 0 20px;
     padding: 0 !important;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 .age_input:nth-child(2){
-    margin: 24px 73px 0 0;
+    width: 95px !important;
+    margin: 24px 79px 0 0;
     padding: 0 !important;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -724,8 +737,6 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     border-bottom: 1px solid #4B9FDF !important;
 }
 .focus_back{
-    top: -54px;
-    width: 278px;
     height: 62px;
     border: 1px solid #4B9FDF;
     background: #fff;

@@ -49,7 +49,7 @@ class BreedAnimal {
             let type = document.querySelector('#view_animal_inpt')
             type = type.getAttribute('value') * 1
 
-            fetch(this.proxyUrl + `https://aniway.ru/api/breed/?animal_type=${type}&common=true&format=json`)
+            fetch(`https://aniway.ru/api/breed/?animal_type=${type}&common=true&format=json`)
                 .then(
                     (response) => {
                         if (response.status !== 200) {
@@ -71,6 +71,7 @@ class BreedAnimal {
         )
     }
     drawList() {
+        debugger
         let conteiner = document.querySelector('#breed_list')
         let all_items = document.querySelectorAll('.breed_search_item')
         let type_animal = document.querySelector('#type_animal_inpt')
@@ -83,9 +84,13 @@ class BreedAnimal {
             item.setAttribute('class', 'search_item breed_search_item')
             item.setAttribute('id', `item_breed_${el.id}`)
             item.setAttribute('value', `${el.id}`)
-            item.innerText = `${el.name}`
+
+            let span = document.createElement('p')
+
+            span.innerText = `${el.name}`
 
             conteiner.prepend(item)
+            item.append(span)
 
             item.onclick = () => {
                 conteiner.style.display = 'none'

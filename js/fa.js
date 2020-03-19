@@ -14,7 +14,7 @@ window.onload = () => {
     })
 
     promise.then(
-        result => {},
+        result => { },
         err => alert(err.message)
     )
 
@@ -340,79 +340,86 @@ window.onload = () => {
     let rigth_age = document.querySelector('#month_age_anim_inpt')
     let label_age = document.querySelector('#label_age_pet')
     let back_age = document.querySelector('.composite_input_back')
-    
+
 
     left_age.oninput = () => {
         console.log('was')
         let text = document.querySelector('.year_text_input')
         let validIcon = document.querySelector('.val_icon_age_pet')
         let invIcon = document.querySelector('.inv_icon_age_pet')
-        
+
 
         let arrVal = []
         let val = left_age.value
-        
-        for (let i=0; i < val.length; i++ ) {
+
+        for (let i = 0; i < val.length; i++) {
             arrVal.push(val[i])
         }
 
-        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
+        if (val == '') {
+            validIcon.style.display = 'none'
+            text.innerText = ''
+            return left_age.value = val
+        }
+ 
+        if (val.length > 2 ||
+            /[^0-9]/.test(val[val.length - 1]) ) {
             arrVal.pop()
-        } 
-        if (val*1 > 19) {
+            let txt = ''
+            arrVal.forEach(el => txt += el)
+            return left_age.value = txt
+        }
+
+
+        
+        if (val * 1 > 19) {
             arrVal[0] = '1'
             arrVal[1] = '9'
         }
-        
 
-        let el 
+
+        let el
         if (arrVal.length == 1) {
             el = arrVal[0]
-            text.style.left = '8px'
+            text.style.left = '0px'
             label_age.classList.add('active_text')
         } else {
-            el = arrVal[0]+arrVal[1]
-            text.style.left = '18px'
+            el = arrVal[0] + arrVal[1]
+            text.style.left = '10px'
             label_age.classList.add('active_text')
         }
-        
-        if (val.length == 0 && rigth_age.value != 0) {
-            left_age.value = '0'
-            text.innerText = 'лет'
-            text.style.left = '8px'
-            label_age.classList.add('active_text')
-        } else if (val.length == 0 && rigth_age.value == 0) {
-            left_age.value = ''
-            text.innerText = ''
-            document.querySelector('.month_text_input').innerText = ''
-            rigth_age.value = ''
-            validIcon.style.display = 'none'
-            invIcon.style.display = 'none'
-        } 
 
-        if (el==1 || el==21 || el==31 || el==41) {
+
+        if (el == 0) {
+            rigth_age.value = el
+            text.innerText = 'лет'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+        if (el == 1 || el == 21 || el == 31 || el == 41) {
             left_age.value = el
             text.innerText = 'год'
             validIcon.style.display = 'block'
         }
 
-        if (el>=2 && el<=4 ||
-            el>=22 && el<=24 ||
-            el>=32 && el<=34 ||
-            el>=42 && el<=44) {
-                left_age.value = el
-                text.innerText = 'года'
-                validIcon.style.display = 'block'
+        if (el >= 2 && el <= 4 ||
+            el >= 22 && el <= 24 ||
+            el >= 32 && el <= 34 ||
+            el >= 42 && el <= 44) {
+            left_age.value = el
+            text.innerText = 'года'
+            validIcon.style.display = 'block'
         }
 
-        if (el>=5 && el<=20 ||
-            el>=25 && el<=30 ||
-            el>=35 && el<=40 ||
-            el>=45 && el<=50) {
-                left_age.value = el
-                text.innerText = 'лет'
-                validIcon.style.display = 'block'
-            }
+        if (el >= 5 && el <= 20 ||
+            el >= 25 && el <= 30 ||
+            el >= 35 && el <= 40 ||
+            el >= 45 && el <= 50) {
+            left_age.value = el
+            text.innerText = 'лет'
+            validIcon.style.display = 'block'
+        }
 
     }
 
@@ -424,9 +431,9 @@ window.onload = () => {
             back_age.classList.add('focus_back')
         }
     }
-    
+
     focusLeftInpt()
-    document.querySelector('.year_text_input').onclick = () => {left_age.focus()}
+    document.querySelector('.year_text_input').onclick = () => { left_age.focus() }
 
 
     function focusRightInpt() {
@@ -437,8 +444,9 @@ window.onload = () => {
         }
     }
     focusRightInpt()
-    document.querySelector('.month_text_input').onclick = () => {rigth_age.focus()}
+    document.querySelector('.month_text_input').onclick = () => { rigth_age.focus() }
     rigth_age.oninput = () => {
+        
         let text = document.querySelector('.month_text_input')
         let validIcon = document.querySelector('.val_icon_age_pet')
         let invIcon = document.querySelector('.inv_icon_age_pet')
@@ -446,42 +454,50 @@ window.onload = () => {
         let arrVal = []
         let val = rigth_age.value
         
-        for (let i=0; i < val.length; i++ ) {
+        for (let i = 0; i < val.length; i++) {
             arrVal.push(val[i])
+            
         }
 
-        if (val.length > 2 || /[^0-9]/.test(val[val.length-1])) {
-            arrVal.pop()
-        } 
-        if (val*1 > 13) {
+        if (val * 1 > 13) {
             arrVal[0] = '1'
             arrVal[1] = '2'
         }
-        
-        let el 
-        if (arrVal.length == 1) {
-            el = arrVal[0]
-            text.style.left = '106px'
-            label_age.classList.add('active_text')
-        } else {
-            el = arrVal[0]+arrVal[1]
-            text.style.left = '116px'
-            label_age.classList.add('active_text')
-        }
-        
-        if (val.length == 0 && left_age.value != 0) {
-            rigth_age.value = '0'
-            text.innerText = 'месяцев'
-            text.style.left = '106px'
-        } else if (val.length == 0 && left_age.value == 0) {
-            rigth_age.value = ''
-            text.innerText = ''
-            left_age.value = ''
-            document.querySelector('.year_text_input').innerText = ''
+
+        if (val == '') {
             validIcon.style.display = 'none'
+            text.innerText = ''
+            return rigth_age.value = val
+        }
+ 
+        if (val.length > 2 ||
+            /[^0-9]/.test(val[val.length - 1]) ) {
+            arrVal.pop()
+            let txt = ''
+            arrVal.forEach(el => txt += el)
+            return rigth_age.value = txt
         }
 
-        if (el==1) {
+        let el
+        if (arrVal.length == 1) {
+            el = arrVal[0]
+            text.style.left = '86px'
+            label_age.classList.add('active_text')
+        } else {
+            el = arrVal[0] + arrVal[1]
+            text.style.left = '96px'
+            label_age.classList.add('active_text')
+        }
+
+        
+        if (el == 0) {
+            rigth_age.value = el
+            text.innerText = 'месяцев'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
+        if (el == 1) {
             rigth_age.value = el
             text.innerText = 'месяц'
             validIcon.style.display = 'block'
@@ -490,23 +506,23 @@ window.onload = () => {
             document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }
 
-        if (el>=2 && el<=4) {
-                rigth_age.value = el
-                text.innerText = 'месяца'
-                validIcon.style.display = 'block'
-                document.querySelector('.composite_input_back').classList.remove('invalid_back')
-                document.querySelector('#inv_text_age_anim').style.display = 'none'
-                document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        if (el >= 2 && el <= 4) {
+            rigth_age.value = el
+            text.innerText = 'месяца'
+            validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }
 
-        if (el>=5 && el<=12) {
-                rigth_age.value = el
-                text.innerText = 'месяцев'
-                validIcon.style.display = 'block'
-                document.querySelector('.composite_input_back').classList.remove('invalid_back')
-                document.querySelector('#inv_text_age_anim').style.display = 'none'
-                document.querySelector('.inv_icon_age_pet').style.display = 'none'
-            }
+        if (el >= 5 && el <= 12) {
+            rigth_age.value = el
+            text.innerText = 'месяцев'
+            validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
+        }
 
     }
 
@@ -548,7 +564,7 @@ window.onload = () => {
         country_list.style.display = 'grid'
         wrapper_country.style.display = "block"
         if (country_inpt.value.length == 0) return countryInfo.famousCoutries()
-        
+
     }
     wrapper_country.onclick = () => {
         wrapper_country.style.display = "none"
@@ -568,9 +584,6 @@ window.onload = () => {
             breedAnimal.searching()
         } else if (type_animal.value.length < 3 && type_animal.value.length > 0) {
             breedAnimal.clearValid()
-        } else if (type_animal.value.length == 0) {
-            type_animal.classList.remove('full_list_input')
-            breedAnimal.famousTypes()
         }
     }
     type_animal.onfocus = () => {
@@ -582,11 +595,6 @@ window.onload = () => {
         wrapper_breed.style.display = 'none'
         breed_list.style.display = 'none'
     }
-
-
-
-
-    
 
 
 
@@ -937,5 +945,5 @@ window.onload = () => {
     }
 
 
-    
+
 }

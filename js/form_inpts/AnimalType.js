@@ -42,8 +42,13 @@ class TypeAnimal {
             block.setAttribute('class', 'search_item type_pet_item')
             block.setAttribute('id', `type_pet_${el.id}`)
             block.setAttribute('value', `${el.id}`)
+
+            let span = document.createElement('p')
+
+            span.innerText = el.name
+            
             conteiner.append(block)
-            block.innerHTML = el.name
+            block.append(span)
         })
         dropDownList.focusSelector({
             arrItems: '.type_pet_item',

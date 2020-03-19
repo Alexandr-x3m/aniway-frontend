@@ -6,6 +6,7 @@ class CountryInfo {
     }
     searching(country_inpt) {
         let promise = new Promise((resolve, reject) => {
+            this.data = []
 
             let val = country_inpt.value
             val.toLowerCase()
@@ -16,7 +17,7 @@ class CountryInfo {
                         if (response.status != 200) return alert('Oops, something went wrong :(' + response.status)
                         response.clone().json()
                             .then(data => {
-                                this.item = data
+                                this.data = data
                                 resolve()
                             })
                     }
@@ -25,7 +26,7 @@ class CountryInfo {
         })
         promise.then(
             result => {
-                if (this.item.length == 0) {
+                if (this.data.length == 0) {
                     let all_items = document.querySelectorAll('.country_search_item')
                     all_items.forEach((el) => { el.remove() })
                     return this.invalidInpt('Не найдено, ни одного совпадения')
@@ -71,9 +72,14 @@ class CountryInfo {
             let item = document.createElement('div')
             item.setAttribute('class', 'search_item country_search_item')
             item.setAttribute('value', `item_country_${el.id}`)
-            item.innerText = `${el.name}`
+
+            let span = document.createElement('p')
+
+            span.innerText = `${el.name}`
 
             conteiner.prepend(item)
+            item.append(span)
+            
 
             item.onclick = () => {
                 let country_inpt = document.querySelector('#country_arrival')
@@ -88,6 +94,9 @@ class CountryInfo {
                 wrapper_country.style.display = 'none'
                 country_inpt.setAttribute('class', 'input_list')
                 this.validInpt()
+
+                let all_items = document.querySelectorAll('.country_search_item')
+                all_items.forEach((el) => { el.remove() })
             }
         })
     }
