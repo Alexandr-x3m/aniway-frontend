@@ -1,4 +1,3 @@
-
 const typeAnimal = new TypeAnimal()
 const breedAnimal = new BreedAnimal()
 const travelBoxes = new TravelBoxes()
@@ -11,7 +10,7 @@ window.onload = () => {
 
     let promise = new Promise((resolve, reject) => {
         console.log('step 1')
-        travelBoxes.getBoxes( resolve)
+        travelBoxes.getBoxes(resolve)
     })
 
     travelBoxes.showTravelBoxCardMainPage()
@@ -79,15 +78,15 @@ window.onload = () => {
     openCards()
     closeCard()
 
- 
+
     function visible(target, func, dist) {
         // Все позиции элемента
         var targetPosition = {
-            top: window.pageYOffset + target.getBoundingClientRect().top,
-            left: window.pageXOffset + target.getBoundingClientRect().left,
-            right: window.pageXOffset + target.getBoundingClientRect().right,
-            bottom: window.pageYOffset + target.getBoundingClientRect().bottom
-        },
+                top: window.pageYOffset + target.getBoundingClientRect().top,
+                left: window.pageXOffset + target.getBoundingClientRect().left,
+                right: window.pageXOffset + target.getBoundingClientRect().right,
+                bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
             // Получаем позиции окна
             windowPosition = {
                 top: window.pageYOffset,
@@ -100,7 +99,7 @@ window.onload = () => {
             targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
             targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
             // Если элемент полностью видно, то запускаем следующий код
-                
+
             let val = target.getAttribute('value')
 
             if (val == '1') {
@@ -117,17 +116,17 @@ window.onload = () => {
         gsap.from(target, { duration: 0.8, y: dist, ease: "slow(0.7, 0.7, false)" })
         gsap.to(target, { duration: 0.8, opacity: 1, ease: "slow(0.7, 0.7, false)" })
     }
-    
+
     function opacity(target) {
         gsap.to(target, { duration: 1.5, opacity: 1, ease: "slow(0.7, 0.7, false)" })
     }
 
-    
+
 
     window.addEventListener('scroll', () => {
 
         let windowScroll = document.body.scrollTop || document.documentElement.scrollTop
-       
+
         let textVideoBL = document.querySelector('.video_text_block')
         visible(textVideoBL, showTopBottom, 100)
 
@@ -143,7 +142,7 @@ window.onload = () => {
         visible(onlineBlock, showTopBottom, 300)
 
         let travelBox = document.querySelectorAll('.item_travel_box')
-        travelBox.forEach( el => visible(el, opacity))
+        travelBox.forEach(el => visible(el, opacity))
 
         let cardsBlock = document.querySelectorAll('.item_cards_block')
         cardsBlock.forEach(el => visible(el, showTopBottom, 200))
@@ -161,28 +160,28 @@ window.onload = () => {
     })
 
 
-    
+
 
 
     //Вопросы внизу страницы 
     let questBlock = document.querySelectorAll('.item_question_block')
-    questBlock.forEach( el => {
-        
+    questBlock.forEach(el => {
+
         if (el.getAttribute('value') == 1) {
             el.onclick = () => {
                 console.log(el)
                 el.setAttribute('value', 0)
                 let txt = document.querySelector('.')
                 let head = el.firstChild
-    
+
                 txt.style.display = 'block'
                 head.setAttribute('class', 'header_question active_head_quest')
                 el.setAttribute('value', 'item_question_block active_block_quest')
             }
-            
+
         } else {
             el.onclick = () => {
-    
+
                 el.setAttribute('value', 1)
                 let txt = el.lastChild
                 let head = el.firstChild
@@ -192,7 +191,7 @@ window.onload = () => {
                 el.setAttribute('value', 'item_question_block')
             }
         }
-        
+
     })
 
     travelBoxes.switchTravelBoxesMainPage(visible, opacity)
@@ -218,7 +217,7 @@ window.onload = () => {
         country_list.style.display = 'grid'
         wrapper_country.style.display = "block"
         if (country_inpt.value.length == 0) return countryInfo.famousCoutries()
-        
+
     }
     wrapper_country.onclick = () => {
         wrapper_country.style.display = "none"
@@ -340,8 +339,7 @@ window.onload = () => {
             }
 
             if (input.value.length > 1 && input.value.length < 3) {
-                if (/[0-9]{1,2}/.test(day)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -349,8 +347,7 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 3 && input.value.length < 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -358,8 +355,7 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -444,7 +440,7 @@ window.onload = () => {
         }
     }
     departureDate()
-    //маска для телефона
+        //маска для телефона
     $('#your_telephone').mask('+7(999)999-99-99')
 
 
@@ -456,12 +452,12 @@ window.onload = () => {
         let breed = document.querySelector('#type_animal_inpt').value
         let country = document.querySelector('#country_arrival').value
         let date = document.querySelector('#date_departure').value
-        
+
         console.log(type)
         if (type.length == 0) {
             document.querySelector('#view_animal_inpt').classList.add('invalid_select')
             document.querySelector('#animal_type_inv_text').style.display = 'block'
-            
+
         }
 
         if (breed.length == 0) {
@@ -481,32 +477,32 @@ window.onload = () => {
             breed.length != 0 &&
             country.length != 0 &&
             date.length != 0) {
-                localStorage.setItem('animal_type', type)
-                localStorage.setItem('type_text', type_text)
-                localStorage.setItem('breed', breed)
-                localStorage.setItem('country', country)
-                localStorage.setItem('date', date)
-        
-                window.open('./form_aniway.html')
+            localStorage.setItem('animal_type', type)
+            localStorage.setItem('type_text', type_text)
+            localStorage.setItem('breed', breed)
+            localStorage.setItem('country', country)
+            localStorage.setItem('date', date)
+
+            window.open('./form_aniway.html')
         } else {
             return
         }
 
-        
+
     }
 
     let menu_humb = document.querySelector('#menu_handurger')
     menu_humb.onclick = () => {
         if (menu_humb.checked) {
             //document.querySelector('.nav_block').style.display = 'block'
-            document.querySelector('.nav_block').style.left = '0px'
+            document.querySelector('.nav_block').style.right = '0px'
         } else {
             //document.querySelector('.nav_block').style.display = 'none'
-            document.querySelector('.nav_block').style.left = '400px'
+            document.querySelector('.nav_block').style.right = '-400px'
         }
-        
+
     }
-    
+
 
     window.onunload = () => {
         localStorage.clear()

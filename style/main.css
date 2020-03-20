@@ -1,11 +1,7 @@
 @font-face {
     font-family: TTWellingtons-Regular;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot');
-    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Regular.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Regular.woff') format('woff'),
-        url('.//fonts/TT_WELLIGTONES/ttf/TTWellingtons-Regular.ttf') format('truetype');
+    src: local('TT Wellingtons Regular'), local('TTWellingtons-Regular'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Regular.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Regular.woff') format('woff'), url('.//fonts/TT_WELLIGTONES/ttf/TTWellingtons-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,11 +9,7 @@
 @font-face {
     font-family: TTWellingtons-Medium;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot');
-    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'),
-        url('./style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'),
-        url('./style/fonts/TT_WELLIGTONES/woff2/TTWellingtons-Medium.woff2') format('woff2'),
-        url('./style/fonts/TT_WELLIGTONES/woff/TTWellingtons-Medium.woff') format('woff'),
-        url('./style/fonts/TT_WELLIGTONES/ttf/TTWellingtons-Medium.ttf') format('truetype');
+    src: local('TT Wellingtons Medium'), local('TTWellingtons-Medium'), url('./style/fonts/TT_WELLIGTONES/eot/TTWellingtons-Medium.eot?#iefix') format('embedded-opentype'), url('./style/fonts/TT_WELLIGTONES/woff2/TTWellingtons-Medium.woff2') format('woff2'), url('./style/fonts/TT_WELLIGTONES/woff/TTWellingtons-Medium.woff') format('woff'), url('./style/fonts/TT_WELLIGTONES/ttf/TTWellingtons-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -25,11 +17,7 @@
 @font-face {
     font-family: TTWellingtons-DemiBold;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot');
-    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-DemiBold.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-DemiBold.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-DemiBold.ttf') format('truetype');
+    src: local('TT Wellingtons DemiBold'), local('TTWellingtons-DemiBold'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-DemiBold.eot') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-DemiBold.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-DemiBold.woff') format('woff'), url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-DemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
@@ -37,11 +25,7 @@
 @font-face {
     font-family: TTWellingtons-ExtraLight;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-ExtraLight.eot');
-    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-ExtraLight.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-ExtraLight.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-ExtraLight.ttf') format('truetype');
+    src: local('TT Wellingtons ExtraLight'), local('TTWellingtons-ExtraLight'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-ExtraLight.eot?#iefix') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-ExtraLight.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-ExtraLight.woff') format('woff'), url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-ExtraLight.ttf') format('truetype');
     font-weight: 200;
     font-style: normal;
 }
@@ -49,11 +33,7 @@
 @font-face {
     font-family: TTWellingtons-MediumItalic;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-MediumItalic.eot');
-    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-MediumItalic.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-MediumItalic.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-MediumItalic.ttf') format('truetype');
+    src: local('TT Wellingtons Medium Italic'), local('TTWellingtons-MediumItalic'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-MediumItalic.eot?#iefix') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-MediumItalic.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-MediumItalic.woff') format('woff'), url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
@@ -61,11 +41,7 @@
 @font-face {
     font-family: TTWellingtons-Bold;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Bold.eot');
-    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Bold.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Bold.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Bold.ttf') format('truetype');
+    src: local('TT Wellingtons Bold'), local('TTWellingtons-Bold'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Bold.eot?#iefix') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Bold.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Bold.woff') format('woff'), url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -73,20 +49,16 @@
 @font-face {
     font-family: TTWellingtons-Light;
     src: url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Light.eot');
-    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'),
-        url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Light.eot?#iefix') format('embedded-opentype'),
-        url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Light.woff2') format('woff2'),
-        url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Light.woff') format('woff'),
-        url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Light.ttf') format('truetype');
+    src: local('TT Wellingtons Light'), local('TTWellingtons-Light'), url('./fonts/TT_WELLIGTONES/eot/TTWellingtons-Light.eot?#iefix') format('embedded-opentype'), url('./fonts/TT_WELLIGTONES/woff2/TTWellingtons-Light.woff2') format('woff2'), url('./fonts/TT_WELLIGTONES/woff/TTWellingtons-Light.woff') format('woff'), url('./fonts/TT_WELLIGTONES/ttf/TTWellingtons-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
-
 
 a {
     text-decoration: none;
     color: #fff;
 }
+
 
 /*----------------------------
 
@@ -151,6 +123,7 @@ a {
     font-weight: 600;
 }
 
+
 /*-------------------------------
 
 
@@ -158,27 +131,29 @@ a {
 
 
 ------------------------------*/
-.input_width_conteiner{
+
+.input_width_conteiner {
     /*styles*/
-   width: 100%;
+    width: 100%;
 }
-.input_width__setter{
+
+.input_width__setter {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-   /*NO changes*/
-   position: relative;
-
-   /*styles*/
-   margin: 0 35px;
+    grid-template-columns: 110px 174px;
+    /*NO changes*/
+    position: relative;
+    /*styles*/
+    margin: 0 35px;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
     position: absolute;
     left: -35px;
     width: 100%;
     outline: none;
     border: none;
-    
     height: 26px;
     font-size: 16px;
     padding: 30px 50px 8px 20px;
@@ -194,7 +169,10 @@ input[type="text"], input[type="email"], input[type="number"] {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
     background-color: #fff;
     border: 1px solid #4B9FDF;
     padding: 29px 49px 7px 19px;
@@ -202,6 +180,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 .label_field {
     color: #999;
     font-size: 14px;
@@ -213,7 +192,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
 }
-.label_text{
+
+.label_text {
     position: absolute;
     top: 24px;
     left: -16px;
@@ -230,6 +210,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     width: 18px;
     height: 12px;
 }
+
 .invalid_info_icon {
     display: none;
     position: absolute;
@@ -238,6 +219,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     width: 18px;
     height: 12px;
 }
+
 .invalid_info_text {
     display: none;
     position: absolute;
@@ -249,74 +231,95 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     font-family: TTWellingtons-Medium;
     font-size: 12px;
 }
-.invalid_select{
+
+.invalid_select {
     border: 1px solid #DD5656 !important;
 }
-.invalid_select~.select_main_text{
-    top: 12px;
-    font-size: 12px;
-}
-.invalid_input{
-    padding: 29px 49px 7px 19px !important;
-    border: 1px solid #DD5656 !important;
-}
-.invalid_input~.invalid_info_icon,
-.invalid_input~.invalid_info_text{
-    display: block;
-}
-.invalid_input:focus~.label_text{
-    top: 12px;
-    font-size: 12px;
-}
-.invalid_input~.label_text{
-    top: 12px;
-    font-size: 12px;
-}
-/* анимация при фокусе на поле ввода */
-.focus_input~.label_text{
-    top: 12px;
-    font-size: 12px;
-}
-.valid_input~.label_text{
+
+.invalid_select~.select_main_text {
     top: 12px;
     font-size: 12px;
 }
 
-/* сохранение анимации при фокусе на поле ввода, если оно валидно */
-.valid_input~.valid_info_icon{
+.invalid_input {
+    padding: 29px 49px 7px 19px !important;
+    border: 1px solid #DD5656 !important;
+}
+
+.invalid_input~.invalid_info_icon,
+.invalid_input~.invalid_info_text {
     display: block;
 }
+
+.invalid_input:focus~.label_text {
+    top: 12px;
+    font-size: 12px;
+}
+
+.invalid_input~.label_text {
+    top: 12px;
+    font-size: 12px;
+}
+
+
+/* анимация при фокусе на поле ввода */
+
+.focus_input~.label_text {
+    top: 12px;
+    font-size: 12px;
+}
+
+.valid_input~.label_text {
+    top: 12px;
+    font-size: 12px;
+}
+
+
+/* сохранение анимации при фокусе на поле ввода, если оно валидно */
+
+.valid_input~.valid_info_icon {
+    display: block;
+}
+
 
 /* --------------------------
     Поля ввода со списком
 ---------------------------*/
-.input_list:focus{
+
+.input_list:focus {
     background-color: #fff !important;
     border: 1px solid #4B9FDF !important;
     border-bottom-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     padding: 29px 49px 7px 19px !important;
 }
-.input_list:focus~.label_text{
+
+.input_list:focus~.label_text {
     top: 12px;
     font-size: 12px;
 }
-.valid_list_input~.label_text{
+
+.valid_list_input~.label_text {
     top: 12px;
     font-size: 12px;
 }
-.invalid_list_input~.label_text{
+
+.invalid_list_input~.label_text {
     top: 12px;
     font-size: 12px;
 }
-.invalid_list_input{
+
+.invalid_list_input {
     border: 1px solid #DD5656 !important;
     padding: 29px 49px 7px 19px !important;
 }
-.full_list_input~.label_text{
+
+.full_list_input~.label_text {
     top: 12px !important;
     font-size: 12px !important;
 }
+
+
 /*----------------------------------------------------------------------
 
 
@@ -434,9 +437,12 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     -o-transform: translate(1rem, 0);
     transform: translate(1rem, 0);
 }
+
+
 /*-------------------------------
         Стили для селекта
 ------------------------------*/
+
 .type_pet_block:hover {
     cursor: pointer;
 }
@@ -471,9 +477,11 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     height: 100%;
     z-index: 10;
 }
-.wrapper_select{
+
+.wrapper_select {
     cursor: pointer;
 }
+
 .select_main_text {
     position: absolute;
     left: 20px;
@@ -496,11 +504,11 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     outline: none;
     border-radius: 8px;
 }
-.inv_select_text{
+
+.inv_select_text {
     top: 64px !important;
     left: 12px;
 }
-
 
 .active_select {
     width: 278px;
@@ -524,7 +532,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .select_input {
     display: none;
 }
-.select_input:checked~.select_main_text{
+
+.select_input:checked~.select_main_text {
     top: 12px !important;
     font-size: 12px !important;
 }
@@ -540,6 +549,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 #list_type_pets:hover {
     display: grid;
 }
+
+
 /*-------------------------------
 
     Выпадающий список поиска
@@ -559,7 +570,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     border-bottom-right-radius: 8px;
     max-height: 196px !important;
     overflow: hidden;
-    background-color: #EEF2F7;
+    background-color: #fff;
     z-index: 12;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
@@ -579,21 +590,25 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.search_item:hover {
+    background: #EEF2F7;
+}
+
 .search_item p {
     width: 85% !important;
     font-family: TTWellingtons-Medium !important;
-    font-size: 16px !important; 
+    font-size: 16px !important;
     line-height: 48px !important;
-
     overflow: hidden !important;
     white-space: nowrap !important;
     -o-text-overflow: ellipsis !important;
     text-overflow: ellipsis !important;
 }
+
 .search_item {
     cursor: pointer;
 }
-
 
 .list_saerch_conteiner:hover {
     display: grid;
@@ -606,6 +621,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 .list_saerch_conteiner:hover {
     display: grid;
 }
+
+
 /*-------------------------------
 
 
@@ -613,27 +630,45 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus{
 
 
 ------------------------------*/
+
 input[type="checkbox"] {
     display: none;
 }
 
-input[type='number']::-webkit-outer-spin-button, input[type='number']::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
     display: none;
 }
 
-input[type='number']::-moz-outer-spin-button, input[type='number']::-moz-inner-spin-button {
+input[type='number']::-moz-outer-spin-button,
+input[type='number']::-moz-inner-spin-button {
     display: none;
 }
 
-input[type='text']::-webkit-input-placeholder{ color: #EEF2F7;}
-input[type='text']:focus::-webkit-input-placeholder { color: #9E9DAB;}
+input[type='text']::-webkit-input-placeholder {
+    color: #EEF2F7;
+}
 
+input[type='text']:focus::-webkit-input-placeholder {
+    color: #9E9DAB;
+}
 
+input[type='text']::-moz-placeholder {
+    color: #EEF2F7;
+}
 
-input[type='text']::-moz-placeholder{ color: #EEF2F7;}
-input[type='text']:-moz-placeholder{ color: #EEF2F7;}
-input[type='text']:focus::-moz-placeholder { color: #9E9DAB;}
-input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
+input[type='text']:-moz-placeholder {
+    color: #EEF2F7;
+}
+
+input[type='text']:focus::-moz-placeholder {
+    color: #9E9DAB;
+}
+
+input[type='text']:focus:-moz-placeholder {
+    color: #9E9DAB;
+}
+
 
 /*-----------------------
 
@@ -641,10 +676,11 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 
 -----------------------*/
 
-.hide_block{
+.hide_block {
     display: none;
 }
-.preloader_background{
+
+.preloader_background {
     position: fixed;
     left: 0;
     top: 0;
@@ -655,7 +691,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     opacity: 0.8;
     z-index: 99998;
 }
-#hellopreloader_preload{
+
+#hellopreloader_preload {
     display: block;
     position: fixed;
     z-index: 99999;
@@ -664,121 +701,39 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 100%;
     height: 100%;
     min-width: 1000px;
-    background:  url(http://hello-site.ru//main/images/preloads/oval.svg) center center no-repeat;
+    background: url(http://hello-site.ru//main/images/preloads/oval.svg) center center no-repeat;
     background-size: 172px;
 }
 
-/*---------------------------
-    Стили для поля возраста
-----------------------------*/
-#year_age_anim_inpt,
-#month_age_anim_inpt,
-.input_width__setter img,
-.input_width__setter label{
-    z-index: 9;
-}
-#year_age_anim_inpt,
-#month_age_anim_inpt{
-    font-family: 'Open Sans', sans-serif;
-}
-.composite_input_back{
-    grid-column: 1/3;
-    position: relative;
-    top: -50px;
-    left: -36px;
-    width: 100%;
-    height: 64px;
-    border-radius: 8px;
-    background: #EEF2F7;
-}
-.invalid_back{
-    border: 1px solid #DD5656 ;
-}
-.active_text{
-    top: 12px !important;
-    font-size: 12px !important;
-}
-.age_input{
-    position: relative !important;
-    
-}
-.age_input:nth-child(1){
-    width: 74px !important;
-    margin: 24px 12px 0 20px;
-    padding: 0 !important;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-.age_input:nth-child(2){
-    width: 95px !important;
-    margin: 24px 79px 0 0;
-    padding: 0 !important;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-/*---------------------------
-    Стили для поля возраста
-----------------------------*/
-.focus_left_input{
-    margin: 1px 12px 0 20px;
-    padding: 26px 0 0 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    border-bottom: 1px solid #9E9DAB !important;
-    background: #fff !important;
-}
-.focus_left_input:focus{
-    border-bottom: 1px solid #4B9FDF !important;
-}
-.focus_right_input{
-    margin: 1px 73px 0 0;
-    padding: 26px 0 0 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    border-bottom: 1px solid #9E9DAB !important;
-    background: #fff !important;
-}
-.focus_right_input:focus{
-    border-bottom: 1px solid #4B9FDF !important;
-}
-.focus_back{
-    height: 62px;
-    border: 1px solid #4B9FDF;
-    background: #fff;
-}
-.composite_text{
-    position: absolute;
-    top: 27px;
-    left: 8px;
-    font-family: TTWellingtons-DemiBold;
-    z-index: 11;
-}
-.year_text_input{
-    left: 8px;
-}
-.month_text_input{
-    left: 106px;
-}
-.inv_icon_age_pet{
-    z-index: 11;
+.focus_left_input::-webkit-input-placeholder {
+    color: #9E9DAB !important;
 }
 
+.focus_right_input::-webkit-input-placeholder {
+    color: #9E9DAB !important;
+}
 
-.focus_left_input::-webkit-input-placeholder { color: #9E9DAB !important;}
-.focus_right_input::-webkit-input-placeholder { color: #9E9DAB !important;}
+input[type='text']::-moz-placeholder {
+    color: #EEF2F7;
+}
 
+input[type='text']:-moz-placeholder {
+    color: #EEF2F7;
+}
 
+input[type='text']:focus::-moz-placeholder {
+    color: #9E9DAB;
+}
 
-input[type='text']::-moz-placeholder{ color: #EEF2F7;}
-input[type='text']:-moz-placeholder{ color: #EEF2F7;}
-input[type='text']:focus::-moz-placeholder { color: #9E9DAB;}
-input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
-
+input[type='text']:focus:-moz-placeholder {
+    color: #9E9DAB;
+}
 
 
 /*----------------------------
     Знак рубля
 ------------------------------*/
+
 .rub {
     line-height: 3px;
     width: 0.4em;
@@ -790,6 +745,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     font-size: 13px !important;
     top: -2px;
 }
+
+
 /*-------------------------------
 
 
@@ -871,9 +828,12 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     line-height: 44px;
     color: #545454;
 }
+
+
 /*----------------------------
     Кнопка назад вверху страницы
 ------------------------------*/
+
 .back_btn_block {
     display: none;
     grid-template-columns: 20px 110px;
@@ -885,17 +845,20 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     line-height: 32px;
     color: #A3A3A3;
 }
-.back_btn_block p{
+
+.back_btn_block p {
     color: #A3A3A3;
     text-decoration: underline;
     font-size: 12px;
     margin: 0;
 }
-.back_btn_block:hover{
+
+.back_btn_block:hover {
     cursor: pointer;
     color: #000;
 }
-.back_btn_block:hover p{
+
+.back_btn_block:hover p {
     cursor: pointer;
     color: #000;
 }

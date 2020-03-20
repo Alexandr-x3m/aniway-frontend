@@ -4,9 +4,10 @@ body {
     background: #F5E9DB;
 }
 
-
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: TTWellingtons-DemiBold;
 }
 
@@ -20,70 +21,75 @@ p {
         Стили для headera
 
 ----------------------------------------------*/
-.header_conteiner{
+
+.header_conteiner {
     grid-template-columns: 105px 1fr 680px 160px;
     width: 1124px;
 }
 
-.logo_block{
+.logo_block {
     height: 60px;
     border-bottom: 1px solid #F16331;
 }
-.nav_block{
-    width: 680px;
 
+.nav_block {
+    width: 680px;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-.nav_block ul{
+
+.nav_block ul {
     grid-template-columns: 150px 170px 64px 42px 114px;
     margin-top: 35px;
 }
-.nav_block ul a:hover{
-    border-bottom: 1px solid #B83D16;
 
+.nav_block ul a:hover {
+    border-bottom: 1px solid #B83D16;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-.nomber_phone:hover{
+
+.nomber_phone:hover {
     padding-bottom: 0;
     border-bottom: none;
-
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -o-transform: scale(1.05);
     transform: scale(1.05);
     transform: ;
-
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
     -o-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
-.icon_phone{
+
+.icon_phone {
     position: relative;
     top: 34px;
     left: 0;
 }
-.header_nomber{
+
+.header_nomber {
     position: relative;
     top: 30px;
     left: 2px;
     font-size: 16px;
 }
 
-.menu_button_conteiner{
+.menu_button_conteiner {
     display: none;
     position: relative;
 }
 
+
 /*----------------------------
         Hamburger button
 -----------------------------*/
+
 .hamburger {
     margin: 0 auto;
     margin-top: 30px;
@@ -91,6 +97,7 @@ p {
     height: 30px;
     position: relative;
 }
+
 .hamburger .bar {
     padding: 0;
     width: 30px;
@@ -99,7 +106,7 @@ p {
     display: block;
     border-radius: 4px;
     transition: all 0.4s ease-in-out;
-    position: absolute; 
+    position: absolute;
 }
 
 .bar1 {
@@ -119,7 +126,6 @@ p {
     bottom: 0;
 }
 
-
 .hamburger3 .bar1 {
     transform-origin: 5%;
 }
@@ -128,29 +134,31 @@ p {
     transform-origin: 5%;
 }
 
-.checkbox3:checked + label > .hamburger3 > .bar1{
+.checkbox3:checked+label>.hamburger3>.bar1 {
     transform: rotate(45deg);
     height: 3px;
     width: 42px;
 }
 
-.checkbox3:checked + label > .hamburger3 > .bar3{
+.checkbox3:checked+label>.hamburger3>.bar3 {
     transform: rotate(45deg);
     height: 3px;
     background-color: transparent;
 }
 
-.checkbox3:checked + label > .hamburger3 > .bar2{
+.checkbox3:checked+label>.hamburger3>.bar2 {
     transform: rotate(-45deg);
     height: 3px;
     background-color: transparent;
 }
 
-.checkbox3:checked + label > .hamburger3 > .bar4{
+.checkbox3:checked+label>.hamburger3>.bar4 {
     transform: rotate(-45deg);
     height: 3px;
     width: 42px;
 }
+
+
 /*-------------------------------------------
 
         Стили для основного конейтнера
@@ -165,6 +173,7 @@ p {
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 }
+
 
 /*---------------------------------------
 
@@ -212,6 +221,7 @@ p {
     margin-bottom: 64px;
 }
 
+
 /*---------------------------------------
         Стили для mini формой
 ---------------------------------------*/
@@ -248,10 +258,14 @@ p {
     border-radius: 8px;
 }
 
-.select_type_conteiner, .breed_pet_block, .country_travel_block, .date_travel_block {
+.select_type_conteiner,
+.breed_pet_block,
+.country_travel_block,
+.date_travel_block {
     position: relative;
     height: 84px;
 }
+
 
 /*---------------------------------------
         Стили для selecta
@@ -263,7 +277,7 @@ p {
     height: 84px;
     border-radius: 0;
     border-right: 1px solid #C9C9C9;
-    border-top-left-radius: 8px  !important;
+    border-top-left-radius: 8px !important;
     border-bottom-left-radius: 8px !important;
     background: #fff;
 }
@@ -284,37 +298,44 @@ p {
     top: 10px !important;
     font-size: 14px !important;
 }
-.active_select{
+
+.active_select {
     width: 100%;
     border-bottom-left-radius: 0 !important;
     border: 1px solid #4B9FDF;
     width: 215.5px;
     height: 82px !important;
 }
-.select_text{
+
+.select_text {
     top: 20px;
     font-size: 16px !important;
     color: #000 !important;
     left: 20px !important;
     text-align: left;
 }
-.inv_select_text{
+
+.inv_select_text {
     top: 12px !important;
     font-size: 12px !important;
     color: #DD5656 !important;
     left: 20px !important;
 }
+
 .invalid_select {
     border: 1px solid #DD5656 !important;
     height: 82px !important;
     width: 215.5px !important;
 }
 
+
 /*---------------------------------------
         Стили для inputов
 ---------------------------------------*/
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
     width: 143px;
     height: 26px;
     font-size: 16px;
@@ -326,7 +347,9 @@ input[type="text"], input[type="email"], input[type="number"] {
     font-family: TTWellingtons-Medium;
 }
 
-input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus {
     width: 143px;
     height: 26px;
     background-color: #fff;
@@ -342,12 +365,12 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     font-family: TTWellingtons-Medium;
 }
 
-
 .invalid_info_icon {
     top: 40px !important;
     left: 100% !important;
 }
-.invalid_input{
+
+.invalid_input {
     width: 143px;
     height: 26px;
     padding: 33px 47.5px 23px 25px!important;
@@ -361,41 +384,49 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
 .invalid_info_text {
     width: 200px !important;
     font-size: 12px;
-    left: -10px ;
+    left: -10px;
 }
-.invalid_list_input{
+
+.invalid_list_input {
     width: 143px !important;
     border: none;
     padding: 33px 47.5px 23px 25px!important;
 }
-.list_saerch_conteiner{
+
+.list_saerch_conteiner {
     top: 84px;
     width: 100%;
     border: none;
 }
-.search_item{
+
+.search_item {
     background: #fff;
 }
-.search_item p{
+
+.search_item p {
     left: 0;
     margin: 0;
     color: #000;
 }
 
-.search_item:hover{
+.search_item:hover {
     background: #E5E9EE;
 }
+
 .valid_list_input~.label_text {
     top: 12px;
     font-size: 14px;
 }
 
+
 /*---------------------------------------
         Стили для btn open form
 ---------------------------------------*/
-.open_form_btn{
+
+.open_form_btn {
     grid-column: 6;
 }
+
 .btn_nav {
     left: 0;
     margin-left: 0;
@@ -432,6 +463,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     border-bottom-right-radius: 8px;
 }
 
+
 /*---------------------------------------
 
         Стили для окна с формой
@@ -455,7 +487,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     overflow: hidden;
     border-radius: 15px;
 }
-.video_content_conteiner video{
+
+.video_content_conteiner video {
     position: relative;
     left: -6%;
 }
@@ -478,7 +511,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     margin: auto;
     border: 1px solid #fff;
     border-radius: 50%;
-
     -webkit-transition-duration: 0.4s;
     -moz-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
@@ -495,7 +527,6 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     border-left: 21px solid #fff;
     border-bottom: 12px solid transparent;
     margin-left: -9px;
-
     -webkit-transition-duration: 0.4s;
     -moz-transition-duration: 0.4s;
     -o-transition-duration: 0.4s;
@@ -507,7 +538,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     background: #fff;
     top: -5px;
 }
-.overlay:hover .triangle{
+
+.overlay:hover .triangle {
     border-top: 12px solid transparent;
     border-left: 21px solid #F16331;
     border-bottom: 12px solid transparent;
@@ -520,7 +552,8 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     height: 324px;
     z-index: 12;
 }
-.play_btn_block{
+
+.play_btn_block {
     margin-bottom: 32px;
 }
 
@@ -546,12 +579,14 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     width: 680px;
     margin-left: -340px;
 }
-.services_indo_block img{
+
+.services_indo_block img {
     position: relative;
     top: 45px;
     left: 15px;
 }
-.services_indo_block div{
+
+.services_indo_block div {
     width: 100%;
     height: 88px;
     text-align: center;
@@ -559,6 +594,7 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     border-radius: 8px;
     padding-top: 12px;
 }
+
 .services_indo_block span {
     font-family: TTWellingtons-Bold;
     font-size: 16px;
@@ -573,15 +609,31 @@ input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus 
     line-height: 17px;
 }
 
-input[type='text']::-webkit-input-placeholder{ color: #fff;}
-input[type='text']:focus::-webkit-input-placeholder { color: #9E9DAB;}
+input[type='text']::-webkit-input-placeholder {
+    color: #fff;
+}
+
+input[type='text']:focus::-webkit-input-placeholder {
+    color: #9E9DAB;
+}
+
+input[type='text']::-moz-placeholder {
+    color: #fff;
+}
+
+input[type='text']:-moz-placeholder {
+    color: #fff;
+}
+
+input[type='text']:focus::-moz-placeholder {
+    color: #9E9DAB;
+}
+
+input[type='text']:focus:-moz-placeholder {
+    color: #9E9DAB;
+}
 
 
-
-input[type='text']::-moz-placeholder{ color: #fff;}
-input[type='text']:-moz-placeholder{ color: #fff;}
-input[type='text']:focus::-moz-placeholder { color: #9E9DAB;}
-input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 /*---------------------------------------
 
     Стили для окна с услугами и 
@@ -593,13 +645,14 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     position: relative;
     top: 80px;
     width: 100%;
-    height: 2513px;
+    margin: auto;
 }
 
 .serv_tb_block {
     position: relative;
     top: 200px;
     width: 1152px;
+    height: 1887px;
     margin: auto;
     margin-bottom: 120px;
     -moz-box-sizing: content-box;
@@ -628,13 +681,16 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin-bottom: 42px;
 }
 
+
 /*---------------------------------------
         Карточки с услугами
 -------------------------------------------*/
 
 .services_conteiner {
+    position: relative;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 558px);
     grid-column-gap: 30px;
     margin-bottom: 42px;
 }
@@ -648,26 +704,28 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 }
 
 .service_list_block {
-    width: 100%; 
-    height: 660px;
-    padding: 24px 0;
+    width: 100%;
+    box-sizing: content-box;
+    padding: 24px 0 0 0;
     background: #fff;
     border-radius: 30px;
 }
-.type_list{
+
+.type_list {
     color: #C39763;
-}
-.service_list_block span {
     position: relative;
-    left: 50%;
-    margin-left: -24px;
+    left: 42px;
     font-family: TTWellingtons-Bold;
     font-size: 12px;
 }
-.name_list{
-    text-align: center !important;
+
+.name_list {
+    position: relative;
+    left: 42px;
+    text-align: left !important;
     margin-bottom: 24px;
 }
+
 .service_list_block h4 {
     text-align: center;
     text-align: left;
@@ -719,18 +777,22 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     height: 350px;
 }
 
+
 /*---------------------------------------
         Карточки с тревел боксами
 -------------------------------------------*/
 
-.nav_tavel_box_block {
-    display: none;
+.nav_tb_conteiner {
     position: relative;
-    left: 50%;
-    margin-left: -395px;
+    width: 714px;
+    margin: auto;
+}
+
+.nav_tavel_box_block {
     display: grid;
     grid-template-columns: 187px 187px 240px;
     grid-column-gap: 50px;
+    position: relative;
     margin-bottom: 48px;
 }
 
@@ -739,16 +801,17 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     grid-template-columns: 1fr 1fr;
     height: 37px;
     border-bottom: 1px solid #CBAC89;
-
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
 }
-.nav_el_tb:hover{
+
+.nav_el_tb:hover {
     border-bottom: 1px solid #000;
     cursor: pointer;
 }
-.nav_tavel_box_img{
+
+.nav_tavel_box_img {
     height: 37px;
     background-size: 50%;
     background-repeat: no-repeat;
@@ -758,9 +821,11 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 .dog_tb_block .nav_tavel_box_img {
     background-image: url(./img/mp/nav_tb/focus_dog.svg);
 }
+
 .cat_tb_block .nav_tavel_box_img {
     background-image: url(./img/mp/nav_tb/cat.svg);
 }
+
 .rabbit_tb_block .nav_tavel_box_img {
     background-image: url(./img/mp/nav_tb/rabbit.svg);
 }
@@ -786,13 +851,19 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 .active_nav_el {
     border-bottom: 1px solid #000;
 }
-.active_nav_el h4{
+
+.active_nav_el h4 {
     font-family: TTWellingtons-Bold;
+}
+
+.travel_boxes_conteiner {
+    width: 1096px;
+    margin: auto;
 }
 
 .list_travel_box {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 350px);
     grid-column-gap: 14px;
 }
 
@@ -812,6 +883,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 /*----------------------------------
     Travel bo styles
 -----------------------------------*/
+
 .item_travel_box {
     position: relative;
     top: 0;
@@ -820,73 +892,85 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     border: 1px solid #888888;
     border-radius: 8px;
     box-shadow: none;
-    
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
 }
+
+
 /* При наведении на item box */
-.item_travel_box:hover{
+
+.item_travel_box:hover {
     cursor: pointer;
     top: -10px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
-.item_travel_box:hover .travel_box__img_back{
+
+.item_travel_box:hover .travel_box__img_back {
     cursor: pointer;
     height: 100%;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
-.item_travel_box:hover .more_info_tb{
+
+.item_travel_box:hover .more_info_tb {
     background: #EEEBEB;
 }
-.item_travel_box:hover .more_info_tb{
+
+.item_travel_box:hover .more_info_tb {
     background: #EEEBEB;
 }
-.item_travel_box:hover h4{
+
+.item_travel_box:hover h4 {
     color: #fff;
 }
-.item_travel_box:hover p{
+
+.item_travel_box:hover p {
     color: #fff;
 }
-.item_travel_box:hover span{
+
+.item_travel_box:hover span {
     color: #fff;
 }
-.item_travel_box:hover .price_block{
+
+.item_travel_box:hover .price_block {
     color: #fff;
 }
-.item_travel_box:hover .button-text{
+
+.item_travel_box:hover .button-text {
     color: #000 !important;
 }
-.item_travel_box:hover .more_info_tb{
+
+.item_travel_box:hover .more_info_tb {
     border: 1px solid #EEEBEB !important;
 }
-.item_travel_box:hover .more_info_tb .circle .icon.arrow::before{
+
+.item_travel_box:hover .more_info_tb .circle .icon.arrow::before {
     border-top: 2px solid #000 !important;
     border-right: 2px solid #000 !important;
 }
 
-
-
-
-
-.travel_box__img_back{
+.travel_box__img_back {
     position: absolute;
     width: 100%;
     height: 240px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
 }
+
 .nature_tb_back {
     background: #366D50;
 }
+
 .sea_tb_back {
     background: #4A94CC;
 }
+
 .town_tb_back {
     background: #EC693A;
 }
-.preview_travel_box{
+
+.preview_travel_box {
     position: relative !important;
     width: 100%;
     height: 270px;
@@ -931,7 +1015,23 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     font-size: 18px !important;
     z-index: 11;
 }
-.price_block .rub{
+
+
+/*----------------------------
+    Знак рубля
+------------------------------*/
+
+.rub_ser {
+    line-height: 3px;
+    width: 0.4em;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    position: relative;
+    font-size: 18px !important;
+}
+
+.price_block .rub {
     top: -1px;
     font-size: 18px !important;
 }
@@ -947,6 +1047,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin: auto;
     z-index: 11;
 }
+
 
 /*---------------------------------------
         Кнопки больше информации для тревел боксов
@@ -1004,6 +1105,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 100% !important;
 }
 
+
 /*---------------------------------------
 
     Стили для окна с карточками работников
@@ -1011,6 +1113,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 -------------------------------------------*/
 
 .info_team_window_block {
+    display: none;
     position: relative;
     top: 162px;
     left: 0;
@@ -1133,6 +1236,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     border-radius: 0 !important;
 }
 
+
 /*---------------------------------------
         Кнопки больше информации для 
             карточек работников
@@ -1180,6 +1284,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 246px !important;
 }
 
+
 /*---------------------------------------
 
     Стили для окна с доп информацией
@@ -1187,6 +1292,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 -------------------------------------------*/
 
 .secnd_info_window_conteiner {
+    display: none;
     position: relative;
     top: 162px;
     left: 0;
@@ -1196,6 +1302,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 }
 
 .support_conteiner {
+    display: none !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
     position: relative;
@@ -1263,6 +1370,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 396px !important;
 }
 
+
 /*---------------------------------------
         Кнопка скачать информацию
 -------------------------------------------*/
@@ -1312,6 +1420,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 248px !important;
 }
 
+
 /*---------------------------------------
 
     Стили для окна с историями путешествий
@@ -1319,6 +1428,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 -------------------------------------------*/
 
 .history_travels_window_conteiner {
+    display: none;
     position: relative;
     top: 100px;
     left: 0;
@@ -1404,6 +1514,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin-bottom: 44px;
 }
 
+
 /*---------------------------------------
 
         Шрифты для текста
@@ -1446,6 +1557,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 .autor_block img {
     border-radius: 50%;
 }
+
 
 /*---------------------------------------
         Кнопка скачать информацию
@@ -1491,6 +1603,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 246px !important;
 }
 
+
 /*---------------------------------------
 
     Стили для окна с историями путешествий
@@ -1498,6 +1611,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 -------------------------------------------*/
 
 .question_window_conteiner {
+    display: none;
     position: relative;
     top: 38px;
     left: 0;
@@ -1579,6 +1693,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     color: #DE4C21;
 }
 
+
 /*---------------------------------------
 
     Стили для окна с историями путешествий
@@ -1586,6 +1701,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 -------------------------------------------*/
 
 .footer_window_conteiner {
+    display: none;
     position: relative;
     top: 100px;
     left: 0;
@@ -1664,6 +1780,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 .head_footer {
     top: 520px;
 }
+
 
 /*---------------------------------------
 
@@ -1776,6 +1893,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin: 0;
 }
 
+
 /*-----------------------------------------
     Кнопка закрытия карточки работника
 -----------------------------------------*/
@@ -1847,7 +1965,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 
 
 ------------------------------*/
-.travel_box_back{
+
+.travel_box_back {
     position: fixed;
     top: 0;
     left: 0;
@@ -1856,7 +1975,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     background: #000;
     opacity: 0.6;
 }
-.travel_box_conteiner{
+
+.travel_box_conteiner {
     display: none;
     position: fixed;
     top: 50px;
@@ -1865,13 +1985,16 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin-left: -542px;
     z-index: 12;
 }
-.travel_box_conteiner h4{
+
+.travel_box_conteiner h4 {
     margin: 0;
 }
+
 .travel_box_conteiner .header_slider_block {
     margin-bottom: 18px !important;
 }
-.travel_box_mobile_conteiner{
+
+.travel_box_mobile_conteiner {
     position: relative;
     width: 100%;
     padding: 74px 80px 0 80px;
@@ -1879,16 +2002,19 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     box-sizing: content-box;
     background-color: #fff;
 }
+
 .travel_box_mobile_conteiner,
 .contacts_block,
-.btn_close_card_worker{
+.btn_close_card_worker {
     z-index: 11;
 }
-.close_up_tb{
+
+.close_up_tb {
     display: grid;
     left: 0 !important;
     top: -16px !important;
 }
+
 .slider_box_img_conteiner {
     width: 380px;
     height: 400px;
@@ -1964,14 +2090,16 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     width: 380px;
     height: 80px;
 }
-.slider_block_nav{
+
+.slider_block_nav {
     position: relative;
     left: 0px;
     display: grid;
     transition-property: left;
     transition-delay: 0.2s;
 }
-.no_selected_img{
+
+.no_selected_img {
     position: absolute;
     background: #000;
     width: 100%;
@@ -2011,9 +2139,11 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     grid-column-gap: 12px;
     grid-row-gap: 24px;
 }
-.text_info_block{
+
+.text_info_block {
     font-size: 16px;
 }
+
 .text_info_block span {
     font-family: TTWellingtons-Regular;
 }
@@ -2023,24 +2153,30 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     font-size: 24px !important;
     margin: 0;
 }
-.name_travel_box span{
+
+.name_travel_box span {
     font-family: TTWellingtons-DemiBold;
     font-size: 24px !important;
 }
-.text_info_block .hor_line{
+
+.text_info_block .hor_line {
     grid-column: 1/3;
     margin: 0;
 }
-.text_info_block h4{
+
+.text_info_block h4 {
     font-size: 16px;
 }
-.text_price{
+
+.text_price {
     grid-column: 1/3;
     grid-row: 2;
 }
-.text_price span{
+
+.text_price span {
     font-family: 'Open Sans', sans-serif;
 }
+
 .text_info_block p {
     margin: 0px;
     font-family: TTWellingtons-Regular;
@@ -2055,7 +2191,7 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     grid-column: 2;
 }
 
-.type_food_block h4{
+.type_food_block h4 {
     margin-bottom: 12px;
 }
 
@@ -2069,8 +2205,9 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     grid-template-columns: 24px 60px 24px;
     width: 108px;
     height: 24px;
-} 
-.count_boxes_block h4{
+}
+
+.count_boxes_block h4 {
     margin-bottom: 21px;
 }
 
@@ -2124,7 +2261,8 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
 #step_two_from_box {
     width: 250px !important;
 }
-.footer_conteiner{
+
+.footer_conteiner {
     position: relative;
     display: grid;
     grid-template-columns: 200px 1fr 200px;
@@ -2133,36 +2271,42 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     margin: auto;
     left: 0;
 }
-.footer_conteiner span{
+
+.footer_conteiner span {
     font-size: 12px;
     color: #C1AD96;
 }
-.footer_conteiner a{
+
+.footer_conteiner a {
     color: #C1AD96;
     text-decoration: underline;
 }
-.footer_conteiner a:hover{
+
+.footer_conteiner a:hover {
     cursor: pointer;
 }
-.footer_conteiner span:nth-child(2){
+
+.footer_conteiner span:nth-child(2) {
     grid-column: 3;
     text-align: end;
 }
-.travel_box_conteiner .btn_nav{
+
+.travel_box_conteiner .btn_nav {
     left: 50% !important;
     margin-left: -140px !important;
 }
 
+
 /*-----------------------------------------
     Кнопка закрытия карточки работника
 -----------------------------------------*/
+
 .contacts_block {
     display: none;
     grid-template-columns: 280px 280px 280px;
     grid-column-gap: 22px;
     grid-row-gap: 30px;
     margin-bottom: 32px;
-    
     position: relative;
     width: 100%;
     padding: 74px 80px 0 80px;
@@ -2170,24 +2314,29 @@ input[type='text']:focus:-moz-placeholder { color: #9E9DAB;}
     box-sizing: content-box;
     background-color: #fff;
 }
-.type_link_block{
+
+.type_link_block {
     position: relative;
     height: 64px;
 }
+
 .send_appl {
     grid-column: 2 !important;
     grid-row: 2 !important;
 }
-.type_link_conteiner{
+
+.type_link_conteiner {
     position: relative;
 }
-#send_application{
+
+#send_application {
     position: relative;
     top: -5px;
 }
+
 #your_telephone,
 #age_anim_inpt,
 #date_departure,
-#vakvina_date{
+#vakvina_date {
     font-family: 'Open Sans', sans-serif;
 }

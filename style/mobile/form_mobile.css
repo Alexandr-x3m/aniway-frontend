@@ -1,24 +1,24 @@
 @media screen and (max-width: 1250px) {
-    .form_conteiner{
+    .form_conteiner {
         width: 876px;
     }
-    
-    .header_nomber a{
+    .header_nomber a {
         color: #000;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .form_conteiner{
+    .form_conteiner {
         width: 100%;
         border-radius: 0;
         padding: 0;
         margin: 0;
     }
 }
+
 @media screen and (max-width: 1080px) {
-    .header_conteiner{
-        grid-template-columns: 105px 1fr 150px;    
+    .header_conteiner {
+        grid-template-columns: 105px 1fr 150px;
         height: 44px;
         width: 90%;
     }
@@ -26,49 +26,47 @@
         padding-top: 0;
         line-height: 44px;
     }
-    .header_nomber img{
+    .header_nomber img {
         height: 20px;
     }
-    .header_nomber a{
+    .header_nomber a {
         font-size: 12px;
     }
-    .convention_conteiner{
+    .convention_conteiner {
         grid-column: 1;
         width: 270px;
         top: -76px;
         left: 297px;
         margin: 0;
     }
-    .footer_conteiner{
+    .footer_conteiner {
         height: 44px;
         width: 90%;
         line-height: 44px;
     }
-    
     .rub {
         top: -1px;
     }
-    
-/*-----------------------------------
+    /*-----------------------------------
             стили второго окна
     -------------------------------------*/
-    .form_step_two{
+    .form_step_two {
         width: 90%;
         margin: auto;
     }
-    .form_step_two h1{
+    .form_step_two h1 {
         font-size: 18px;
     }
-    .hint_conteiner{
+    .hint_conteiner {
         display: none;
     }
-    .header_slider_block{
+    .header_slider_block {
         margin-bottom: 120px;
     }
     /*-----------------------------------
                 Список тревел боксов
     -------------------------------------*/
-    .back_btn_block{
+    .back_btn_block {
         top: 0 !important;
         width: 110px;
         height: 40px;
@@ -77,24 +75,24 @@
     .back_btn_block p {
         font-size: 10px;
     }
-    .box_items_conteiner{
-        top: 0px; 
+    .box_items_conteiner {
+        top: 0px;
         grid-template-columns: 70%;
         grid-template-rows: repeat(3, 270px);
         grid-column-gap: 0;
         grid-row-gap: 12px;
         margin-bottom: 0;
     }
-    .box_item_block{
+    .box_item_block {
         display: grid;
         grid-template-columns: 270px 1fr;
         grid-column-gap: 56px;
         height: 110px;
     }
-    .box_item_block h4{
+    .box_item_block h4 {
         width: 100%;
     }
-    .img_block{
+    .img_block {
         width: 270px;
         height: 270px;
         margin-bottom: 0;
@@ -104,7 +102,7 @@
         height: 270px;
         border-radius: 5px;
     }
-    .notification_circle{
+    .notification_circle {
         top: -38px;
         left: 206px;
         width: 64px;
@@ -114,40 +112,39 @@
         border-bottom-right-radius: 8px;
         font-size: 14px;
     }
-    .notification_circle span{
+    .notification_circle span {
         font-size: 14px;
     }
-    .name_tr_box{
+    .name_tr_box {
         width: 100%;
         margin-top: 36px;
         margin-bottom: 12px;
         font-size: 24px;
     }
-    .price_tr_box{
+    .price_tr_box {
         margin-bottom: 28px;
         font-size: 18px;
     }
-    .price_text{
+    .price_text {
         font-size: 18px;
     }
-    .more_info_conteiner{
+    .more_info_conteiner {
         width: 100%;
         height: 64px;
         font-size: 18px;
         line-height: 64px;
-        border-radius: 5px; 
-        border: 0.5px solid #282936;   
+        border-radius: 5px;
+        border: 0.5px solid #282936;
         color: #282936;
     }
-    .more_info_conteiner:hover{
+    .more_info_conteiner:hover {
         height: 62px;
         line-height: 62px;
     }
-
     /*-----------------------------------
             стили третьего окна
     -------------------------------------*/
-    .form_step_tree{
+    .form_step_tree {
         width: 90%;
         margin: auto;
     }
@@ -180,12 +177,12 @@
     /*-----------------------------------
             Travel box выбранный для покупки
     -------------------------------------*/
-    .box_purchase_conteiner{
+    .box_purchase_conteiner {
         display: block;
         padding-left: 32px;
         margin-bottom: 20px;
     }
-    .box_purchase_item{
+    .box_purchase_item {
         grid-template-columns: 40px 1fr 1fr 54px 24px;
         grid-column-gap: 25px;
         margin-bottom: 18px;
@@ -194,21 +191,21 @@
         width: 40px;
         height: 40px;
     }
-    .box_purchase_item h5{
+    .box_purchase_item h5 {
         line-height: 20px;
     }
-    .name_purchase_block{
+    .name_purchase_block {
         display: block;
     }
-    .box_purchase_item .price_block h4{
+    .box_purchase_item .price_block h4 {
         line-height: 24px;
         font-size: 14px !important;
     }
     .hor_img {
         display: block;
     }
-    .del_tr_box{
-        width: 22px;  
+    .del_tr_box {
+        width: 22px;
         top: 20px;
     }
     .finish_summ {
@@ -236,12 +233,10 @@
     .btn-tertiary {
         width: 100%;
     }
-
-
     /*-----------------------------------
          Тревел бокс внутри
     -------------------------------------*/
-    .travel_box_conteiner{
+    .travel_box_conteiner {
         top: 100px;
         left: 0;
         width: 100%;
@@ -249,14 +244,14 @@
         margin-left: 0;
         border-radius: 0;
     }
-    .travel_box_mobile_conteiner{
+    .travel_box_mobile_conteiner {
         width: 90%;
         margin: auto;
     }
-    .travel_box_conteiner .header_slider_block{
+    .travel_box_conteiner .header_slider_block {
         margin-bottom: 0px;
     }
-    .travel_box_conteiner h1{
+    .travel_box_conteiner h1 {
         font-size: 28px;
         margin-top: 100px;
         margin-bottom: 30px;
@@ -265,12 +260,12 @@
     .box_info_block {
         grid-template-columns: 100%;
     }
-    .text_info_block{
+    .text_info_block {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-row-gap: 24px;
     }
-    .img_slider{
+    .img_slider {
         position: relative;
         top: 0px;
         margin-bottom: 16px;
@@ -299,37 +294,37 @@
     .list_ware_two {
         grid-column: 2;
     }
-    .list_ware_one p{
+    .list_ware_one p {
         font-size: 14px;
     }
-    .list_ware_two p{
+    .list_ware_two p {
         font-size: 14px;
     }
-    .count_boxes_block{
+    .count_boxes_block {
         grid-column: 1;
         grid-row: 4;
     }
-    .type_food_block{
+    .type_food_block {
         grid-column: 2;
     }
-    .type_food_block h4{
+    .type_food_block h4 {
         font-size: 20px;
         margin-bottom: 12px;
     }
-    .count_boxes_block{
+    .count_boxes_block {
         font-size: 10px;
         margin-bottom: 12px;
     }
-    .count_boxes_block h4{
+    .count_boxes_block h4 {
         font-size: 20px;
     }
-    .small_switcher{
+    .small_switcher {
         width: 180px;
         height: 48px;
         font-size: 12px;
         border-radius: 5px;
     }
-    .type_food_text{
+    .type_food_text {
         grid-template-columns: 90px 90px !important;
         width: 180px !important;
         height: 48px !important;
@@ -338,7 +333,7 @@
         width: 90px !important;
         line-height: 48px;
     }
-    .type_food_switcher:after{   
+    .type_food_switcher:after {
         width: 90px;
         height: 48px;
         line-height: 48px;
@@ -346,7 +341,7 @@
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
     }
-    :checked+.type_food_switcher:after {
+     :checked+.type_food_switcher:after {
         left: 90px;
         border-bottom-right-radius: 5px;
         border-top-right-radius: 5px;
@@ -356,10 +351,9 @@
         font-family: TTWellingtons-DemiBold !important;
         font-size: 20px !important;
     }
-    .dwn_back_step span{
+    .dwn_back_step span {
         font-size: 20px;
     }
-
     /*-------------------------------
     Успешно отправленная заявка
 ------------------------------*/
@@ -370,71 +364,78 @@
         height: 400px;
         padding-top: 44px;
     }
-    .invaite_block{
+    .invaite_block {
         top: 0;
     }
-    .success_title{
+    .success_title {
         font-size: 28px;
         margin-bottom: 12px;
     }
-    .invaite_block h4{
+    .invaite_block h4 {
         text-align: center;
         font-size: 14px;
     }
-    .invaite_block h4:nth-child(2){
+    .invaite_block h4:nth-child(2) {
         margin-bottom: 12px;
     }
-    .invaite_block h4:nth-child(3){
+    .invaite_block h4:nth-child(3) {
         margin-bottom: 10px;
     }
-    .invaite_block a{
+    .invaite_block a {
         color: #00768F;
         font-size: 20px;
         text-decoration: none;
     }
-    .invaite_block a:hover{
+    .invaite_block a:hover {
         text-decoration: underline !important;
     }
-    .back_main_page{
+    .back_main_page {
         left: 50%;
         width: 100px;
         margin-left: -50px;
         font-size: 9px !important;
     }
-    .back_main_page:hover{
+    .back_main_page:hover {
         color: #000 !important;
     }
-
-    .images_inst_conteiner{
+    .images_inst_conteiner {
         display: grid;
-        grid-template-columns: repeat(6, 1fr);    
+        grid-template-columns: repeat(6, 1fr);
         position: relative;
         top: 95px;
     }
-    .images_inst_conteiner img{
+    .images_inst_conteiner img {
         width: 100%;
         height: 100%;
     }
-
 }
+
 @media screen and (max-width: 900px) {
-    .box_items_conteiner{
+    .box_items_conteiner {
         grid-template-columns: 100%;
     }
 }
 
-
 @media screen and (max-width: 640px) {
-    .footer_conteiner{
+    .composite_input_back {
+        top: -40px;
+        left: -26px;
+        height: 48px;
+        border-radius: 5px;
+    }
+    .age_conteiner {
+        margin: 0;
+        left: 26px;
+    }
+    .footer_conteiner {
         grid-template-columns: 150px;
     }
-    .footer_conteiner span{
+    .footer_conteiner span {
         font-size: 10px;
         color: #C1AD96;
         line-height: 40px;
     }
-    
-     /*-----------------------------------
+    /*-----------------------------------
                 Окно ошибки 
     =-------------------------------------*/
     .err_window_block {
@@ -455,61 +456,60 @@
         margin-bottom: 30px;
         font-size: 10px;
     }
-    #send_again_application{
+    #send_again_application {
         left: 0;
         margin: auto;
         width: 90%;
     }
-
     .rub {
         top: -2px;
     }
-    #hellopreloader_preload{
+    #hellopreloader_preload {
         min-width: 0;
         background-size: 64px;
     }
-    .form_conteiner{
+    .form_conteiner {
         left: 0;
         max-width: 100% !important;
         width: 100%;
         padding: 0;
         margin: 0;
     }
-    .steps_slider_conteiner{
+    .steps_slider_conteiner {
         grid-template-columns: repeat(5, 100%);
         width: 100%;
     }
-    .form_step_one{
+    .form_step_one {
         width: 90%;
         margin: auto;
     }
-    .form_step_one h1{
+    .form_step_one h1 {
         font-size: 18px;
     }
-    .form_step_tree h1{
+    .form_step_tree h1 {
         font-size: 14px !important;
     }
     /*-----------------------------------
             Заголовок страницы с формой 
     =-------------------------------------*/
-    .haeder_conteiner{
+    .haeder_conteiner {
         height: 76px;
         margin-bottom: 12px;
     }
-    .header_slider_block{
+    .header_slider_block {
         width: 295px;
         margin-bottom: 40px;
     }
-    .header_slider_block h1{
+    .header_slider_block h1 {
         font-size: 16px;
         text-align: left;
         width: 100%;
         height: 68px;
     }
-     /*-----------------------------------
+    /*-----------------------------------
                 Навигация по форме 
     =-------------------------------------*/
-    .nav_form_conteiner{
+    .nav_form_conteiner {
         position: relative;
         left: 5%;
         top: 144px;
@@ -523,71 +523,70 @@
         width: 16px;
         height: 16px;
     }
-    .step_circle p{
+    .step_circle p {
         font-size: 10px;
         line-height: 16px;
     }
-    .connect_info p{
+    .connect_info p {
         font-size: 8px;
         margin: 16px 0 0 4px;
     }
-    .full_text{
+    .full_text {
         font-size: 8px !important;
     }
     /*-----------------------------------
             Навигация по форме 
     -------------------------------------*/
-    .arc_conteiner{
+    .arc_conteiner {
         top: -48px;
         left: 9px;
     }
-    .arc_window_block{
+    .arc_window_block {
         grid-template-columns: repeat(3, 82px);
         grid-column-gap: 19px;
     }
-    .arc{
+    .arc {
         width: 89px;
         height: 20px;
     }
-    .header_4_lvl{
+    .header_4_lvl {
         font-size: 12px;
         grid-column: 1;
     }
     /*-----------------------------------
             Форма колонки 
     -------------------------------------*/
-    .two_columns_grid:nth-child(2){
+    .two_columns_grid:nth-child(2) {
         grid-auto-flow: column;
         grid-template-rows: 24px repeat(4, 48px);
         grid-template-columns: 100%;
         grid-column-gap: 0;
         grid-row-gap: 15px;
         width: 100%;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
-    .two_columns_grid:nth-child(3){
+    .two_columns_grid:nth-child(3) {
         grid-auto-flow: column;
         grid-template-rows: 24px repeat(3, 48px);
         grid-template-columns: 100%;
         grid-column-gap: 0;
         grid-row-gap: 15px;
         width: 100%;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
-    .type_pet_block{
+    .type_pet_block {
         height: 48px;
     }
-
-    .chip_text{
+    .chip_text {
         font-size: 10px;
     }
-    .switcher{
+    .switcher {
         width: 136px;
         height: 26px;
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
     }
-    .text_block{
+    .text_block {
         grid-template-columns: 68px 68px;
         width: 136px !important;
         height: 28px !important;
@@ -600,15 +599,15 @@
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
     }
-    .text_block div{
+    .text_block div {
         width: 66px;
         height: 26px !important;
         line-height: 26px;
     }
-    .chip_switcher{
+    .chip_switcher {
         width: 68px;
     }
-    .chip_switcher:after{
+    .chip_switcher:after {
         width: 68px;
         height: 28px;
         line-height: 28px;
@@ -620,7 +619,7 @@
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
     }
-    .vacine_time_block{
+    .vacine_time_block {
         grid-row: 4;
         position: relative;
         top: 19px;
@@ -628,7 +627,7 @@
         width: 130px;
         height: 20px;
     }
-    .checkbox_block{
+    .checkbox_block {
         width: 18px;
         height: 18px;
     }
@@ -636,23 +635,23 @@
         grid-template-columns: 20px 1fr;
         grid-column-gap: 8px;
     }
-    .pet_vaccination_text{
+    .pet_vaccination_text {
         font-size: 10px;
     }
-    .check_tick{
+    .check_tick {
         top: 3px;
         left: 1px;
     }
     /*-----------------------------------
                 Кнопка навигации
     -------------------------------------*/
-    .btn_nav{
+    .btn_nav {
         grid-template-rows: 64px 32px;
         left: 0;
         width: 100%;
         margin-left: 0;
     }
-    .next_step{
+    .next_step {
         width: 100%;
         height: 64px;
     }
@@ -664,8 +663,7 @@
         line-height: 64px;
         font-size: 14px !important;
     }
-
-    .back_btn_block{
+    .back_btn_block {
         width: 110px;
         height: 40px;
     }
@@ -687,10 +685,10 @@
     /*-----------------------------------
             Travel box выбранный для покупки
     -------------------------------------*/
-    .box_purchase_conteiner{
+    .box_purchase_conteiner {
         display: block;
     }
-    .box_purchase_item{
+    .box_purchase_item {
         grid-template-columns: 30px 8fr 3fr 18px;
         grid-column-gap: 12px;
         margin-bottom: 18px;
@@ -703,7 +701,7 @@
         line-height: 15px;
         font-size: 12px;
     }
-    .name_purchase_block{
+    .name_purchase_block {
         display: block;
         font-size: 10px;
         line-height: 15px;
@@ -712,15 +710,13 @@
         font-size: 12px !important;
         line-height: 21px;
     }
-    .hor_img{
+    .hor_img {
         display: none;
     }
-    .del_tr_box{
+    .del_tr_box {
         top: 14px;
     }
-
-
-/*-----------------------------------
+    /*-----------------------------------
         Footer на третьем шаге
     -------------------------------------*/
     .finish_summ {
@@ -741,9 +737,7 @@
         grid-template-rows: repeat(4, 48px) 64px 84px;
         grid-row-gap: 12px;
     }
-
-
-    .box_items_conteiner{
+    .box_items_conteiner {
         top: 0px;
         grid-template-columns: 100%;
         grid-template-rows: repeat(3, 110px);
@@ -751,17 +745,17 @@
         grid-row-gap: 12px;
         margin-bottom: 0;
     }
-    .box_item_block{
+    .box_item_block {
         display: grid;
         grid-template-columns: 110px 1fr;
         grid-column-gap: 20px;
         height: 110px;
         width: 400px;
     }
-    .box_item_block h4{
+    .box_item_block h4 {
         width: 100%;
     }
-    .img_block{
+    .img_block {
         width: 110px;
         height: 110px;
         margin-bottom: 0;
@@ -771,7 +765,7 @@
         height: 110px;
         border-radius: 5px;
     }
-    .notification_circle{
+    .notification_circle {
         top: -24px;
         left: 76px;
         width: 34px;
@@ -781,40 +775,39 @@
         border-bottom-right-radius: 5px;
         font-size: 8px;
     }
-    .notification_circle span{
+    .notification_circle span {
         font-size: 8px;
     }
-    .name_tr_box{
+    .name_tr_box {
         width: 100%;
         margin-top: 0;
         margin-bottom: 12px;
         font-size: 12px;
     }
-    .price_tr_box{
+    .price_tr_box {
         margin-bottom: 28px;
         font-size: 10px;
     }
-    .price_text{
+    .price_text {
         font-size: 10px;
     }
-    .more_info_conteiner{
+    .more_info_conteiner {
         width: 100%;
         height: 36px;
         font-size: 10px;
         line-height: 36px;
-        border-radius: 5px; 
-        border: 0.5px solid #282936;   
+        border-radius: 5px;
+        border: 0.5px solid #282936;
         color: #282936;
     }
-    .more_info_conteiner:hover{
+    .more_info_conteiner:hover {
         height: 35px;
         line-height: 36px;
     }
-
-     /*-----------------------------------
+    /*-----------------------------------
          Тревел бокс внутри
     -------------------------------------*/
-    .travel_box_conteiner{
+    .travel_box_conteiner {
         top: 50px;
         left: 0;
         width: 100%;
@@ -822,11 +815,11 @@
         margin-left: 0;
         border-radius: 0;
     }
-    .travel_box_mobile_conteiner{
+    .travel_box_mobile_conteiner {
         width: 90%;
         margin: auto;
     }
-    .travel_box_conteiner h1{
+    .travel_box_conteiner h1 {
         font-size: 18px;
         margin-top: 48px;
         margin-bottom: 30px;
@@ -836,12 +829,12 @@
         grid-template-columns: 100%;
         margin-bottom: 20px;
     }
-    .text_info_block{
+    .text_info_block {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-row-gap: 12px;
     }
-    .img_slider{
+    .img_slider {
         position: relative;
         top: 0;
         margin-bottom: 16px;
@@ -870,41 +863,40 @@
     .list_ware_two {
         grid-column: 2;
     }
-    .list_ware_one p{
+    .list_ware_one p {
         font-size: 9px;
     }
-    .list_ware_two p{
+    .list_ware_two p {
         font-size: 9px;
     }
-
-    .count_boxes_block{
+    .count_boxes_block {
         grid-column: 1;
         grid-row: 4;
     }
-    .count_boxes_block h4{
+    .count_boxes_block h4 {
         font-size: 10px;
     }
-    .type_food_block{
+    .type_food_block {
         grid-column: 2;
     }
-    .type_food_block h4{
+    .type_food_block h4 {
         font-size: 10px;
         margin-bottom: 12px;
     }
-    .count_boxes_block{
+    .count_boxes_block {
         font-size: 10px;
         margin-bottom: 0;
     }
-    .small_switcher{
+    .small_switcher {
         width: 136px;
         height: 28px;
         font-size: 8px;
         border-radius: 3px;
     }
-    .set_food_block{
+    .set_food_block {
         grid-column: 2;
     }
-    .type_food_text{
+    .type_food_text {
         grid-template-columns: 68px 68px !important;
         width: 136px !important;
         height: 28px !important;
@@ -913,7 +905,7 @@
         width: 68px !important;
         line-height: 28px;
     }
-    .type_food_switcher:after{   
+    .type_food_switcher:after {
         width: 68px;
         height: 28px;
         line-height: 28px;
@@ -921,7 +913,7 @@
         border-bottom-left-radius: 3px;
         border-top-left-radius: 3px;
     }
-    :checked+.type_food_switcher:after {
+     :checked+.type_food_switcher:after {
         left: 68px;
         border-bottom-right-radius: 3px;
         border-top-right-radius: 3px;
@@ -931,21 +923,19 @@
         font-family: TTWellingtons-DemiBold !important;
         font-size: 10px !important;
     }
-    .dwn_back_step span{
+    .dwn_back_step span {
         font-size: 14px;
     }
-
     /*-------------------------------
     Успешно отправленная заявка
     ------------------------------*/
     .images_inst_conteiner {
         top: 20px;
     }
-
-    #send_application{
+    #send_application {
         top: 20px;
     }
-    .convention_conteiner{
+    .convention_conteiner {
         grid-row: 9;
         grid-column: 1;
         width: 90%;
@@ -957,7 +947,6 @@
         margin: auto;
         left: 0;
     }
-    
 }
 
 @media screen and (max-width: 460px) {
