@@ -142,8 +142,9 @@ span {
 }
 
 .logo_block {
-    top: 0;
+    top: -6px;
     background-image: url(./img/black_logotype.svg);
+    height: 61px !important;
 }
 
 .form_conteiner {
@@ -299,6 +300,14 @@ span {
 
 .type_pet_block {
     height: 64px;
+}
+
+.select_label:hover {
+    cursor: pointer;
+}
+
+.label_text:hover {
+    cursor: text;
 }
 
 .type_pet_block,
@@ -590,8 +599,8 @@ span {
     height: 32px;
     text-align: center;
     line-height: 32px;
-    border-top-left-radius: 18px;
-    border-bottom-right-radius: 18px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     background-color: #F68026;
     color: #fff;
     font-size: 14px;
@@ -680,7 +689,7 @@ span {
     display: grid;
     grid-template-columns: 448px 448px;
     grid-column-gap: 25px;
-    margin-bottom: 58px;
+    margin-bottom: 24px;
 }
 
 .services_conteiner h4 {
@@ -722,7 +731,7 @@ span {
 }
 
 .item_service .price_block h4 {
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -959,10 +968,10 @@ span {
 
 .icon_inpt_file {
     position: relative;
-    top: 13px;
-    left: 7px;
-    width: 44px;
-    height: 40px;
+    top: 18px;
+    left: 12px;
+    width: 32px;
+    height: 30px;
 }
 
 .icon_inpt_file:hover {
@@ -1025,7 +1034,7 @@ span {
     position: relative;
     left: 3px;
     font-size: 13px !important;
-    top: -2px;
+    top: -1px;
 }
 
 

@@ -30,7 +30,7 @@ class FormOrder {
         let breed = localStorage.getItem('breed')
         let date = localStorage.getItem('date')
 
-        
+
         //date_departure
         if (date != null) {
             let date_inpt = document.querySelector('#date_departure')
@@ -51,7 +51,7 @@ class FormOrder {
             breed_inpt.value = breed
             breedAnimal.validInpt()
         }
-        
+
         //Тип животного
         if (type != null) {
             document.querySelector('#view_animal_inpt').setAttribute('value', type)
@@ -83,7 +83,7 @@ class FormOrder {
         this.order.chip = have_chip
         this.order.date_vaccination = vakvina_date
         this.order.have_vakcina = have_vakcina
-        this.order.age = (year_age*12)+month_age*1
+        this.order.age = (year_age * 12) + month_age * 1
         this.order.contact_name = whats_name
         this.order.contact_email = your_email
         this.order.contact_phone = your_telephone
@@ -120,7 +120,9 @@ class FormOrder {
         let vakcinaCheck = document.querySelector('#have_vakcina')
         let year_age_pet = document.querySelector('#year_age_anim_inpt')
         let month_age_pet = document.querySelector('#month_age_anim_inpt')
-        
+
+
+
 
         if (year_age_pet.value == 0 && month_age_pet.value == 0) {
             document.querySelector('.composite_input_back').classList.add('invalid_back')
@@ -133,14 +135,20 @@ class FormOrder {
             datetravel = false
             dtTr.classList.add('invalid_input')
             document.querySelector('#inv_text_date_departure').innerText = 'Не указана дата путешествия'
-        } else { dtTr.classList.remove('invalid_input') }
-        
+        } else {
+            dtTr.classList.remove('invalid_input')
+            dtTr.classList.add('valid_input')
+        }
+
         if (vakc.value == '' && !vakcinaCheck.checked) {
             vakcina = false
             vakc.classList.remove('valid_input')
             vakc.classList.add('invalid_input')
             document.querySelector('#inv_text_vakcina_field').innerText = 'Не указана дата выкцинации'
-        } else { vakc.classList.remove('invalid_input') }
+        } else {
+            vakc.classList.remove('invalid_input')
+            vakc.classList.add('valid_input')
+        }
 
         if (breedValid == 0) {
             breedAnimal.invalidInpt()
@@ -157,7 +165,8 @@ class FormOrder {
             datetravel &&
             type_animal != 0 &&
             breedValid != 0 &&
-            countryValid != 0) {
+            countryValid != 0 ||
+            document.querySelectorAll('.invalid_input').length == 0) {
             return true
         }
 
@@ -219,6 +228,9 @@ class FormOrder {
             mail.classList.remove('valid_input')
             mail.classList.add('invalid_input')
         }
+        if (!user_agreement.checked) {
+            alert('Поставьте галочку, что вы даете согласие на обработку персональных данных')
+        }
         if (name.validity.valid && name.value.length != 0 &&
             phone.validity.valid && phone.value.length != 0 &&
             mail.validity.valid && mail.value.length != 0 &&
@@ -227,6 +239,8 @@ class FormOrder {
         }
     }
     sendForm() {
+
+        console.log(this.order)
         let preloader = document.querySelector('#preloader_conteiner')
         let err_block = document.querySelector('.err_conteiner')
         let nav = document.querySelector('.nav_form_conteiner')
@@ -240,12 +254,12 @@ class FormOrder {
             preloader.classList.remove('hide_block')
 
             fetch(('https://aniway.ru/api/order/?format=api'), {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-                body: JSON.stringify(obj)
-            })
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    body: JSON.stringify(obj)
+                })
                 .then(response => {
                     console.log(response.statusText)
                     response.ok ? resolve() : reject()

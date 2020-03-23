@@ -14,7 +14,7 @@ window.onload = () => {
     })
 
     promise.then(
-        result => { },
+        result => {},
         err => alert(err.message)
     )
 
@@ -108,6 +108,7 @@ window.onload = () => {
 
         showLeftRight(form_step_one, 500)
     }
+
     function stepTwo() {
         //Навигация по шагам
         step_two_circle.classList.add('full_circle')
@@ -158,6 +159,7 @@ window.onload = () => {
 
         showLeftRight(form_step_two, 500)
     }
+
     function stepTree() {
 
         //Навигация по шагам
@@ -290,6 +292,7 @@ window.onload = () => {
                 el.classList.remove('valid_input')
                 el.classList.remove('focus_input')
             } else if (el.value.length > 0 && el.validity.valid) {
+                if (el.name == "date_departure" || el.name == "vakvina_date") return
                 el.classList.add('valid_input')
                 el.classList.remove('invalid_input')
                 el.classList.remove('focus_input')
@@ -297,8 +300,8 @@ window.onload = () => {
         }
     })
 
-    let valid_inputs = document.querySelectorAll('.text_validity')
-    valid_inputs.forEach(el => {
+    let allInputs = document.querySelectorAll('.text_validity')
+    allInputs.forEach(el => {
         el.oninput = () => {
             if (el.value.length > 0 && el.validity.valid) {
                 el.classList.add('valid_input')
@@ -347,6 +350,7 @@ window.onload = () => {
         let text = document.querySelector('.year_text_input')
         let validIcon = document.querySelector('.val_icon_age_pet')
         let invIcon = document.querySelector('.inv_icon_age_pet')
+        let widthScreen = document.documentElement.clientWidth
 
 
         let arrVal = []
@@ -358,12 +362,13 @@ window.onload = () => {
 
         if (val == '') {
             validIcon.style.display = 'none'
+            document.querySelector('#date_travel').setAttribute('value', 0)
             text.innerText = ''
             return left_age.value = val
         }
- 
+
         if (val.length > 2 ||
-            /[^0-9]/.test(val[val.length - 1]) ) {
+            /[^0-9]/.test(val[val.length - 1])) {
             arrVal.pop()
             let txt = ''
             arrVal.forEach(el => txt += el)
@@ -371,7 +376,7 @@ window.onload = () => {
         }
 
 
-        
+
         if (val * 1 > 19) {
             arrVal[0] = '1'
             arrVal[1] = '9'
@@ -381,8 +386,10 @@ window.onload = () => {
         let el
         if (arrVal.length == 1) {
             el = arrVal[0]
-            text.style.left = '0px'
             label_age.classList.add('active_text')
+
+            if (widthScreen > 640) text.style.left = '0px'
+            else if (widthScreen <= 640) text.style.left = '4px'
         } else {
             el = arrVal[0] + arrVal[1]
             text.style.left = '10px'
@@ -391,7 +398,13 @@ window.onload = () => {
 
 
         if (el == 0) {
-            rigth_age.value = el
+            rigth_age.focus()
+
+            left_age.classList.add('focus_left_input')
+            rigth_age.classList.add('focus_right_input')
+            back_age.classList.add('focus_back')
+            label_age.classList.add('active_text')
+
             text.innerText = 'лет'
             document.querySelector('.composite_input_back').classList.remove('invalid_back')
             document.querySelector('#inv_text_age_anim').style.display = 'none'
@@ -401,6 +414,9 @@ window.onload = () => {
             left_age.value = el
             text.innerText = 'год'
             validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }
 
         if (el >= 2 && el <= 4 ||
@@ -410,6 +426,9 @@ window.onload = () => {
             left_age.value = el
             text.innerText = 'года'
             validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }
 
         if (el >= 5 && el <= 20 ||
@@ -419,6 +438,9 @@ window.onload = () => {
             left_age.value = el
             text.innerText = 'лет'
             validIcon.style.display = 'block'
+            document.querySelector('.composite_input_back').classList.remove('invalid_back')
+            document.querySelector('#inv_text_age_anim').style.display = 'none'
+            document.querySelector('.inv_icon_age_pet').style.display = 'none'
         }
 
     }
@@ -441,22 +463,24 @@ window.onload = () => {
             left_age.classList.add('focus_left_input')
             rigth_age.classList.add('focus_right_input')
             back_age.classList.add('focus_back')
+            label_age.classList.add('active_text')
         }
     }
     focusRightInpt()
     document.querySelector('.month_text_input').onclick = () => { rigth_age.focus() }
     rigth_age.oninput = () => {
-        
+
         let text = document.querySelector('.month_text_input')
         let validIcon = document.querySelector('.val_icon_age_pet')
         let invIcon = document.querySelector('.inv_icon_age_pet')
+        let widthScreen = document.documentElement.clientWidth
 
         let arrVal = []
         let val = rigth_age.value
-        
+
         for (let i = 0; i < val.length; i++) {
             arrVal.push(val[i])
-            
+
         }
 
         if (val * 1 > 13) {
@@ -469,9 +493,9 @@ window.onload = () => {
             text.innerText = ''
             return rigth_age.value = val
         }
- 
+
         if (val.length > 2 ||
-            /[^0-9]/.test(val[val.length - 1]) ) {
+            /[^0-9]/.test(val[val.length - 1])) {
             arrVal.pop()
             let txt = ''
             arrVal.forEach(el => txt += el)
@@ -481,15 +505,19 @@ window.onload = () => {
         let el
         if (arrVal.length == 1) {
             el = arrVal[0]
-            text.style.left = '86px'
             label_age.classList.add('active_text')
+            if (widthScreen > 640) text.style.left = '90px'
+            else if (widthScreen <= 640) text.style.left = '94px'
         } else {
             el = arrVal[0] + arrVal[1]
-            text.style.left = '96px'
             label_age.classList.add('active_text')
+
+            if (widthScreen > 640) text.style.left = '100px'
+            else if (widthScreen <= 640) text.style.left = '102px'
+
         }
 
-        
+
         if (el == 0) {
             rigth_age.value = el
             text.innerText = 'месяцев'
@@ -623,11 +651,15 @@ window.onload = () => {
             let month
             let year
 
+            if (val.length > 10) val.pop()
+
             if (val.length == 4) {
                 month = val[3] * 1
             } else if (val.length > 4) {
                 month = (val[3] + val[4]) * 1
             }
+
+
 
             if (val.length == 7) {
                 year = val[6] * 1
@@ -652,8 +684,7 @@ window.onload = () => {
             }
 
             if (input.value.length > 1 && input.value.length < 3) {
-                if (/[0-9]{1,2}/.test(day)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -661,8 +692,7 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 3 && input.value.length < 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -670,8 +700,7 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -687,9 +716,7 @@ window.onload = () => {
                 val.push('.')
             }
 
-            if (val.length >= 11) {
-                val.pop()
-            }
+            if (val.length >= 11) val.pop()
 
 
             if (day > 31 && month != 02) {
@@ -708,17 +735,14 @@ window.onload = () => {
                 val[4] = '2'
             }
 
-            if (year > 2020 && year.toString().length == 4) {
-                val[6] = '2'
-                val[7] = '0'
-                val[8] = '2'
-                val[9] = '0'
-            } else if (year < 2000 && year.toString().length == 4) {
+
+            if (year < 2000 && year.toString().length == 4) {
                 val[6] = '2'
                 val[7] = '0'
                 val[8] = '0'
                 val[9] = '0'
-            } else if (year < 200 && year.toString().length == 3) {
+            } else
+            if (year < 200 && year.toString().length == 3) {
                 val[6] = '2'
                 val[7] = '0'
                 val[8] = '0'
@@ -785,6 +809,8 @@ window.onload = () => {
             let month
             let year
 
+            if (val.length > 10) val.pop()
+
             if (val.length == 4) {
                 month = val[3] * 1
             } else if (val.length > 4) {
@@ -814,8 +840,7 @@ window.onload = () => {
             }
 
             if (input.value.length > 1 && input.value.length < 3) {
-                if (/[0-9]{1,2}/.test(day)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -823,8 +848,7 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 3 && input.value.length < 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
@@ -832,15 +856,13 @@ window.onload = () => {
                     return
                 }
             } else if (input.value.length > 6) {
-                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {
-                } else {
+                if (/[0-9]{1,2}/.test(day) && /[0-9]{1,2}/.test(month) && /([0-9]{1,4})/.test(year)) {} else {
                     val.pop()
                     val.forEach(el => arrToDraw += el)
                     state = arrToDraw
                     input.value = arrToDraw
                     return
                 }
-
             }
 
 
@@ -875,11 +897,6 @@ window.onload = () => {
                 val[7] = '0'
                 val[8] = '2'
                 val[9] = '5'
-            } else if (year < 2020 && year.toString().length == 4) {
-                val[6] = '2'
-                val[7] = '0'
-                val[8] = '2'
-                val[9] = '0'
             } else if (year < 200 && year.toString().length == 3) {
                 val[6] = '2'
                 val[7] = '0'
@@ -918,7 +935,7 @@ window.onload = () => {
         }
     }
     departureDate()
-    //маска для телефона
+        //маска для телефона
     $('#your_telephone').mask('+7(999)999-99-99')
 
 
@@ -946,4 +963,51 @@ window.onload = () => {
 
 
 
+    document.querySelector('#inv_icon_breed').onclick = () => {
+        document.querySelector('#type_animal_inpt').value = ''
+        breedAnimal.clearValid()
+        document.querySelector('#type_animal_inpt').focus()
+    }
+
+    document.querySelector('#inv_icon_country').onclick = () => {
+        document.querySelector('#country_arrival').value = ''
+        countryInfo.clearValid()
+        document.querySelector('#country_arrival').focus()
+    }
+
+
+    document.querySelector('#inv_date_travel').onclick = () => {
+        let input = document.querySelector('#date_departure')
+        input.value = ''
+        input.focus()
+        input.classList.remove('invalid_input')
+    }
+
+    document.querySelector('#inv_date_vakcina').onclick = () => {
+        let input = document.querySelector('#vakvina_date')
+        input.value = ''
+        input.focus()
+        input.classList.remove('invalid_input')
+    }
+
+    document.querySelector('#user_name_inv_icon').onclick = () => {
+        let input = document.querySelector('#whats_name')
+        input.value = ''
+        input.focus()
+        input.classList.remove('invalid_input')
+    }
+
+
+    document.querySelector('#inv_telephone_nomber').onclick = () => {
+        let input = document.querySelector('#your_telephone')
+        input.value = ''
+        input.focus()
+        input.classList.remove('invalid_input')
+    }
+    document.querySelector('#inv_your_mail').onclick = () => {
+        let input = document.querySelector('#your_email')
+        input.value = ''
+        input.focus()
+        input.classList.remove('invalid_input')
+    }
 }

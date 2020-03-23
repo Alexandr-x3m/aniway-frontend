@@ -24,7 +24,7 @@ class TravelBoxes {
                 .catch(err => alert(err.message))
         })
         promise.then(
-            result => {return resolve()},
+            result => { return resolve() },
             err => alert(err.message)
         )
     }
@@ -91,20 +91,20 @@ class TravelBoxes {
             let img = el.images
             let imgArr = []
 
-            img.forEach((el) => imgArr.push({img: el.image, thumb: el.thumbnail}))
+            img.forEach((el) => imgArr.push({ img: el.image, thumb: el.thumbnail }))
 
             let fr = $('#fotorama').fotorama({
                 width: 380,
                 height: 400,
                 thumbheight: 84,
             })
-            
+
             let fotorama = fr.data('fotorama');
-            
+
             if (fotorama) {
                 fotorama.load(imgArr)
             } else {
-                $('#fotorama').fotorama({data: imgArr});
+                $('#fotorama').fotorama({ data: imgArr });
             }
 
 
@@ -130,7 +130,7 @@ class TravelBoxes {
         box_conteiner.append(conteiner)
         conteiner.append(imgBl)
         conteiner.append(text_block)
-        
+
         text_block.append(name)
         text_block.append(price)
         text_block.append(btn)
@@ -169,15 +169,18 @@ class TravelBoxes {
 
                 let type_pet = ''
                 switch (el.animal_type) {
-                    case '1': type_pet = 'кошек'
-                    case '2': type_pet = 'собак'
-                    case '3': type_pet = 'грызунов'
+                    case '1':
+                        type_pet = 'кошек'
+                    case '2':
+                        type_pet = 'собак'
+                    case '3':
+                        type_pet = 'грызунов'
                 }
 
                 let text = document.createElement('h5')
                 text.setAttribute('class', `count_block count_block_${el.id}`)
                 text.setAttribute('value', el.count)
-                text.innerText = `Travel box "на природу" для ${type_pet} (${el.count} шт.)`
+                text.innerText = `Travel box "${el.name}" для ${el.type_pet} (${el.count} шт.)`
 
 
                 let hor_img = document.createElement('img')
@@ -263,7 +266,9 @@ class TravelBoxes {
         document.querySelector('#travel_box_counter').innerText = '0'
     }
 
-    drawBoxesMainPage(val) {
+    drawBoxesMainPage(val, visible, opacity) {
+
+
         let preview_1 = document.querySelector('#travel_box_preview_1')
         let preview_2 = document.querySelector('#travel_box_preview_2')
         let preview_3 = document.querySelector('#travel_box_preview_3')
@@ -271,7 +276,7 @@ class TravelBoxes {
         let name_1 = document.querySelector('#name_travel_box_1')
         let name_2 = document.querySelector('#name_travel_box_2')
         let name_3 = document.querySelector('#name_travel_box_3')
-        
+
         let desc_1 = document.querySelector('#description_travel_box_1')
         let desc_2 = document.querySelector('#description_travel_box_2')
         let desc_3 = document.querySelector('#description_travel_box_3')
@@ -283,48 +288,83 @@ class TravelBoxes {
         let more_1 = document.querySelector('#travel_box_1')
         let more_2 = document.querySelector('#travel_box_2')
         let more_3 = document.querySelector('#travel_box_3')
-        
+
 
         let typeArr = []
 
         let type = val
-        
+
         this.data.forEach(el => {
-            
-            if (el.animal_type == type*1) {
-                
+
+            if (el.animal_type == type * 1) {
+
                 console.log(el)
                 typeArr.push(el)
             }
         })
-        
+
         typeArr.forEach(el => {
 
-            switch(el.name) {
-                case 'На природу' : {
-                    preview_1.src = el.preview
-                    name_1.innerText = el.name
-                    desc_1.innerText = el.desc_left
-                    price_1.innerText = el.price
-                    more_1.setAttribute('value', el.id)
-                    break
-                }
-                case 'На море' : {
-                    preview_2.src = el.preview
-                    name_2.innerText = el.name
-                    desc_2.innerText = el.desc_left
-                    price_2.innerText = el.price
-                    more_2.setAttribute('value', el.id)
-                    break
-                }
-                case 'В город' : {
-                    preview_3.src = el.preview
-                    name_3.innerText = el.name
-                    desc_3.innerText = el.desc_left
-                    price_3.innerText = el.price
-                    more_3.setAttribute('value', el.id)
-                    break
-                }
+            switch (el.name) {
+                case 'На природу':
+                    {
+
+                        let screenWidth = document.documentElement.clientWidth
+                        if (screenWidth > 1080) {
+                            let block = document.querySelector('.item_tb_one')
+                            block.style.display = 'block'
+                                //visible(block, opacity)
+                        } else if (screenWidth <= 1080) {
+                            let block = document.querySelector('.item_tb_one')
+                            block.style.display = 'grid'
+                                //visible(block, opacity)
+                        }
+
+                        preview_1.src = el.preview
+                        name_1.innerText = el.name
+                        desc_1.innerText = el.desc_left
+                        price_1.innerText = el.price
+                        more_1.setAttribute('value', el.id)
+                        break
+                    }
+                case 'На море':
+                    {
+                        let screenWidth = document.documentElement.clientWidth
+                        if (screenWidth > 1080) {
+                            let block = document.querySelector('.item_tb_two')
+                            block.style.display = 'block'
+                                //visible(block, opacity)
+                        } else if (screenWidth <= 1080) {
+                            let block = document.querySelector('.item_tb_two')
+                            block.style.display = 'block'
+                                //visible(block, opacity)
+                        }
+                        preview_2.src = el.preview
+                        name_2.innerText = el.name
+                        desc_2.innerText = el.desc_left
+                        price_2.innerText = el.price
+                        more_2.setAttribute('value', el.id)
+                        break
+                    }
+                case 'В город':
+                    {
+                        let screenWidth = document.documentElement.clientWidth
+                        if (screenWidth > 1080) {
+                            let block = document.querySelector('.item_tb_tree')
+                            block.style.display = 'block'
+                                //visible(block, opacity)
+                        } else if (screenWidth <= 1080) {
+                            let block = document.querySelector('.item_tb_tree')
+                            block.style.display = 'block'
+                                //visible(block, opacity)
+                        }
+                        preview_3.src = el.preview
+                        name_3.innerText = el.name
+                        desc_3.innerText = el.desc_left
+                        price_3.innerText = el.price
+                        more_3.setAttribute('value', el.id)
+                        break
+                    }
             }
         })
 
@@ -341,7 +381,7 @@ class TravelBoxes {
         })
     }
     downloadInfoTravelBoxCardMP(id, type) {
-        let curruntTB 
+        let curruntTB
         let imgArr = []
         this.data.forEach(el => {
             if (el.id == id && el.animal_type == type) curruntTB = el
@@ -360,25 +400,25 @@ class TravelBoxes {
         ware_left.innerText = curruntTB.desc_left
         ware_right.innerText = curruntTB.desc_right
 
-        curruntTB.images.forEach((el) => imgArr.push({img: el.image, thumb: el.thumbnail}))
+        curruntTB.images.forEach((el) => imgArr.push({ img: el.image, thumb: el.thumbnail }))
         console.log(imgArr)
-        
+
         conteiner.style.display = 'block'
-        
-            let fr = $('#fotorama_main_page').fotorama({
-                width: 380,
-                height: 400,
-                thumbheight: 84,
-                thumbwidth: 84,
-            })
-            
-            let fotorama = fr.data('fotorama');
-            
-            if (fotorama) {
-                fotorama.load(imgArr)
-            } else {
-                $('#fotorama').fotorama({data: imgArr});
-            }
+
+        let fr = $('#fotorama_main_page').fotorama({
+            width: 380,
+            height: 400,
+            thumbheight: 84,
+            thumbwidth: 84,
+        })
+
+        let fotorama = fr.data('fotorama');
+
+        if (fotorama) {
+            fotorama.load(imgArr)
+        } else {
+            $('#fotorama').fotorama({ data: imgArr });
+        }
 
         let give_contact = document.querySelector('#order_only_trav_box')
 
@@ -388,7 +428,6 @@ class TravelBoxes {
         }
 
         this.boxCounter()
-        //console.log(id, type)
     }
 
     switchTravelBoxesMainPage(visible, opacity) {
@@ -397,11 +436,19 @@ class TravelBoxes {
         let rabbitTb = document.querySelector('#show_rabbit_tb')
 
         let listTB = document.querySelector('.list_travel_box')
+        let items = document.querySelectorAll('.item_travel_box')
 
         dogTb.onclick = () => {
             let val = dogTb.getAttribute('value')
+            items.forEach(el => el.style.display = 'none')
 
-            listTB.style.display = 'grid'
+            let screenWidth = document.documentElement.clientWidth
+            if (screenWidth > 1080) {
+                listTB.style.display = 'grid'
+            } else if (screenWidth <= 1080) {
+                listTB.style.display = 'block'
+            }
+
             gsap.from(listTB, { duration: 0.8, y: 100, ease: "power2.out" })
 
             document.querySelector('.dog_tb_block').classList.add('active_nav_el')
@@ -412,16 +459,20 @@ class TravelBoxes {
             document.querySelector('.cat_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/cat.svg)'
             document.querySelector('.rabbit_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/rabbit.svg)'
 
-            let travelBox = document.querySelectorAll('.item_travel_box')
-            
-            travelBox.forEach( el => visible(el, opacity))
-            this.drawBoxesMainPage(val)
+            this.drawBoxesMainPage(val, visible, opacity)
         }
         catTb.onclick = () => {
             let val = catTb.getAttribute('value')
-            
-            listTB.style.display = 'grid'
-            gsap.from(listTB, { duration: 0.8, y: 100, ease: "power2.out"})
+            items.forEach(el => el.style.display = 'none')
+
+            let screenWidth = document.documentElement.clientWidth
+            if (screenWidth > 1080) {
+                listTB.style.display = 'grid'
+            } else if (screenWidth <= 1080) {
+                listTB.style.display = 'block'
+            }
+
+            gsap.from(listTB, { duration: 0.8, y: 100, ease: "power2.out" })
 
             document.querySelector('.cat_tb_block').classList.add('active_nav_el')
             document.querySelector('.dog_tb_block').classList.remove('active_nav_el')
@@ -431,14 +482,19 @@ class TravelBoxes {
             document.querySelector('.cat_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/focus_cat.svg)'
             document.querySelector('.rabbit_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/rabbit.svg)'
 
-            let travelBox = document.querySelectorAll('.item_travel_box')
-            travelBox.forEach( el => visible(el, opacity))
             this.drawBoxesMainPage(val)
         }
         rabbitTb.onclick = () => {
             let val = rabbitTb.getAttribute('value')
+            items.forEach(el => el.style.display = 'none')
 
-            listTB.style.display = 'grid'
+            let screenWidth = document.documentElement.clientWidth
+            if (screenWidth > 1080) {
+                listTB.style.display = 'grid'
+            } else if (screenWidth <= 1080) {
+                listTB.style.display = 'block'
+            }
+
             gsap.from(listTB, { duration: 0.8, y: 100, ease: "power2.out" })
 
             document.querySelector('.rabbit_tb_block').classList.add('active_nav_el')
@@ -449,13 +505,11 @@ class TravelBoxes {
             document.querySelector('.cat_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/cat.svg)'
             document.querySelector('.rabbit_tb_block .nav_tavel_box_img').style.backgroundImage = 'url(./style/img/mp/nav_tb/focus_rabbit.svg)'
 
-            let travelBox = document.querySelectorAll('.item_travel_box')
-            travelBox.forEach( el => visible(el, opacity))
             this.drawBoxesMainPage(val)
         }
     }
-    
 
 
-    
+
+
 }

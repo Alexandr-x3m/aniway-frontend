@@ -92,6 +92,7 @@ class BreedAnimal {
             item.append(span)
 
             item.onclick = () => {
+                let all_items = document.querySelectorAll('.breed_search_item')
                 conteiner.style.display = 'none'
                 wrapper_breed.style.display = 'none'
                 conteiner.style.display = 'none'
@@ -100,8 +101,8 @@ class BreedAnimal {
                 type_animal.setAttribute('value', el.id)
                 type_animal.setAttribute('class', 'input_list')
 
-                all_items.forEach(el => el.remove())
 
+                all_items.forEach(el => el.remove())
                 this.validInpt()
             }
         })
@@ -116,12 +117,12 @@ class BreedAnimal {
 
         valid_icon.style.display = 'none'
         valid_icon.setAttribute('value', 0)
-        
+
         text.style.display = 'block'
         invalid_icon.style.display = 'block'
         wrap.style.display = 'none'
         if (inv_text != undefined) text.innerText = inv_text
-        
+
         inpt.classList.remove('valid_list_input')
         inpt.classList.add('invalid_list_input')
     }
@@ -137,7 +138,7 @@ class BreedAnimal {
         valid_icon.style.display = 'block'
         valid_icon.setAttribute('value', 1)
         invalid_icon.style.display = 'none'
-        
+
         inpt.classList.remove('invalid_list_input')
         inpt.classList.add('valid_list_input')
         inpt.blur()
@@ -159,6 +160,3 @@ class BreedAnimal {
     }
 
 }
-
-
-

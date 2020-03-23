@@ -38,7 +38,9 @@
 <body>
 
     <header class="header_conteiner">
-        <div class="logo_block"></div>
+        <a href="./index.html">
+            <div class="logo_block"></div>
+        </a>
         <span class="header_nomber">
             <img src="./style/img/phone_icon.svg">
             <a href="tel:84959589845">8(495) 958 98 45</a></span>
@@ -101,7 +103,9 @@
                             <input type="text" autocomplete="off" class="input_list" id="type_animal_inpt" placeholder="Хаски" name="breed_animal" pattern="([А-Яа-яЁё])(\s)" value="">
                             <label for="type_animal_inpt" class="label_text label_field">Порода животного*</label>
                             <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_breed" value="0" class="valid_info_icon">
-                            <img src="./style/img/Group547.svg" id="inv_icon_breed" class="invalid_info_icon">
+                            <div id="inv_icon_breed" class="invalid_info_icon" id="inv_icon_breed">
+                                <img src="./style/img/Group547.svg">
+                            </div>
                             <span class="invalid_info_text" id="breed_invalid">Необходимо выбрать породу</span>
                         </div>
                     </div>
@@ -115,7 +119,9 @@
                             <input type="text" autocomplete="off" class="input_list" pattern="^\s*" id="country_arrival" placeholder="Германия" name="country_arrival">
                             <label for="country_arrival" class="label_text label_field">Страна прибытия*</label>
                             <img src="./style/img/noun_tick_1181537.svg" id="valid_icon_country" class="valid_info_icon" value="0">
-                            <img src="./style/img/Group547.svg" id="inv_icon_country" class="invalid_info_icon">
+                            <div id="inv_icon_country" class="invalid_info_icon">
+                                <img src="./style/img/Group547.svg">
+                            </div>
                             <span class="invalid_info_text" id="contry_invalid_text">Необходимо выбрать страну прибытия</span>
                         </div>
                     </div>
@@ -124,11 +130,12 @@
                 </div>
                 <div class="input_width_conteiner country_arrival_block">
                     <div class="input_width__setter">
-                        <input type="text" autocomplete="off" class="input_text" id="date_departure" placeholder="дд.мм.гггг" pattern="^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
-                            placeholder=" " name="date_departure" required>
+                        <input type="text" autocomplete="off" class="input_text" id="date_departure" placeholder="дд.мм.гггг" name="date_departure" required>
                         <label for="date_departure" class="label_text label_field">Дата путешествия*</label>
-                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
-                        <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" id="date_travel" value="0">
+                        <div class="invalid_info_icon" id='inv_date_travel'>
+                            <img src="./style/img/Group547.svg">
+                        </div>
                         <span class="invalid_info_text" id="inv_text_date_departure">Не верно указана дата</span>
                     </div>
                 </div>
@@ -141,7 +148,9 @@
                         <input type="text" autocomplete="off" class="input_text age_input text_validity" id="month_age_anim_inpt" placeholder="месяцев">
                         <label for="year_age_anim_inpt" class="label_text label_field" id="label_age_pet">Возраст*</label>
                         <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon val_icon_age_pet">
-                        <img src="./style/img/Group547.svg" class="invalid_info_icon inv_icon_age_pet">
+                        <div class="invalid_info_icon inv_icon_age_pet">
+                            <img src="./style/img/Group547.svg">
+                        </div>
                         <span class="invalid_info_text inv_text_age_pet" id="inv_text_age_anim">Вы неверно указали возраст</span>
                         <span class="year_text_input composite_text"></span>
                         <span class="month_text_input composite_text"></span>
@@ -151,12 +160,13 @@
 
                 <div class="input_width_conteiner date_vakcina_block">
                     <div class="input_width__setter">
-                        <input type="text" autocomplete="off" class="input_text" id="vakvina_date" placeholder="дд.мм.гггг" pattern="^(?:(?:31(\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$"
-                            placeholder=" ">
+                        <input type="text" autocomplete="off" class="input_text" id="vakvina_date" placeholder="дд.мм.гггг" name="vakvina_date" placeholder=" ">
                         <label for="vakvina_date" class="label_text label_field" id="vakcina_field">Дата посл.
                             вакцинации</label>
-                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
-                        <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                        <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon" id="date_vakcina" value="0">
+                        <div class="invalid_info_icon" id="inv_date_vakcina">
+                            <img src="./style/img/Group547.svg">
+                        </div>
                         <span class="invalid_info_text" id="inv_text_vakcina_field">Не указана дата последней вакцинации</span>
                     </div>
                 </div>
@@ -261,7 +271,9 @@
                             <input type="text" class="input_text text_validity" id="whats_name" placeholder="Василий" pattern="([А-Яа-яЁё\s]+$)">
                             <label for="whats_name" class="label_text label_field">Как вас зовут</label>
                             <img src="./style/img/noun_tick_1181537.svg" id='user_name_valid_icon' class="valid_info_icon">
-                            <img src="./style/img/Group547.svg" id='user_name_inv_icon' class="invalid_info_icon">
+                            <div id='user_name_inv_icon' class="invalid_info_icon">
+                                <img src="./style/img/Group547.svg">
+                            </div>
                             <span class="invalid_info_text" id='user_name_inv_text'>Неправильно введено имя</span>
                         </div>
                     </div>
@@ -270,7 +282,9 @@
                             <input type="text" autocomplete="off" class="input_text text_validity" id="your_telephone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
                             <label for="your_telephone" class="label_text label_field">Ваш номер телефона</label>
                             <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
-                            <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                            <div class="invalid_info_icon" id="inv_telephone_nomber">
+                                <img src="./style/img/Group547.svg">
+                            </div>
                             <span class="invalid_info_text">Неправильно введен номер</span>
                         </div>
                     </div>
@@ -289,7 +303,9 @@
                             <input type="text" autocomplete="off" class="input_text text_validity" id="your_email" value="" placeholder="aniway@email.ru" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
                             <label for="your_email" class="label_text label_field">Ваша эл. почта</label>
                             <img src="./style/img/noun_tick_1181537.svg" class="valid_info_icon">
-                            <img src="./style/img/Group547.svg" class="invalid_info_icon">
+                            <div class="invalid_info_icon" id="inv_your_mail">
+                                <img src="./style/img/Group547.svg">
+                            </div>
                             <span class="invalid_info_text">Неправильно введена почта</span>
                         </div>
                     </div>
@@ -304,14 +320,21 @@
                             </label>
                         </div>
                         <div class="list_items_links list_saerch_conteiner select_list" id="list_type_links" value="0">
-                            <div class="search_item type_link_item" id="type_link_1" value="1">Звонок по телефону
+                            <div class="search_item type_link_item" id="type_link_1" value="1">
+                                <p>Звонок по телефону</p>
                             </div>
-                            <div class="search_item type_link_item" id="type_link_2" value="2">WhatsApp</div>
-                            <div class="search_item type_link_item" id="type_link_3" value="3">Telegram</div>
-                            <div class="search_item type_link_item" id="type_link_4" value="4">Viber</div>
-                            <div class="search_item type_link_item" id="type_link_5" value="5">Facebook messenger
+                            <div class="search_item type_link_item" id="type_link_2" value="2">
+                                <p>WhatsApp</p>
                             </div>
-                            <div class="search_item type_link_item" id="type_link_6" value="6">Email</div>
+                            <div class="search_item type_link_item" id="type_link_3" value="3">
+                                <p>Telegram</p>
+                            </div>
+                            <div class="search_item type_link_item" id="type_link_4" value="4">
+                                <p>Facebook messenger</p>
+                            </div>
+                            <div class="search_item type_link_item" id="type_link_5" value="5">
+                                <p>Email</p>
+                            </div>
                         </div>
                         <div id="wrapper_select_links" class="wrapper_select"></div>
                     </div>
@@ -341,7 +364,7 @@
 
     <div id="preloader_conteiner" class="hide_block">
         <div class="preloader_background"></div>
-        <div id="hellopreloader_preload"></div>
+        <img src="./style/img/preloader_dog.gif" alt="">
     </div>
 
     <div class="err_conteiner hide_block">

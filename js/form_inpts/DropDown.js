@@ -37,11 +37,10 @@ class DropDownList {
         }
 
         arrItems.forEach(el => {
-            
+
             el.onclick = () => {
-                let state = document.querySelector('#view_animal_inpt').getAttribute('value')*1
+                let state = document.querySelector('#view_animal_inpt').getAttribute('value') * 1
                 wrap.style.display = 'none'
-                list.style.display = 'none'
                 if (invTxt == null) {
                     return
                 } else {
@@ -51,11 +50,32 @@ class DropDownList {
                 check.value = '1'
 
                 let val = el.getAttribute('value')
-                let txt = el.textContent
+                let txt = el.outerText
+
+
+                list.style.display = 'none'
 
                 if (state == val) {
                     console.log('without changes')
                 } else {
+                    let val = document.querySelector('#view_animal_inpt')
+                    let inpt = document.querySelector('#type_animal_inpt')
+
+                    switch (val) {
+                        case "1":
+                            {
+                                inpt.setAttribute('placeholder', 'Сиамская')
+                            }
+                        case "2":
+                            {
+                                inpt.setAttribute('placeholder', 'Хаски')
+                            }
+                        case "3":
+                            {
+                                inpt.setAttribute('placeholder', 'Хомяк')
+                            }
+                    }
+
                     breedAnimal.famousTypes()
                     breedAnimal.drawList()
                     document.querySelector('#type_animal_inpt').value = ''

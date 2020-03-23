@@ -9,7 +9,6 @@ window.onload = () => {
 
 
     let promise = new Promise((resolve, reject) => {
-        console.log('step 1')
         travelBoxes.getBoxes(resolve)
     })
 
@@ -32,7 +31,6 @@ window.onload = () => {
 
     promise.then(
         result => {
-            console.log('step 2')
             travelBoxes.drawBoxesMainPage(2)
         },
         err => alert(err.message)
@@ -169,7 +167,6 @@ window.onload = () => {
 
         if (el.getAttribute('value') == 1) {
             el.onclick = () => {
-                console.log(el)
                 el.setAttribute('value', 0)
                 let txt = document.querySelector('.')
                 let head = el.firstChild
@@ -310,6 +307,8 @@ window.onload = () => {
             let month
             let year
 
+            if (val.length > 10) val.pop()
+
             if (val.length == 4) {
                 month = val[3] * 1
             } else if (val.length > 4) {
@@ -362,7 +361,6 @@ window.onload = () => {
                     input.value = arrToDraw
                     return
                 }
-
             }
 
 
@@ -397,11 +395,6 @@ window.onload = () => {
                 val[7] = '0'
                 val[8] = '2'
                 val[9] = '5'
-            } else if (year < 2020 && year.toString().length == 4) {
-                val[6] = '2'
-                val[7] = '0'
-                val[8] = '2'
-                val[9] = '0'
             } else if (year < 200 && year.toString().length == 3) {
                 val[6] = '2'
                 val[7] = '0'
@@ -414,21 +407,21 @@ window.onload = () => {
                 if (curYear > year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
                 } else if (curMonth > month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
                     return
                 } else if (curDay > day && curMonth >= month && curYear >= year) {
                     input.classList.remove('valid_input')
                     input.classList.add('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
                     return
                 } else {
                     input.classList.add('valid_input')
                     input.classList.remove('invalid_input')
-                    document.querySelector('#inv_text_date_departure').innerText = `Укажите не раньше ${curDay}.${curMonth}.${curYear}`
+                    document.querySelector('#inv_text_date_departure').innerText = `Укажите дату не раньше ${curDay}.${curMonth}.${curYear}`
                 }
             }
             val.forEach(el => {
@@ -453,7 +446,6 @@ window.onload = () => {
         let country = document.querySelector('#country_arrival').value
         let date = document.querySelector('#date_departure').value
 
-        console.log(type)
         if (type.length == 0) {
             document.querySelector('#view_animal_inpt').classList.add('invalid_select')
             document.querySelector('#animal_type_inv_text').style.display = 'block'
@@ -496,9 +488,11 @@ window.onload = () => {
         if (menu_humb.checked) {
             //document.querySelector('.nav_block').style.display = 'block'
             document.querySelector('.nav_block').style.right = '0px'
+            document.querySelectorAll('.hamburger .bar').forEach(el => el.style.backgroundColor = '#808080')
         } else {
             //document.querySelector('.nav_block').style.display = 'none'
             document.querySelector('.nav_block').style.right = '-400px'
+            document.querySelectorAll('.hamburger .bar').forEach(el => el.style.backgroundColor = '#fff')
         }
 
     }
